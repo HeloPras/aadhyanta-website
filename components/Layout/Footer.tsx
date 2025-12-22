@@ -26,7 +26,7 @@ const footerData = {
     {
       title: 'Contact',
       items: [
-        { name: 'info@apexfund.com', href: 'mailto:info@apexfund.com' },
+        { name: 'info@aadhyanta.com', href: 'mailto:info@aadhyanta.com' },
         { name: '+1 (555) 123-4567', href: 'tel:+15551234567' },
         { name: 'New York, NY 10001', href: 'https://www.google.com/maps/search/New+York,+NY+10001', target: '_blank', rel: 'noopener noreferrer' },
       ],
