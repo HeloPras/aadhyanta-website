@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Linkedin, Mail, Award, Briefcase, GraduationCap } from 'lucide-react';
+import { Award, Briefcase, GraduationCap, ChevronRight } from 'lucide-react';
 
 interface TeamMember {
   name: string;
@@ -13,22 +13,7 @@ interface TeamMember {
   initials: string;
 }
 
-interface Department {
-  name: string;
-  color: string;
-}
-
 const TeamPage: React.FC = () => {
-  const [selectedDepartment, setSelectedDepartment] = useState<string>('All');
-
-  const departments: Department[] = [
-    { name: 'All', color: '#161142' },
-    { name: 'Executive', color: '#B71E52' },
-    { name: 'Investment', color: '#161142' },
-    { name: 'Operations', color: '#B71E52' },
-    { name: 'Client Relations', color: '#161142' }
-  ];
-
   const teamMembers: TeamMember[] = [
     {
       name: 'Michael Chen',
@@ -152,102 +137,260 @@ const TeamPage: React.FC = () => {
     }
   ];
 
-  const filteredMembers = selectedDepartment === 'All' 
-    ? teamMembers 
-    : teamMembers.filter(member => member.department === selectedDepartment);
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(135deg, #161142 0%, #2d1b69 100%)' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Meet Our <span style={{ color: '#B71E52' }}>Expert Team</span>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Centered with large imagery feel */}
+      <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#161142' }}>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{ 
+            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(183, 30, 82, 0.3) 35px, rgba(183, 30, 82, 0.3) 70px)'
+          }}></div>
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 leading-tight">
+              Our Team
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Our team of seasoned professionals brings decades of combined experience in investment 
-              management, financial analysis, and client service to help you achieve your financial goals.
+            <p className="text-2xl text-gray-300 leading-relaxed">
+              Meet the exceptional professionals driving investment excellence and delivering results for our clients worldwide.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Department Filter */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white shadow-sm sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-3">
-            {departments.map((dept, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedDepartment(dept.name)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all duration-200 ${
-                  selectedDepartment === dept.name 
-                    ? 'text-white shadow-lg transform scale-105' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-                style={selectedDepartment === dept.name ? { backgroundColor: dept.color } : {}}
-              >
-                {dept.name}
-              </button>
-            ))}
+      {/* Stats Bar */}
+      <section className="py-16 bg-gray-50 border-t border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-[#161142]" >
+                150+
+              </div>
+              <div className="text-gray-600 font-medium">Team Members</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-[#161142]">
+                450+
+              </div>
+              <div className="text-gray-600 font-medium">Years Combined Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-[#161142]">
+                85%
+              </div>
+              <div className="text-gray-600 font-medium">Hold Advanced Degrees</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-[#161142]">
+                40+
+              </div>
+              <div className="text-gray-600 font-medium">CFA Charterholders</div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Team Grid */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      {/* Executive Leadership Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredMembers.map((member, index) => (
+          <div className="mb-16">
+            <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
+              Leadership
+            </div>
+            <h2 className="text-4xl font-bold mb-4 text-[#161142]">
+              Executive team
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl">
+              Strategic leaders with decades of experience guiding global investment strategies
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            {teamMembers.filter(m => m.department === 'Executive').map((member, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-transparent"
               >
-                {/* Profile Header */}
-                <div className="h-48 flex items-center justify-center text-white text-5xl font-bold relative" style={{ backgroundColor: '#161142' }}>
-                  {member.initials}
+                <div className="h-56 flex items-center justify-center text-white text-5xl font-bold relative overflow-hidden" style={{ backgroundColor: '#161142' }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black opacity-20"></div>
+                  <span className="relative z-10">{member.initials}</span>
                 </div>
 
-                {/* Profile Content */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-1" style={{ color: '#161142' }}>
-                    {member.name}
-                  </h3>
-                  <p className="text-sm font-semibold mb-1" style={{ color: '#B71E52' }}>
-                    {member.position}
-                  </p>
-                  <p className="text-xs text-gray-500 mb-4 uppercase tracking-wide">
-                    {member.department}
-                  </p>
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold mb-1" style={{ color: '#161142' }}>
+                      {member.name}
+                    </h3>
+                    <p className="text-sm font-semibold" style={{ color: '#B71E52' }}>
+                      {member.position}
+                    </p>
+                  </div>
 
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-600 leading-relaxed mb-6 text-sm">
                     {member.bio}
                   </p>
 
-                  {/* Experience & Education */}
-                  <div className="space-y-3 mb-4">
+                  <div className="space-y-3 mb-6 pb-6 border-b border-gray-100">
                     <div className="flex items-start">
-                      <Briefcase size={16} className="mr-2 mt-1 flex-shrink-0" style={{ color: '#B71E52' }} />
+                      <Briefcase size={16} className="mr-2.5 mt-0.5 flex-shrink-0" style={{ color: '#B71E52' }} />
                       <span className="text-sm text-gray-700">{member.experience}</span>
                     </div>
                     <div className="flex items-start">
-                      <GraduationCap size={16} className="mr-2 mt-1 flex-shrink-0" style={{ color: '#B71E52' }} />
+                      <GraduationCap size={16} className="mr-2.5 mt-0.5 flex-shrink-0" style={{ color: '#B71E52' }} />
                       <span className="text-sm text-gray-700">{member.education}</span>
                     </div>
                   </div>
 
-                  {/* Specialties */}
                   <div>
-                    <div className="flex items-center mb-2">
+                    <div className="flex items-center mb-3">
                       <Award size={16} className="mr-2" style={{ color: '#B71E52' }} />
-                      <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Specialties</span>
+                      <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Expertise</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {member.specialties.map((specialty, idx) => (
                         <span 
                           key={idx}
-                          className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-700"
+                          className="text-xs px-3 py-1.5 rounded-md bg-gray-50 text-gray-700 border border-gray-100"
+                        >
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Investment Team */}
+          <div className="mb-16">
+            <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
+              Portfolio Management
+            </div>
+            <h2 className="text-4xl font-bold mb-4 text-[#161142]">
+              Investment team
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl">
+              Expert portfolio managers and analysts driving superior investment performance
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            {teamMembers.filter(m => m.department === 'Investment').map((member, index) => (
+              <div 
+                key={index}
+                className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-transparent"
+              >
+                <div className="h-56 flex items-center justify-center text-white text-5xl font-bold relative overflow-hidden" style={{ backgroundColor: '#161142' }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black opacity-20"></div>
+                  <span className="relative z-10">{member.initials}</span>
+                </div>
+
+                <div className="p-6">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold mb-1 text-[#161142]">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm font-semibold text-[#B71E52]">
+                      {member.position}
+                    </p>
+                  </div>
+
+                  <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+                    {member.bio}
+                  </p>
+
+                  <div className="space-y-3 mb-6 pb-6 border-b border-gray-100">
+                    <div className="flex items-start">
+                      <Briefcase size={16} className="mr-2.5 mt-0.5 flex-shrink-0 text-[#B71E52]" />
+                      <span className="text-sm text-gray-700">{member.experience}</span>
+                    </div>
+                    <div className="flex items-start">
+                      <GraduationCap size={16} className="mr-2.5 mt-0.5 flex-shrink-0 text-[#B71E52]" />
+                      <span className="text-sm text-gray-700">{member.education}</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center mb-3">
+                      <Award size={16} className="mr-2 text-[#B71E52]" />
+                      <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Expertise</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {member.specialties.map((specialty, idx) => (
+                        <span 
+                          key={idx}
+                          className="text-xs px-3 py-1.5 rounded-md bg-gray-50 text-gray-700 border border-gray-100"
+                        >
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Operations & Client Relations */}
+          <div className="mb-16">
+            <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
+              Support Teams
+            </div>
+            <h2 className="text-4xl font-bold mb-4 text-[#161142]">
+              Operations & client relations
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl">
+              Dedicated professionals ensuring operational excellence and exceptional client service
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.filter(m => m.department === 'Operations' || m.department === 'Client Relations').map((member, index) => (
+              <div 
+                key={index}
+                className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-transparent"
+              >
+                <div className="h-56 flex items-center justify-center text-white text-5xl font-bold relative overflow-hidden" style={{ backgroundColor: '#161142' }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black opacity-20"></div>
+                  <span className="relative z-10">{member.initials}</span>
+                </div>
+
+                <div className="p-6">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold mb-1 text-[#161142]">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm font-semibold text-[#B71E52]">
+                      {member.position}
+                    </p>
+                  </div>
+
+                  <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+                    {member.bio}
+                  </p>
+
+                  <div className="space-y-3 mb-6 pb-6 border-b border-gray-100">
+                    <div className="flex items-start">
+                      <Briefcase size={16} className="mr-2.5 mt-0.5 flex-shrink-0 text-[#B71E52]" />
+                      <span className="text-sm text-gray-700">{member.experience}</span>
+                    </div>
+                    <div className="flex items-start">
+                      <GraduationCap size={16} className="mr-2.5 mt-0.5 flex-shrink-0 text-[#B71E52]" />
+                      <span className="text-sm text-gray-700">{member.education}</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center mb-3">
+                      <Award size={16} className="mr-2 text-[#B71E52]" />
+                      <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Expertise</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {member.specialties.map((specialty, idx) => (
+                        <span 
+                          key={idx}
+                          className="text-xs px-3 py-1.5 rounded-md bg-gray-50 text-gray-700 border border-gray-100"
                         >
                           {specialty}
                         </span>
@@ -261,54 +404,136 @@ const TeamPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* Featured Section - Culture & Values */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
+                Our Culture
+              </div>
+              <h2 className="text-4xl font-bold mb-6 leading-tight text-[#161142]">
+                Where talent meets opportunity
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                At Aadhyanta Fund, we cultivate an environment where exceptional professionals can thrive, innovate, and make meaningful contributions to our clients' success. Our culture emphasizes collaboration, continuous learning, and excellence in everything we do.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                We invest in our team through professional development programs, industry certifications, and opportunities to work on challenging, high-impact projects alongside some of the brightest minds in finance.
+              </p>
+              <a 
+                href="#careers" 
+                className="inline-flex items-center font-semibold text-lg transition-colors duration-200 text-[#B71E52]"
+              >
+                Explore career opportunities
+                <ChevronRight className="ml-1" size={20} />
+              </a>
+            </div>
+            <div className="bg-white p-10 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="text-2xl font-bold mb-6 text-[#161142]">
+                What We Offer
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <ChevronRight className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5 text-[#B71E52]" />
+                  <div>
+                    <div className="font-semibold text-gray-900 mb-1">Competitive Compensation</div>
+                    <div className="text-gray-600 text-sm">Market-leading salaries and performance-based bonuses</div>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <ChevronRight className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5 text-[#B71E52]" />
+                  <div>
+                    <div className="font-semibold text-gray-900 mb-1">Professional Development</div>
+                    <div className="text-gray-600 text-sm">Support for CFA, MBA, and other certifications</div>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <ChevronRight className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5 text-[#B71E52]" />
+                  <div>
+                    <div className="font-semibold text-gray-900 mb-1">Global Opportunities</div>
+                    <div className="text-gray-600 text-sm">Work across our international offices and diverse markets</div>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <ChevronRight className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5 text-[#B71E52]" />
+                  <div>
+                    <div className="font-semibold text-gray-900 mb-1">Inclusive Environment</div>
+                    <div className="text-gray-600 text-sm">Diverse team with equal opportunities for all</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#161142' }}>
-              Our Team by Numbers
+            <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
+              Team Voices
+            </div>
+            <h2 className="text-4xl font-bold mb-4 text-[#161142]">
+              What our team says
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2" style={{ color: '#B71E52' }}>150+</div>
-              <div className="text-gray-600 font-medium">Team Members</div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed italic">
+                "The collaborative environment and access to sophisticated investment strategies make every day a learning opportunity. I've grown more here in three years than in the previous decade of my career."
+              </p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold mr-4 bg-[#161142]">
+                  JA
+                </div>
+                <div>
+                  <div className="font-bold text-[#161142]">James Anderson</div>
+                  <div className="text-sm text-gray-600">Senior Portfolio Manager</div>
+                </div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2" style={{ color: '#B71E52' }}>450+</div>
-              <div className="text-gray-600 font-medium">Years Combined Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2" style={{ color: '#B71E52' }}>85%</div>
-              <div className="text-gray-600 font-medium">Hold Advanced Degrees</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2" style={{ color: '#B71E52' }}>40+</div>
-              <div className="text-gray-600 font-medium">CFA Charterholders</div>
+            
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed italic">
+                "What sets Aadhyanta apart is the genuine commitment to both client success and employee development. The leadership truly invests in helping us reach our full potential."
+              </p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold mr-4 bg-[#161142]">
+                  JL
+                </div>
+                <div>
+                  <div className="font-bold text-[#161142]">Jennifer Lee</div>
+                  <div className="text-sm text-gray-600">Director of Client Relations</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#161142' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Join Our Team
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#161142]">
+            Join our team
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            We're always looking for talented professionals who share our commitment to excellence 
-            and client success. Explore career opportunities at Apex Fund.
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+            We're always looking for talented professionals who share our commitment to excellence and client success. Explore career opportunities at Aadhyanta Fund.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105"
-              style={{ backgroundColor: '#B71E52' }}
+              className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center justify-center group bg-[#B71E52]"
             >
               View Open Positions
+              <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </button>
-            <button className="px-8 py-4 rounded-lg bg-white font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105" style={{ color: '#161142' }}>
-              Contact a Team Member
+            <button 
+              className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg border-2 inline-flex items-center justify-center border-[#161142]  bg-[#161142] text-white" 
+            >
+              Contact Recruitment
             </button>
           </div>
         </div>

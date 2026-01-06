@@ -105,13 +105,15 @@ const LandingPage: React.FC = () => {
       {/* Navigation */}
 
       {/* Hero Section - Inspired by A&O Shearman */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-gray-50 to-white">
+        <div className="absolute -top-24 right-24 h-96 w-96 rounded-full bg-[#B71E52]/10 blur-3xl" />
+        <div className="absolute top-1/2 -left-24 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl" />
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl">
-            <div className="inline-block px-4 py-1 bg-gray-100 rounded-full text-sm font-medium mb-6" style={{ color: '#B71E52' }}>
+            <div className="inline-block px-4 py-1 bg-gray-100 rounded-full text-sm font-medium mb-6 text-[#B71E52]" >
               Trusted by Global Investors
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ color: '#161142' }}>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-transparent bg-clip-text bg-linear-to-r from-[#161142] to-[#B71E52]">
               Investment excellence in a fast-changing world
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
@@ -119,15 +121,13 @@ const LandingPage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-                className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center justify-center group"
-                style={{ backgroundColor: '#B71E52' }}
+                className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center justify-center group bg-[#B71E52]  "
               >
                 Explore Our Services
                 <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </button>
               <button 
-                className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg border-2 inline-flex items-center justify-center" 
-                style={{ borderColor: '#161142', color: '#161142' }}
+                className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg border-2 inline-flex items-center justify-center boder-[#161142] text-[#161142]" 
               >
                 Schedule Consultation
               </button>
@@ -142,7 +142,7 @@ const LandingPage: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#161142' }}>
+                <div className="text-4xl md:text-5xl font-bold mb-2 text-[#161142]">
                   {stat.value}
                 </div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
@@ -157,10 +157,10 @@ const LandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: '#B71E52' }}>
+              <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
                 About Aadhyanta Fund
               </div>
-              <h2 className="text-4xl font-bold mb-6 leading-tight" style={{ color: '#161142' }}>
+              <h2 className="text-4xl font-bold mb-6 leading-tight text-[#161142]">
                 See why we are uniquely equipped to support global investors
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -168,15 +168,14 @@ const LandingPage: React.FC = () => {
               </p>
               <a 
                 href="#about" 
-                className="inline-flex items-center font-semibold transition-colors duration-200"
-                style={{ color: '#B71E52' }}
+                className="inline-flex items-center font-semibold transition-colors duration-200 text-[#B71E52]"
               >
                 Learn more about us
                 <ChevronRight className="ml-1" size={20} />
               </a>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-sm">
-              <h3 className="text-2xl font-bold mb-6" style={{ color: '#161142' }}>
+              <h3 className="text-2xl font-bold mb-6 text-[#161142]">
                 Our Commitment
               </h3>
               <ul className="space-y-4">
@@ -206,10 +205,10 @@ const LandingPage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: '#B71E52' }}>
+            <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
               Expertise
             </div>
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#161142' }}>
+            <h2 className="text-4xl font-bold mb-4 text-[#161142]">
               Explore our capabilities
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -223,7 +222,7 @@ const LandingPage: React.FC = () => {
                 key={index}
                 className="group bg-white border border-gray-200 p-8 rounded-lg hover:shadow-xl transition-all duration-300 hover:border-transparent"
               >
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#161142' }}>
+                <h3 className="text-2xl font-bold mb-4 text-[#161142]">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
@@ -237,8 +236,7 @@ const LandingPage: React.FC = () => {
                 </ul>
                 <a 
                   href="#" 
-                  className="inline-flex items-center font-semibold transition-colors duration-200 group-hover:underline"
-                  style={{ color: '#B71E52' }}
+                  className="inline-flex items-center font-semibold transition-colors duration-200 group-hover:underline text-[#B71E52]"
                 >
                   Learn more
                   <ChevronRight className="ml-1 group-hover:translate-x-1 transition-transform" size={18} />
@@ -254,17 +252,16 @@ const LandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <div className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: '#B71E52' }}>
+              <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
                 Insights
               </div>
-              <h2 className="text-4xl font-bold" style={{ color: '#161142' }}>
+              <h2 className="text-4xl font-bold text-[#161142]">
                 Spotlight on our latest thinking
               </h2>
             </div>
             <a 
               href="#insights" 
-              className="hidden md:inline-flex items-center font-semibold transition-colors duration-200"
-              style={{ color: '#B71E52' }}
+              className="hidden md:inline-flex items-center font-semibold transition-colors duration-200 text-[#B71E52]"
             >
               View all insights
               <ChevronRight className="ml-1" size={20} />
@@ -278,12 +275,12 @@ const LandingPage: React.FC = () => {
                 href="#"
                 className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
               >
-                <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200"></div>
+                <div className="h-48 bg-linear-to-br from-gray-100 to-gray-200"></div>
                 <div className="p-6">
-                  <div className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#B71E52' }}>
+                  <div className="text-xs font-semibold uppercase tracking-wide mb-2 text-[#B71E52]">
                     {insight.category}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:underline" style={{ color: '#161142' }}>
+                  <h3 className="text-xl font-bold mb-3 group-hover:underline text-[#161142]">
                     {insight.title}
                   </h3>
                   <div className="flex items-center justify-between text-sm text-gray-500">
@@ -301,7 +298,7 @@ const LandingPage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#161142' }}>
+            <h2 className="text-4xl font-bold mb-4 text-[#161142]">
               Why Choose Aadhyanta Fund
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -316,7 +313,7 @@ const LandingPage: React.FC = () => {
                 className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold mb-3" style={{ color: '#161142' }}>
+                <h3 className="text-xl font-bold mb-3 text-[#161142]">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
@@ -327,7 +324,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#161142' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#161142]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Grow Your Wealth?
@@ -337,8 +334,7 @@ const LandingPage: React.FC = () => {
             Schedule a consultation with our expert advisors today.
           </p>
           <button 
-            className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105 inline-flex items-center"
-            style={{ backgroundColor: '#B71E52' }}
+            className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105 inline-flex items-center bg-[#B71E52] "
           >
             Schedule Consultation
             <ArrowRight className="ml-2" size={20} />
