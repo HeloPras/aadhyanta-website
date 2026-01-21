@@ -22,6 +22,7 @@ const TeamPage: React.FC = () => {
       image: "/aadhyanta/Team/Copy of DSC01254.JPG",
     },
 
+
     {
       name: "Sarah Williams",
       position: "Chief Investment Officer",
