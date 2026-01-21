@@ -28,6 +28,7 @@ const Member = ({
   if (isMobile) {
     return (
       <div className="mobile-container">
+        
         {/* ADD YOUR MOBILE ELSE CODE HERE */}
         {teamMembers
               .filter((m) => m.department === department)

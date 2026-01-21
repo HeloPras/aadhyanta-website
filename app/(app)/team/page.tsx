@@ -353,7 +353,7 @@ const TeamPage: React.FC = () => {
               </h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <ChevronRight className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5 text-[#B71E52]" />
+                  <ChevronRight className="w-5 h-5 mr-3 shrink-0 mt-0.5 text-[#B71E52]" />
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">
                       Competitive Compensation
@@ -364,7 +364,7 @@ const TeamPage: React.FC = () => {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <ChevronRight className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5 text-[#B71E52]" />
+                  <ChevronRight className="w-5 h-5 mr-3 flexnk-0 mt-0.5 text-[#B71E52]" />
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">
                       Professional Development
@@ -375,7 +375,7 @@ const TeamPage: React.FC = () => {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <ChevronRight className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5 text-[#B71E52]" />
+                  <ChevronRight className="w-5 h-5 mr-3 flexnk-0 mt-0.5 text-[#B71E52]" />
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">
                       Global Opportunities
@@ -386,7 +386,7 @@ const TeamPage: React.FC = () => {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <ChevronRight className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5 text-[#B71E52]" />
+                  <ChevronRight className="w-5 h-5 mr-3 flexnk-0 mt-0.5 text-[#B71E52]" />
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">
                       Inclusive Environment
@@ -468,7 +468,7 @@ const TeamPage: React.FC = () => {
             commitment to excellence and client success. Explore career
             opportunities at Aadhyanta Fund.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flexsm:flexgap-4 justify-center">
             <button className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center justify-center group bg-[#B71E52]">
               View Open Positions
               <ChevronRight
