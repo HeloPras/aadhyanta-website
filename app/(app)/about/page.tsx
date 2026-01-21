@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Target, Eye, Heart, TrendingUp, Users, Globe, Briefcase, ChevronRight } from 'lucide-react';
+import { teamMembers } from '@/data/team';
 
 interface Value {
   icon: React.ReactNode;
@@ -44,32 +45,32 @@ const AboutPage: React.FC = () => {
     }
   ];
 
-  const teamMembers: TeamMember[] = [
-    {
-      name: 'Michael Chen',
-      position: 'Chief Executive Officer',
-      bio: '25+ years of experience in asset management and private equity',
-      image: 'MC'
-    },
-    {
-      name: 'Sarah Williams',
-      position: 'Chief Investment Officer',
-      bio: 'Former portfolio manager at Fortune 500 investment firms',
-      image: 'SW'
-    },
-    {
-      name: 'David Martinez',
-      position: 'Head of Risk Management',
-      bio: 'PhD in Financial Engineering with 20 years industry experience',
-      image: 'DM'
-    },
-    {
-      name: 'Emily Thompson',
-      position: 'Managing Director',
-      bio: 'Specialist in institutional client relations and strategic growth',
-      image: 'ET'
-    }
-  ];
+  // const teamMembers: TeamMember[] = [
+  //   {
+  //     name: 'Michael Chen',
+  //     position: 'Chief Executive Officer',
+  //     bio: '25+ years of experience in asset management and private equity',
+  //     image: 'MC'
+  //   },
+  //   {
+  //     name: 'Sarah Williams',
+  //     position: 'Chief Investment Officer',
+  //     bio: 'Former portfolio manager at Fortune 500 investment firms',
+  //     image: 'SW'
+  //   },
+  //   {
+  //     name: 'David Martinez',
+  //     position: 'Head of Risk Management',
+  //     bio: 'PhD in Financial Engineering with 20 years industry experience',
+  //     image: 'DM'
+  //   },
+  //   {
+  //     name: 'Emily Thompson',
+  //     position: 'Managing Director',
+  //     bio: 'Specialist in institutional client relations and strategic growth',
+  //     image: 'ET'
+  //   }
+  // ];
 
   const milestones: Milestone[] = [
     {
@@ -287,13 +288,13 @@ const AboutPage: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
+            {teamMembers.filter((member) => member.department.toLowerCase() === 'executive').map((member, index) => (index < 4 && (
               <div 
                 key={index}
                 className="group"
               >
                 <div className="h-80 flex items-center justify-center text-white text-5xl font-bold mb-6 rounded-lg overflow-hidden" style={{ backgroundColor: '#161142' }}>
-                  {member.image}
+                  <img src={member.image} className='w-full h-full object-cover' alt="" />
                 </div>
                 <h3 className="text-xl font-bold mb-1" style={{ color: '#161142' }}>
                   {member.name}
@@ -303,7 +304,7 @@ const AboutPage: React.FC = () => {
                 </p>
                 <p className="text-gray-600 leading-relaxed">{member.bio}</p>
               </div>
-            ))}
+            )))}
           </div>
         </div>
       </section>
