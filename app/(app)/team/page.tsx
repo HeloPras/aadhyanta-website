@@ -18,7 +18,7 @@ const TeamPage: React.FC = () => {
         "Corporate Governance",
         "Leadership",
       ],
-      initials: "MC",
+      initials: "MC"    ,
       image: "/aadhyanta/Team/Copy of DSC01254.JPG",
     },
     {

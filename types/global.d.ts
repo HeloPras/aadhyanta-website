@@ -8,5 +8,6 @@ interface TeamMember {
   specialties: string[];
   initials: string;
   image?:string;
-
 }
+
+
