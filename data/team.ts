@@ -49,7 +49,7 @@ export const teamMembers = [
       initials: "DM",
     },
     {
-      name: "Emily Thompson",
+      name: "James Anderson",
       position: "Managing Director",
       department: "Executive",
       bio: "Emily oversees strategic growth initiatives and institutional client relationships. She has been instrumental in expanding our global footprint and establishing key partnerships.",
@@ -65,7 +65,7 @@ export const teamMembers = [
       image:"/aadhyanta/Team/Lomus.jpeg",
     },
     {
-      name: "James Anderson",
+      name: "Nothing",
       position: "Senior Portfolio Manager",
       department: "Investment",
       bio: "James manages our equity portfolios with a focus on technology and healthcare sectors. His research-driven approach has generated consistent returns for our clients.",

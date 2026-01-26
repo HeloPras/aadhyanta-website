@@ -1,6 +1,4 @@
-"use client"
 
-import React, { useState } from "react"
 import {
   TrendingUp,
   Shield,
@@ -12,7 +10,7 @@ import {
   X,
   ChevronRight,
 } from "lucide-react"
-import ScaleLetterText from "@/components/ui/scale-letter-text"
+import ModalDemo from "@/components/Pages/Landing/fundmodal"
 
 interface Feature {
   icon: React.ReactNode
@@ -39,7 +37,6 @@ interface InsightCard {
 }
 
 const LandingPage: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const features: Feature[] = [
     {
@@ -117,35 +114,41 @@ const LandingPage: React.FC = () => {
   const funds = [
     {
       title: "Nepal Opportunity Fund I",
+      focus: "Market-proven growth enterprises",
       description:
-        "A $10M growth equity fund investing in market-proven enterprises across Nepal.",
+        "Our flagship fund targets established businesses with proven business models, strong management teams, and clear growth trajectories. NOF I provides patient growth capital with active governance support.",
       features: [
         "Sector-agnostic approach",
+        "All seven provinces",
+        "NPR 10-50M ticket sizes",
         "5-7 year hold periods",
-        "Gender lens integration",
-        "Climate impact measurement",
+        "Board representation",
       ],
     },
     {
       title: "Nepal Opportunity Fund II",
+      focus: "Follow-on and new investments",
       description:
-        "A $15M growth equity fund investing in market-proven enterprises across Nepal.",
+        "Building on NOF I's success, our second fund continues supporting portfolio companies while identifying new high-potential enterprises ready for institutional capital and strategic growth partnerships.",
       features: [
-        "Sector-agnostic approach",
-        "5-7 year hold periods",
-        "Gender lens integration",
-        "Climate impact measurement",
+        "Follow-on capacity",
+        "Larger ticket sizes",
+        "Proven track record",
+        "Enhanced due diligence",
+        "Portfolio synergies",
       ],
     },
     {
       title: "Simrik Fund",
+      focus: "Gender-lens investing",
       description:
-        "A $5M gender-lens fund investing in enterprises led by women.",
+        "Nepal's first gender-lens investment fund, managed by an all-women deal team. Simrik targets women-led enterprises and businesses with significant women beneficiaries, addressing critical financing gaps.",
       features: [
-        "Sector-agnostic approach",
-        "5-7 year hold periods",
-        "Gender lens integration",
-        "Climate impact measurement",
+        "Women-led businesses",
+        "Women workforce focus",
+        "All-women deal team",
+        "Gender-smart design",
+        "Inclusion metrics",
       ],
     },
   ]
@@ -178,7 +181,7 @@ const LandingPage: React.FC = () => {
       {/* Hero Section - Inspired by A&O Shearman */}
       <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-gray-50 to-white">
         <div className="absolute top-24 right-24 h-96 w-96 rounded-full bg-[#B71E52]/10 blur-3xl" />
-        <div className="absolute top-1/2 left-24 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl"/>
+        <div className="absolute top-1/2 left-24 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl" />
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl">
             <div className="inline-block px-4 py-1 bg-gray-100 rounded-full text-sm font-medium mb-6 text-[#B71E52]">
@@ -404,8 +407,40 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div
+                className="text-sm font-semibold uppercase tracking-wide mb-4"
+                style={{ color: "#B71E52" }}
+              >
+                Our Funds
+              </div>
+              <h2
+                className="text-4xl font-bold mb-6 leading-tight"
+                style={{ color: "#161142" }}
+              >
+               Three Vehicles, One Mission
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                We manage three complementary institutional funds, each designed
+                to address specific market opportunities while maintaining our
+                core commitment to growth capital deployment and transformative
+                impact across Nepal's economy.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <div className="space-y-6">
+                <ModalDemo highlights={funds}></ModalDemo>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-[#161142]">
