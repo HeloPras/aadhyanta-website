@@ -27,10 +27,20 @@ const footerData = {
       title: 'Contact',
       items: [
         { name: 'info@aadhyanta.com', href: 'mailto:info@aadhyanta.com' },
-        { name: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-        { name: 'New York, NY 10001', href: 'https://www.google.com/maps/search/New+York,+NY+10001', target: '_blank', rel: 'noopener noreferrer' },
+        { name: '01-4526601 / 01-4526601 '},
+        { name: 'Dharamarga, Baluwatar-4, Kathmandu, Nepal', href: 'https://www.google.com/maps/search/New+York,+NY+10001', target: '_blank', rel: 'noopener noreferrer' },
       ],
     },
+    {title:'',items:[]},
+    {title:'',items:[]},
+    {title:'',items:[]},
+    {
+      title:'Specialized Contacts',
+items:[
+  {name:'Investments: investments@aadhyanta.com',href:'mailto:investments@aadhyanta.com'},
+  {name:'Partnerships: partnerships@aadhyanta.com',href:'mailto:partnerships@aadhyanta.com'},
+  {name:'Governance: governance@aadhyanta.com',href:'mailto:governance@aadhyanta.com'}]
+    }
   ],
   copyright: '© 2024 Aadhyanta Fund Management. All rights reserved.',
 };

@@ -69,44 +69,83 @@ const LandingPage: React.FC = () => {
   ]
 
   const stats: Stat[] = [
-    { value: "$2.5B+", label: "Assets Under Management" },
-    { value: "15+", label: "Years of Excellence" },
-    { value: "5,000+", label: "Satisfied Clients" },
-    { value: "98%", label: "Client Retention Rate" },
+    { value: "Rs. 320M+", label: "Capital Mobilized" },
+    { value: "200+", label: "Enterprises Supported" },
+    // { value: "40+", label: "Banking Partners" },
+    { value: "3", label: "Active Funds" },
+    // { value: "", label: "" },
+    // { value: "6+", label: "Development Partners" },
+    // { value: "1st", label: "Gender-Lens Fund" },
   ]
 
   const services: Service[] = [
     {
-      title: "Wealth Management",
+      title: "Fund Management",
       description:
-        "Comprehensive financial planning and investment management for high-net-worth individuals.",
+        "We manage three institutional funds totaling NPR 320M+ in committed capital, deploying growth equity to market-proven enterprises across all seven provinces of Nepal.",
       features: [
-        "Portfolio Diversification",
-        "Tax Optimization",
-        "Estate Planning",
-        "Retirement Strategies",
+        "Nepal Opportunity Fund I & II",
+        "Simrik Fund (gender-lens investing)",
+        "Sector-agnostic approach",
+        "5-7 year hold periods",
       ],
     },
     {
-      title: "Institutional Services",
+      title: "Ecosystem Building",
       description:
-        "Tailored solutions for corporations, foundations, and institutional investors.",
+        "Through targeted accelerator programs and technical assistance, we transform early-stage ventures into investment-ready enterprises capable of absorbing institutional capital.",
       features: [
-        "Custom Mandates",
-        "ESG Integration",
-        "Performance Reporting",
-        "Regulatory Compliance",
+        "Comprehensive accelerator programs",
+        "Investment readiness training",
+        "Market linkage support",
+        "Governance strengthening",
       ],
     },
     {
-      title: "Alternative Investments",
+      title: "Impact & Inclusion",
       description:
-        "Access to exclusive investment opportunities across various asset classes.",
+        "Every investment decision integrates rigorous impact measurement, targeting job creation, gender inclusion, climate resilience, and sustainable development aligned with national priorities.",
       features: [
-        "Private Equity",
-        "Real Estate",
-        "Hedge Funds",
-        "Venture Capital",
+        "SDG-aligned investments",
+        "Gender lens integration",
+        "Climate impact measurement",
+        "Livelihood creation focus",
+      ],
+    },
+  ]
+
+  const funds = [
+    {
+      title: "Nepal Opportunity Fund I",
+      description:
+        "A $10M growth equity fund investing in market-proven enterprises across Nepal.",
+      features: [
+        "Sector-agnostic approach",
+        "5-7 year hold periods",
+        "Gender lens integration",
+        "Climate impact measurement",
+      ],
+    },
+    {
+      title: "Nepal Opportunity Fund II",
+      description:
+        "A $15M growth equity fund investing in market-proven enterprises across Nepal.",
+      features: [
+        "Sector-agnostic approach",
+        "5-7 year hold periods",
+        "Gender lens integration",
+        "Climate impact measurement",
+      ],
+    },
+    {
+      title: "Simrik Fund",
+      description:
+        "A $5M gender-lens fund investing in enterprises led by women.",
+      features: [
+        "Sector-agnostic approach",
+        "5-7 year hold periods",
+        "Gender lens integration",
+        "Climate impact measurement",
       ],
     },
   ]
@@ -137,37 +176,36 @@ const LandingPage: React.FC = () => {
       {/* Navigation */}
 
       {/* Hero Section - Inspired by A&O Shearman */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-gray-50 to-white">
-
-        
-
-        <div className="absolute -top-24 right-24 h-96 w-96 rounded-full bg-[#B71E52]/10 blur-3xl" />
-        <div className="absolute top-1/2 -left-24 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl" />
+      <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-gray-50 to-white">
+        <div className="absolute top-24 right-24 h-96 w-96 rounded-full bg-[#B71E52]/10 blur-3xl" />
+        <div className="absolute top-1/2 left-24 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl"/>
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl">
             <div className="inline-block px-4 py-1 bg-gray-100 rounded-full text-sm font-medium mb-6 text-[#B71E52]">
-              Trusted by Global Investors
+              Nepal's Impact Investment Pioneer
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-relaxed tracking-tight text-transparent bg-clip-text bg-linear-to-r from-[#161142] to-[#B71E52]">
-              Investment excellence in a fast-changing world
+              Mobilizing Capital That Transforms
             </h1>
 
             {/* <ScaleLetterText text="Investment excellence in a fast-changing world" className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-transparent" /> */}
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
-              Strategic investment solutions backed by 15+ years of excellence.
-              We manage your wealth with precision, transparency, and unwavering
-              commitment to your success.
+              We deploy growth capital and build investment-ready ecosystems
+              across Nepal, bridging the gap between ambitious enterprises and
+              institutional investors. As Nepal's first SEBON-licensed
+              institutional fund manager, we combine rigorous financial
+              discipline with deep impact commitment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center justify-center group bg-[#B71E52]  ">
-                Explore Our Services
+                For Enterprises
                 <ChevronRight
                   className="ml-2 group-hover:translate-x-1 transition-transform"
                   size={20}
                 />
               </button>
               <button className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg border-2 inline-flex items-center justify-center boder-[#161142] text-[#161142]">
-                Schedule Consultation
+                For Investors
               </button>
             </div>
           </div>
@@ -175,7 +213,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-white border-t border-b border-gray-100">
+      <section className="pb-20  pt-20 bg-white border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -267,14 +305,16 @@ const LandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
-              Expertise
+              What We Do
             </div>
             <h2 className="text-4xl font-bold mb-4 text-[#161142]">
-              Explore our capabilities
+              Capital Meets Capability
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our teams are known for the quality of their financial thinking
-              and for creating cutting-edge investment strategies.
+              Aadhyanta stands at the intersection of institutional finance and
+              transformative impact. We don't just deploy capital—we build the
+              entire ecosystem that makes growth sustainable, inclusive, and
+              scalable across Nepal's diverse provinces.
             </p>
           </div>
 
