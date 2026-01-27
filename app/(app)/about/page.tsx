@@ -16,8 +16,8 @@ interface TeamMember {
   image: string;
 }
 
-interface Milestone {
-  year: string;
+interface program {
+  number: string;
   title: string;
   description: string;
 }
@@ -52,32 +52,27 @@ const AboutPage: React.FC = () => {
 
 
 
-  const milestones: Milestone[] = [
+  const programs: program[] = [
     {
-      year: '2009',
-      title: 'Foundation',
-      description: 'Aadhyanta Fund was established with a vision to revolutionize wealth management'
+      number: '1',
+      title: 'Enterprise Accelerator',
+      description: 'Our flagship program has supported 200+ enterprises with comprehensive business development services, resulting in $28M+ in follow-on capital raised by program participants.'
     },
     {
-      year: '2012',
-      title: '$500M AUM',
-      description: 'Reached half a billion in assets under management, establishing our market presence'
+      number: '2',
+      title: 'Koshi Accelerator',
+      description: 'Targeted provincial development initiative supporting enterprises in Koshi Province, demonstrating our commitment to inclusive growth beyond Kathmandu valley.'
     },
     {
-      year: '2016',
-      title: 'Global Expansion',
-      description: 'Opened offices in London and Singapore, serving international clients'
+      number: '3',
+      title: 'DIAL Program',
+      description: 'Agriculture technology and innovation acceleration, supporting agri-tech ventures that strengthen food security and rural livelihoods across Nepal.'
     },
     {
-      year: '2020',
-      title: 'Digital Innovation',
-      description: 'Launched our proprietary investment analytics platform'
+      number: '4',
+      title: 'Roof of the World',
+      description: 'Cross-border connectivity initiative fostering regional trade and investment linkages, positioning Nepal as a bridge between South Asian markets.'
     },
-    {
-      year: '2024',
-      title: '$2.5B+ AUM',
-      description: 'Surpassed $2.5 billion in assets, serving over 5,000 satisfied clients'
-    }
   ];
 
   return (
@@ -284,28 +279,28 @@ const AboutPage: React.FC = () => {
               className="text-sm font-semibold uppercase tracking-wide mb-4"
               style={{ color: "#B71E52" }}
             >
-              Our Story
+              Programs
             </div>
             <h2
               className="text-4xl font-bold mb-4"
               style={{ color: "#161142" }}
             >
-              A legacy of growth and innovation
+              Building Investment-Ready Ecosystems
             </h2>
           </div>
 
           <div className="space-y-8">
-            {milestones.map((milestone, index) => (
+            {programs.map((program, index) => (
               <div
                 key={index}
-                className="flex flex-col md:flex-row gap-8 md:gap-16 group"
+                className="flex flex-col md:flex-row gap-4 md:gap-16 group"
               >
-                <div className="md:w-32 shrink-0">
+                <div className="   shrink-0">
                   <div
-                    className="text-4xl font-bold"
+                    className="text-4xl font-bold lg:text-right sm:text-left md:text-left "
                     style={{ color: "#B71E52" }}
                   >
-                    {milestone.year}
+                    {program.number}
                   </div>
                 </div>
                 <div className="grow border-l-2 border-gray-200 pl-8 pb-8 group-hover:border-gray-400 transition-colors">
@@ -313,10 +308,10 @@ const AboutPage: React.FC = () => {
                     className="text-2xl font-bold mb-2"
                     style={{ color: "#161142" }}
                   >
-                    {milestone.title}
+                    {program.title}
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    {milestone.description}
+                  <p className="text-md text-gray-600 leading-relaxed">
+                    {program.description}
                   </p>
                 </div>
               </div>

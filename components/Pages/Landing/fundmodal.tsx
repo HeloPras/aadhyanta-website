@@ -149,6 +149,9 @@ const ModalDemo = ({ highlights }: { highlights: Highlight[] }) => {
                 <p className="mt-1 text-sm text-gray-600 leading-relaxed">
                   {highlight.focus}
                 </p>
+                <p className=" pt-2 text-sm  leading-relaxed text-[#B71E52] group-hover:underline group-hover:font-bold">
+                  View Details
+                </p>
               </div>
             </div>
           </div>

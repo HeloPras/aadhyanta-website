@@ -67,12 +67,12 @@ const WorkWithUsSection: React.FC = () => {
   );
 
   return (
-    <div className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <section className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className=" mb-16">
           <div
-            className="inline-block px-4 py-1 bg-gray-100 rounded-full text-sm font-medium mb-6"
+            className="inline-block px-4 py-1 bg-gray-50 bg- rounded-full text-sm font-medium mb-6"
             style={{ color: "#B71E52" }}
           >
             Work with us
@@ -100,18 +100,18 @@ const WorkWithUsSection: React.FC = () => {
         </div>
 
         {/* Tabs and Content */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden  ">
           {/* Tab Navigation */}
-          <div className="border-b border-gray-200">
+          <div className="border-b border-gray-200  ">
             <div className="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible">
               {tabs.map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 px-8 py-4 text-center font-semibold transition-all duration-200 border-b-2 whitespace-nowrap ${
+                  className={`flex-1 px-8 py-4 text-center font-semibold transition-all duration-200 border-b-2 whitespace-nowrap cursor-pointer  ${
                     activeTab === tab
-                      ? "border-[#B71E52] text-[#161142]"
-                      : "border-transparent text-gray-500 hover:text-gray-700"
+                      ? "border-[#B71E52] text-[#161142] bg-gray-50"
+                      : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-100"
                   }`}
                 >
                   For {tab}
@@ -169,9 +169,9 @@ const WorkWithUsSection: React.FC = () => {
                 </div>
 
                 {/* CTA Button */}
-                <div className="pt-6 border-t border-gray-200 flex justify-center ">
+                <div className="pt-6 border-t border-gray-200 flex justify-center  ">
                   <button
-                    className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center group"
+                    className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center cursor-pointer group  "
                     style={{ backgroundColor: "#B71E52" }}
                   >
                     {currentPartner.button}

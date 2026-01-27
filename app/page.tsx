@@ -9,6 +9,7 @@ import {
   Menu,
   X,
   ChevronRight,
+  Building2,
 } from "lucide-react"
 import ModalDemo from "@/components/Pages/Landing/fundmodal"
 import WorkWithUsSection from "@/components/Pages/Landing/workwithussection"
@@ -30,11 +31,10 @@ interface Service {
   features: string[]
 }
 
-interface InsightCard {
-  category: string
+interface Highlight {
   title: string
-  type: string
-  date: string
+  description:string
+  icon: React.ReactNode
 }
 
 const LandingPage: React.FC = () => {
@@ -154,26 +154,23 @@ const LandingPage: React.FC = () => {
     },
   ]
 
-  const insights: InsightCard[] = [
+ const highlights: Highlight[] = [
     {
-      category: "Market Analysis",
-      title: "Global Market Outlook 2025: Navigating Uncertainty",
-      type: "Report",
-      date: "15 Dec 2025",
+      icon: <Users className="w-10 h-10" style={{ color: '#B71E52' }} />,
+      title: 'Simrik Fund Launch',
+      description: "Nepal's first gender-lens investment fund, managed by an all-women deal team, targeting women-led and women-benefiting enterprises. This pioneering initiative addresses the critical financing gap faced by women entrepreneurs."
     },
     {
-      category: "Investment Strategy",
-      title: "ESG Investing: The Future of Sustainable Returns",
-      type: "Insight",
-      date: "10 Dec 2025",
+      icon: <TrendingUp className="w-10 h-10" style={{ color: '#B71E52' }} />,
+      title: 'Koshi Accelerator Program',
+      description: "A targeted provincial development initiative supporting enterprises in Nepal's Koshi Province, strengthening local economic ecosystems through capital access, technical assistance, and market linkages."
     },
     {
-      category: "Private Capital",
-      title: "Alternative Investments in a Rising Rate Environment",
-      type: "Podcast",
-      date: "5 Dec 2025",
-    },
-  ]
+      icon: <Building2 className="w-10 h-10" style={{ color: '#B71E52' }} />,
+      title: 'DV Excellus Partnership',
+      description: "Strategic growth investment in one of Nepal's leading manufacturing enterprises, showcasing our approach to value creation through governance strengthening, operational excellence, and market expansion support."
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -181,8 +178,8 @@ const LandingPage: React.FC = () => {
 
       {/* Hero Section - Inspired by A&O Shearman */}
       <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-gray-50 to-white">
-        <div className="absolute top-24 right-24 h-96 w-96 rounded-full bg-[#B71E52]/10 blur-3xl" />
-        <div className="absolute top-1/2 left-24 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl" />
+        {/* <div className="absolute top-24 right-24 h-96 w-96 rounded-full bg-[#B71E52]/10 blur-3xl z-[-1]" />
+        <div className="absolute top-1/2 left-24 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl z-[-1]" /> */}
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl">
             <div className="inline-block px-4 py-1 bg-gray-100 rounded-full text-sm font-medium mb-6 text-[#B71E52]">
@@ -201,14 +198,14 @@ const LandingPage: React.FC = () => {
               discipline with deep impact commitment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center justify-center group bg-[#B71E52]  ">
+              <button className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center justify-center group bg-[#B71E52] cursor-pointer ">
                 For Enterprises
                 <ChevronRight
                   className="ml-2 group-hover:translate-x-1 transition-transform"
                   size={20}
                 />
               </button>
-              <button className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg border-2 inline-flex items-center justify-center boder-[#161142] text-[#161142]">
+              <button className="px-8 py-4 cursor-pointer rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg border-2 inline-flex items-center justify-center boder-[#161142] text-[#161142]">
                 For Investors
               </button>
             </div>
@@ -362,55 +359,55 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Insights Section - A&O Shearman Style */}
-      {/* <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
             <div>
               <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
-                Insights
+                Recent Highlights
               </div>
               <h2 className="text-4xl font-bold text-[#161142]">
-                Spotlight on our latest thinking
+                Building Nepal's Investment Future
               </h2>
             </div>
-            <a
+            {/* <a
               href="#insights"
               className="hidden md:inline-flex items-center font-semibold transition-colors duration-200 text-[#B71E52]"
             >
               View all insights
               <ChevronRight className="ml-1" size={20} />
-            </a>
+            </a> */}
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {insights.map((insight, index) => (
-              <a
-                key={index}
-                href="#"
-                className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
-              >
-                <div className="h-48 bg-linear-to-br from-gray-100 to-gray-200"></div>
-                <div className="p-6">
-                  <div className="text-xs font-semibold uppercase tracking-wide mb-2 text-[#B71E52]">
-                    {insight.category}
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:underline text-[#161142]">
-                    {insight.title}
-                  </h3>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>{insight.type}</span>
-                    <span>{insight.date}</span>
-                  </div>
-                </div>
-              </a>
-            ))}
+             {highlights.map((highlight, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-all duration-300"
+            >
+              {/* Icon */}
+              <div className="mb-6">
+                {highlight.icon}
+              </div>
+
+              {/* Content */}
+              <div>
+                <h3 className="text-2xl font-bold mb-4 leading-tight" style={{ color: '#161142' }}>
+                  {highlight.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {highlight.description}
+                </p>
+              </div>
+            </div>
+          ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
-        <WorkWithUsSection/>
+      <WorkWithUsSection />
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white-50">
+      <section className="py-20 bg-gray-50 px-4 sm:px-6 lg:px-8 bg-white-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -424,7 +421,7 @@ const LandingPage: React.FC = () => {
                 className="text-4xl font-bold mb-6 leading-tight"
                 style={{ color: "#161142" }}
               >
-               Three Vehicles, One Mission
+                Three Vehicles, One Mission
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 We manage three complementary institutional funds, each designed
@@ -443,7 +440,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-[#161142]">
