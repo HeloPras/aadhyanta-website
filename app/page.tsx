@@ -11,6 +11,7 @@ import {
   ChevronRight,
 } from "lucide-react"
 import ModalDemo from "@/components/Pages/Landing/fundmodal"
+import WorkWithUsSection from "@/components/Pages/Landing/workwithussection"
 
 interface Feature {
   icon: React.ReactNode
@@ -344,7 +345,7 @@ const LandingPage: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <a
+                {/* <a
                   href="#"
                   className="inline-flex items-center font-semibold transition-colors duration-200 group-hover:underline text-[#B71E52]"
                 >
@@ -353,7 +354,7 @@ const LandingPage: React.FC = () => {
                     className="ml-1 group-hover:translate-x-1 transition-transform"
                     size={18}
                   />
-                </a>
+                </a> */}
               </div>
             ))}
           </div>
@@ -361,7 +362,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Insights Section - A&O Shearman Style */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
             <div>
@@ -405,7 +406,9 @@ const LandingPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+        <WorkWithUsSection/>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white-50">
         <div className="max-w-7xl mx-auto">
