@@ -42,6 +42,13 @@ const Navbar = () => {
   const navItems: NavItem[] = [
     { name: "Portfolio", href: "/portfolio" },
     { name: "About", href: "/about" },
+    {name:"Funds", href:"/fund",
+      dropdown:[
+        {name:"NOF-I", href:"/fund/nofone"},
+        {name:"Fund 2", href:"/fund/2"},
+        {name:"Fund 3", href:"/fund/3"},
+      ]
+    },
     { name: "Career", href: "/career" },
     { name: "Team", href: "/team" },
     { name: "Press", href: "/press" },
@@ -80,7 +87,7 @@ const Navbar = () => {
                     key={index}
                     className="relative"
                     onMouseEnter={() => item.dropdown && setOpenDropdown(index)}
-                    onMouseLeave={() => setOpenDropdown(null)}
+                    onMouseLeave={()=>{setOpenDropdown(null)}}
                   >
                     <a
                       href={item.href}
@@ -93,7 +100,7 @@ const Navbar = () => {
 
                     {/* Dropdown */}
                     {item.dropdown && openDropdown === index && (
-                      <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100">
+                      <div className="absolute top-[36] left-[-50] transition-all  mt-1 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100">
                         {item.dropdown.map((dropItem, dropIndex) => (
                           <a
                             key={dropIndex}
@@ -128,17 +135,35 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-gray-200 bg-white">
+          <div className="md:hidden px-5 border-t border-gray-200 bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item, index) => (
+                <>
                 <a
                   key={index}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100"
+                  className="flex items-center gap-1 px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 border-b "
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
+                  {item.dropdown && <ChevronDown size={16} color="#8E1A4E" />}
                 </a>
+
+                {item.dropdown && (
+                  <div className="transition-all  pl-5  bg-white rounded-lg py-2 z-50">
+                    {item.dropdown.map((dropItem, dropIndex) => (
+                      <a
+                        key={dropIndex}
+                        href={dropItem.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                      >
+                        {dropItem.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+
+                </>
               ))}
             </div>
           </div>

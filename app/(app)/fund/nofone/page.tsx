@@ -3,11 +3,7 @@
 import React, { useState } from 'react';
 import { ChevronRight, CheckCircle, ArrowLeft, Zap, Building2, Smartphone, Leaf, Factory, Shield, Globe, TrendingUp, BarChart3, Users } from 'lucide-react';
 
-type Page = 'funds' | 'nof1';
 
-/* ─────────────────────────────────────────────
-   NOF I PAGE
-───────────────────────────────────────────── */
 export default function NOF1Page({ onBack }: { onBack: () => void }) {
   const stats = [
     { value: 'NPR 300Cr', label: 'Raised from institutions' },
@@ -91,7 +87,7 @@ export default function NOF1Page({ onBack }: { onBack: () => void }) {
     <div className="min-h-screen bg-white">
 
       {/* Back nav */}
-      <div className="bg-white border-b border-gray-100 sticky top-0 z-40">
+      {/* <div className="bg-white border-b border-gray-100 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <button
             onClick={onBack}
@@ -102,7 +98,7 @@ export default function NOF1Page({ onBack }: { onBack: () => void }) {
             Back to Funds
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Hero */}
       <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#161142' }}>
