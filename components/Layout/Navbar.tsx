@@ -45,8 +45,8 @@ const Navbar = () => {
     {name:"Funds", href:"/fund",
       dropdown:[
         {name:"NOF-I", href:"/fund/nofone"},
-        {name:"Fund 2", href:"/fund/2"},
-        {name:"Fund 3", href:"/fund/3"},
+        {name:"NOF-II", href:"/fund/noftwo"},
+        {name:"NOF-III", href:"/fund/nofthree"},
       ]
     },
     { name: "Career", href: "/career" },
