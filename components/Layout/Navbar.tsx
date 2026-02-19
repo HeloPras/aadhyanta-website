@@ -49,6 +49,7 @@ const Navbar = () => {
         {name:"Simrik Fund", href:"/fund/simrik"},
       ]
     },
+    { name: "Program", href: "/program" },
     { name: "Career", href: "/career" },
     { name: "Team", href: "/team" },
     { name: "Press", href: "/press" },
