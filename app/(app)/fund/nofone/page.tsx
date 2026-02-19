@@ -241,7 +241,7 @@ export default function NOF1Page({ onBack }: { onBack: () => void }) {
               <div className="space-y-6">
                 {whatWeLookFor.map((item, i) => (
                   <div key={i} className="flex items-start gap-4 pb-6 border-b border-gray-100 last:border-0 last:pb-0">
-                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#B71E52' }} />
+                    <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" style={{ color: '#B71E52' }} />
                     <div>
                       <div className="font-bold mb-1" style={{ color: '#161142' }}>{item.title}</div>
                       <div className="text-gray-600 text-sm leading-relaxed">{item.description}</div>
@@ -257,7 +257,7 @@ export default function NOF1Page({ onBack }: { onBack: () => void }) {
               <div className="grid grid-cols-1 gap-4">
                 {howWeAddValue.map((item, i) => (
                   <div key={i} className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition-all duration-200 flex items-start gap-4">
-                    <div className="flex-shrink-0 mt-0.5">{item.icon}</div>
+                    <div className="shrink-0 mt-0.5">{item.icon}</div>
                     <div>
                       <div className="font-bold mb-1" style={{ color: '#161142' }}>{item.title}</div>
                       <div className="text-gray-600 text-sm">{item.description}</div>
@@ -292,7 +292,7 @@ export default function NOF1Page({ onBack }: { onBack: () => void }) {
                   {/* Left */}
                   <div className="md:col-span-2">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="flex-shrink-0">{item.icon}</div>
+                      <div className="shrink-0">{item.icon}</div>
                       <div>
                         <div className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#B71E52' }}>
                           {item.sector}
@@ -310,7 +310,7 @@ export default function NOF1Page({ onBack }: { onBack: () => void }) {
                     <ul className="space-y-3">
                       {item.impacts.map((imp, j) => (
                         <li key={j} className="flex items-center gap-2 text-sm text-gray-700">
-                          <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: '#B71E52' }} />
+                          <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: '#B71E52' }} />
                           {imp}
                         </li>
                       ))}
@@ -341,7 +341,7 @@ export default function NOF1Page({ onBack }: { onBack: () => void }) {
             <div className="space-y-4">
               {governance.map((item, i) => (
                 <div key={i} className="bg-white border border-gray-200 rounded-lg p-6 flex items-start gap-4">
-                  <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#B71E52' }} />
+                  <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" style={{ color: '#B71E52' }} />
                   <div>
                     <div className="font-bold mb-1" style={{ color: '#161142' }}>{item.title}</div>
                     <div className="text-gray-600 text-sm">{item.description}</div>
@@ -370,7 +370,7 @@ export default function NOF1Page({ onBack }: { onBack: () => void }) {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {proofs.map((p, i) => (
               <div key={i} className="flex items-start gap-4 bg-white bg-opacity-5 rounded-lg p-6">
-                <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#B71E52' }} />
+                <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" style={{ color: '#B71E52' }} />
                 <p className="text-gray-200 leading-relaxed">{p}</p>
               </div>
             ))}

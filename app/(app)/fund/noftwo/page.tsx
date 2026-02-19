@@ -215,7 +215,7 @@ export default function NOF2Page() {
             <div className="space-y-3">
               {corePrinciples.map((item, i) => (
                 <div key={i} className="bg-gray-50 border border-gray-200 rounded-lg p-6 flex items-start gap-4">
-                  <CheckCircle className="w-4 h-4 flex-shrink-0 mt-1" style={{ color: '#B71E52' }} />
+                  <CheckCircle className="w-4 h-4 shrink-0 mt-1" style={{ color: '#B71E52' }} />
                   <div>
                     <p className="font-semibold text-sm mb-0.5" style={{ color: '#161142' }}>{item.title}</p>
                     <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
@@ -253,7 +253,7 @@ export default function NOF2Page() {
                     key={i}
                     className="flex items-start gap-4 py-5 border-b border-gray-100 last:border-0"
                   >
-                    <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#B71E52' }} />
+                    <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#B71E52' }} />
                     <p className="text-sm text-gray-700 leading-relaxed">{item}</p>
                   </div>
                 ))}
