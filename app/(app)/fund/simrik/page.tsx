@@ -1,5 +1,4 @@
-import React from 'react';
-import { ChevronRight, CheckCircle, ArrowLeft, TrendingUp, Users, Target, Award, Briefcase, Shield, Factory, GraduationCap, Building2, Globe, Zap, Leaf } from 'lucide-react';
+import { ChevronRight, CheckCircle,  TrendingUp, Users, Target, Award, Briefcase,  Factory, GraduationCap, Building2, Globe, Zap, Leaf } from 'lucide-react';
 
 export default function SimrikFundPage() {
   const marketStats = [
@@ -50,19 +49,6 @@ export default function SimrikFundPage() {
   return (
     <div className="min-h-screen bg-white">
 
-      {/* ── Back nav ── */}
-      {/* <div className="bg-white border-b border-gray-100 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center">
-          <button
-            onClick={onBack}
-            className="inline-flex items-center gap-2 text-sm font-semibold hover:opacity-60 transition-opacity"
-            style={{ color: '#161142' }}
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Funds
-          </button>
-        </div>
-      </div> */}
 
       {/* ── Hero - Unique gradient layout ── */}
       <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-linear-to-br from-pink-50 via-white to-purple-50">
