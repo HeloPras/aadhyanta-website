@@ -317,6 +317,10 @@ const AboutPage: React.FC = () => {
               </div>
             ))}
           </div>
+          <a href="/program" className='group'>
+          <button  className="inline-flex items-center bg-primary-pink cursor-pointer gap-2 px-6   py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg  mt-16 text-center group-hover:shadow-xl shadow-gray-400 ">
+            Learn More <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-all duration-300 " />
+          </button></a>
         </div>
       </section>
 

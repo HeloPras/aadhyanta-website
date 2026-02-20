@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronRight, CheckCircle, ArrowLeft, TrendingUp, Users, Target, Award, Briefcase, Shield, Factory, GraduationCap, Building2, Globe, Zap, Leaf } from 'lucide-react';
 
-export default function SimrikFundPage({ onBack }: { onBack?: () => void }) {
+export default function SimrikFundPage() {
   const marketStats = [
     { value: '<10%', label: 'Bank credit to women-led businesses' },
     { value: '42%', label: 'Loan approval rate for women vs 60% for men' },

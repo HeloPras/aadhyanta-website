@@ -1,10 +1,8 @@
-'use client'
 
-import React, { useState } from 'react';
 import { ChevronRight, CheckCircle, ArrowLeft, Zap, Building2, Smartphone, Leaf, Factory, Shield, Globe, TrendingUp, BarChart3, Users } from 'lucide-react';
 
 
-export default function NOF1Page({ onBack }: { onBack: () => void }) {
+export default function NOF1Page() {
   const stats = [
     { value: 'NPR 300Cr', label: 'Raised from institutions' },
     { value: '18 Months', label: 'Fully deployed' },
@@ -38,13 +36,13 @@ export default function NOF1Page({ onBack }: { onBack: () => void }) {
       description: 'Long-term partnership supporting clean energy generation. Our involvement strengthened governance, improved financial reporting, and facilitated additional financing for expansion projects.',
       impacts: ['MW-scale clean energy', 'CO₂ emissions avoided', 'Rural energy access'],
     },
-    {
-      icon: <Building2 className="w-6 h-6" style={{ color: '#B71E52' }} />,
-      sector: 'Premium Hospitality',
-      name: 'Budhanilkantha Heritage Hotel',
-      description: 'Growth capital and strategic support for 5-star heritage hotel development under international brand partnership. Focus on operational excellence, brand positioning, and market expansion.',
-      impacts: ['Quality jobs created', 'Tourism infrastructure', 'Heritage preservation'],
-    },
+    // {
+    //   icon: <Building2 className="w-6 h-6" style={{ color: '#B71E52' }} />,
+    //   sector: 'Premium Hospitality',
+    //   name: 'Budhanilkantha Heritage Hotel',
+    //   description: 'Growth capital and strategic support for 5-star heritage hotel development under international brand partnership. Focus on operational excellence, brand positioning, and market expansion.',
+    //   impacts: ['Quality jobs created', 'Tourism infrastructure', 'Heritage preservation'],
+    // },
     {
       icon: <Smartphone className="w-6 h-6" style={{ color: '#B71E52' }} />,
       sector: 'Digital Financial Inclusion',

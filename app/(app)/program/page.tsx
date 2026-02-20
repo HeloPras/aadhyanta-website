@@ -208,7 +208,11 @@ export default function AcceleratorPage() {
               </div>
             ))}
           </div>
+
+
         </div>
+
+
       </section>
 
       {/* ── Specialized Initiatives ── */}
