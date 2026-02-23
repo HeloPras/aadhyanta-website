@@ -287,7 +287,7 @@ export default function AcceleratorPage() {
                     </div>
                   )}
                   {track.strategicValue && (
-                    <div className="bg-white rounded-lg border border-gray-200 p-6 md:col-span-2">
+                    <div className="bg-white rounded-lg border border-gray-200 p-6">
                       <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#B71E52' }}>Strategic Value</p>
                       <p className="text-gray-700 leading-relaxed">{track.strategicValue}</p>
                     </div>

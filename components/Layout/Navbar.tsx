@@ -64,8 +64,7 @@ const Navbar = () => {
   `}
 >
 <nav className=" backdrop-blur-lg border-b border-gray-200  mx-auto bg-transparent rounded-2xl ">
-<div className="h-[2px] w-full bg-linear-to-r from-transparent via-primary-pink to-transparent " />2
-
+<div className="h-[2px] w-full bg-linear-to-r from-transparent via-primary-pink to-transparent " />
         <div className="px-6 sm:px-8 lg:px-10 max-w-[80%] mx-auto">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}

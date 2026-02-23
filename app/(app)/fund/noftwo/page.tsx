@@ -187,7 +187,7 @@ export default function NOF2Page() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div>
+            <div className='my-auto'>
               <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#B71E52' }}>
                 Core Principles
               </p>
@@ -216,8 +216,8 @@ export default function NOF2Page() {
       {/* ── Investment Criteria ── */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div>
+          <div className="grid md:grid-cols-2 gap-16 items-start ">
+            <div className='my-auto'>
               <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#B71E52' }}>
                 Investment Criteria
               </p>
@@ -230,7 +230,7 @@ export default function NOF2Page() {
             </div>
 
             <div className="bg-white border border-gray-200 rounded-lg p-8">
-              <h3 className="text-xl font-bold mb-8 pb-6 border-b border-gray-100" style={{ color: '#161142' }}>
+              <h3 className="text-xl font-bold  pb-6 border-b border-gray-100" style={{ color: '#161142' }}>
                 What We Look For
               </h3>
               <div className="space-y-0">
@@ -266,8 +266,8 @@ export default function NOF2Page() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {whyThisMatters.map((item, i) => (
               <div key={i} className="rounded-lg p-6 border border-white border-opacity-10 bg-white bg-opacity-5">
-                <h3 className="font-bold mb-2 text-white">{item.label}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+                <h3 className="font-bold mb-2 text-primary-pink">{item.label}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
