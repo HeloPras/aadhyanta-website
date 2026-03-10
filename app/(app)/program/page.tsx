@@ -91,7 +91,14 @@ export default function AcceleratorPage() {
     { title: 'Ecosystem Credibility', description: "Supporting 200+ enterprises builds trust and relationships across Nepal's business community" },
   ];
 
-  const partners = ['Swiss Development Cooperation', 'USAID', 'US Embassy in Nepal', 'FAO', 'Winrock International', 'Koshi Province Government'];
+  const partners = [
+    { name: "Swiss Development Cooperation", href: "/aadhyanta/Logo/Program/Swiss.jpeg" },
+    { name: "USAID", href: "/aadhyanta/Logo/Program/USAID.webp"},
+    { name: "US Embassy in Nepal", href: "/aadhyanta/Logo/Program/"},
+    { name: "FAO", href: "/aadhyanta/Logo/Program/FAO.svg" },
+    { name: "Winrock International", href: "/aadhyanta/Logo/Program/winrock.png" },
+    { name: "Koshi Province Government", href: "/aadhyanta/Logo/Program/" },
+  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -104,7 +111,7 @@ export default function AcceleratorPage() {
               Accelerator Programs
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ color: '#161142' }}>
-              Aadhyanta Accelerator Program
+              Aadhyanta Accelerator Progra  m
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
               Building investment-ready enterprises through comprehensive support, market connections, and pathways to capital.
@@ -333,7 +340,7 @@ export default function AcceleratorPage() {
       </section>
 
       {/* ── Partners ── */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-gray-100">
+      {/* <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-sm font-semibold uppercase tracking-widest mb-8" style={{ color: '#B71E52' }}>
             Program Partners
@@ -346,7 +353,7 @@ export default function AcceleratorPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── CTA Section ── */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-blue-50 via-white to-indigo-50">
