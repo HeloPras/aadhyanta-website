@@ -56,15 +56,16 @@ const Navbar = () => {
     { name: "Tools", href: "/tools" },
   ]
 
+
   return (
-   <header
-  className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300  mx-auto
-    ${showNavbar ? 'translate-y-0' : '-translate-y-full'}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300  mx-auto
+    ${showNavbar ? "translate-y-0" : "-translate-y-full"}
     
   `}
->
-<nav className=" backdrop-blur-lg border-b border-gray-200  mx-auto bg-transparent rounded-2xl ">
-<div className="h-[2px] w-full bg-linear-to-r from-transparent via-primary-pink to-transparent " />
+    >
+      <nav className=" backdrop-blur-lg border-b border-gray-200  mx-auto bg-transparent rounded-2xl ">
+        <div className="h-[2px] w-full bg-linear-to-r from-transparent via-primary-pink to-transparent " />
         <div className="px-6 sm:px-8 lg:px-10 max-w-[80%] mx-auto">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
@@ -73,9 +74,11 @@ const Navbar = () => {
                 href="/"
                 className="relative font-medium text-gray-700 transition-colors duration-200 hover:text-primary-pink"
               >
-                <span className="text-2xl font-bold cursor-pointer text-primary-pink">
-                  Brand
-                </span>
+                <img
+                  src="/aadhyanta/logomark.png"
+                  alt="aadhyanta-logo"
+                  className="h-full w-12"
+                />
               </a>
             </div>
 
@@ -87,7 +90,9 @@ const Navbar = () => {
                     key={index}
                     className="relative"
                     onMouseEnter={() => item.dropdown && setOpenDropdown(index)}
-                    onMouseLeave={()=>{setOpenDropdown(null)}}
+                    onMouseLeave={() => {
+                      setOpenDropdown(null)
+                    }}
                   >
                     <a
                       href={item.href}
@@ -139,37 +144,35 @@ const Navbar = () => {
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item, index) => (
                 <>
-                <a
-                  key={index}
-                  href={item.href}
-                  className="flex items-center gap-1 px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 border-b "
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                  {item.dropdown && <ChevronDown size={16} color="#8E1A4E" />}
-                </a>
+                  <a
+                    key={index}
+                    href={item.href}
+                    className="flex items-center gap-1 px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 border-b "
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                    {item.dropdown && <ChevronDown size={16} color="#8E1A4E" />}
+                  </a>
 
-                {item.dropdown && (
-                  <div className="transition-all  pl-5  bg-white rounded-lg py-2 z-50">
-                    {item.dropdown.map((dropItem, dropIndex) => (
-                      <a
-                        key={dropIndex}
-                        href={dropItem.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      >
-                        {dropItem.name}
-                      </a>
-                    ))}
-                  </div>
-                )}
-
+                  {item.dropdown && (
+                    <div className="transition-all  pl-5  bg-white rounded-lg py-2 z-50">
+                      {item.dropdown.map((dropItem, dropIndex) => (
+                        <a
+                          key={dropIndex}
+                          href={dropItem.href}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                        >
+                          {dropItem.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </>
               ))}
             </div>
           </div>
         )}
       </nav>
-
     </header>
   )
 }
