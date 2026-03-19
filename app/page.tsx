@@ -1,4 +1,5 @@
-"use client"
+
+'use client'
 
 import {
   TrendingUp,
@@ -11,14 +12,14 @@ import {
   Building2,
 } from "lucide-react"
 import {
-  motion,
-  useInView,
-  useAnimation,
-  type Variants,
+  motion
 } from "framer-motion"
-import { useRef, useEffect } from "react"
 import ModalDemo from "@/components/Pages/Landing/fundmodal"
 import WorkWithUsSection from "@/components/Pages/Landing/workwithussection"
+import { ScrollReveal } from "@/components/ui/scrollreveal"
+
+import { cardUp, cardZoom, fadeLeft, fadeRight, fadeUp, slideFromRight, springPop, zoomIn } from '@/util/animation/animaitonhelper';
+import { StaggerReveal } from "@/components/ui/staggerreveal"
 
 interface Feature {
   icon: React.ReactNode
@@ -43,151 +44,8 @@ interface Highlight {
   icon: React.ReactNode
 }
 
-/* ─── Reusable scroll-triggered wrapper ──────────────────────────── */
-function ScrollReveal({
-  children,
-  variants,
-  className,
-  delay = 0,
-  threshold = 0.12,
-}: {
-  children: React.ReactNode
-  variants: Variants
-  className?: string
-  delay?: number
-  threshold?: number
-}) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: "0px 0px -60px 0px", amount: threshold })
-  const controls = useAnimation()
 
-  useEffect(() => {
-    if (inView) controls.start("visible")
-  }, [inView, controls])
 
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      initial="hidden"
-      animate={controls}
-      variants={variants}
-      transition={{ delay, ease: [0.16, 1, 0.3, 1], duration: 0.7 }}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-/* ─── Stagger container — children animate one-by-one ────────────── */
-function StaggerReveal({
-  children,
-  className,
-  childVariants,
-  staggerDelay = 0.1,
-  threshold = 0.1,
-}: {
-  children: React.ReactNode
-  className?: string
-  childVariants: Variants
-  staggerDelay?: number
-  threshold?: number
-}) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: "0px 0px -60px 0px", amount: threshold })
-  const controls = useAnimation()
-
-  useEffect(() => {
-    if (inView) controls.start("visible")
-  }, [inView, controls])
-
-  const childArray = Array.isArray(children) ? children : [children]
-
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: staggerDelay } },
-      }}
-    >
-      {childArray.map((child, i) => (
-        <motion.div key={i} variants={childVariants}>
-          {child}
-        </motion.div>
-      ))}
-    </motion.div>
-  )
-}
-
-/* ─── Variant presets ─────────────────────────────────────────────── */
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-}
-
-const fadeLeft: Variants = {
-  hidden: { opacity: 0, x: -36 },
-  visible: { opacity: 1, x: 0 },
-}
-
-const fadeRight: Variants = {
-  hidden: { opacity: 0, x: 36 },
-  visible: { opacity: 1, x: 0 },
-}
-
-const zoomIn: Variants = {
-  hidden: { opacity: 0, scale: 0.94 },
-  visible: { opacity: 1, scale: 1 },
-}
-
-// Spring pop — used for stat numbers
-const springPop: Variants = {
-  hidden: { opacity: 0, y: 20, scale: 0.88 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { type: "spring", stiffness: 260, damping: 18 },
-  },
-}
-
-// Zoom + lift — used for highlight cards
-const cardZoom: Variants = {
-  hidden: { opacity: 0, scale: 0.93, y: 18 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
-  },
-}
-
-// Slide from right — used for checklist items
-const slideFromRight: Variants = {
-  hidden: { opacity: 0, x: 22 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
-  },
-}
-
-// Plain fade-up — used for card grids
-const cardUp: Variants = {
-  hidden: { opacity: 0, y: 26 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
-  },
-}
-
-/* ─── Page ────────────────────────────────────────────────────────── */
 const LandingPage: React.FC = () => {
   const features: Feature[] = [
     {

@@ -1,14 +1,11 @@
-"use client"
+'use client'
 
-import React, { useRef, useEffect } from 'react';
-import { Award, Target, Eye, Heart, TrendingUp, Users, Globe, Briefcase, ChevronRight, Check, ArrowRight } from 'lucide-react';
+import { Award,  Heart, TrendingUp, Users, ChevronRight, Check, ArrowRight } from 'lucide-react';
 import { teamMembers } from '@/data/team';
-import {
-  motion,
-  useInView,
-  useAnimation,
-  type Variants,
-} from "framer-motion"
+import { motion } from "framer-motion"
+import { StaggerReveal } from '@/components/ui/staggerreveal';
+import { ScrollReveal } from '@/components/ui/scrollreveal';
+import { cardUp, cardZoom, fadeLeft, fadeRight, fadeUp, flipUp, slideLeft, springPop, zoomIn } from '@/util/animation/animaitonhelper';
 
 interface approach {
   icon: React.ReactNode;
@@ -30,152 +27,8 @@ interface program {
   description: string;
 }
 
-/* ─── Reusable primitives ─────────────────────────────────────────── */
 
-function ScrollReveal({
-  children,
-  variants,
-  className,
-  delay = 0,
-  threshold = 0.12,
-}: {
-  children: React.ReactNode
-  variants: Variants
-  className?: string
-  delay?: number
-  threshold?: number
-}) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: "0px 0px -60px 0px", amount: threshold })
-  const controls = useAnimation()
 
-  useEffect(() => {
-    if (inView) controls.start("visible")
-  }, [inView, controls])
-
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      initial="hidden"
-      animate={controls}
-      variants={variants}
-      transition={{ delay, ease: [0.16, 1, 0.3, 1], duration: 0.7 }}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-function StaggerReveal({
-  children,
-  className,
-  childVariants,
-  staggerDelay = 0.1,
-  threshold = 0.1,
-}: {
-  children: React.ReactNode
-  className?: string
-  childVariants: Variants
-  staggerDelay?: number
-  threshold?: number
-}) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: "0px 0px -60px 0px", amount: threshold })
-  const controls = useAnimation()
-
-  useEffect(() => {
-    if (inView) controls.start("visible")
-  }, [inView, controls])
-
-  const childArray = Array.isArray(children) ? children : [children]
-
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: staggerDelay } },
-      }}
-    >
-      {childArray.map((child, i) => (
-        <motion.div key={i} variants={childVariants}>
-          {child}
-        </motion.div>
-      ))}
-    </motion.div>
-  )
-}
-
-/* ─── Variant presets ─────────────────────────────────────────────── */
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-}
-
-const fadeLeft: Variants = {
-  hidden: { opacity: 0, x: -36 },
-  visible: { opacity: 1, x: 0 },
-}
-
-const fadeRight: Variants = {
-  hidden: { opacity: 0, x: 36 },
-  visible: { opacity: 1, x: 0 },
-}
-
-const zoomIn: Variants = {
-  hidden: { opacity: 0, scale: 0.94 },
-  visible: { opacity: 1, scale: 1 },
-}
-
-// Spring pop — stats
-const springPop: Variants = {
-  hidden: { opacity: 0, y: 20, scale: 0.88 },
-  visible: {
-    opacity: 1, y: 0, scale: 1,
-    transition: { type: "spring", stiffness: 260, damping: 18 },
-  },
-}
-
-// Card stagger fade-up
-const cardUp: Variants = {
-  hidden: { opacity: 0, y: 26 },
-  visible: {
-    opacity: 1, y: 0,
-    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
-  },
-}
-
-// Card zoom-in — team members
-const cardZoom: Variants = {
-  hidden: { opacity: 0, scale: 0.93, y: 14 },
-  visible: {
-    opacity: 1, scale: 1, y: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
-  },
-}
-
-// Slide from left — program timeline rows
-const slideLeft: Variants = {
-  hidden: { opacity: 0, x: -28 },
-  visible: {
-    opacity: 1, x: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
-  },
-}
-
-// Flip-up — feature checkmarks inside approach cards
-const flipUp: Variants = {
-  hidden: { opacity: 0, rotateX: 30, y: 12 },
-  visible: {
-    opacity: 1, rotateX: 0, y: 0,
-    transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
-  },
-}
 
 /* ─── Page ────────────────────────────────────────────────────────── */
 const AboutPage: React.FC = () => {
@@ -233,7 +86,7 @@ const AboutPage: React.FC = () => {
     <div className="min-h-screen bg-white">
 
       {/* ── Hero — cascading fade-up on mount ── */}
-      <section className="relative overflow-hidden pt-36 pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-slate-50 via-white to-slate-100">
+      <section className="relative overflow-hidden pt-36 pb-28 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-slate-50 via-white to-slate-100  border-b border-gray-200">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-[#B71E52]/10 blur-3xl" />
         <div className="absolute top-1/2 -left-24 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl" />
 
@@ -277,10 +130,10 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* ── Stats — spring bounce per number ── */}
-      <section className="py-16 bg-white border-t border-b border-gray-100">
+ <section className="py-20 bg-white border-b border-gray-200  ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <StaggerReveal
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 border border-gray-200 divide-x divide-y md:divide-y-0 divide-gray-200"
             childVariants={springPop}
             staggerDelay={0.1}
           >
@@ -290,7 +143,7 @@ const AboutPage: React.FC = () => {
               { value: "25+", label: "Industry Awards" },
               { value: "18.5%", label: "Avg. Annual Return" },
             ].map((stat, i) => (
-              <div key={i} className="text-center">
+              <div key={i} className="text-center px-8 py-10">
                 <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: "#161142" }}>{stat.value}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
@@ -300,7 +153,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* ── Mission & Vision — opposing horizontal slides ── */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50  border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <ScrollReveal variants={fadeLeft}>
@@ -343,7 +196,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* ── Investment Approach — heading fades up; cards stagger up; features flip-up inside ── */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white  border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal variants={fadeUp} className="mb-16">
             <div className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: "#B71E52" }}>
@@ -391,7 +244,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* ── Programs — heading fades up; each row slides in from left, staggered ── */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50  border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal variants={fadeUp} className="mb-16">
             <div className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: "#B71E52" }}>
@@ -433,7 +286,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* ── Team — heading fades up; cards zoom in with stagger ── */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white  border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal variants={fadeUp} className="mb-16">
             <div className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: "#B71E52" }}>
@@ -469,7 +322,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* ── Global Presence — opposing slides ── */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50  border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollReveal variants={fadeLeft}>
@@ -519,7 +372,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* ── CTA — zoom-in as single confident block ── */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-100">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-100 ">
         <ScrollReveal variants={zoomIn} className="max-w-4xl mx-auto text-center" threshold={0.2}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "#161142" }}>
             Partner with Aadhyanta Fund
