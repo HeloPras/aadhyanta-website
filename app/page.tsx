@@ -1,3 +1,4 @@
+"use client"
 
 import {
   TrendingUp,
@@ -6,11 +7,16 @@ import {
   BarChart3,
   ArrowRight,
   CheckCircle,
-  Menu,
-  X,
   ChevronRight,
   Building2,
 } from "lucide-react"
+import {
+  motion,
+  useInView,
+  useAnimation,
+  type Variants,
+} from "framer-motion"
+import { useRef, useEffect } from "react"
 import ModalDemo from "@/components/Pages/Landing/fundmodal"
 import WorkWithUsSection from "@/components/Pages/Landing/workwithussection"
 
@@ -33,47 +39,183 @@ interface Service {
 
 interface Highlight {
   title: string
-  description:string
+  description: string
   icon: React.ReactNode
 }
 
-const LandingPage: React.FC = () => {
+/* ─── Reusable scroll-triggered wrapper ──────────────────────────── */
+function ScrollReveal({
+  children,
+  variants,
+  className,
+  delay = 0,
+  threshold = 0.12,
+}: {
+  children: React.ReactNode
+  variants: Variants
+  className?: string
+  delay?: number
+  threshold?: number
+}) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: "0px 0px -60px 0px", amount: threshold })
+  const controls = useAnimation()
 
+  useEffect(() => {
+    if (inView) controls.start("visible")
+  }, [inView, controls])
+
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
+      transition={{ delay, ease: [0.16, 1, 0.3, 1], duration: 0.7 }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+/* ─── Stagger container — children animate one-by-one ────────────── */
+function StaggerReveal({
+  children,
+  className,
+  childVariants,
+  staggerDelay = 0.1,
+  threshold = 0.1,
+}: {
+  children: React.ReactNode
+  className?: string
+  childVariants: Variants
+  staggerDelay?: number
+  threshold?: number
+}) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: "0px 0px -60px 0px", amount: threshold })
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (inView) controls.start("visible")
+  }, [inView, controls])
+
+  const childArray = Array.isArray(children) ? children : [children]
+
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: staggerDelay } },
+      }}
+    >
+      {childArray.map((child, i) => (
+        <motion.div key={i} variants={childVariants}>
+          {child}
+        </motion.div>
+      ))}
+    </motion.div>
+  )
+}
+
+/* ─── Variant presets ─────────────────────────────────────────────── */
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+}
+
+const fadeLeft: Variants = {
+  hidden: { opacity: 0, x: -36 },
+  visible: { opacity: 1, x: 0 },
+}
+
+const fadeRight: Variants = {
+  hidden: { opacity: 0, x: 36 },
+  visible: { opacity: 1, x: 0 },
+}
+
+const zoomIn: Variants = {
+  hidden: { opacity: 0, scale: 0.94 },
+  visible: { opacity: 1, scale: 1 },
+}
+
+// Spring pop — used for stat numbers
+const springPop: Variants = {
+  hidden: { opacity: 0, y: 20, scale: 0.88 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 260, damping: 18 },
+  },
+}
+
+// Zoom + lift — used for highlight cards
+const cardZoom: Variants = {
+  hidden: { opacity: 0, scale: 0.93, y: 18 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
+// Slide from right — used for checklist items
+const slideFromRight: Variants = {
+  hidden: { opacity: 0, x: 22 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
+// Plain fade-up — used for card grids
+const cardUp: Variants = {
+  hidden: { opacity: 0, y: 26 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
+/* ─── Page ────────────────────────────────────────────────────────── */
+const LandingPage: React.FC = () => {
   const features: Feature[] = [
     {
       icon: <TrendingUp className="w-8 h-8" style={{ color: "#B71E52" }} />,
       title: "Expert Portfolio Management",
-      description:
-        "Strategic investment solutions tailored to your financial goals with proven track records.",
+      description: "Strategic investment solutions tailored to your financial goals with proven track records.",
     },
     {
       icon: <Shield className="w-8 h-8" style={{ color: "#B71E52" }} />,
       title: "Risk Management",
-      description:
-        "Comprehensive risk assessment and mitigation strategies to protect your investments.",
+      description: "Comprehensive risk assessment and mitigation strategies to protect your investments.",
     },
     {
       icon: <Users className="w-8 h-8" style={{ color: "#B71E52" }} />,
       title: "Dedicated Advisory",
-      description:
-        "Personalized guidance from experienced financial advisors committed to your success.",
+      description: "Personalized guidance from experienced financial advisors committed to your success.",
     },
     {
       icon: <BarChart3 className="w-8 h-8" style={{ color: "#B71E52" }} />,
       title: "Real-Time Analytics",
-      description:
-        "Advanced reporting and insights to keep you informed about your portfolio performance.",
+      description: "Advanced reporting and insights to keep you informed about your portfolio performance.",
     },
   ]
 
   const stats: Stat[] = [
     { value: "Rs. 320M+", label: "Capital Mobilized" },
     { value: "200+", label: "Enterprises Supported" },
-    // { value: "40+", label: "Banking Partners" },
     { value: "3", label: "Active Funds" },
-    // { value: "", label: "" },
-    // { value: "6+", label: "Development Partners" },
-    // { value: "1st", label: "Gender-Lens Fund" },
   ]
 
   const services: Service[] = [
@@ -154,86 +296,104 @@ const LandingPage: React.FC = () => {
     },
   ]
 
- const highlights: Highlight[] = [
+  const highlights: Highlight[] = [
     {
-      icon: <Users className="w-10 h-10" style={{ color: '#B71E52' }} />,
-      title: 'Simrik Fund Launch',
-      description: "Nepal's first gender-lens investment fund, managed by an all-women deal team, targeting women-led and women-benefiting enterprises. This pioneering initiative addresses the critical financing gap faced by women entrepreneurs."
+      icon: <Users className="w-10 h-10" style={{ color: "#B71E52" }} />,
+      title: "Simrik Fund Launch",
+      description:
+        "Nepal's first gender-lens investment fund, managed by an all-women deal team, targeting women-led and women-benefiting enterprises. This pioneering initiative addresses the critical financing gap faced by women entrepreneurs.",
     },
     {
-      icon: <TrendingUp className="w-10 h-10" style={{ color: '#B71E52' }} />,
-      title: 'Koshi Accelerator Program',
-      description: "A targeted provincial development initiative supporting enterprises in Nepal's Koshi Province, strengthening local economic ecosystems through capital access, technical assistance, and market linkages."
+      icon: <TrendingUp className="w-10 h-10" style={{ color: "#B71E52" }} />,
+      title: "Koshi Accelerator Program",
+      description:
+        "A targeted provincial development initiative supporting enterprises in Nepal's Koshi Province, strengthening local economic ecosystems through capital access, technical assistance, and market linkages.",
     },
     {
-      icon: <Building2 className="w-10 h-10" style={{ color: '#B71E52' }} />,
-      title: 'DV Excellus Partnership',
-      description: "Strategic growth investment in one of Nepal's leading manufacturing enterprises, showcasing our approach to value creation through governance strengthening, operational excellence, and market expansion support."
-    }
-  ];
+      icon: <Building2 className="w-10 h-10" style={{ color: "#B71E52" }} />,
+      title: "DV Excellus Partnership",
+      description:
+        "Strategic growth investment in one of Nepal's leading manufacturing enterprises, showcasing our approach to value creation through governance strengthening, operational excellence, and market expansion support.",
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
 
-      {/* Hero Section - Inspired by A&O Shearman */}
-      <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-gray-50 to-white">
-        {/* <div className="absolute top-24 right-24 h-96 w-96 rounded-full bg-[#B71E52]/10 blur-3xl z-[-1]" />
-        <div className="absolute top-1/2 left-24 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl z-[-1]" /> */}
+      {/* ── Hero — cascading fade-up on mount (no scroll needed) ── */}
+      <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-gray-50 to-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl">
-            <div className="inline-block px-4 py-1 bg-gray-100 rounded-full text-sm font-medium mb-6 text-[#B71E52]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="inline-block px-4 py-1 bg-gray-100 rounded-full text-sm font-medium mb-6 text-[#B71E52]"
+            >
               Nepal's Impact Investment Pioneer
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-relaxed tracking-tight text-transparent bg-clip-text bg-linear-to-r from-[#161142] to-[#B71E52]">
-              Mobilizing Capital That Transforms
-            </h1>
+            </motion.div>
 
-            {/* <ScaleLetterText text="Investment excellence in a fast-changing world" className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-transparent" /> */}
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
-              We deploy growth capital and build investment-ready ecosystems
-              across Nepal, bridging the gap between ambitious enterprises and
-              institutional investors. As Nepal's first SEBON-licensed
-              institutional fund manager, we combine rigorous financial
-              discipline with deep impact commitment.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center justify-center group bg-[#B71E52] cursor-pointer ">
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl md:text-7xl font-bold mb-6 leading-relaxed tracking-tight text-transparent bg-clip-text bg-linear-to-r from-[#161142] to-[#B71E52]"
+            >
+              Mobilizing Capital That Transforms
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl"
+            >
+              We deploy growth capital and build investment-ready ecosystems across Nepal, bridging the gap between
+              ambitious enterprises and institutional investors. As Nepal's first SEBON-licensed institutional fund
+              manager, we combine rigorous financial discipline with deep impact commitment.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <button className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center justify-center group bg-[#B71E52] cursor-pointer">
                 For Enterprises
-                <ChevronRight
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
-                  size={20}
-                />
+                <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </button>
-              <button className="px-8 py-4 cursor-pointer rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg border-2 inline-flex items-center justify-center boder-[#161142] text-[#161142]">
+              <button className="px-8 py-4 cursor-pointer rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg border-2 inline-flex items-center justify-center border-[#161142] text-[#161142]">
                 For Investors
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="pb-20  pt-20 bg-white border-t border-b border-gray-100">
+      {/* ── Stats — spring bounce, staggered per number ── */}
+      <section className="py-20 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <StaggerReveal
+            className="grid grid-cols-2 md:grid-cols-3 border border-gray-200 divide-x divide-y md:divide-y-0 divide-gray-200"
+            childVariants={springPop}
+            staggerDelay={0.1}
+          >
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2 text-[#161142]">
-                  {stat.value}
-                </div>
+              <div key={index} className="text-center px-8 py-10">
+                <div className="text-4xl md:text-5xl font-bold mb-2 text-[#161142]">{stat.value}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 
-      {/* Featured Section - A&O Shearman Style */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      {/* ── Featured — opposing horizontal slides; checklist slides from right ── */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <ScrollReveal variants={fadeLeft}>
               <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
                 About Aadhyanta Fund
               </div>
@@ -241,252 +401,171 @@ const LandingPage: React.FC = () => {
                 See why we are uniquely equipped to support global investors
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                We combine rigorous analysis, innovative strategies, and
-                personalized attention to help you build and preserve wealth
-                across generations. Our approach is grounded in deep market
-                expertise and a commitment to excellence.
+                We combine rigorous analysis, innovative strategies, and personalized attention to help you build and
+                preserve wealth across generations.
               </p>
-              <a
-                href="#about"
-                className="inline-flex items-center font-semibold transition-colors duration-200 text-[#B71E52]"
-              >
-                Learn more about us
-                <ChevronRight className="ml-1" size={20} />
+              <a href="#about" className="inline-flex items-center font-semibold transition-colors duration-200 text-[#B71E52]">
+                Learn more about us <ChevronRight className="ml-1" size={20} />
               </a>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 text-[#161142]">
-                Our Commitment
-              </h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <CheckCircle
-                    className="w-6 h-6 mr-3 shrink-0 mt-0.5"
-                    style={{ color: "#B71E52" }}
-                  />
-                  <span className="text-gray-700">
-                    Transparent communication and regular portfolio updates
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle
-                    className="w-6 h-6 mr-3 shrink-0 mt-0.5"
-                    style={{ color: "#B71E52" }}
-                  />
-                  <span className="text-gray-700">
-                    Rigorous due diligence and risk management processes
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle
-                    className="w-6 h-6 mr-3 shrink-0 mt-0.5"
-                    style={{ color: "#B71E52" }}
-                  />
-                  <span className="text-gray-700">
-                    Access to institutional-quality investment opportunities
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle
-                    className="w-6 h-6 mr-3 shrink-0 mt-0.5"
-                    style={{ color: "#B71E52" }}
-                  />
-                  <span className="text-gray-700">
-                    Personalized strategies aligned with your goals
-                  </span>
-                </li>
-              </ul>
-            </div>
+            </ScrollReveal>
+
+            <ScrollReveal variants={fadeRight}>
+              <div className="bg-white p-8 rounded-lg shadow-sm">
+                <h3 className="text-2xl font-bold mb-6 text-[#161142]">Our Commitment</h3>
+                <StaggerReveal
+                  className="space-y-4"
+                  childVariants={slideFromRight}
+                  staggerDelay={0.09}
+                >
+                  {[
+                    "Transparent communication and regular portfolio updates",
+                    "Rigorous due diligence and risk management processes",
+                    "Access to institutional-quality investment opportunities",
+                    "Personalized strategies aligned with your goals",
+                  ].map((text, i) => (
+                    <li key={i} className="flex items-start list-none">
+                      <CheckCircle className="w-6 h-6 mr-3 shrink-0 mt-0.5" style={{ color: "#B71E52" }} />
+                      <span className="text-gray-700">{text}</span>
+                    </li>
+                  ))}
+                </StaggerReveal>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Services Section - Clean Layout */}
-      <section className="py-20 bg-white">
+      {/* ── Services — heading fades up; cards stagger up ── */}
+      <section className="py-20 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
-              What We Do
-            </div>
-            <h2 className="text-4xl font-bold mb-4 text-[#161142]">
-              Capital Meets Capability
-            </h2>
+          <ScrollReveal variants={fadeUp} className="text-center mb-16">
+            <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">What We Do</div>
+            <h2 className="text-4xl font-bold mb-4 text-[#161142]">Capital Meets Capability</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Aadhyanta stands at the intersection of institutional finance and
-              transformative impact. We don't just deploy capital—we build the
-              entire ecosystem that makes growth sustainable, inclusive, and
-              scalable across Nepal's diverse provinces.
+              Aadhyanta stands at the intersection of institutional finance and transformative impact. We don't just
+              deploy capital—we build the entire ecosystem that makes growth sustainable, inclusive, and scalable
+              across Nepal's diverse provinces.
             </p>
-          </div>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <StaggerReveal className="grid md:grid-cols-3 gap-8" childVariants={cardUp} staggerDelay={0.11}>
             {services.map((service, index) => (
-              <div
-                key={index}
-                className="group bg-white border border-gray-200 p-8 rounded-lg hover:shadow-xl transition-all duration-300 hover:border-transparent"
-              >
-                <h3 className="text-2xl font-bold mb-4 text-[#161142]">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-                <ul className="space-y-3 mb-6">
+              <div key={index} className="group bg-white border border-gray-200 p-8 rounded-lg hover:shadow-xl transition-all duration-300 hover:border-transparent">
+                <h3 className="text-2xl font-bold mb-4 text-[#161142]">{service.title}</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
-                      <ChevronRight
-                        className="w-5 h-5 mr-2 shrink-0 mt-0.5"
-                        style={{ color: "#B71E52" }}
-                      />
+                      <ChevronRight className="w-5 h-5 mr-2 shrink-0 mt-0.5" style={{ color: "#B71E52" }} />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
-                {/* <a
-                  href="#"
-                  className="inline-flex items-center font-semibold transition-colors duration-200 group-hover:underline text-[#B71E52]"
-                >
-                  Learn more
-                  <ChevronRight
-                    className="ml-1 group-hover:translate-x-1 transition-transform"
-                    size={18}
-                  />
-                </a> */}
               </div>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 
-      {/* Insights Section - A&O Shearman Style */}
-      <section className="py-20 bg-gray-50">
+      {/* ── Highlights — heading fades up; cards zoom-in stagger ── */}
+      <section className="py-20 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
-                Recent Highlights
-              </div>
-              <h2 className="text-4xl font-bold text-[#161142]">
-                Building Nepal's Investment Future
-              </h2>
+          <ScrollReveal variants={fadeUp} className="mb-12">
+            <div className="text-sm font-semibold uppercase tracking-wide mb-4 text-[#B71E52]">
+              Recent Highlights
             </div>
-            {/* <a
-              href="#insights"
-              className="hidden md:inline-flex items-center font-semibold transition-colors duration-200 text-[#B71E52]"
-            >
-              View all insights
-              <ChevronRight className="ml-1" size={20} />
-            </a> */}
-          </div>
+            <h2 className="text-4xl font-bold text-[#161142]">Building Nepal's Investment Future</h2>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
-             {highlights.map((highlight, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-all duration-300"
-            >
-              {/* Icon */}
-              <div className="mb-6">
-                {highlight.icon}
-              </div>
-
-              {/* Content */}
-              <div>
-                <h3 className="text-2xl font-bold mb-4 leading-tight" style={{ color: '#161142' }}>
+          <StaggerReveal className="grid md:grid-cols-3 gap-8" childVariants={cardZoom} staggerDelay={0.13}>
+            {highlights.map((highlight, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-all duration-300">
+                <div className="mb-6">{highlight.icon}</div>
+                <h3 className="text-2xl font-bold mb-4 leading-tight" style={{ color: "#161142" }}>
                   {highlight.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {highlight.description}
-                </p>
+                <p className="text-gray-600 leading-relaxed">{highlight.description}</p>
               </div>
-            </div>
-          ))}
-          </div>
+            ))}
+          </StaggerReveal>
         </div>
       </section>
 
-      <WorkWithUsSection />
+      {/* ── Work With Us ── */}
+      <div className="border-b border-gray-200">
+        <WorkWithUsSection />
+      </div>
 
-      <section className="py-20 bg-gray-50 px-4 sm:px-6 lg:px-8 bg-white-50">
+      {/* ── Funds — opposing slides ── */}
+      <section className="py-20 bg-gray-50 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div
-                className="text-sm font-semibold uppercase tracking-wide mb-4"
-                style={{ color: "#B71E52" }}
-              >
+            <ScrollReveal variants={fadeLeft}>
+              <div className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: "#B71E52" }}>
                 Our Funds
               </div>
-              <h2
-                className="text-4xl font-bold mb-6 leading-tight"
-                style={{ color: "#161142" }}
-              >
+              <h2 className="text-4xl font-bold mb-6 leading-tight" style={{ color: "#161142" }}>
                 Three Vehicles, One Mission
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                We manage three complementary institutional funds, each designed
-                to address specific market opportunities while maintaining our
-                core commitment to growth capital deployment and transformative
+                We manage three complementary institutional funds, each designed to address specific market
+                opportunities while maintaining our core commitment to growth capital deployment and transformative
                 impact across Nepal's economy.
               </p>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <div className="space-y-6">
-                <ModalDemo highlights={funds}></ModalDemo>
+            </ScrollReveal>
+
+            <ScrollReveal variants={fadeRight}>
+              <div className="bg-white p-8 rounded-xl shadow-sm">
+                <div className="space-y-6">
+                  <ModalDemo highlights={funds} />
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-white">
+      {/* ── Features — stagger up ── */}
+      <section className="py-20 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-[#161142]">
-              Why Choose Aadhyanta Fund
-            </h2>
+          <ScrollReveal variants={fadeUp} className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-[#161142]">Why Choose Aadhyanta Fund</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Experience the difference of working with a premier fund
-              management firm dedicated to your financial success.
+              Experience the difference of working with a premier fund management firm dedicated to your financial success.
             </p>
-          </div>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerReveal
+            className="grid md:grid-cols-2 lg:grid-cols-4 border border-gray-200 divide-x divide-y lg:divide-y-0 divide-gray-200"
+            childVariants={cardUp}
+            staggerDelay={0.09}
+          >
             {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300"
-              >
+              <div key={index} className="p-8 hover:bg-gray-50 transition-all duration-300">
                 <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-[#161142]">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
+                <h3 className="text-xl font-bold mb-3 text-[#161142]">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* ── CTA — zoom-in as single confident block ── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#161142]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Grow Your Wealth?
-          </h2>
+        <ScrollReveal variants={zoomIn} className="max-w-4xl mx-auto text-center" threshold={0.2}>
+          <h2 className="text-4xl font-bold text-white mb-6">Ready to Grow Your Wealth?</h2>
           <p className="text-xl text-gray-300 mb-8">
-            Join thousands of investors who trust us with their financial
-            future. Schedule a consultation with our expert advisors today.
+            Join thousands of investors who trust us with their financial future. Schedule a consultation with our
+            expert advisors today.
           </p>
-          <button className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105 inline-flex items-center bg-[#B71E52] ">
+          <button className="px-8 py-4 rounded-lg text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105 inline-flex items-center bg-[#B71E52]">
             Schedule Consultation
             <ArrowRight className="ml-2" size={20} />
           </button>
-        </div>
+        </ScrollReveal>
       </section>
+
     </div>
   )
 }
