@@ -1,22 +1,90 @@
+'use client'
 
-import { ChevronRight, CheckCircle,  TrendingUp, Layers, Target, Shield, Users, BarChart3 } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { ChevronRight, CheckCircle, TrendingUp, Layers, Target, Shield, Users, BarChart3 } from 'lucide-react';
+
+/* ─── Scroll Animation Hook ─────────────────────────────────────────── */
+function useScrollReveal() {
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.reveal--left {
+        transform: translateX(-28px);
+      }
+      .reveal.reveal--right {
+        transform: translateX(28px);
+      }
+      .reveal.reveal--scale {
+        transform: translateY(20px) scale(0.97);
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-stagger > * {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal-stagger.is-visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0ms; }
+      .reveal-stagger.is-visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 80ms; }
+      .reveal-stagger.is-visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 160ms; }
+      .reveal-stagger.is-visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 240ms; }
+      .reveal-stagger.is-visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 320ms; }
+      .reveal-stagger.is-visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 400ms; }
+    `;
+    document.head.appendChild(style);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    const targets = document.querySelectorAll('.reveal, .reveal-stagger');
+    targets.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+      document.head.removeChild(style);
+    };
+  }, []);
+}
 
 export default function NOF2Page() {
+  useScrollReveal();
+
   const differentiators = [
     {
       icon: <Layers className="w-5 h-5" style={{ color: '#B71E52' }} />,
       title: 'Blended Finance Structure',
-      description: 'NOF II integrates commercial and concessional capital, enabling investments that create strong returns while addressing market failures—gender gaps, climate resilience, rural access—that pure commercial capital often overlooks. This structure doesn\'t dilute discipline. It expands possibility.',
+      description:
+        'NOF II integrates commercial and concessional capital, enabling investments that create strong returns while addressing market failures—gender gaps, climate resilience, rural access—that pure commercial capital often overlooks. This structure doesn\'t dilute discipline. It expands possibility.',
     },
     {
       icon: <Target className="w-5 h-5" style={{ color: '#B71E52' }} />,
       title: 'Instrument Flexibility',
-      description: 'Beyond pure equity, NOF II deploys quasi-equity (revenue shares, profit participation, convertible structures), mezzanine (subordinated debt with equity upside), and structured products customized to match business cash flows and growth profiles.',
+      description:
+        'Beyond pure equity, NOF II deploys quasi-equity (revenue shares, profit participation, convertible structures), mezzanine (subordinated debt with equity upside), and structured products customized to match business cash flows and growth profiles.',
     },
     {
       icon: <TrendingUp className="w-5 h-5" style={{ color: '#B71E52' }} />,
       title: 'Dual Focus',
-      description: 'Portfolio continuation supporting high-performing NOF I companies requiring additional capital, plus strategic new deals deploying capital in enterprises aligned with our proven thesis—sector-agnostic growth equity with strong teams, market traction, and impact potential.',
+      description:
+        'Portfolio continuation supporting high-performing NOF I companies requiring additional capital, plus strategic new deals deploying capital in enterprises aligned with our proven thesis—sector-agnostic growth equity with strong teams, market traction, and impact potential.',
     },
   ];
 
@@ -55,7 +123,6 @@ export default function NOF2Page() {
   return (
     <div className="min-h-screen bg-white">
 
-
       {/* ── Hero ── */}
       <section
         className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
@@ -67,16 +134,22 @@ export default function NOF2Page() {
         />
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-8">
+            <div className="reveal flex items-center gap-3 mb-8">
               <span className="px-3 py-1 rounded-full text-xs font-bold text-white border border-white border-opacity-30">
                 Active
               </span>
               <span className="text-gray-400 text-sm font-medium">Nepal Opportunity Fund II</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1
+              className="reveal text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+              style={{ transitionDelay: '200ms' }}
+            >
               Building on proven success
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p
+              className="reveal text-xl text-gray-300 leading-relaxed"
+              style={{ transitionDelay: '200ms' }}
+            >
               Enhanced flexibility, continued discipline, expanded impact—NOF II builds on NOF I's proven track record with blended finance structure.
             </p>
           </div>
@@ -87,7 +160,7 @@ export default function NOF2Page() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-20 items-start">
-            <div>
+            <div className="reveal reveal--left">
               <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#B71E52' }}>
                 Why NOF II
               </p>
@@ -102,7 +175,7 @@ export default function NOF2Page() {
               </p>
             </div>
 
-            <div className="bg-white rounded-lg border border-gray-200 p-8">
+            <div className="reveal reveal--right bg-white rounded-lg border border-gray-200 p-8">
               <h3 className="text-xl font-bold mb-6" style={{ color: '#161142' }}>
                 Structure Overview
               </h3>
@@ -134,7 +207,7 @@ export default function NOF2Page() {
       {/* ── What's Different ── */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-14">
+          <div className="reveal mb-14">
             <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#B71E52' }}>
               What's Different
             </p>
@@ -143,7 +216,7 @@ export default function NOF2Page() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="reveal-stagger grid md:grid-cols-3 gap-6">
             {differentiators.map((item, i) => (
               <div key={i} className="border border-gray-200 rounded-lg p-8 flex flex-col gap-4 hover:shadow-lg transition-shadow duration-300">
                 <div className="w-9 h-9 rounded-md bg-gray-50 border border-gray-100 flex items-center justify-center">
@@ -160,7 +233,7 @@ export default function NOF2Page() {
       {/* ── Instruments ── */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-14">
+          <div className="reveal mb-14">
             <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#B71E52' }}>
               Investment Instruments
             </p>
@@ -172,7 +245,7 @@ export default function NOF2Page() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="reveal-stagger grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {instruments.map((item, i) => (
               <div key={i} className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
                 <h3 className="font-bold mb-2" style={{ color: '#161142' }}>{item.name}</h3>
@@ -187,7 +260,7 @@ export default function NOF2Page() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div className='my-auto'>
+            <div className="reveal reveal--left my-auto">
               <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#B71E52' }}>
                 Core Principles
               </p>
@@ -198,7 +271,7 @@ export default function NOF2Page() {
                 While structure and instruments evolve, our core approach remains unchanged. The same disciplined processes, governance standards, and value creation focus that defined NOF I continue in NOF II.
               </p>
             </div>
-            <div className="space-y-3">
+            <div className="reveal-stagger space-y-3">
               {corePrinciples.map((item, i) => (
                 <div key={i} className="bg-gray-50 border border-gray-200 rounded-lg p-6 flex items-start gap-4">
                   <CheckCircle className="w-4 h-4 shrink-0 mt-1" style={{ color: '#B71E52' }} />
@@ -216,8 +289,8 @@ export default function NOF2Page() {
       {/* ── Investment Criteria ── */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-start ">
-            <div className='my-auto'>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div className="reveal reveal--left my-auto">
               <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#B71E52' }}>
                 Investment Criteria
               </p>
@@ -229,16 +302,13 @@ export default function NOF2Page() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-lg p-8">
-              <h3 className="text-xl font-bold  pb-6 border-b border-gray-100" style={{ color: '#161142' }}>
+            <div className="reveal reveal--right bg-white border border-gray-200 rounded-lg p-8">
+              <h3 className="text-xl font-bold pb-6 border-b border-gray-100" style={{ color: '#161142' }}>
                 What We Look For
               </h3>
-              <div className="space-y-0">
+              <div className="reveal-stagger space-y-0">
                 {investmentCriteria.map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-4 py-5 border-b border-gray-100 last:border-0"
-                  >
+                  <div key={i} className="flex items-start gap-4 py-5 border-b border-gray-100 last:border-0">
                     <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#B71E52' }} />
                     <p className="text-sm text-gray-700 leading-relaxed">{item}</p>
                   </div>
@@ -252,7 +322,7 @@ export default function NOF2Page() {
       {/* ── Why This Matters ── */}
       <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#161142' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto text-center mb-14">
+          <div className="reveal max-w-2xl mx-auto text-center mb-14">
             <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#B71E52' }}>
               Ecosystem Impact
             </p>
@@ -263,10 +333,10 @@ export default function NOF2Page() {
               NOF II demonstrates maturation of Nepal's private equity ecosystem
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="reveal-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {whyThisMatters.map((item, i) => (
               <div key={i} className="rounded-lg p-6 border border-white border-opacity-10 bg-white bg-opacity-5">
-                <h3 className="font-bold mb-2 text-primary-pink">{item.label}</h3>
+                <h3 className="font-bold mb-2" style={{ color: '#B71E52' }}>{item.label}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
@@ -277,7 +347,7 @@ export default function NOF2Page() {
       {/* ── Key Advantages ── */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="reveal-stagger grid md:grid-cols-3 gap-8">
             <div className="border border-gray-200 rounded-lg p-8">
               <div className="w-10 h-10 rounded-md bg-gray-50 border border-gray-100 flex items-center justify-center mb-6">
                 <Shield className="w-5 h-5" style={{ color: '#B71E52' }} />
@@ -313,7 +383,7 @@ export default function NOF2Page() {
 
       {/* ── CTA ── */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 border-t border-gray-100">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="reveal reveal--scale max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#161142' }}>
             Ready to participate in NOF II?
           </h2>
