@@ -1,6 +1,5 @@
 "use client"
-import React, { useState } from "react"
-import { Award, Briefcase, GraduationCap, ChevronRight } from "lucide-react"
+import {  ChevronRight } from "lucide-react"
 import Member from "@/components/Pages/Teams/member"
 import { teamMembers } from "@/data/team"
 
@@ -37,7 +36,7 @@ const TeamPage: React.FC = () => {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-16 bg-gray-50 border-t border-b border-gray-100">
+      {/* <section className="py-16 bg-gray-50 border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -72,7 +71,7 @@ const TeamPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Executive Leadership Section */}
 

@@ -142,6 +142,7 @@ const Member = ({
                   filter: "blur(10px)",
                   transition:{duration: 0.4, ease: "easeInOut",delay: 0.8}
                 }}
+                
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 onClick={() => setSelected(isSelected ? "" : member.name)}
                 className="relative min-w-[300px] h-[600px] grow-0 shrink-0 bg-pink-50 flex items-center justify-start rounded-lg shadow-md overflow-hidden cursor-pointer"

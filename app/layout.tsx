@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Bodoni_Moda, Figtree, Lato } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Layout/Navbar";
+// import Navbar from "@/components/Layout/Navbar";
+import {Navbar}  from "@/components/Layout/Navbar";
 import { lazy } from "react";
 import Footer from "@/components/Layout/Footer";
 const geistSans = Geist({
