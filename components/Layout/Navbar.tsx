@@ -6,16 +6,16 @@ import { useEffect, useState } from "react"
 // import { useState, useEffect } from "react"
 // import { Menu, X, ChevronDown } from "lucide-react"
 
-// interface DropdownItem {
-//   name: string
-//   href: string
-// }
+interface DropdownItem {
+  name: string
+  href: string
+}
 
-// interface NavItem {
-//   name: string
-//   href: string
-//   dropdown?: DropdownItem[]
-// }
+interface NavItem {
+  name: string
+  href: string
+  dropdown?: DropdownItem[]
+}
 
 // const Navbar = () => {
 //   const [isOpen, setIsOpen] = useState(false)
@@ -42,22 +42,22 @@ import { useEffect, useState } from "react"
 //     return () => window.removeEventListener("scroll", handleScroll)
 //   }, [lastScrollY])
 
-//   const navItems: NavItem[] = [
-//     { name: "Portfolio", href: "/portfolio" },
-//     { name: "About", href: "/about" },
-//     {name:"Funds", href:"/fund",
-//       dropdown:[
-//         {name:"NOF-I", href:"/fund/nofone"},
-//         {name:"NOF-II", href:"/fund/noftwo"},
-//         // {name:"Simrik Fund", href:"/fund/simrik"},
-//       ]
-//     },
-//     { name: "Program", href: "/program" },
-//     { name: "Career", href: "/career" },
-//     { name: "Team", href: "/team" },
-//     { name: "Press", href: "/press" },
-//     { name: "Tools", href: "/tools" },
-//   ]
+  const navItems: NavItem[] = [
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "About", href: "/about" },
+    {name:"Funds", href:"/fund",
+      dropdown:[
+        {name:"NOF-I", href:"/fund/nofone"},
+        {name:"NOF-II", href:"/fund/noftwo"},
+        // {name:"Simrik Fund", href:"/fund/simrik"},
+      ]
+    },
+    { name: "Program", href: "/program" },
+    { name: "Career", href: "/career" },
+    { name: "Team", href: "/team" },
+    { name: "Insights", href: "/insights" },
+    { name: "Tools", href: "/tools" },
+  ]
 
 
 //   return (
@@ -211,9 +211,9 @@ export function Navbar() {  const [scrolled, setScrolled] = useState(false)
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
-          {['About', 'Funds', 'Impact', 'Insights'].map(l => (
-            <a key={l} href="#" className={`nav-link font-medium text-sm transition-colors duration-200
-              ${scrolled ? 'text-stone-500 hover:text-[#1C1C2E]' : 'text-white/75 hover:text-white'}`}>{l}</a>
+          {navItems.map(item => (
+            <a key={item.name} href={item.href} className={`nav-link font-medium text-sm transition-colors duration-200
+              ${scrolled ? 'text-stone-500 hover:text-[#1C1C2E]' : 'text-white/75 hover:text-white'}`}>{item.name}</a>
           ))}
           <a href="#" className="flex items-center gap-1.5 bg-[#B71E52] hover:bg-[#9e1847] text-white text-sm font-semibold px-5 py-2.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
             Invest Now <ArrowUpRight size={13} />
