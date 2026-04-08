@@ -7,6 +7,7 @@ import {
   ArrowUpRight, Globe, Award, Layers, MapPin, Phone, Mail, Menu, X
 } from 'lucide-react'
 
+
 /* ─── Minimal global CSS — only what Tailwind can't do ───────────────────── */
 const GLOBAL_CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
