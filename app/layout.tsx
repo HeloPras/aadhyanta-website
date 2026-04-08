@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Bodoni_Moda, Figtree, Lato } from "next/font/google";
+import { Geist, Geist_Mono, Bodoni_Moda, Figtree, Lato, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 // import Navbar from "@/components/Layout/Navbar";
 import {Navbar}  from "@/components/Layout/Navbar";
-import { lazy } from "react";
 import Footer from "@/components/Layout/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +25,12 @@ const lato = Lato({
   subsets: ["latin"],
 })
 
+const cormorant  =  Cormorant_Garamond({
+  variable: "--font-cormorant",
+  weight: ["400","700"],
+  subsets: ["latin"]
+})
+
 const bodoniModa = Bodoni_Moda({
   variable: "--font-bodoni-moda",
   weight: ["400", "700"],
@@ -46,12 +51,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${bodoniModa.variable} ${figtree.variable} ${lato.variable} antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${bodoniModa.variable} ${figtree.variable} ${lato.variable} ${cormorant.variable} antialiased`}
     >
-      <Navbar />
       {/* <body className={`${figtree.className}`}>{children}</body> */}
-      <body className={`${lato.className}`}>{children}</body>
+      <body className={`${lato.className}`}>
+      <Navbar />
+        {children}
+
       <Footer />
+      </body>
     </html>
   )
 }

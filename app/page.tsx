@@ -219,8 +219,8 @@ function Hero() {
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-36 md:pt-44">
         {/* Badge */}
-        <div className="sr inline-flex items-center gap-2.5 mb-7 px-4 py-2 bg-white/[0.07] border border-white/[0.15] rounded-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
+        <div className="sr inline-flex items-center gap-2.5 mb-7 px-4 py-2 bg-white/[0.07] border border-white/15 rounded-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
           <span className="font-mono-dm text-[10px] text-white/80 tracking-[0.12em] uppercase">
             Nepal's First SEBON-Licensed Fund Manager
           </span>
@@ -251,7 +251,7 @@ function Hero() {
 
         {/* Scroll cue */}
         <div className="sr d5 hidden sm:flex items-center gap-3 mt-16">
-          <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent" />
+          <div className="w-px h-12 bg-linear-to-b from-white/40 to-transparent" />
           <span className="font-mono-dm text-[9px] text-white/30 tracking-[0.14em] uppercase">Scroll to explore</span>
         </div>
       </div>
@@ -298,7 +298,7 @@ function TrustBar() {
       <div className="max-w-7xl mx-auto flex items-center justify-start md:justify-center min-w-max md:min-w-0 gap-0">
         {badges.map((b, i) => (
           <div key={i} className={`flex items-center gap-2 px-5 sm:px-7 ${i < badges.length - 1 ? 'border-r border-[#E8E4DD]' : ''}`}>
-            <div className="w-4 h-4 rounded-full bg-[#f5e8ed] flex items-center justify-center flex-shrink-0">
+            <div className="w-4 h-4 rounded-full bg-[#f5e8ed] flex items-center justify-center shrink-0">
               <div className="w-1.5 h-1.5 rounded-full bg-[#B71E52]" />
             </div>
             <span className="font-medium text-[13px] text-stone-500 whitespace-nowrap">{b}</span>
@@ -336,7 +336,7 @@ function About() {
           <div className="flex flex-col gap-4 mb-10">
             {points.map((p, i) => (
               <div key={i} className="flex gap-3 items-start">
-                <div className="w-5 h-5 rounded-full bg-[#f5e8ed] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-5 h-5 rounded-full bg-[#f5e8ed] flex items-center justify-center shrink-0 mt-0.5">
                   <CheckCircle size={11} className="text-[#B71E52]" />
                 </div>
                 <span className="text-[16px] text-stone-600 leading-[1.7]">{p}</span>
@@ -352,7 +352,7 @@ function About() {
         {/* Right */}
         <div className="sr-r relative mt-8 lg:mt-0">
           {/* Main image */}
-          <div className="rounded-xl overflow-hidden shadow-2xl shadow-stone-200 aspect-[4/3]">
+          <div className="rounded-xl overflow-hidden shadow-2xl shadow-stone-200 aspect-4/3">
             <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80"
               alt="Team" className="w-full h-full object-cover" />
           </div>
@@ -427,7 +427,7 @@ function Services() {
               <ul className="space-y-2.5">
                 {s.items.map((item, j) => (
                   <li key={j} className="flex items-start gap-2.5">
-                    <ChevronRight size={13} className="text-[#B71E52] mt-0.5 flex-shrink-0" />
+                    <ChevronRight size={13} className="text-[#B71E52] mt-0.5 shrink-0" />
                     <span className="text-[14px] text-stone-600">{item}</span>
                   </li>
                 ))}
@@ -500,7 +500,7 @@ function Funds() {
           {/* Image */}
           <div className="relative rounded-xl overflow-hidden aspect-4/3 shadow-2xl shadow-stone-200">
             <img src={f.image} alt={f.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/60 via-transparent to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
               <div>
                 <div className="font-display font-bold text-[30px] text-white leading-none">{f.capital}</div>
@@ -518,7 +518,7 @@ function Funds() {
             <div className="space-y-3 mb-10">
               {f.items.map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <div className="w-4 h-[1.5px] bg-stone-300 flex-shrink-0" />
+                  <div className="w-4 h-[1.5px] bg-stone-300 shrink-0" />
                   <span className="text-[14px] text-stone-600">{item}</span>
                 </div>
               ))}
@@ -552,7 +552,7 @@ function Highlights() {
               Building Nepal's <em className="italic text-[#B71E52]">Investment Future</em>
             </h2>
           </div>
-          <a href="#" className="inline-flex items-center gap-1.5 text-[#B71E52] font-semibold text-[14px] hover:gap-3 transition-all duration-200 self-start sm:self-auto flex-shrink-0">
+          <a href="#" className="inline-flex items-center gap-1.5 text-[#B71E52] font-semibold text-[14px] hover:gap-3 transition-all duration-200 self-start sm:self-auto shrink-0">
             View All <ArrowRight size={15} />
           </a>
         </div>
@@ -562,7 +562,7 @@ function Highlights() {
             <div key={i} className={`sr d${i + 1} card-img-wrap bg-white rounded-xl overflow-hidden border border-[#E8E4DD] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-stone-200`}>
               <div className="relative h-52 overflow-hidden">
                 <img src={item.image} alt={item.title} className="card-img w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/40 to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 bg-[#B71E52] rounded font-mono-dm text-[9px] text-white tracking-widest uppercase">
                   {item.tag}
                 </span>
@@ -739,7 +739,7 @@ function Footer() {
 
         <div className="border-t border-white/[0.07] pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <span className="text-[12px] text-white/20">© 2025 Aadhyanta Fund Management. All rights reserved. SEBON Licensed.</span>
-          <span className="font-mono-dm text-[10px] text-white/15 tracking-[0.1em] uppercase">Kathmandu, Nepal</span>
+          <span className="font-mono-dm text-[10px] text-white/15 tracking-widest uppercase">Kathmandu, Nepal</span>
         </div>
       </div>
     </footer>
@@ -757,7 +757,7 @@ export default function LandingPage() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       {/* Progress bar */}
-      <div className="fixed top-0  left-0 h-[2px] z-[9999] bg-[#B71E52] transition-[width_0.1s_linear]"
+      <div className="fixed top-0  left-0 h-[2px] z-9999 bg-[#B71E52] transition-[width_0.1s_linear]"
         style={{ width: `${prog}%` }} />
 
       {/* <Nav />
