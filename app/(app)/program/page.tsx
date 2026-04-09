@@ -8,11 +8,11 @@ import {
 
 /* ─── Global CSS — same token system, distinct personality ──────────────── */
 const GLOBAL_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+  // @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
-  body { font-family: 'Outfit', sans-serif; }
-  .font-display { font-family: 'Cormorant Garamond', serif; }
-  .font-mono-dm { font-family: 'DM Mono', monospace; }
+  // body { font-family: 'Outfit', sans-serif; }
+  // .font-display { font-family: 'Cormorant Garamond', serif; }
+  // .font-mono-dm { font-family: 'DM Mono', monospace; }
 
   @keyframes fadeUp    { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
   @keyframes fadeLeft  { from { opacity:0; transform:translateX(-28px); } to { opacity:1; transform:translateX(0); } }

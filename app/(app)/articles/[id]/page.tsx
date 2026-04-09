@@ -22,11 +22,11 @@ import { useParams } from "next/navigation"
 
 /* ─── Global CSS ─────────────────────────────────────────────────────────── */
 const GLOBAL_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+  // @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
-  body { font-family: 'Outfit', sans-serif; }
-  .font-display { font-family: 'Cormorant Garamond', serif; }
-  .font-mono-dm { font-family: 'DM Mono', monospace; }
+  // body { font-family: 'Outfit', sans-serif; }
+  // .font-display { font-family: 'Cormorant Garamond', serif; }
+  // .font-mono-dm { font-family: 'DM Mono', monospace; }
 
   @keyframes fadeUp    { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
   @keyframes fadeLeft  { from { opacity:0; transform:translateX(-20px); } to { opacity:1; transform:translateX(0); } }
@@ -205,7 +205,7 @@ function ProseSection({ section }: { section: Section }) {
       )
     case "bullets":
       return (
-        <ul>{section.items || [].map((item, i) => <li key={i}>{item}</li>)}</ul>
+        <ul>{section.items?.map((item, i) => <li key={i}>{item}</li>)}</ul>
       )
     case "callout":
       return <div className="callout">{section.text}</div>

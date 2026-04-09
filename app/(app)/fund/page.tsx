@@ -8,11 +8,11 @@ import {
 
 /* ─── Same global CSS token as Landing + About pages ────────────────────── */
 const GLOBAL_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+  // @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
-  body { font-family: 'Outfit', sans-serif; }
-  .font-display { font-family: 'Cormorant Garamond', serif; }
-  .font-mono-dm { font-family: 'DM Mono', monospace; }
+  // body { font-family: 'Outfit', sans-serif; }
+  // .font-display { font-family: 'Cormorant Garamond', serif; }
+  // .font-mono-dm { font-family: 'DM Mono', monospace; }
 
   @keyframes fadeUp    { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
   @keyframes fadeLeft  { from { opacity:0; transform:translateX(-28px); } to { opacity:1; transform:translateX(0); } }
@@ -181,17 +181,17 @@ function Hero() {
         }}
       />
       {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1C1C2E]/95 via-[#1C1C2E]/70 to-[#1C1C2E]/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/80 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#1C1C2E]/95 via-[#1C1C2E]/70 to-[#1C1C2E]/40" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/80 via-transparent to-transparent" />
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20">
         {/* Badge */}
-        <div className="sr inline-flex items-center gap-2.5 mb-7 px-4 py-2 bg-white/[0.07] border border-white/[0.15] rounded-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0" />
+        <div className="sr inline-flex items-center gap-2.5 mb-7 px-4 py-2 bg-white/[0.07] border border-white/15 rounded-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] shrink-0" />
           <span className="font-mono-dm text-[10px] text-white/75 tracking-[0.12em] uppercase">Our Funds</span>
         </div>
 
-        <h1 className="sr d1 font-display font-bold text-white leading-[1.0] mb-6
+        <h1 className="sr d1 font-display font-bold text-white leading-none mb-6
           text-[clamp(44px,7vw,88px)]">
           Growth capital for<br />
           <em className="italic text-white/45">Nepal's transformation</em>
@@ -219,7 +219,7 @@ function TrackRecord() {
                 text-[clamp(32px,4vw,48px)]">
                 <StatNumber value={s.value} />
               </div>
-              <div className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase">{s.label}</div>
+              <div className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase">{s.label}</div>
             </div>
           ))}
         </div>
@@ -271,7 +271,7 @@ function Narrative() {
                 'NPR 320M+ mobilized across three funds',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#f5e8ed] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#f5e8ed] flex items-center justify-center shrink-0 mt-0.5">
                     <CheckCircle size={11} className="text-[#B71E52]" />
                   </div>
                   <span className="text-[14px] text-stone-600 leading-[1.65]">{item}</span>
@@ -306,7 +306,7 @@ function OurFunds() {
           </div>
 
           {/* Tab pills */}
-          <div className="flex gap-1 bg-white p-1 rounded-lg border border-[#E8E4DD] self-start sm:self-auto flex-shrink-0">
+          <div className="flex gap-1 bg-white p-1 rounded-lg border border-[#E8E4DD] self-start sm:self-auto shrink-0">
             {funds.map(fund => (
               <button key={fund.id} onClick={() => setActive(fund.id)}
                 className={`px-4 sm:px-5 py-2.5 rounded-md text-[13px] font-medium transition-all duration-200 cursor-pointer whitespace-nowrap
@@ -321,9 +321,9 @@ function OurFunds() {
         <div key={active} className="fund-panel grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start mb-16">
 
           {/* Image */}
-          <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-xl shadow-stone-200">
+          <div className="relative rounded-xl overflow-hidden aspect-4/3 shadow-xl shadow-stone-200">
             <img src={f.image} alt={f.name} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/65 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/65 via-transparent to-transparent" />
             {/* Capital overlay */}
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
               <div>
@@ -349,7 +349,7 @@ function OurFunds() {
               {f.meta.map((m, i) => (
                 <div key={i} className={`px-6 py-4 flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6
                   ${i < f.meta.length - 1 ? 'border-b border-[#E8E4DD]' : ''}`}>
-                  <div className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.1em] uppercase flex-shrink-0 w-28 pt-0.5">{m.label}</div>
+                  <div className="font-mono-dm text-[10px] text-[#B71E52] tracking-widest uppercase shrink-0 w-28 pt-0.5">{m.label}</div>
                   <div className="text-[14px] text-stone-600 leading-[1.6] font-medium">{m.value}</div>
                 </div>
               ))}
@@ -419,7 +419,7 @@ function ValueBeyondCapital() {
             <div key={i} className={`sr val-card d${i + 1} bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl p-8`}>
               {/* Ghost number */}
               <div className="relative">
-                <span className="absolute -top-1 -right-1 font-display font-bold text-[80px] text-[#1C1C2E]/[0.04] leading-none select-none pointer-events-none">
+                <span className="absolute -top-1 -right-1 font-display font-bold text-[80px] text-[#1C1C2E]/4 leading-none select-none pointer-events-none">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div className="w-11 h-11 rounded-lg bg-white border border-[#E8E4DD] flex items-center justify-center text-[#B71E52] mb-5 relative z-10">

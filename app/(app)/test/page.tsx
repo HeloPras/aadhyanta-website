@@ -1,8 +1,10 @@
-import React from 'react'
 
 const page = () => {
+
   return (
-    <div className={`font-cormorant`}>This is the test</div>
+    // <div className={`${cormorant.variable}`}>
+      <div className={`font-cormorant`}>This is the test</div>
+    // </div>
   )
 }
 

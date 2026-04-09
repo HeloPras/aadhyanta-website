@@ -103,6 +103,16 @@
 
 }
 
+.font-display {
+  font-family:var(--font-cormorant)
+}
+
+.font-mono-dm{
+  font-family:var(--font-dm-mono)
+}
+
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -150,5 +160,6 @@
   }
   body {
     @apply bg-background text-foreground; 
+    font-size: 16px;
   } 
 }
