@@ -111,88 +111,71 @@ function Counter({ end=-1, suffix = '', prefix = '', duration = 1600 }) {
 /* ═══════════════════════════════════════════════════════════════════════════
    NAVBAR
 ═══════════════════════════════════════════════════════════════════════════ */
-function Nav() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+// function Nav() {
+//   const [scrolled, setScrolled] = useState(false)
+//   const [menuOpen, setMenuOpen] = useState(false)
 
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', fn, { passive: true })
-    return () => window.removeEventListener('scroll', fn)
-  }, [])
+//   useEffect(() => {
+//     const fn = () => setScrolled(window.scrollY > 40)
+//     window.addEventListener('scroll', fn, { passive: true })
+//     return () => window.removeEventListener('scroll', fn)
+//   }, [])
 
-  return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-      ${scrolled ? 'bg-white/95 backdrop-blur-xl border-b border-stone-200 py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+//   return (
+//     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+//       ${scrolled ? 'bg-white/95 backdrop-blur-xl border-b border-stone-200 py-3' : 'bg-transparent py-5'}`}>
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-md bg-[#B71E52] flex items-center justify-center shrink-0">
-            <span className="font-display font-bold text-white text-lg leading-none">A</span>
-          </div>
-          <div>
-            <div className={`font-display font-bold text-[16px] leading-tight transition-colors duration-300
-              ${scrolled ? 'text-[#1C1C2E]' : 'text-white'}`}>Aadhyanta</div>
-            <div className={`font-mono-dm text-[16px] tracking-[0.12em] uppercase transition-colors duration-300
-              ${scrolled ? 'text-stone-400' : 'text-white/50'}`}>Fund Management</div>
-          </div>
-        </div>
+//         {/* Logo */}
+//         <div className="flex items-center gap-3">
+//           <div className="w-9 h-9 rounded-md bg-[#B71E52] flex items-center justify-center shrink-0">
+//             <span className="font-display font-bold text-white text-lg leading-none">A</span>
+//           </div>
+//           <div>
+//             <div className={`font-display font-bold text-[16px] leading-tight transition-colors duration-300
+//               ${scrolled ? 'text-[#1C1C2E]' : 'text-white'}`}>Aadhyanta</div>
+//             <div className={`font-mono-dm text-[16px] tracking-[0.12em] uppercase transition-colors duration-300
+//               ${scrolled ? 'text-stone-400' : 'text-white/50'}`}>Fund Management</div>
+//           </div>
+//         </div>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
-          {['About', 'Funds', 'Impact', 'Insights'].map(l => (
-            <a key={l} href="#" className={`nav-link font-medium text-sm transition-colors duration-200
-              ${scrolled ? 'text-stone-500 hover:text-[#1C1C2E]' : 'text-white/75 hover:text-white'}`}>{l}</a>
-          ))}
-          <a href="#" className="flex items-center gap-1.5 bg-[#B71E52] hover:bg-[#9e1847] text-white text-sm font-semibold px-5 py-2.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
-            Invest Now <ArrowUpRight size={13} />
-          </a>
-        </div>
+//         {/* Desktop links */}
+//         <div className="hidden md:flex items-center gap-8">
+//           {['About', 'Funds', 'Impact', 'Insights'].map(l => (
+//             <a key={l} href="#" className={`nav-link font-medium text-sm transition-colors duration-200
+//               ${scrolled ? 'text-stone-500 hover:text-[#1C1C2E]' : 'text-white/75 hover:text-white'}`}>{l}</a>
+//           ))}
+//           <a href="#" className="flex items-center gap-1.5 bg-[#B71E52] hover:bg-[#9e1847] text-white text-sm font-semibold px-5 py-2.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
+//             Invest Now <ArrowUpRight size={13} />
+//           </a>
+//         </div>
 
-        {/* Mobile hamburger */}
-        <button className="md:hidden p-2 rounded" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen
-            ? <X size={22} className={scrolled ? 'text-[#1C1C2E]' : 'text-white'} />
-            : <Menu size={22} className={scrolled ? 'text-[#1C1C2E]' : 'text-white'} />}
-        </button>
-      </div>
+//         {/* Mobile hamburger */}
+//         <button className="md:hidden p-2 rounded" onClick={() => setMenuOpen(!menuOpen)}>
+//           {menuOpen
+//             ? <X size={22} className={scrolled ? 'text-[#1C1C2E]' : 'text-white'} />
+//             : <Menu size={22} className={scrolled ? 'text-[#1C1C2E]' : 'text-white'} />}
+//         </button>
+//       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white border-t border-stone-100 px-4 py-4 flex flex-col gap-3">
-          {['About', 'Funds', 'Impact', 'Insights'].map(l => (
-            <a key={l} href="#" className="text-stone-600 font-medium text-sm py-2 border-b border-stone-100">{l}</a>
-          ))}
-          <a href="#" className="mt-2 flex items-center justify-center gap-1.5 bg-[#B71E52] text-white text-sm font-semibold px-5 py-3 rounded">
-            Invest Now <ArrowUpRight size={13} />
-          </a>
-        </div>
-      )}
-    </nav>
-  )
-}
+//       {/* Mobile menu */}
+//       {menuOpen && (
+//         <div className="md:hidden bg-white border-t border-stone-100 px-4 py-4 flex flex-col gap-3">
+//           {['About', 'Funds', 'Impact', 'Insights'].map(l => (
+//             <a key={l} href="#" className="text-stone-600 font-medium text-sm py-2 border-b border-stone-100">{l}</a>
+//           ))}
+//           <a href="#" className="mt-2 flex items-center justify-center gap-1.5 bg-[#B71E52] text-white text-sm font-semibold px-5 py-3 rounded">
+//             Invest Now <ArrowUpRight size={13} />
+//           </a>
+//         </div>
+//       )}
+//     </nav>
+//   )
+// }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    TICKER
 ═══════════════════════════════════════════════════════════════════════════ */
-function Ticker() {
-  const items = ['NPR 320M+ Capital Mobilized', '200+ Enterprises Supported', '3 Active Funds',
-    "Nepal's First SEBON-Licensed Fund Manager", 'Gender-Lens Investing Pioneer', 'All 7 Provinces Covered']
-  const all = [...items, ...items]
-  return (
-    <div className="overflow-hidden bg-[#1C1C2E] py-2.5">
-      <div className="ticker-track">
-        {all.map((item, i) => (
-          <span key={i} className="whitespace-nowrap px-9 font-mono-dm text-[10px] text-white/60 tracking-widest uppercase inline-flex items-center gap-4">
-            {item}
-            <span className="inline-block w-1 h-1 rounded-full bg-[#B71E52]" />
-          </span>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    HERO
@@ -265,7 +248,7 @@ function Stats() {
     { end: 7, suffix: '', prefix: '', label: 'Provinces Covered', icon: <Globe size={16} /> },
   ]
   return (
-    <section className="bg-[#F5F2ED] border-b border-[#E8E4DD]">
+    <section className="  bg-[#F5F2ED] border-b border-[#E8E4DD]">
       <div className=" max-w-1250 mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-[#E8E4DD]">
         {stats.map((s, i) => (
           <div key={i} className={`sr p-8 lg:p-10 `} style={{ animationDelay: `${i * 0.08}s` }}>
