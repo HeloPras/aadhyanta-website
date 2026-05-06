@@ -22,11 +22,6 @@ import { useParams } from "next/navigation"
 
 /* ─── Global CSS ─────────────────────────────────────────────────────────── */
 const GLOBAL_CSS = `
-  // @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
-
-  // body { font-family: 'Outfit', sans-serif; }
-  // .font-display { font-family: 'Cormorant Garamond', serif; }
-  // .font-mono-dm { font-family: 'DM Mono', monospace; }
 
   @keyframes fadeUp    { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
   @keyframes fadeLeft  { from { opacity:0; transform:translateX(-20px); } to { opacity:1; transform:translateX(0); } }
@@ -221,7 +216,7 @@ function TableOfContents({ content }: { content: Section[] }) {
   const headings = content.filter((s) => s.kind === "heading")
   const [active, setActive] = useState(0)
 
-  useEffect(() => {
+  useEffect(() =>   {
     const headingEls = document.querySelectorAll(".prose-body h2")
     if (!headingEls.length) return
     const io = new IntersectionObserver(
@@ -252,8 +247,9 @@ function TableOfContents({ content }: { content: Section[] }) {
             key={i}
             onClick={() => {
               const els = document.querySelectorAll(".prose-body h2")
-              els[i]?.scrollIntoView({ behavior: "smooth", block: "start" })
+              els[i]?.scrollIntoView({ behavior: "smooth", block: "center" })
             }}
+
             className={`toc-link text-left text-[13px] leading-normal transition-all duration-200 py-0.5 ${
               active === i
                 ? "active font-semibold"
