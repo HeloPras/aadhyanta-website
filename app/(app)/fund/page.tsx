@@ -119,6 +119,7 @@ const funds = [
       { label: 'Backed by', value: "Nepal's 4 largest banks + leading insurance companies" },
       { label: 'Hold period', value: '5–7 years with active board representation' },
     ],
+    href:'/fund/nofone',
   },
   {
     id: 1,
@@ -136,6 +137,7 @@ const funds = [
       { label: 'Instruments', value: 'Equity, quasi-equity, mezzanine' },
       { label: 'Strategy', value: 'Follow-on + strategic new investments' },
     ],
+    href:'/fund/noftwo',
   },
   {
     id: 2,
@@ -153,6 +155,7 @@ const funds = [
       { label: 'Team', value: '100% female investment committee and deal team' },
       { label: 'Impact', value: 'Addressing <10% female access to institutional credit' },
     ],
+    href:'/fund/simrik'
   },
 ]
 
@@ -355,7 +358,7 @@ function OurFunds() {
               ))}
             </div>
 
-            <a href="#" className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[14px] px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
+            <a href={f.href} className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[14px] px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
               Learn More <ChevronRight size={16} />
             </a>
           </div>

@@ -207,9 +207,9 @@ function Hero() {
         {/* Headline */}
         <h1 className="sr d1 font-display font-bold text-white leading-none mb-7
           text-[clamp(48px,8vw,92px)]">
-          Mobilizing Capital<br />
-          <em className="italic text-white/45">That Transforms</em><br />
-          Nepal
+          Transforming the <br />
+          <em className="italic text-white/45">Approach to Capital</em><br />
+           Mobilization
         </h1>
 
         {/* Sub */}
@@ -228,10 +228,6 @@ function Hero() {
         </div>
 
         {/* Scroll cue */}
-        <div className="sr d5 hidden sm:flex items-center gap-3 mt-16">
-          <div className="w-px h-12 bg-linear-to-b from-white/40 to-transparent" />
-          <span className="font-mono-dm text-[9px] text-white/30 tracking-[0.14em] uppercase">Scroll to explore</span>
-        </div>
       </div>
     </section>
   )
@@ -430,6 +426,7 @@ function Funds() {
       items: ['Sector-agnostic', 'All 7 provinces', 'NPR 10–50M tickets', '5–7 year hold periods', 'Board representation'],
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80',
       capital: 'NPR 120M+',
+      href: '/fund/nofone'
     },
     {
       tag: 'NOF II', title: 'Nepal Opportunity Fund II', subtitle: 'Building on a proven track record',
@@ -437,6 +434,7 @@ function Funds() {
       items: ['Follow-on capacity', 'Larger ticket sizes', 'Enhanced due diligence', 'Portfolio synergies', 'Active value creation'],
       image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80',
       capital: 'NPR 140M+',
+      href: '/fund/noftwo'
     },
     {
       tag: 'Simrik', title: 'Simrik Fund', subtitle: "Nepal's first gender-lens investment fund",
@@ -444,6 +442,7 @@ function Funds() {
       items: ['Women-led businesses', 'Women workforce focus', 'All-women deal team', 'Gender-smart design', 'Inclusion metrics'],
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80',
       capital: 'NPR 60M+',
+      href: '/fund/simrik'
     },
   ]
   const f = funds[active]
@@ -501,7 +500,7 @@ function Funds() {
                 </div>
               ))}
             </div>
-            <a href="#" className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
+            <a href={f.href} className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
               Learn More <ArrowRight size={14} />
             </a>
           </div>
