@@ -288,23 +288,29 @@ function TrustBar() {
 ═══════════════════════════════════════════════════════════════════════════ */
 function About() {
   const points = [
-    'Transparent communication and regular portfolio updates',
-    'Rigorous due diligence and risk management processes',
-    'Access to institutional-quality investment opportunities',
-    'Personalized strategies aligned with your financial goals',
+    'Establish and manage sector-focused investment funds by mobilizing domestic and foreign capital',
+    'Invest in and restructure high-potential companies, partnering with institutions to provide advisory and technical support',
+    'Facilitate foreign investment and manage foreign exchange risk',
+    'Manage assets and securities, deploying capital through flexible instruments — equity, debt, and hybrid structures',
   ]
   return (
     <section className="bg-white py-20 md:py-28 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-
         {/* Left */}
         <div className="sr-l ">
-          <span className="font-mono-dm text-sm tracking-[0.14em] uppercase text-[#B71E52] mb-3 block  ">About Aadhyanta</span>
+          <span className="font-mono-dm text-sm tracking-[0.14em] uppercase text-[#B71E52] mb-3 block  ">
+            About Aadhyanta
+          </span>
           <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-6">
-            Uniquely equipped to support <em className="italic text-[#B71E52]">global investors</em>
+            Uniquely equipped to support{" "}
+            <em className="italic text-[#B71E52]">global investors</em>
           </h2>
           <p className="text-stone-500 text-[18px] leading-[1.85] mb-8">
-            We combine rigorous analysis, innovative strategies, and personalized attention to help you build and preserve wealth across generations. As Nepal's pioneering institutional fund manager, we bridge the gap between ambitious enterprises and capital markets.
+            With a mission to transform how capital is mobilized and deployed
+            across Nepal. Backed by the country's leading banks with a combined
+            promoter stake exceeding 50%, we manage sector-focused investment
+            funds that bridge the gap between institutional capital and
+            high-potential businesses.
           </p>
 
           <div className="flex flex-col gap-4 mb-10">
@@ -313,12 +319,17 @@ function About() {
                 <div className="w-5 h-5 rounded-full bg-[#f5e8ed] flex items-center justify-center shrink-0 mt-0.5">
                   <CheckCircle size={11} className="text-[#B71E52]" />
                 </div>
-                <span className="text-[16px] text-stone-600 leading-[1.7]">{p}</span>
+                <span className="text-[16px] text-stone-600 leading-[1.7]">
+                  {p}
+                </span>
               </div>
             ))}
           </div>
 
-          <a href="#" className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25"
+          >
             Our Story <ArrowUpRight size={14} />
           </a>
         </div>
@@ -327,8 +338,11 @@ function About() {
         <div className="sr-r relative mt-8 lg:mt-0">
           {/* Main image */}
           <div className="rounded-xl overflow-hidden shadow-2xl shadow-stone-200 aspect-4/3">
-            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80"
-              alt="Team" className="w-full h-full object-cover" />
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80"
+              alt="Team"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Floating stat card */}
@@ -336,7 +350,9 @@ function About() {
             <div className="font-display font-bold text-[34px] text-[#1C1C2E] leading-none">
               <Counter end={97} suffix="%" />
             </div>
-            <div className="text-[12px] text-stone-400 mt-1">Portfolio Retention</div>
+            <div className="text-[12px] text-stone-400 mt-1">
+              Portfolio Retention
+            </div>
             <div className="mt-3 h-[3px] bg-stone-100 rounded-full overflow-hidden">
               <div className="h-full bg-[#B71E52] rounded-full stat-bar" />
             </div>
@@ -749,7 +765,7 @@ export default function LandingPage() {
       <Features />
       <Testimonial />
       <CTA />
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

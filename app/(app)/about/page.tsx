@@ -6,6 +6,8 @@ import {
   ChevronRight, Check, ArrowRight, MapPin
 } from 'lucide-react'
 
+teamMembers
+
 /* ─── Same global CSS as LandingPage — font imports + keyframes only ─────── */
 const GLOBAL_CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
@@ -101,6 +103,7 @@ function Counter({ value }:{value:string}) {
 }
 
 import { useRef } from 'react'
+import { teamMembers } from '@/data/team'
 
 /* ═══════════════════════════════════════════════════════════════════════════
    DATA
@@ -146,12 +149,14 @@ const stats = [
   { value: '18.5%', label: 'Avg. Annual Return' },
 ]
 
-const teamMembers = [
-  { name: 'Rajan Sharma', position: 'Chief Executive Officer', bio: 'Over 20 years in institutional investment management across South and Southeast Asia.', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80' },
-  { name: 'Priya Thapa', position: 'Chief Investment Officer', bio: 'Former Goldman Sachs MD with deep expertise in emerging market private equity.', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
-  { name: 'Anil Pradhan', position: 'Managing Director, Funds', bio: 'Pioneered Nepal\'s structured finance market with 15 years of fund management experience.', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80' },
-  { name: 'Sunita Rai', position: 'Head of Impact', bio: 'Leading SDG integration and impact measurement across all portfolio companies.', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80' },
-]
+// const teamMembers = [
+//   { name: 'Rajan Sharma', position: 'Chief Executive Officer', bio: 'Over 20 years in institutional investment management across South and Southeast Asia.', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80' },
+//   { name: 'Priya Thapa', position: 'Chief Investment Officer', bio: 'Former Goldman Sachs MD with deep expertise in emerging market private equity.', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
+//   { name: 'Anil Pradhan', position: 'Managing Director, Funds', bio: 'Pioneered Nepal\'s structured finance market with 15 years of fund management experience.', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80' },
+//   { name: 'Sunita Rai', position: 'Head of Impact', bio: 'Leading SDG integration and impact measurement across all portfolio companies.', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80' },
+// ]
+
+
 
 const offices = [
   { city: 'Kathmandu', label: 'Headquarters', detail: 'Lazimpat, Kathmandu 44600' },
@@ -377,7 +382,7 @@ function Team() {
         <div className="sr mb-16">
           <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Leadership</span>
           <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-3">
-            Meet our <em className="italic text-[#B71E52]">executive team</em>
+            Meet our <em className="italic text-[#B71E52]">Directors </em>
           </h2>
           <p className="text-stone-500 text-[15px]">Experienced professionals guiding Aadhyanta Fund to new heights</p>
         </div>

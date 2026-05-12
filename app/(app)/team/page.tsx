@@ -154,7 +154,6 @@ const TeamPage: React.FC = () => {
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
 
       <div className="min-h-screen bg-white">
-
         {/* ── HERO ─────────────────────────────────────────────────────────── */}
         <section className="relative min-h-[52vh] flex items-end overflow-hidden bg-[#1C1C2E] hero-grid">
           {/* Photo backdrop */}
@@ -183,13 +182,14 @@ const TeamPage: React.FC = () => {
               className="sr d1 font-display font-bold text-white leading-[1.0] mb-5
               text-[clamp(48px,7vw,88px)]"
             >
-              The Team Behind<br />
+              The Team Behind
+              <br />
               <em className="italic text-white/45">Nepal's Capital Markets</em>
             </h1>
 
             <p className="sr d2 text-white/55 text-base sm:text-lg leading-[1.8] max-w-lg">
-              Meet the exceptional professionals driving investment excellence and
-              delivering results for enterprises and investors across Nepal.
+              Meet the exceptional professionals driving investment excellence
+              and delivering results for enterprises and investors across Nepal.
             </p>
           </div>
         </section>
@@ -223,6 +223,12 @@ const TeamPage: React.FC = () => {
         <section className="bg-white py-20 md:py-28 lg:py-32 border-b border-[#E8E4DD]">
           <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
             <DepartmentSection
+              label="Governance"
+              title="Board of Directors"
+              description="Experienced board members providing strategic oversight, governance, and long-term direction for the organization."
+              department="Director"
+            />
+            <DepartmentSection
               label="Leadership"
               title="Executive Team"
               description="Strategic leaders with decades of experience guiding investment strategy and enterprise development across Nepal."
@@ -230,40 +236,43 @@ const TeamPage: React.FC = () => {
             />
             <DepartmentSection
               label="Portfolio Management"
-              title="Investment Team"
+              title="Management Team"
               description="Expert portfolio managers and analysts identifying and nurturing Nepal's most compelling growth opportunities."
-              department="Investment"
+              department="Management"
             />
-            <DepartmentSection
+            {/* <DepartmentSection
               label="Support Teams"
               title="Operations & Client Relations"
               description="Dedicated professionals ensuring operational excellence and exceptional service across every touchpoint."
               department="Operations"
-            />
+            /> */}
           </div>
         </section>
 
         {/* ── CULTURE & VALUES ─────────────────────────────────────────────── */}
         <section className="bg-[#F5F2ED] py-20 md:py-28 border-b border-[#E8E4DD]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-
             {/* Left */}
             <div className="sr-l">
               <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
                 Our Culture
               </span>
               <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-6">
-                Where talent meets <em className="italic text-[#B71E52]">opportunity</em>
+                Where talent meets{" "}
+                <em className="italic text-[#B71E52]">opportunity</em>
               </h2>
               <p className="text-stone-500 text-[15px] leading-[1.85] mb-5">
-                At Aadhyanta Fund, we cultivate an environment where exceptional professionals can thrive,
-                innovate, and make meaningful contributions to our clients' success. Our culture emphasizes
-                collaboration, continuous learning, and excellence in everything we do.
+                At Aadhyanta Fund, we cultivate an environment where exceptional
+                professionals can thrive, innovate, and make meaningful
+                contributions to our clients' success. Our culture emphasizes
+                collaboration, continuous learning, and excellence in everything
+                we do.
               </p>
               <p className="text-stone-500 text-[15px] leading-[1.85] mb-8">
-                We invest in our team through professional development programs, industry certifications, and
-                opportunities to work on challenging, high-impact projects alongside some of the brightest minds
-                in finance.
+                We invest in our team through professional development programs,
+                industry certifications, and opportunities to work on
+                challenging, high-impact projects alongside some of the
+                brightest minds in finance.
               </p>
               <a
                 href="#careers"
@@ -294,7 +303,9 @@ const TeamPage: React.FC = () => {
                         <div className="font-semibold text-[14px] text-[#1C1C2E] mb-0.5">
                           {o.title}
                         </div>
-                        <div className="text-[13px] text-stone-500 leading-[1.65]">{o.desc}</div>
+                        <div className="text-[13px] text-stone-500 leading-[1.65]">
+                          {o.desc}
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -333,10 +344,14 @@ const TeamPage: React.FC = () => {
 
                   <div className="flex items-center gap-3 pt-5 border-t border-[#E8E4DD]">
                     <div className="w-10 h-10 rounded-full bg-[#1C1C2E] flex items-center justify-center flex-shrink-0">
-                      <span className="font-mono-dm text-[11px] text-white">{t.initials}</span>
+                      <span className="font-mono-dm text-[11px] text-white">
+                        {t.initials}
+                      </span>
                     </div>
                     <div>
-                      <div className="font-semibold text-[14px] text-[#1C1C2E]">{t.name}</div>
+                      <div className="font-semibold text-[14px] text-[#1C1C2E]">
+                        {t.name}
+                      </div>
                       <div className="font-mono-dm text-[10px] text-stone-400 tracking-[0.08em] uppercase mt-0.5">
                         {t.role}
                       </div>
@@ -352,7 +367,6 @@ const TeamPage: React.FC = () => {
         <section className="bg-[#1C1C2E] py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="sr-s grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
               {/* Left */}
               <div>
                 <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
@@ -362,8 +376,9 @@ const TeamPage: React.FC = () => {
                   Join our <em className="italic text-[#B71E52]">team</em>
                 </h2>
                 <p className="text-white/50 text-[15px] leading-[1.85] max-w-md">
-                  We're always looking for talented professionals who share our commitment to excellence
-                  and client success. Explore career opportunities at Aadhyanta Fund.
+                  We're always looking for talented professionals who share our
+                  commitment to excellence and client success. Explore career
+                  opportunities at Aadhyanta Fund.
                 </p>
               </div>
 
@@ -385,7 +400,6 @@ const TeamPage: React.FC = () => {
             </div>
           </div>
         </section>
-
       </div>
     </>
   )
