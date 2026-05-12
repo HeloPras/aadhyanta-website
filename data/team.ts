@@ -316,6 +316,6 @@ image:"/aadhyanta/Team/Dibakar.JPG"
     "Accounting Support",
   ],
   initials: "AW",
-  image:"/aadhyanta/Team/Asmita.png",
+  image:"/aadhyanta/Team/Asmita.PNG",
 },
 ]
