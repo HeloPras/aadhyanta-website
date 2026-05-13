@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { Navbar } from '@/components/Layout/Navbar'
 import {
   ChevronRight, CheckCircle, TrendingUp, Users,
   Building2, Shield, Globe, BarChart3, ArrowRight
@@ -470,6 +471,7 @@ export default function FundsPage() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-white">
+        <Navbar/>
         <Hero />
         <TrackRecord />
         <Narrative />

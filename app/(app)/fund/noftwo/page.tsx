@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { Navbar } from '@/components/Layout/Navbar' 
 import {
   ArrowRight, CheckCircle, Layers, Target, TrendingUp,
   Shield, Users, BarChart3, Zap, ChevronRight, Download,
@@ -568,6 +569,7 @@ export default function NOF2Page() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-white">
+        <Navbar/>
         <Hero />
         <HighlightsStrip />
         <WhyNOF2 />

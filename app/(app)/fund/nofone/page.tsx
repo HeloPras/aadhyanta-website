@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { Navbar } from '@/components/Layout/Navbar'
 import {
   ChevronRight, CheckCircle, ArrowRight, Zap, Building2,
   Smartphone, Leaf, Factory, Shield, Globe, TrendingUp,
@@ -598,6 +599,7 @@ export default function NOF1Page() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-white">
+        <Navbar/>
         <Hero />
         <StatsStrip />
         <Challenge />

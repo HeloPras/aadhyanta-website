@@ -275,7 +275,7 @@ const Member = ({
                     {/* Close button */}
                     <button
                       onClick={(e) => { e.stopPropagation(); setSelected("") }}
-                      className="absolute top-4 right-4 z-10 w-7 h-7 rounded-full bg-white border border-[#E8E4DD] flex items-center justify-center text-stone-400 hover:text-[#B71E52] hover:border-[#B71E52] transition-all duration-200"
+                      className="absolute top-4 right-4 z-10 w-7 h-7 rounded-full bg-white border cursor-pointer border-[#E8E4DD] flex items-center justify-center text-stone-400 hover:text-[#B71E52] hover:border-[#B71E52] transition-all duration-200"
                     >
                       <X size={12} />
                     </button>

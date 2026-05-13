@@ -5,6 +5,7 @@
 // The `articles` array lives in data/articles.ts
 
 import { use, useEffect, useRef, useState } from "react"
+import { Navbar } from "@/components/Layout/Navbar"
 import {
   ArrowLeft,
   Clock,
@@ -351,7 +352,7 @@ export default function ArticlePage() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div id="read-progress" style={{ width: `${progress}%` }} />
-
+    <Navbar variant="nontransparent"/>
       <div className="min-h-screen bg-white">
         {/* ── HERO ──────────────────────────────────────────────────────── */}
         <section className="bg-[#F5F2ED] border-b border-[#E8E4DD] pt-28 pb-0 overflow-hidden">

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { Navbar } from '@/components/Layout/Navbar'
 import {
   Award, Heart, TrendingUp, Users,
   ChevronRight, Check, ArrowRight, MapPin
@@ -389,7 +390,7 @@ function Team() {
 
         {/* Team grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {teamMembers.map((m, i) => (
+          {teamMembers.filter((i)=>{i.department === "Director"}).map((m, i) => (
             <div key={i} className={`sr d${i + 1} group`}>
               {/* Photo */}
               <div className="team-img-wrap rounded-xl overflow-hidden aspect-3/4 mb-5 bg-[#1C1C2E] shadow-md">
@@ -496,6 +497,7 @@ export default function AboutPage() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-white">
+        <Navbar variant="nontransparent" />
         <Hero />
         <Stats />
         <MissionVision />

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { Navbar } from '@/components/Layout/Navbar'
 import {
   ArrowRight, CheckCircle, TrendingUp, Users, Target, Award,
   Briefcase, Factory, GraduationCap, Building2, Globe, Zap, Leaf, Download
@@ -8,7 +9,7 @@ import {
 
 /* ─── Global CSS — NOF I token system ───────────────────────────────────── */
 const GLOBAL_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+  // @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
   body { font-family: 'Outfit', sans-serif; }
   .font-display { font-family: 'Cormorant Garamond', serif; }
@@ -584,6 +585,7 @@ export default function SimrikFundPage() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-white">
+        <Navbar></Navbar> 
         <Hero />
         <StatsStrip />
         <MarketFailure />

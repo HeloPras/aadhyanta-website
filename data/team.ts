@@ -32,7 +32,7 @@ export const teamMembers = [
     "Strategic Partnerships",
   ],
   initials: "AK",
-  image:"/aadhyanta/Team/Amitlow.JPG"
+  image:"/aadhyanta/Team/Amit.jpeg"
 },
  
   {
@@ -51,7 +51,7 @@ export const teamMembers = [
     "Infrastructure Finance",
   ],
   initials: "ST",
-    image: "/aadhyanta/Team/Santosh.JPG",
+    image: "/aadhyanta/Team/Santosh.jpeg",
 
 },
 {
@@ -69,7 +69,7 @@ export const teamMembers = [
     "Banking Operations",
   ],
   initials: "PP",
-    image: "/aadhyanta/Team/Pramesh.JPG",
+    image: "/aadhyanta/Team/Pramesh.jpeg",
 
 },
 {
@@ -107,7 +107,7 @@ export const teamMembers = [
     "ESG & Sustainability",
   ],
   initials: "NB",
-    image: "/aadhyanta/Team/Nischal.JPG",
+    image: "/aadhyanta/Team/Nischal.jpeg",
 
 },
 {
@@ -170,7 +170,7 @@ export const teamMembers = [
   name: "Mr. Krishna Prasad Sharma",
   position: "Independent Director",
   department: "Director",
-  bio: "Krishna Prasad Sharma brings over 32 years of extensive banking experience, including serving as the Chief Executive Officer of Rastriya Banijya Bank. He has held board positions at several leading financial institutions and currently contributes to governance through audit, risk management, and employee service committees.",
+  bio: "Krishna brings over 32 years of extensive banking experience, including serving as the Chief Executive Officer of Rastriya Banijya Bank. He has held board positions at several leading financial institutions and currently contributes to governance through audit, risk management, and employee service committees.",
   experience: "40+ years in Nepal’s Financial Sector",
   education: "Bachelor’s Degree in Agricultural Science; Master’s Degrees in Management and Sociology",
   specialties: [
@@ -182,14 +182,14 @@ export const teamMembers = [
     "Institutional Oversight",
   ],
   initials: "KS",
-    image: "/aadhyanta/Team/Krishna.JPG",
+    image: "/aadhyanta/Team/Krishna.jpeg",
 
 },
 {
   name: "Ms. Aarati Rajya Laxmi Rana",
   position: "Director Representing Laxmi Sunrise Bank Limited",
   department: "Director",
-  bio: "Aarati Rajya Laxmi Rana represents Laxmi Sunrise Bank Limited as the Nominee Director at Aadhyanta Fund Management Limited. She is also the Deputy Chief Executive Officer at Laxmi Sunrise Bank Limited and is a well-known banking professional with extensive leadership experience across the financial sector.",
+  bio: "Aarati Laxmi Rana represents Laxmi Sunrise Bank Limited as the Nominee Director at Aadhyanta Fund Management Limited. She is also the Deputy Chief Executive Officer at Laxmi Sunrise Bank Limited and is a well-known banking professional with extensive leadership experience across the financial sector.",
   experience: "20+ years in Banking and Financial Leadership",
   education: "Not specified",
   specialties: [
@@ -205,10 +205,10 @@ export const teamMembers = [
 },
 
 {
-  name: "Smritee Paudel",
+  name: "Ms. Smritee Paudel",
   position: "Director",
   department: "Director",
-  bio: "Smritee Paudel is a sustainability and governance professional with over 7 years of experience across fund management, renewable energy, infrastructure, and circular economy research. She focuses on bridging evidence-based development practices with private sector strategy to create long-term impact in Nepal and beyond.",
+  bio: "Smritee is a sustainability and governance professional with over 7 years of experience across fund management, renewable energy, infrastructure, and circular economy research. She focuses on bridging evidence-based development practices with private sector strategy to create long-term impact in Nepal and beyond.",
   experience: "7+ years in Sustainability, Governance, and Fund Management",
   education: "MSc in Development and Sustainability, Asian Institute of Technology; MSc in International Management, University of the West of England",
   specialties: [
@@ -249,10 +249,10 @@ export const teamMembers = [
 image:"/aadhyanta/Team/Anuja.jpeg"
 },
 {
-  name: "Dibakar Paudel",
+  name: "Mr. Dibakar Paudel",
   position: "Director",
   department: "Director",
-  bio: "Dibakar Paudel has substantial managerial and supervisory expertise with a strong understanding of Nepal’s private sector, including business policies, processes, and financial services. He currently serves as CEO of GME Remit Pvt. Ltd. and is also a Board Member at Ventures Hire Purchase Pvt. Ltd.",
+  bio: "Dibakar has substantial managerial and supervisory expertise with a strong understanding of Nepal’s private sector, including business policies, processes, and financial services. He currently serves as CEO of GME Remit Pvt. Ltd. and is also a Board Member at Ventures Hire Purchase Pvt. Ltd.",
   experience: "Experience in Business Leadership, Financial Services, and Management",
   education: "Not specified",
   specialties: [
@@ -270,9 +270,9 @@ image:"/aadhyanta/Team/Dibakar.JPG"
   name: "Lomus Pudasaini",
   position: "Investment Analyst",
   department: "Management",
-  bio: "Lomus Pudasaini is an economics graduate focused on climate finance and international financial reform. He has experience leading policy initiatives at Beyond Bretton Woods and conducting sustainable finance and investment research across emerging markets.",
-  experience: "Experience in Sustainable Finance Research and Policy Initiatives",
-  education: "Bachelor of Arts in Economics, Middlebury College",
+  bio: "Lomus is an economics graduate focused on climate finance and international financial reform. He has experience leading policy initiatives at Beyond Bretton Woods and conducting sustainable finance and investment research across emerging markets.",
+  experience: "Sustainable Finance Research and Policy Initiatives",
+  education: "Bachelor of Arts in Economics, Middlebury College, USA",
   specialties: [
     "Financial Analysis",
     "Sustainable Finance",
@@ -288,7 +288,7 @@ image:"/aadhyanta/Team/Dibakar.JPG"
   name: "Swastika Khatri",
   position: "Investment Analyst",
   department: "Management",
-  bio: "Swastika Khatri is an Investment Analyst and Chartered Accountant qualified from the Institute of Chartered Accountants of Nepal (ICAN), with over 4 years of professional experience in financing, valuation, auditing, and accounting. She specializes in financial modelling, investment evaluation, valuation analysis, and due diligence, supporting private equity investment decisions through structured, data-driven insights.",
+  bio: "Swastika is an Investment Analyst and Chartered Accountant qualified from the Institute of Chartered Accountants of Nepal (ICAN), with over 4 years of professional experience in financing, valuation, auditing, and accounting. She specializes in financial modelling, investment evaluation, valuation analysis, and due diligence, supporting private equity investment decisions through structured, data-driven insights.",
   experience: "4+ years in Investment Analysis, Auditing, and Financial Consulting",
   education: "Chartered Accountant (ICAN), Bachelor in Business Studies, Tribhuvan University",
   specialties: [
@@ -305,7 +305,7 @@ image:"/aadhyanta/Team/Dibakar.JPG"
   name: "Asmita Waiba",
   position: "Admin & Finance Assistant",
   department: "Management",
-  bio: "Asmita Waiba is an Admin & Finance Assistant at Aadhyanta with over 4 years of professional experience in financial administration, accounting support, tax compliance, and operational coordination. She specializes in financial reconciliations, regulatory reporting, office administration, and maintaining accurate financial documentation to ensure organizational efficiency and compliance.",
+  bio: "Asmita is an Admin & Finance Assistant at Aadhyanta with over 4 years of professional experience in financial administration, accounting support, tax compliance, and operational coordination. She specializes in financial reconciliations, regulatory reporting, office administration, and maintaining accurate financial documentation to ensure organizational efficiency and compliance.",
   experience: "4+ years in Finance Administration and Accounting Support",
   education: "Bachelor in Business Studies (Finance), Tribhuvan University; +2 in Business & Marketing, Ideal Model Higher Secondary School",
   specialties: [

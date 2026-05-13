@@ -77,7 +77,7 @@ export default function RootLayout({
     >
       {/* <body className={`${figtree.className}`}>{children}</body> */}
       <body className={`${outfit.className} `}>
-        <Navbar />
+        {/* <Navbar variant="transparent"/> */}
         {children}
         <Footer />
       </body>

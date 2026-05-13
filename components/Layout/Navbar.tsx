@@ -7,6 +7,10 @@ import Image from "next/image"
 // import { useState, useEffect } from "react"
 // import { Menu, X, ChevronDown } from "lucide-react"
 
+type NavbarProp = {
+  variant?:  "transparent"|"nontransparent"
+}
+
 interface DropdownItem {
   name: string
   href: string
@@ -56,8 +60,8 @@ const navItems: NavItem[] = [
     ],
   },
   { name: "Program", href: "/program" },
-  { name: "Career", href: "/career" },
-  { name: "Team", href: "/team" },
+  // { name: "Career", href: "/career" },
+  // { name: "Team", href: "/team" },
   { name: "Insights", href: "/insights" },
   { name: "Tools", href: "/tools" },
 ]
@@ -184,7 +188,7 @@ const navItems: NavItem[] = [
 
 // export default Navbar
 
-export function Navbar() {
+export function Navbar({variant = "transparent"}:NavbarProp) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -196,8 +200,9 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3
-      ${scrolled ? "bg-white/95 backdrop-blur-xl border-b border-stone-200 " : "bg-transparent "}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 text-shadow-amber-300
+        text-
+      ${scrolled || variant !== "transparent"  ? "bg-white/95 backdrop-blur-xl " : "bg-transparent "}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
@@ -227,8 +232,8 @@ export function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className={`nav-link font-medium text-sm transition-colors duration-200
-              ${scrolled ? "text-stone-500 hover:text-[#1C1C2E]" : "text-white/75 hover:text-white"}`}
+              className={`nav-link font-medi  um text-md transition-colors duration-200
+              ${scrolled || variant !== "transparent" ? "text-stone-500 hover:text-[#1C1C2E]" : "text-white/75 hover:text-white"}`}
             >
               {item.name}
             </a>

@@ -6,6 +6,7 @@ import {
   ArrowRight, CheckCircle, ChevronRight, Building2,
   ArrowUpRight, Globe, Award, Layers, MapPin, Phone, Mail, Menu, X
 } from 'lucide-react'
+import { Navbar } from '@/components/Layout/Navbar'
 
 
 /* ─── Minimal global CSS — only what Tailwind can't do ───────────────────── */
@@ -750,11 +751,14 @@ export default function LandingPage() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       {/* Progress bar */}
-      <div className="fixed top-0  left-0 h-[2px] z-9999 bg-[#B71E52] transition-[width_0.1s_linear]"
-        style={{ width: `${prog}%` }} />
+      <div
+        className="fixed top-0  left-0 h-[2px] z-9999 bg-[#B71E52] transition-[width_0.1s_linear]"
+        style={{ width: `${prog}%` }}
+      />
 
       {/* <Nav />
       <Ticker /> */}
+      <Navbar />
       <Hero />
       <Stats />
       <TrustBar />

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, FormEvent } from 'react'
+import { Navbar } from '@/components/Layout/Navbar'
 import {
   ArrowRight, ArrowUpRight, BookOpen, Headphones,
   Mail, Play, Clock, Calendar, ChevronRight, Search,
@@ -646,6 +647,7 @@ export default function InsightsPage() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-white">
+        <Navbar variant='nontransparent'></Navbar>
         <Hero />
         <Articles />
         <Podcast />

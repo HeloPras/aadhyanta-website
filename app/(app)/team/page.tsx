@@ -1,6 +1,7 @@
 "use client"
 
 import { ChevronRight, ArrowRight, Users, Award, Globe, TrendingUp } from "lucide-react"
+import { Navbar } from "@/components/Layout/Navbar"
 import { useEffect } from "react"
 import Member from "@/components/Pages/Teams/member"
 import { teamMembers } from "@/data/team"
@@ -107,7 +108,7 @@ const TeamPage: React.FC = () => {
   useReveal()
 
   const stats = [
-    { value: "40+", label: "Team Members", icon: <Users size={16} /> },
+    { value: "20+", label: "Team Members", icon: <Users size={16} /> },
     { value: "3", label: "Active Funds", icon: <TrendingUp size={16} /> },
     { value: "7", label: "Provinces Reached", icon: <Globe size={16} /> },
     { value: "15+", label: "Years Experience", icon: <Award size={16} /> },
@@ -152,7 +153,7 @@ const TeamPage: React.FC = () => {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
-
+      <Navbar />
       <div className="min-h-screen bg-white">
         {/* ── HERO ─────────────────────────────────────────────────────────── */}
         <section className="relative min-h-[52vh] flex items-end overflow-hidden bg-[#1C1C2E] hero-grid">
