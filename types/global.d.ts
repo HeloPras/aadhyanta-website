@@ -36,3 +36,24 @@ interface TeamMember {
   text?: string
   items?: string[]
 }
+
+
+// portfolio page types
+
+type Company = {
+  id: string
+  name: string
+  sector: string
+  sectorIcon: React.ReactNode
+  fund: 'NOF I' | 'NOF II' | 'Simrik'
+  status: 'Active' | 'Advancing to Exit' | 'Follow-on'
+  statusCls: string
+  province: string
+  year: string
+  description: string
+  tags: string[]
+  impacts: string[]
+  image: string
+  featured?: boolean
+  logoPlaceholder: string
+}

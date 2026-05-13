@@ -376,37 +376,138 @@ function Programs() {
    TEAM
 ═══════════════════════════════════════════════════════════════════════════ */
 function Team() {
+  const directors = teamMembers.filter((m) => m.department === "Director")
+  const [current, setCurrent] = useState(0)
+  const [dragging, setDragging] = useState(false)
+  const [dragStartX, setDragStartX] = useState(0)
+  const trackRef = useRef<HTMLDivElement>(null)
+
+  const VISIBLE = 4 // cards visible at once on desktop
+  const total = directors.length
+  const canPrev = current > 0
+  const canNext = current < total - VISIBLE
+
+  const prev = () => canPrev && setCurrent((c) => c - 1)
+  const next = () => canNext && setCurrent((c) => c + 1)
+
+  // Drag / swipe
+  const onMouseDown = (e: React.MouseEvent) => { setDragging(true); setDragStartX(e.clientX) }
+  const onMouseUp   = (e: React.MouseEvent) => {
+    if (!dragging) return
+    setDragging(false)
+    const diff = dragStartX - e.clientX
+    if (diff > 60) next()
+    else if (diff < -60) prev()
+  }
+  const onTouchStart = (e: React.TouchEvent) => setDragStartX(e.touches[0].clientX)
+  const onTouchEnd   = (e: React.TouchEvent) => {
+    const diff = dragStartX - e.changedTouches[0].clientX
+    if (diff > 50) next()
+    else if (diff < -50) prev()
+  }
+
   return (
     <section className="bg-white py-20 md:py-28 lg:py-32 border-b border-[#E8E4DD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="sr mb-16">
-          <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Leadership</span>
-          <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-3">
-            Meet our <em className="italic text-[#B71E52]">Directors </em>
-          </h2>
-          <p className="text-stone-500 text-[15px]">Experienced professionals guiding Aadhyanta Fund to new heights</p>
+
+        {/* Header row */}
+        <div className="sr flex items-end justify-between mb-12 gap-6">
+          <div>
+            <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Leadership</span>
+            <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-2">
+              Meet our <em className="italic text-[#B71E52]">Directors</em>
+            </h2>
+            <p className="text-stone-500 text-[15px]">Experienced professionals guiding Aadhyanta Fund to new heights</p>
+          </div>
+
+          {/* Prev / Next */}
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button
+              onClick={prev}
+              disabled={!canPrev}
+              aria-label="Previous"
+              className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200
+                ${canPrev
+                  ? 'border-[#1C1C2E] text-[#1C1C2E] hover:bg-[#1C1C2E] hover:text-white'
+                  : 'border-[#E8E4DD] text-[#E8E4DD] cursor-not-allowed'}`}
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button
+              onClick={next}
+              disabled={!canNext}
+              aria-label="Next"
+              className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200
+                ${canNext
+                  ? 'border-[#B71E52] bg-[#B71E52] text-white hover:bg-[#9e1847]'
+                  : 'border-[#E8E4DD] text-[#E8E4DD] cursor-not-allowed'}`}
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
         </div>
 
-        {/* Team grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {teamMembers.filter((i)=>{i.department === "Director"}).map((m, i) => (
-            <div key={i} className={`sr d${i + 1} group`}>
-              {/* Photo */}
-              <div className="team-img-wrap rounded-xl overflow-hidden aspect-3/4 mb-5 bg-[#1C1C2E] shadow-md">
-                <img
-                  src={m.image}
-                  alt={m.name}
-                  className="team-img w-full h-full object-cover object-top"
-                />
+        {/* Carousel track */}
+        <div
+          className="overflow-hidden cursor-grab active:cursor-grabbing select-none "
+          onMouseDown={onMouseDown}
+          onMouseUp={onMouseUp}
+          onMouseLeave={() => setDragging(false)}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
+          <div
+            ref={trackRef}
+            className="flex gap-6"
+            style={{
+              transform: `translateX(calc(-${current} * (25% + 6px)))`,
+              transition: dragging ? 'none' : 'transform 0.55s cubic-bezier(0.16,1,0.3,1)',
+              width: `${(total / VISIBLE) * 100}%`,
+            }}
+          >
+            {directors.map((m, i) => (
+              <div
+                key={i}
+                style={{ width: `${100 / total}%` }}
+                className="flex-shrink-0"
+              >
+                {/* Photo */}
+                <div className="team-img-wrap rounded-xl overflow-hidden aspect-3/4 mb-5 bg-[#1C1C2E] shadow-md">
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    draggable={false}
+                    className="team-img w-full h-full object-cover object-top"
+                  />
+                </div>
+                {/* Info */}
+                <h3 className="font-display font-bold text-[20px] text-[#1C1C2E] mb-1 leading-tight">{m.name}</h3>
+                <p className="font-mono-dm text-[10px] text-[#B71E52] tracking-widest uppercase">{m.position}</p>
               </div>
-              {/* Info */}
-              <h3 className="font-display font-bold text-[20px] text-[#1C1C2E] mb-1 leading-tight">{m.name}</h3>
-              <p className="font-mono-dm text-[10px] text-[#B71E52] tracking-widest uppercase mb-3">{m.position}</p>
-              <p className="text-stone-500 text-[13px] leading-[1.75]">{m.bio}</p>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="flex items-center gap-2 mt-8">
+          {Array.from({ length: total - VISIBLE + 1 }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`rounded-full cursor-pointer transition-all duration-300 ${
+                i === current
+                  ? 'w-6 h-1.5 bg-[#B71E52]'
+                  : 'w-1.5 h-1.5 bg-[#E8E4DD] hover:bg-stone-300'
+              }`}
+            />
           ))}
         </div>
+
       </div>
     </section>
   )
@@ -478,7 +579,7 @@ function CTA() {
           <a href="#contact" className="inline-flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
             Get in Touch <ChevronRight size={18} />
           </a>
-          <a href="/funds" className="inline-flex items-center justify-center gap-2 border border-[#1C1C2E] text-[#1C1C2E] hover:bg-[#1C1C2E] hover:text-white font-medium text-[15px] px-8 py-4 rounded transition-all duration-200">
+          <a href="/fund" className="inline-flex items-center justify-center gap-2 border border-[#1C1C2E] text-[#1C1C2E] hover:bg-[#1C1C2E] hover:text-white font-medium text-[15px] px-8 py-4 rounded transition-all duration-200">
             View Our Funds
           </a>
         </div>

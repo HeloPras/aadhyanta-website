@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Navbar } from "@/components/Layout/Navbar";
 import { ArrowRight } from "lucide-react";
 
 const page = () => {
@@ -26,6 +27,7 @@ const page = () => {
 
   return (
     <div className="bg-white">
+      <Navbar variant="nontransparent"></Navbar>
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]" />

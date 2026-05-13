@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { Navbar } from '@/components/Layout/Navbar'
 import {
   Target, Users, TrendingUp, Globe, Lightbulb,
   Building2, Leaf, Zap, CheckCircle, ArrowRight, Mail, ChevronRight
@@ -658,6 +659,7 @@ export default function AcceleratorPage() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-white">
+        <Navbar variant='nontransparent'/>
         <Hero />
         <Stats />
         <Challenge />
