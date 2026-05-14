@@ -139,7 +139,6 @@ type Company = {
   sector: string
   sectorIcon: React.ReactNode
   fund: "NOF I" | "NOF II" | "Simrik"
-  status: "Active" | "Advancing to Exit" | "Follow-on"
   statusCls: string
   province: string
   year: string
@@ -158,7 +157,6 @@ const companies: Company[] = [
     sector: "Manufacturing",
     sectorIcon: <Factory size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Bagmati Province",
     year: "2019",
@@ -182,7 +180,6 @@ const companies: Company[] = [
     sector: "Telecommunications & Digital Services",
     sectorIcon: <Network size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Bagmati Province",
     year: "2010",
@@ -205,7 +202,6 @@ const companies: Company[] = [
     sector: "Hospitality & Tourism",
     sectorIcon: <Building2 size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Bagmati Province",
     year: "2024",
@@ -227,7 +223,6 @@ const companies: Company[] = [
     sector: "Renewable Energy",
     sectorIcon: <Zap size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Koshi Province",
     year: "2016",
@@ -249,7 +244,6 @@ const companies: Company[] = [
     sector: "Renewable Energy",
     sectorIcon: <Zap size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Koshi Province",
     year: "2020",
@@ -272,7 +266,6 @@ const companies: Company[] = [
     sector: "Renewable Energy",
     sectorIcon: <Zap size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Gandaki Province",
     year: "2015",
@@ -295,7 +288,6 @@ const companies: Company[] = [
     sector: "Renewable Energy",
     sectorIcon: <Zap size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Koshi Province",
     year: "2012",
@@ -317,7 +309,6 @@ const companies: Company[] = [
     sector: "Agriculture & Poultry",
     sectorIcon: <Leaf size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Gandaki Province",
     year: "2018",
@@ -340,7 +331,6 @@ const companies: Company[] = [
     sector: "Renewable Energy",
     sectorIcon: <Zap size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Gandaki Province",
     year: "2017",
@@ -362,7 +352,6 @@ const companies: Company[] = [
     sector: "Renewable Energy",
     sectorIcon: <Zap size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Gandaki Province",
     year: "2015",
@@ -384,7 +373,6 @@ const companies: Company[] = [
     sector: "Information Technology & Digital Services",
     sectorIcon: <Code size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Bagmati Province",
     year: "2003",
@@ -407,7 +395,6 @@ const companies: Company[] = [
     sector: "Agriculture & Agro-Industry",
     sectorIcon: <Leaf size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Koshi Province",
     year: "2015",
@@ -431,7 +418,6 @@ const companies: Company[] = [
     sector: "Agri-Tech & Information Technology",
     sectorIcon: <Cpu size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Bagmati Province",
     year: "2016",
@@ -454,7 +440,6 @@ const companies: Company[] = [
     sector: "Agriculture & Agro-Industry",
     sectorIcon: <Leaf size={15} />,
     fund: "NOF I",
-    status: "Active",
     statusCls: "status-active",
     province: "Lumbini Province",
     year: "2002",
@@ -580,93 +565,6 @@ function Hero() {
 /* ═══════════════════════════════════════════════════════════════════════════
    FEATURED COMPANIES — large horizontal cards for the 2 marquee picks
 ═══════════════════════════════════════════════════════════════════════════ */
-function FeaturedCompanies() {
-  const featured = companies.filter((c) => c.featured)
-  return (
-    <section className="bg-white py-16 border-b border-[#E8E4DD]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="sr mb-8">
-          <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-2 block">
-            Highlighted Investments
-          </span>
-          <h2 className="font-display font-bold text-[clamp(28px,3.5vw,40px)] leading-[1.08] text-[#1C1C2E]">
-            Featured{" "}
-            <em className="italic text-[#B71E52]">Portfolio Companies</em>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {featured.map((co, i) => (
-            <a
-              key={co.id}
-              href={`/portfolio/${co.id}`}
-              className={`sr d${i + 1} feat-co-card group block bg-[#F5F2ED] border border-[#E8E4DD] rounded-2xl overflow-hidden`}
-            >
-              {/* Image */}
-              <div className="relative h-52 overflow-hidden">
-                <img
-                  src={co.image}
-                  alt={co.name}
-                  className="feat-co-img w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/60 via-transparent to-transparent" />
-
-                {/* Fund tag */}
-                <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="font-mono-dm text-[9px] tracking-widest uppercase px-2.5 py-1 bg-[#B71E52] text-white rounded">
-                    {co.fund}
-                  </span>
-                  <span
-                    className={`font-mono-dm text-[9px] tracking-widest uppercase px-2.5 py-1 rounded ${co.statusCls}`}
-                  >
-                    {co.status}
-                  </span>
-                </div>
-
-                {/* Arrow */}
-                <div className="absolute top-4 right-4 co-arrow">
-                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                    <ArrowUpRight size={14} className="text-[#1C1C2E]" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6 sm:p-7">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-5 h-5 rounded bg-[#f5e8ed] flex items-center justify-center text-[#B71E52]">
-                    {co.sectorIcon}
-                  </div>
-                  <span className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase">
-                    {co.sector}
-                  </span>
-                </div>
-                <h3 className="font-display font-bold text-[22px] text-[#1C1C2E] leading-tight mb-2 group-hover:text-[#B71E52] transition-colors duration-200">
-                  {co.name}
-                </h3>
-                <p className="text-stone-500 text-[13px] leading-[1.75] mb-5">
-                  {co.description}
-                </p>
-
-                {/* Impact pills */}
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#E8E4DD]">
-                  {co.impacts.map((imp, j) => (
-                    <span
-                      key={j}
-                      className="font-mono-dm text-[9px] tracking-[0.06em] uppercase px-2.5 py-1.5 bg-white border border-[#E8E4DD] text-stone-500 rounded"
-                    >
-                      {imp}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    FULL PORTFOLIO GRID — filterable
@@ -687,6 +585,8 @@ function PortfolioGrid() {
 
     return matchFund && matchSearch
   })
+
+
 
   return (
     <section className="bg-white py-20 md:py-28 border-b border-[#E8E4DD]">
@@ -744,7 +644,7 @@ function PortfolioGrid() {
             {filtered.map((co, i) => (
               <div
                 key={co.id}
-                className={`sr  co-card d${Math.min(i + 1, 6)} bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden cursor-pointer`}
+                className={`sr on co-card d${Math.min(i + 1, 6)} bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden cursor-pointer`}
                 onClick={() => setExpanded(expanded === co.id ? null : co.id)}
               >
                 {/* Image */}
@@ -761,19 +661,10 @@ function PortfolioGrid() {
                     <span className="font-mono-dm text-[9px] tracking-widest uppercase px-2 py-1 bg-[#B71E52] text-white rounded">
                       {co.fund}
                     </span>
-                    <span
-                      className={`font-mono-dm text-[9px] tracking-widest uppercase px-2 py-1 rounded ${co.statusCls}`}
-                    >
-                      {co.status}
-                    </span>
+                    
                   </div>
 
-                  {/* Arrow */}
-                  <div className="absolute top-3 right-3 co-arrow">
-                    <div className="w-7 h-7 rounded-full bg-white/90 flex items-center justify-center">
-                      <ArrowUpRight size={12} className="text-[#1C1C2E]" />
-                    </div>
-                  </div>
+
                 </div>
 
                 {/* Card body */}
