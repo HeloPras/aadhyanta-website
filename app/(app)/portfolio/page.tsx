@@ -171,7 +171,7 @@ const companies: Company[] = [
       "Nationwide cement distribution and infrastructure support",
     ],
     image:
-      "https://www.riddhisiddhicements.com/wp-content/uploads/2019/03/transpaarent_53-min_1.jpg",
+      "/aadhyanta/Portfolio/riddhisiddhi.jpg",
     featured: true,
     logoPlaceholder: "RS",
   },
@@ -194,7 +194,7 @@ const companies: Company[] = [
       "Expanded digital entertainment access",
       "Strengthened digital infrastructure in Nepal",
     ],
-    image: "https://dishhome.com.np/images/banner/banner-home.jpg",
+    image: "/aadhyanta/Portfolio/dishhome.webp",
     featured: true,
     logoPlaceholder: "DH",
   },
@@ -217,7 +217,7 @@ const companies: Company[] = [
       "Created high-value hospitality employment",
       "Expanded international hotel investment in Nepal",
     ],
-    image: "https://www.hilton.com/im/en/KTMNXHI/23630526/ktmnxhi-exterior.jpg",
+    image: "/aadhyanta/Portfolio/hilton.jpg",
     featured: true,
     logoPlaceholder: "HK",
   },
@@ -239,7 +239,7 @@ const companies: Company[] = [
       "Grid-connected hydropower development in eastern Nepal",
       "Promotion of sustainable water resource utilization",
     ],
-    image: "https://www.aaratipower.com/wp-content/uploads/2021/08/hero.jpg",
+    image: "/aadhyanta/Portfolio/aarati.jpg",
     featured: true,
     logoPlaceholder: "AP",
   },
@@ -261,7 +261,7 @@ const companies: Company[] = [
       "674.30 GWh annual electricity production",
       "50,000+ tons CO₂ emissions avoided annually",
     ],
-    image: "https://kbnr.com.np/wp-content/uploads/2025/06/hero_overlay_1.jpg",
+    image: "/aadhyanta/Portfolio/kbnr.jpg",
     featured: true,
     logoPlaceholder: "KB",
   },
@@ -285,7 +285,7 @@ const companies: Company[] = [
       "Support for rural electrification and local infrastructure development",
     ],
     image:
-      "https://madamekholahydropower.com.np/wp-content/uploads/2022/04/hero.jpg",
+      "/aadhyanta/Portfolio/Madame.jpeg",
     featured: true,
     logoPlaceholder: "MK",
   },
@@ -307,7 +307,7 @@ const companies: Company[] = [
       "Contribution to Nepal’s national grid",
       "Support for rural electrification and energy security",
     ],
-    image: "https://siddhihydropower.com.np/wp-content/uploads/2023/hero.jpg",
+    image: "/aadhyanta/Portfolio/siddhi.jpg",
     featured: true,
     logoPlaceholder: "SH",
   },
@@ -330,7 +330,7 @@ const companies: Company[] = [
       "Advanced automated poultry farming systems",
       "Supports national food supply and agro-industrial growth",
     ],
-    image: "https://www.daunneagro.com/wp-content/uploads/2023/06/hero.jpg",
+    image: "/aadhyanta/Portfolio/daunne.jfif",
     featured: true,
     logoPlaceholder: "DA",
   },
@@ -352,7 +352,7 @@ const companies: Company[] = [
       "Contribution to national grid expansion",
       "Local employment and infrastructure development in Chepe corridor",
     ],
-    image: "https://doodhpokharichepe.com.np/",
+    image: "/aadhyanta/Portfolio/doodhpokhari.png",
     featured: true,
     logoPlaceholder: "DC",
   },
@@ -374,7 +374,7 @@ const companies: Company[] = [
       "Support for Nepal’s renewable energy expansion",
       "Contribution to rural electrification and energy security",
     ],
-    image: "https://shikharpower.com.np/wp-content/uploads/2024/hero.jpg",
+    image: "/aadhyanta/Portfolio/shikhar.JPG",
     featured: true,
     logoPlaceholder: "SP",
   },
@@ -397,7 +397,7 @@ const companies: Company[] = [
       "Web and software solutions for public and private sectors",
       "Support for digital infrastructure and online services",
     ],
-    image: "https://radiantnepal.com/images/banner.jpg",
+    image: "/aadhyanta/Portfolio/radiant infotech.jpg",
     featured: true,
     logoPlaceholder: "RN",
   },
@@ -421,7 +421,7 @@ const companies: Company[] = [
       "Promotes sustainable agro-tourism and rural livelihoods",
     ],
     image:
-      "https://niblequitypartners.com/wp-content/uploads/fikkal-tea-coffee.jpg",
+      "/aadhyanta/Portfolio/Fikkal.jpg",
     featured: true,
     logoPlaceholder: "FTC",
   },
@@ -444,7 +444,7 @@ const companies: Company[] = [
       "Onboarding of hundreds of farmers and agri-vendors in Nepal",
       "Support for rural digitization and agri-fintech innovation",
     ],
-    image: "https://dvexcellus.com.np/wp-content/uploads/2024/hero.jpg",
+    image: "",
     featured: true,
     logoPlaceholder: "DV",
   },
@@ -467,7 +467,7 @@ const companies: Company[] = [
       "Introduction of advanced feed and extrusion technology in Nepal",
       "Strengthening of contract farming and rural agribusiness systems",
     ],
-    image: "https://www.safnepal.com/wp-content/uploads/2024/hero.jpg",
+    image: "/aadhyanta/Portfolio/shreenagar.jpg",
     featured: true,
     logoPlaceholder: "SAF",
   },
@@ -684,6 +684,7 @@ function PortfolioGrid() {
       c.name.toLowerCase().includes(q) ||
       c.sector.toLowerCase().includes(q) ||
       c.province.toLowerCase().includes(q)
+
     return matchFund && matchSearch
   })
 
@@ -743,7 +744,7 @@ function PortfolioGrid() {
             {filtered.map((co, i) => (
               <div
                 key={co.id}
-                className={`sr co-card d${Math.min(i + 1, 6)} bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden cursor-pointer`}
+                className={`sr  co-card d${Math.min(i + 1, 6)} bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden cursor-pointer`}
                 onClick={() => setExpanded(expanded === co.id ? null : co.id)}
               >
                 {/* Image */}
