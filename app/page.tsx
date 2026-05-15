@@ -769,7 +769,7 @@ export default function LandingPage() {
       <Features />
       <Testimonial />
       <CTA />
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

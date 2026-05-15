@@ -22,30 +22,6 @@ interface NavItem {
   dropdown?: DropdownItem[]
 }
 
-// const Navbar = () => {
-//   const [isOpen, setIsOpen] = useState(false)
-//   const [openDropdown, setOpenDropdown] = useState<number | null>(null)
-
-//   // 🔥 scroll logic
-//   const [showNavbar, setShowNavbar] = useState(true)
-//   const [lastScrollY, setLastScrollY] = useState(0)
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       const currentScrollY = window.scrollY
-
-//       if (currentScrollY > lastScrollY && currentScrollY > 80) {
-//         setShowNavbar(false) // scrolling down
-//       } else {
-//         setShowNavbar(true) // scrolling up
-//       }
-
-//       setLastScrollY(currentScrollY)
-//     }
-
-//     window.addEventListener("scroll", handleScroll)
-//     return () => window.removeEventListener("scroll", handleScroll)
-//   }, [lastScrollY])
 
 const navItems: NavItem[] = [
   { name: "Portfolio", href: "/portfolio" },
@@ -63,7 +39,7 @@ const navItems: NavItem[] = [
   // { name: "Career", href: "/career" },
   { name: "Team", href: "/team" },
   { name: "Insights", href: "/insights" },
-  { name: "Tools", href: "/tools" },
+  // { name: "Tools", href: "/tools" },
 ]
 
 //   return (
@@ -208,8 +184,7 @@ export function Navbar({variant = "transparent"}:NavbarProp) {
         {/* Logo */}
         <div className="flex items-center gap-3">
           {/* <div className="w-9 h-9 rounded-md bg-[#B71E52] flex items-center justify-center shrink-0">
-            <span className="font-display font-bold text-white text-lg leading-none">A</span>
-          </div>
+            <span className="font-display font-bold text-white text-lg leading-none">A</span> </div>
           <div>
             <div className={`font-display font-bold text-base leading-tight transition-colors duration-300
               ${scrolled ? 'text-[#1C1C2E]' : 'text-white'}`}>Aadhyanta</div>

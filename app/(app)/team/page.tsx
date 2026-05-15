@@ -1,6 +1,13 @@
 "use client"
 
-import { ChevronRight, ArrowRight, Users, Award, Globe, TrendingUp } from "lucide-react"
+import {
+  ChevronRight,
+  ArrowRight,
+  Users,
+  Award,
+  Globe,
+  TrendingUp,
+} from "lucide-react"
 import { Navbar } from "@/components/Layout/Navbar"
 import { useEffect } from "react"
 import Member from "@/components/Pages/Teams/member"
@@ -18,7 +25,7 @@ function useReveal() {
             io.unobserve(e.target)
           }
         }),
-      { threshold: 0.08 }
+      { threshold: 0.08 },
     )
     els.forEach((el) => io.observe(el))
     return () => io.disconnect()
@@ -89,7 +96,9 @@ function DepartmentSection({
             {title}
           </h2>
         </div>
-        <p className="text-stone-500 text-[15px] leading-[1.8] max-w-xl mt-3">{description}</p>
+        <p className="text-stone-500 text-[15px] leading-[1.8] max-w-xl mt-3">
+          {description}
+        </p>
       </div>
 
       {/* Divider */}
@@ -365,11 +374,10 @@ const TeamPage: React.FC = () => {
         </section>
 
         {/* ── JOIN US CTA ───────────────────────────────────────────────────── */}
-        <section className="bg-[#1C1C2E] py-20 md:py-28">
+        {/* <section className="bg-[#1C1C2E] py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="sr-s grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left */}
-              <div>
+            <div className="sr-s grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"> */}
+        {/* <div>
                 <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
                   Careers
                 </span>
@@ -381,10 +389,9 @@ const TeamPage: React.FC = () => {
                   commitment to excellence and client success. Explore career
                   opportunities at Aadhyanta Fund.
                 </p>
-              </div>
+              </div> */}
 
-              {/* Right */}
-              <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
+        {/* <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
                 <a
                   href="#positions"
                   className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/30"
@@ -400,7 +407,7 @@ const TeamPage: React.FC = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   )
