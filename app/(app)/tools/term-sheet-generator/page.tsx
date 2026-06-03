@@ -1,5 +1,6 @@
 import React from "react"
 import TermSheetGeneratorForm from "@/components/Pages/Tools/Term-Sheet-Generator-Form"
+import TestForm from "@/components/Pages/Tools/TestForm"
 
 const page = () => {
   return (

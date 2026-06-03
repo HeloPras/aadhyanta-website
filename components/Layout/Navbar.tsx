@@ -39,6 +39,8 @@ const navItems: NavItem[] = [
   // { name: "Career", href: "/career" },
   { name: "Team", href: "/team" },
   { name: "Insights", href: "/insights" },
+  { name: "Tools", href: "/tools" },
+  { name: "Contact", href: "/contact-us" },
   // { name: "Tools", href: "/tools" },
 ]
 

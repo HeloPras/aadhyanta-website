@@ -12,11 +12,6 @@ import { podcasts } from '@/data/podcasts'
 
 /* ─── Global CSS ─────────────────────────────────────────────────────────── */
 const GLOBAL_CSS = `
-  // @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
-
-  // body { font-family: 'Outfit', sans-serif; }
-  // .font-display  { font-family: 'Cormorant Garamond', serif; }
-  // .font-mono-dm  { font-family: 'DM Mono', monospace; }
 
   @keyframes fadeUp    { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
   @keyframes fadeLeft  { from { opacity:0; transform:translateX(-28px); } to { opacity:1; transform:translateX(0); } }
@@ -26,9 +21,10 @@ const GLOBAL_CSS = `
   @keyframes pulse     { 0%,100%{opacity:1} 50%{opacity:0.35} }
   @keyframes barPulse  { 0%,100%{transform:scaleY(0.4)} 50%{transform:scaleY(1)} }
   @keyframes spin      { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+  @keyframes showup {from {opacity:0} to {opacity:1}}
 
   /* Scroll-reveal */
-  .sr,.sr-l,.sr-r,.sr-s { opacity:0; }
+  // .sr,.sr-l,.sr-r,.sr-s { animation:showup 0.9s}
   .sr.on   { animation: fadeUp    0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
   .sr-l.on { animation: fadeLeft  0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
   .sr-r.on { animation: fadeRight 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
