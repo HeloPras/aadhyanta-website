@@ -209,16 +209,22 @@ function ContactMain() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
     const errs = validate()
-    if (Object.keys(errs).length) { setErrors(errs); return }
-    // setLoading(true)
+    if (Object.keys(errs).length) {
+      setErrors(errs)
+      return
+    }
+    setLoading(true)
     // setTimeout(() => { setLoading(false); setSubmitted(true) }, 1200)
     try {
-
-       const response = await fetch("/api/contact", { method: "POST", body: JSON.stringify(form) })
-
-      console.log(response)
-    } catch (error) {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(form),
+      })
       
+      console.log(response)
+      setLoading(false)
+    } catch (error) {
+      setLoading(false)
     }
   }
 

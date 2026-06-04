@@ -157,14 +157,14 @@ const StartupIncomeStatementCalculator = () => {
           {/* ── Page Header ── */}
           <div className="mb-12">
             <div className="inline-flex items-center gap-2.5 mb-6 px-4 py-2 bg-white border border-[#E8E4DD] rounded-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] shrink-0" />
               <span className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.12em] uppercase">
                 Investment Tools
               </span>
             </div>
 
             <h1
-              className="font-display font-bold text-[#1C1C2E] leading-[1.0] mb-5
+              className="font-display font-bold text-[#1C1C2E] leading-none mb-5
               text-[clamp(40px,5.5vw,68px)]"
             >
               Income Statement
@@ -193,7 +193,7 @@ const StartupIncomeStatementCalculator = () => {
                     <div className="font-semibold text-[14px] text-[#1C1C2E]">
                       Business Inputs
                     </div>
-                    <div className="font-mono-dm text-[9px] text-stone-400 tracking-[0.1em] uppercase">
+                    <div className="font-mono-dm text-[9px] text-stone-400 tracking-widest uppercase">
                       Annual figures in NPR
                     </div>
                   </div>
@@ -206,7 +206,7 @@ const StartupIncomeStatementCalculator = () => {
                       {i === 1 && (
                         <div className="flex items-center gap-3 mb-6 -mt-2">
                           <div className="h-px flex-1 bg-[#E8E4DD]" />
-                          <span className="font-mono-dm text-[9px] text-stone-400 tracking-[0.1em] uppercase">
+                          <span className="font-mono-dm text-[9px] text-stone-400 tracking-widest uppercase">
                             Costs &amp; Expenses
                           </span>
                           <div className="h-px flex-1 bg-[#E8E4DD]" />
@@ -215,7 +215,7 @@ const StartupIncomeStatementCalculator = () => {
                       {i === 2 && (
                         <div className="flex items-center gap-3 mb-6 -mt-2">
                           <div className="h-px flex-1 bg-[#E8E4DD]" />
-                          <span className="font-mono-dm text-[9px] text-stone-400 tracking-[0.1em] uppercase">
+                          <span className="font-mono-dm text-[9px] text-stone-400 tracking-widest uppercase">
                             Operating Expenses
                           </span>
                           <div className="h-px flex-1 bg-[#E8E4DD]" />
@@ -223,7 +223,7 @@ const StartupIncomeStatementCalculator = () => {
                       )}
 
                       <div className="flex items-start justify-between mb-2">
-                        <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase leading-tight">
+                        <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase leading-tight">
                           {inp.label}
                         </label>
                         {inp.val > 0 && (
@@ -270,12 +270,12 @@ const StartupIncomeStatementCalculator = () => {
                 </div>
 
                 <div className="px-7 py-5">
-                  <div className="font-mono-dm text-[9px] text-stone-400 tracking-[0.1em] uppercase mb-1">
+                  <div className="font-mono-dm text-[9px] text-stone-400 tracking-widest uppercase mb-1">
                     Revenue
                   </div>
                   <StatRow label="Total Revenue" value={revenue || null} />
 
-                  <div className="font-mono-dm text-[9px] text-stone-400 tracking-[0.1em] uppercase mt-4 mb-1">
+                  <div className="font-mono-dm text-[9px] text-stone-400 tracking-widest uppercase mt-4 mb-1">
                     Cost of Sales
                   </div>
                   <StatRow
@@ -292,7 +292,7 @@ const StartupIncomeStatementCalculator = () => {
                     negative={false}
                   />
 
-                  <div className="font-mono-dm text-[9px] text-stone-400 tracking-[0.1em] uppercase mt-4 mb-1">
+                  <div className="font-mono-dm text-[9px] text-stone-400 tracking-widest uppercase mt-4 mb-1">
                     Operating Expenses
                   </div>
                   <StatRow
@@ -373,7 +373,7 @@ const StartupIncomeStatementCalculator = () => {
                 <div className="bg-white rounded-2xl border border-[#E8E4DD] px-7 py-6">
                   <div className="flex items-center gap-2 mb-5">
                     <PieChart size={14} className="text-[#B71E52]" />
-                    <span className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase">
+                    <span className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase">
                       Margin Analysis
                     </span>
                   </div>
@@ -416,7 +416,7 @@ const StartupIncomeStatementCalculator = () => {
                   style={{ color: st.color }}
                 >
                   {st.icon}
-                  <span className="font-mono-dm text-[10px] tracking-[0.1em] uppercase opacity-75">
+                  <span className="font-mono-dm text-[10px] tracking-widest uppercase opacity-75">
                     Business Performance
                   </span>
                 </div>
@@ -441,7 +441,7 @@ const StartupIncomeStatementCalculator = () => {
               <div className="flex items-start gap-3 px-5 py-4 bg-white border border-[#E8E4DD] rounded-xl">
                 <Info
                   size={13}
-                  className="text-stone-400 flex-shrink-0 mt-0.5"
+                  className="text-stone-400 shrink-0 mt-0.5"
                 />
                 <p className="font-mono-dm text-[10px] text-stone-400 leading-[1.75] tracking-[0.02em]">
                   This calculator provides a simplified P&amp;L view. It

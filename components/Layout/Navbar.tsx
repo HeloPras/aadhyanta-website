@@ -231,12 +231,12 @@ export function Navbar({variant = "transparent"}:NavbarProp) {
           {menuOpen ? (
             <X
               size={22}
-              className={scrolled ? "text-[#1C1C2E]" : "text-white"}
+              className={scrolled||variant=='nontransparent' ? "text-[#1C1C2E]" : "text-white"}
             />
           ) : (
             <Menu
               size={22}
-              className={scrolled ? "text-[#1C1C2E]" : "text-white"}
+              className={scrolled||variant=='nontransparent' ? "text-[#1C1C2E]" : "text-white"}
             />
           )}
         </button>
@@ -245,13 +245,13 @@ export function Navbar({variant = "transparent"}:NavbarProp) {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-white border-t border-stone-100 px-4 py-4 flex flex-col gap-3">
-          {["About", "Funds", "Impact", "Insights"].map((l) => (
+          {navItems.map((l) => (
             <a
-              key={l}
-              href="#"
+              key={l.name}
+              href={l.href}
               className="text-stone-600 font-medium text-sm py-2 border-b border-stone-100"
             >
-              {l}
+              {l.name}
             </a>
           ))}
           <a

@@ -158,14 +158,14 @@ const BalanceSheetCalculator = () => {
           {/* ── Page Header ── */}
           <div className="mb-12">
             <div className="inline-flex items-center gap-2.5 mb-6 px-4 py-2 bg-white border border-[#E8E4DD] rounded-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] shrink-0" />
               <span className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.12em] uppercase">
                 Investment Tools
               </span>
             </div>
 
             <h1
-              className="font-display font-bold text-[#1C1C2E] leading-[1.0] mb-5
+              className="font-display font-bold text-[#1C1C2E] leading-none mb-5
               text-[clamp(40px,5.5vw,68px)]"
             >
               Balance Sheet
@@ -194,7 +194,7 @@ const BalanceSheetCalculator = () => {
                     <div className="font-semibold text-[14px] text-[#1C1C2E]">
                       Financial Inputs
                     </div>
-                    <div className="font-mono-dm text-[9px] text-stone-400 tracking-[0.1em] uppercase">
+                    <div className="font-mono-dm text-[9px] text-stone-400 tracking-widest uppercase">
                       Current figures in NPR
                     </div>
                   </div>
@@ -213,7 +213,7 @@ const BalanceSheetCalculator = () => {
                   {assetInputs.map((inp, i) => (
                     <div key={i}>
                       <div className="flex items-start justify-between mb-1.5">
-                        <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase leading-tight">
+                        <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase leading-tight">
                           {inp.label}
                         </label>
                         {inp.val > 0 && (
@@ -247,7 +247,7 @@ const BalanceSheetCalculator = () => {
                   {liabInputs.map((inp, i) => (
                     <div key={i}>
                       <div className="flex items-start justify-between mb-1.5">
-                        <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase leading-tight">
+                        <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase leading-tight">
                           {inp.label}
                         </label>
                         {inp.val > 0 && (
@@ -295,7 +295,7 @@ const BalanceSheetCalculator = () => {
 
                 <div className="px-7 py-5">
                   {/* Assets */}
-                  <div className="font-mono-dm text-[9px] text-[#15803D] tracking-[0.1em] uppercase mb-1">
+                  <div className="font-mono-dm text-[9px] text-[#15803D] tracking-widest uppercase mb-1">
                     Assets
                   </div>
                   <BSRow label="Cash in Bank" value={cash || null} indent />
@@ -318,7 +318,7 @@ const BalanceSheetCalculator = () => {
                   />
 
                   {/* Liabilities */}
-                  <div className="font-mono-dm text-[9px] text-[#B91C1C] tracking-[0.1em] uppercase mt-5 mb-1">
+                  <div className="font-mono-dm text-[9px] text-[#B91C1C] tracking-widest uppercase mt-5 mb-1">
                     Liabilities
                   </div>
                   <BSRow label="Loans & Debt" value={debt || null} indent />
@@ -332,7 +332,7 @@ const BalanceSheetCalculator = () => {
                   />
 
                   {/* Equity */}
-                  <div className="font-mono-dm text-[9px] text-[#1D4ED8] tracking-[0.1em] uppercase mt-5 mb-1">
+                  <div className="font-mono-dm text-[9px] text-[#1D4ED8] tracking-widest uppercase mt-5 mb-1">
                     Equity
                   </div>
                   <BSRow
@@ -405,7 +405,7 @@ const BalanceSheetCalculator = () => {
               {/* Composition bars */}
               {hasResult && (
                 <div className="bg-white rounded-2xl border border-[#E8E4DD] px-7 py-6">
-                  <div className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-5">
+                  <div className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-5">
                     Asset Composition
                   </div>
                   <div className="flex flex-col gap-4">
@@ -449,7 +449,7 @@ const BalanceSheetCalculator = () => {
                   style={{ color: st.color }}
                 >
                   {st.icon}
-                  <span className="font-mono-dm text-[10px] tracking-[0.1em] uppercase opacity-75">
+                  <span className="font-mono-dm text-[10px] tracking-widest uppercase opacity-75">
                     Financial Health
                   </span>
                 </div>
@@ -472,7 +472,7 @@ const BalanceSheetCalculator = () => {
               <div className="flex items-start gap-3 px-5 py-4 bg-white border border-[#E8E4DD] rounded-xl">
                 <Info
                   size={13}
-                  className="text-stone-400 flex-shrink-0 mt-0.5"
+                  className="text-stone-400 shrink-0 mt-0.5"
                 />
                 <p className="font-mono-dm text-[10px] text-stone-400 leading-[1.75] tracking-[0.02em]">
                   This calculator provides a simplified balance sheet view. It

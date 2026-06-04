@@ -161,14 +161,14 @@ const RevenueValuationCalculator = () => {
           {/* ── Page Header ── */}
           <div className="mb-12">
             <div className="inline-flex items-center gap-2.5 mb-6 px-4 py-2 bg-white border border-[#E8E4DD] rounded-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] shrink-0" />
               <span className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.12em] uppercase">
                 Investment Tools
               </span>
             </div>
 
             <h1
-              className="font-display font-bold text-[#1C1C2E] leading-[1.0] mb-5
+              className="font-display font-bold text-[#1C1C2E] leading-none mb-5
               text-[clamp(40px,5.5vw,68px)]"
             >
               Revenue Multiple
@@ -197,7 +197,7 @@ const RevenueValuationCalculator = () => {
                     <div className="font-semibold text-[14px] text-[#1C1C2E]">
                       Business Inputs
                     </div>
-                    <div className="font-mono-dm text-[9px] text-stone-400 tracking-[0.1em] uppercase">
+                    <div className="font-mono-dm text-[9px] text-stone-400 tracking-widest uppercase">
                       Enter your metrics below
                     </div>
                   </div>
@@ -206,7 +206,7 @@ const RevenueValuationCalculator = () => {
                 <div className="px-8 py-8 flex flex-col gap-7">
                   {/* Annual Revenue */}
                   <div>
-                    <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
+                    <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-2 block">
                       Annual Revenue (NPR)
                     </label>
                     <input
@@ -226,7 +226,7 @@ const RevenueValuationCalculator = () => {
                   {/* Growth Rate — slider */}
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase">
+                      <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase">
                         Annual Revenue Growth Rate
                       </label>
                       <span className="font-mono-dm text-[13px] font-medium text-[#B71E52]">
@@ -269,7 +269,7 @@ const RevenueValuationCalculator = () => {
 
                   {/* Industry Type */}
                   <div>
-                    <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
+                    <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-2 block">
                       Industry / Business Type
                     </label>
 
@@ -299,7 +299,7 @@ const RevenueValuationCalculator = () => {
                             </div>
                           </div>
                           <span
-                            className={`font-mono-dm text-[13px] font-medium ml-4 flex-shrink-0
+                            className={`font-mono-dm text-[13px] font-medium ml-4 shrink-0
                           ${industryIdx === i ? "text-[#e8839f]" : "text-[#B71E52]"}`}
                           >
                             {ind.multiple}x
@@ -393,7 +393,7 @@ const RevenueValuationCalculator = () => {
               {/* Multiple bar visual */}
               {hasResult && (
                 <div className="bg-white rounded-2xl border border-[#E8E4DD] px-7 py-6">
-                  <div className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-4">
+                  <div className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-4">
                     Multiple vs. Industry Range
                   </div>
                   <div className="flex flex-col gap-3">
@@ -445,7 +445,7 @@ const RevenueValuationCalculator = () => {
                         : "text-stone-400"
                     }
                   />
-                  <span className="font-mono-dm text-[10px] tracking-[0.1em] uppercase opacity-70">
+                  <span className="font-mono-dm text-[10px] tracking-widest uppercase opacity-70">
                     Investor Perspective
                   </span>
                 </div>
@@ -472,7 +472,7 @@ const RevenueValuationCalculator = () => {
               <div className="flex items-start gap-3 px-5 py-4 bg-white border border-[#E8E4DD] rounded-xl">
                 <Info
                   size={13}
-                  className="text-stone-400 flex-shrink-0 mt-0.5"
+                  className="text-stone-400 shrink-0 mt-0.5"
                 />
                 <p className="font-mono-dm text-[10px] text-stone-400 leading-[1.75] tracking-[0.02em]">
                   This calculator provides indicative estimates only. Actual

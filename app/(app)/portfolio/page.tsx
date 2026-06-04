@@ -642,109 +642,108 @@ function PortfolioGrid() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((co, i) => (
-              <div
-                key={co.id}
-                className={`sr on co-card d${Math.min(i + 1, 6)} bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden cursor-pointer`}
-                onClick={() => setExpanded(expanded === co.id ? null : co.id)}
-              >
-                {/* Image */}
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={co.image}
-                    alt={co.name}
-                    className="co-img w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/50 via-transparent to-transparent" />
+              <div>
+                <div
+                  key={co.id}
+                  className={`sr on co-card d${Math.min(i + 1, 6)} bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden cursor-pointer`}
+                  onClick={() => setExpanded(expanded === co.id ? null : co.id)}
+                >
+                  {/* Image */}
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={co.image}
+                      alt={co.name}
+                      className="co-img w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/50 via-transparent to-transparent" />
 
-                  {/* Badges */}
-                  <div className="absolute top-3 left-3 flex items-center gap-1.5">
-                    <span className="font-mono-dm text-[9px] tracking-widest uppercase px-2 py-1 bg-[#B71E52] text-white rounded">
-                      {co.fund}
-                    </span>
-                    
-                  </div>
-
-
-                </div>
-
-                {/* Card body */}
-                <div className="p-5 sm:p-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-5 h-5 rounded bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] flex-shrink-0">
-                      {co.sectorIcon}
-                    </div>
-                    <span className="font-mono-dm text-[10px] text-stone-400 tracking-[0.08em] uppercase truncate">
-                      {co.sector}
-                    </span>
-                  </div>
-
-                  <h3 className="font-display font-bold text-[19px] text-[#1C1C2E] leading-tight mb-2">
-                    {co.name}
-                  </h3>
-
-                  <p className="text-stone-500 text-[13px] leading-[1.75] mb-4 line-clamp-2">
-                    {co.description}
-                  </p>
-
-                  {/* Meta row */}
-                  <div className="flex items-center gap-4 text-stone-400 mb-4">
-                    <div className="flex items-center gap-1.5">
-                      <MapPin size={11} />
-                      <span className="font-mono-dm text-[10px]">
-                        {co.province}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Calendar size={11} />
-                      <span className="font-mono-dm text-[10px]">
-                        Since {co.year}
+                    {/* Badges */}
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5">
+                      <span className="font-mono-dm text-[9px] tracking-widest uppercase px-2 py-1 bg-[#B71E52] text-white rounded">
+                        {co.fund}
                       </span>
                     </div>
                   </div>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#E8E4DD]">
-                    {co.tags.map((t, j) => (
-                      <span
-                        key={j}
-                        className="font-mono-dm text-[9px] tracking-[0.06em] uppercase px-2 py-1 bg-white border border-[#E8E4DD] text-stone-500 rounded"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Expandable impact panel */}
-                {expanded === co.id && (
-                  <div
-                    className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-[#E8E4DD] bg-white"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <div className="pt-5">
-                      <div className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.12em] uppercase mb-3">
-                        Impact Highlights
+                  {/* Card body */}
+                  <div className="p-5 sm:p-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-5 h-5 rounded bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] flex-shrink-0">
+                        {co.sectorIcon}
                       </div>
-                      <ul className="flex flex-col gap-2.5">
-                        {co.impacts.map((imp, j) => (
-                          <li key={j} className="flex items-start gap-2.5">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0 mt-[6px]" />
-                            <span className="text-[13px] text-stone-600 leading-[1.65]">
-                              {imp}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                      <a
-                        href={`/portfolio/${co.id}`}
-                        className="mt-5 inline-flex items-center gap-1.5 text-[#B71E52] font-semibold text-[13px] hover:gap-3 transition-all duration-200"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        Full Profile <ArrowUpRight size={13} />
-                      </a>
+                      <span className="font-mono-dm text-[10px] text-stone-400 tracking-[0.08em] uppercase truncate">
+                        {co.sector}
+                      </span>
+                    </div>
+
+                    <h3 className="font-display font-bold text-[19px] text-[#1C1C2E] leading-tight mb-2">
+                      {co.name}
+                    </h3>
+
+                    <p className="text-stone-500 text-[13px] leading-[1.75] mb-4 line-clamp-2">
+                      {co.description}
+                    </p>
+
+                    {/* Meta row */}
+                    <div className="flex items-center gap-4 text-stone-400 mb-4">
+                      <div className="flex items-center gap-1.5">
+                        <MapPin size={11} />
+                        <span className="font-mono-dm text-[10px]">
+                          {co.province}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <Calendar size={11} />
+                        <span className="font-mono-dm text-[10px]">
+                          Since {co.year}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#E8E4DD]">
+                      {co.tags.map((t, j) => (
+                        <span
+                          key={j}
+                          className="font-mono-dm text-[9px] tracking-[0.06em] uppercase px-2 py-1 bg-white border border-[#E8E4DD] text-stone-500 rounded"
+                        >
+                          {t}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                )}
+
+                  {/* Expandable impact panel */}
+                  {expanded === co.id && (
+                    <div
+                      className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-[#E8E4DD] bg-white"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div className="pt-5">
+                        <div className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.12em] uppercase mb-3">
+                          Impact Highlights
+                        </div>
+                        <ul className="flex flex-col gap-2.5">
+                          {co.impacts.map((imp, j) => (
+                            <li key={j} className="flex items-start gap-2.5">
+                              <div className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0 mt-[6px]" />
+                              <span className="text-[13px] text-stone-600 leading-[1.65]">
+                                {imp}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                        <a
+                          href={`/portfolio/${co.id}`}
+                          className="mt-5 inline-flex items-center gap-1.5 text-[#B71E52] font-semibold text-[13px] hover:gap-3 transition-all duration-200"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Full Profile <ArrowUpRight size={13} />
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>

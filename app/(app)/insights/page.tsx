@@ -21,10 +21,10 @@ const GLOBAL_CSS = `
   @keyframes pulse     { 0%,100%{opacity:1} 50%{opacity:0.35} }
   @keyframes barPulse  { 0%,100%{transform:scaleY(0.4)} 50%{transform:scaleY(1)} }
   @keyframes spin      { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-  @keyframes showup {from {opacity:0} to {opacity:1}}
+  // @keyframes showup {from {opacity:0} to {opacity:1}}
 
   /* Scroll-reveal */
-  // .sr,.sr-l,.sr-r,.sr-s { animation:showup 0.9s}
+  // .sr,.sr-l,.sr-r,.sr-s { opacity: 0}
   .sr.on   { animation: fadeUp    0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
   .sr-l.on { animation: fadeLeft  0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
   .sr-r.on { animation: fadeRight 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
@@ -277,11 +277,13 @@ function Articles() {
   const [filter, setFilter] = useState('All')
   const [search, setSearch] = useState('')
 
+
   const filtered = articles.filter(a => {
     const matchType = filter === 'All' || a.type === filter
     const matchSearch = a.title.toLowerCase().includes(search.toLowerCase()) ||
       a.excerpt.toLowerCase().includes(search.toLowerCase())
     return matchType && matchSearch
+
   })
 
   return (
@@ -292,7 +294,9 @@ function Articles() {
         {/* Header row */}
         <div className="sr flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
           <div>
-            <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Reading</span>
+            <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
+              Reading
+            </span>
             <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E]">
               Articles &amp; <em className="italic text-[#B71E52]">Blogs</em>
             </h2>
@@ -300,12 +304,17 @@ function Articles() {
 
           {/* Search */}
           <div className="relative self-start sm:self-auto">
-            <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400" />
+            <Search
+              size={14}
+              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400"
+            />
             <input
               type="text"
               placeholder="Search articles…"
               value={search}
-              onChange={e => setSearch(e.target.value)}
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
               className="search-input pl-9 pr-4 py-2.5 text-[13px] border border-[#E8E4DD] rounded-lg bg-[#F5F2ED] text-[#1C1C2E] placeholder:text-stone-400 w-52 transition-all duration-200"
             />
           </div>
@@ -313,57 +322,80 @@ function Articles() {
 
         {/* Filter pills */}
         <div className="sr flex gap-2 flex-wrap mb-10">
-          {FILTERS.map(f => (
-            <button key={f} onClick={() => setFilter(f)}
+          {FILTERS.map((f) => (
+            <button
+              key={f}
+              onClick={() => setFilter(f)}
               className={`filter-pill px-4 py-2 rounded-full border text-[13px] font-medium cursor-pointer transition-all duration-200
-                ${filter === f ? 'active' : 'border-[#E8E4DD] text-stone-500 bg-white'}`}>
+                ${filter === f ? "active" : "border-[#E8E4DD] text-stone-500 bg-white"}`}
+            >
               {f}
             </button>
           ))}
         </div>
 
         {/* Grid */}
-        {filtered.length === 0
-          ? <div className="text-center py-20 text-stone-400 font-display italic text-[22px]">No articles found.</div>
-          : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {filtered.map((a, i) => (
-                <a key={i} href={`/articles/${a.id}`} className={`sr lift d${Math.min(i + 1, 5)} card-img-wrap group bg-white border border-[#E8E4DD] rounded-xl overflow-hidden block`}>
-                  {/* Image */}
-                  <div className="relative h-44 overflow-hidden">
-                    <img src={a.image} alt={a.title} className="card-img w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/30 to-transparent" />
-                    <span className={`absolute top-3 left-3 px-2.5 py-1 rounded font-mono-dm text-[9px] tracking-widest uppercase ${a.typeCls}`}>
-                      {a.type}
-                    </span>
-                    <span className="absolute top-3 right-3 px-2.5 py-1 rounded bg-white/90 font-mono-dm text-[9px] text-stone-500 tracking-wide uppercase">
-                      {a.tag}
-                    </span>
-                  </div>
+        {filtered.length === 0 ? (
+          <div className="text-center py-20 text-stone-400 font-display italic text-[22px]">
+            No articles found.
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {filtered.map((a, i) => (
+              <a
+                key={i}
+                href={`/articles/${a.id}`}
+                className={`sr lift d${Math.min(i + 1, 5)} card-img-wrap group bg-white border border-[#E8E4DD] rounded-xl overflow-hidden block`}
+              >
+                {/* Image */}
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={a.image}
+                    alt={a.title}
+                    className="card-img w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/30 to-transparent" />
+                  <span
+                    className={`absolute top-3 left-3 px-2.5 py-1 rounded font-mono-dm text-[9px] tracking-widest uppercase ${a.typeCls}`}
+                  >
+                    {a.type}
+                  </span>
+                  <span className="absolute top-3 right-3 px-2.5 py-1 rounded bg-white/90 font-mono-dm text-[9px] text-stone-500 tracking-wide uppercase">
+                    {a.tag}
+                  </span>
+                </div>
 
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="font-display font-bold text-[18px] sm:text-[20px] text-[#1C1C2E] leading-tight mb-3 group-hover:text-[#B71E52] transition-colors duration-200">
-                      {a.title}
-                    </h3>
-                    <p className="text-stone-500 text-[13px] leading-[1.75] mb-5 line-clamp-3">{a.excerpt}</p>
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="font-display font-bold text-[18px] sm:text-[20px] text-[#1C1C2E] leading-tight mb-3 group-hover:text-[#B71E52] transition-colors duration-200">
+                    {a.title}
+                  </h3>
+                  <p className="text-stone-500 text-[13px] leading-[1.75] mb-5 line-clamp-3">
+                    {a.excerpt}
+                  </p>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-[#E8E4DD]">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[12px] font-medium text-stone-500">{a.author}</span>
-                        <span className="w-1 h-1 rounded-full bg-stone-300 inline-block" />
-                        <span className="font-mono-dm text-[10px] text-stone-400">{a.date}</span>
-                      </div>
-                      <div className="flex items-center gap-1 text-stone-400">
-                        <Clock size={11} />
-                        <span className="font-mono-dm text-[10px]">{a.readTime}</span>
-                      </div>
+                  <div className="flex items-center justify-between pt-4 border-t border-[#E8E4DD]">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[12px] font-medium text-stone-500">
+                        {a.author}
+                      </span>
+                      <span className="w-1 h-1 rounded-full bg-stone-300 inline-block" />
+                      <span className="font-mono-dm text-[10px] text-stone-400">
+                        {a.date}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1 text-stone-400">
+                      <Clock size={11} />
+                      <span className="font-mono-dm text-[10px]">
+                        {a.readTime}
+                      </span>
                     </div>
                   </div>
-                </a>
-              ))}
-            </div>
-          )}
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
 
         {/* Load more */}
         <div className="sr text-center mt-12">

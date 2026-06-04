@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 
 import React from "react"
 import Link from "next/link"
@@ -7,68 +7,62 @@ import {
   ArrowUpRight, BarChart3, FileText, Scale,
   TrendingUp, ArrowRight
 } from "lucide-react"
+import { motion } from "motion/react"
 
 /* ─── Global CSS — same token system ────────────────────────────────────── */
-const GLOBAL_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+// const global_css = `
+//   @import url('https://fonts.googleapis.com/css2?family=cormorant+garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=outfit:wght@300;400;500;600&family=dm+mono:wght@400;500&display=swap');
 
-  .font-display { font-family: 'Cormorant Garamond', serif; }
-  .font-mono-dm { font-family: 'DM Mono', monospace; }
+//   .font-display { font-family: 'cormorant garamond', serif; }
+//   .font-mono-dm { font-family: 'dm mono', monospace; }
 
-  @keyframes fadeUp   { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
-  @keyframes fadeLeft { from { opacity:0; transform:translateX(-24px);} to { opacity:1; transform:translateX(0); } }
+//   @keyframes fadeup   { from { opacity:0; transform:translatey(24px); } to { opacity:1; transform:translatey(0); } }
+//   @keyframes fadeleft { from { opacity:0; transform:translatex(-24px);} to { opacity:1; transform:translatex(0); } }
 
-  .sr { opacity:0; }
-  .sr.on { animation: fadeUp 0.75s cubic-bezier(0.16,1,0.3,1) forwards; }
-  .sr-l { opacity:0; }
-  .sr-l.on { animation: fadeLeft 0.75s cubic-bezier(0.16,1,0.3,1) forwards; }
 
-  .d1{animation-delay:.05s!important} .d2{animation-delay:.12s!important}
-  .d3{animation-delay:.19s!important} .d4{animation-delay:.26s!important}
+//   /* tool card */
+//   .tool-card {
+//     transition: transform 0.35s cubic-bezier(0.16,1,0.3,1),
+//                 box-shadow 0.35s,
+//                 border-color 0.2s;
+//   }
+//   .tool-card:hover {
+//     transform: translatey(-6px);
+//     box-shadow: 0 24px 56px rgba(0,0,0,0.1);
+//     border-color: #b71e52 !important;
+//   }
+//   .tool-card:hover .tool-img  { transform: scale(1.05); }
+//   .tool-card:hover .tool-arrow { opacity:1; transform:translate(0,0); }
+//   .tool-img   { transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+//   .tool-arrow {
+//     opacity:0; transform:translate(-4px,4px);
+//     transition: opacity 0.2s, transform 0.2s;
+//   }
 
-  /* Tool card */
-  .tool-card {
-    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1),
-                box-shadow 0.35s,
-                border-color 0.2s;
-  }
-  .tool-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 56px rgba(0,0,0,0.1);
-    border-color: #B71E52 !important;
-  }
-  .tool-card:hover .tool-img  { transform: scale(1.05); }
-  .tool-card:hover .tool-arrow { opacity:1; transform:translate(0,0); }
-  .tool-img   { transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
-  .tool-arrow {
-    opacity:0; transform:translate(-4px,4px);
-    transition: opacity 0.2s, transform 0.2s;
-  }
-
-  /* Hero subtle dot grid */
-  .dot-grid {
-    background-image: radial-gradient(#D6D0C7 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-`
+//   /* hero subtle dot grid */
+//   .dot-grid {
+//     background-image: radial-gradient(#d6d0c7 1px, transparent 1px);
+//     background-size: 24px 24px;
+//   }
+// `
 
 /* ─── Reveal hook (client-side only via useEffect) ───────────────────────── */
 // Inline script so we don't need 'use client' — runs after hydration
-const REVEAL_SCRIPT = `
-  (function() {
-    function init() {
-      var els = document.querySelectorAll('.sr,.sr-l');
-      var io = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
-        });
-      }, { threshold: 0.08 });
-      els.forEach(function(el) { io.observe(el); });
-    }
-    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); }
-    else { init(); }
-  })();
-`
+// const REVEAL_SCRIPT = `
+//   (function() {
+//     function init() {
+//       var els = document.querySelectorAll('.sr,.sr-l');
+//       var io = new IntersectionObserver(function(entries) {
+//         entries.forEach(function(e) {
+//           if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+//         });
+//       }, { threshold: 0.08 });
+//       els.forEach(function(el) { io.observe(el); });
+//     }
+//     if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); }
+//     else { init(); }
+//   })();
+// `
 
 /* ─── Data ───────────────────────────────────────────────────────────────── */
 const tools = [
@@ -120,58 +114,98 @@ const tools = [
 const ToolsPage = () => {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
-      <script dangerouslySetInnerHTML={{ __html: REVEAL_SCRIPT }} />
+      {/* <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} /> */}
+      {/* <script dangerouslySetInnerHTML={{ __html: REVEAL_SCRIPT }} /> */}
 
-      <div className="min-h-screen bg-white" style={{ fontFamily: "'Outfit', sans-serif" }}>
+      <div
+        className="min-h-screen bg-white"
+        style={{ fontFamily: "'Outfit', sans-serif" }}
+      >
         <Navbar variant="nontransparent" />
 
         {/* ── HERO ──────────────────────────────────────────────────────── */}
         <section className="relative bg-[#F5F2ED] border-b border-[#E8E4DD] overflow-hidden dot-grid">
-
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-
               {/* Left */}
-              <div>
+              <motion.div
+                // initial = {{opacity:0, x:-10}}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                // whileInView={{opacity:1,  x:0}}
+              >
                 <div className="sr inline-flex items-center gap-2.5 mb-7 px-4 py-2 bg-white border border-[#E8E4DD] rounded-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0" />
-                  <span className="font-mono-dm" style={{ fontSize: 10, color: '#B71E52', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] shrink-0" />
+                  <span
+                    className="font-mono-dm"
+                    style={{
+                      fontSize: 10,
+                      color: "#B71E52",
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                    }}
+                  >
                     Investment Tools
                   </span>
                 </div>
 
-                <h1 className="sr d1 font-display font-bold text-[#1C1C2E] leading-[1.0] mb-6"
-                  style={{ fontSize: 'clamp(48px, 6.5vw, 80px)' }}>
-                  Powerful<br />
-                  <em style={{ fontStyle: 'italic', color: '#B71E52' }}>Business Tools</em>
+                <h1
+                  className="sr d1 font-display font-bold text-[#1C1C2E] leading-none mb-6"
+                  style={{ fontSize: "clamp(48px, 6.5vw, 80px)" }}
+                >
+                  Powerful
+                  <br />
+                  <em style={{ fontStyle: "italic", color: "#B71E52" }}>
+                    Business Tools
+                  </em>
                 </h1>
 
-                <p className="sr d2 leading-[1.85] max-w-md"
-                  style={{ fontSize: 16, color: '#6B7280' }}>
-                  A suite of carefully crafted tools designed to simplify complex financial decisions, improve accuracy, and accelerate your path to institutional investment readiness.
+                <p
+                  className="sr d2 leading-[1.85] max-w-md"
+                  style={{ fontSize: 16, color: "#6B7280" }}
+                >
+                  A suite of carefully crafted tools designed to simplify
+                  complex financial decisions, improve accuracy, and accelerate
+                  your path to institutional investment readiness.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Right — stat chips */}
-              <div className="sr d3 grid grid-cols-2 gap-3">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="grid grid-cols-2 gap-3"
+              >
                 {[
-                  { val: '4', label: 'Free Tools' },
-                  { val: '3', label: 'Financial Calculators' },
-                  { val: '1', label: 'Deal Generator' },
-                  { val: '0', label: 'Sign-up Required' },
+                  { val: "4", label: "Free Tools" },
+                  { val: "3", label: "Financial Calculators" },
+                  { val: "1", label: "Deal Generator" },
+                  { val: "0", label: "Sign-up Required" },
                 ].map((s, i) => (
-                  <div key={i} className="bg-white border border-[#E8E4DD] rounded-xl p-5">
-                    <div className="font-display font-bold text-[#1C1C2E] leading-none mb-1.5"
-                      style={{ fontSize: 'clamp(28px, 3vw, 38px)' }}>
+                  <div
+                    key={i}
+                    className="bg-white border border-[#E8E4DD] rounded-xl p-5"
+                  >
+                    <div
+                      className="font-display font-bold text-[#1C1C2E] leading-none mb-1.5"
+                      style={{ fontSize: "clamp(28px, 3vw, 38px)" }}
+                    >
                       {s.val}
                     </div>
-                    <div className="font-mono-dm" style={{ fontSize: 10, color: '#9CA3AF', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                    <div
+                      className="font-mono-dm"
+                      style={{
+                        fontSize: 10,
+                        color: "#9CA3AF",
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                      }}
+                    >
                       {s.label}
                     </div>
                   </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -179,97 +213,207 @@ const ToolsPage = () => {
         {/* ── TOOLS GRID ────────────────────────────────────────────────── */}
         <section className="bg-white py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
             {/* Section label */}
             <div className="sr flex items-end justify-between mb-12 flex-wrap gap-4">
               <div>
-                <span className="font-mono-dm block mb-3"
-                  style={{ fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#B71E52' }}>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="font-mono-dm block mb-3"
+                  style={{
+                    fontSize: 11,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "#B71E52",
+                  }}
+                >
                   All Tools
-                </span>
-                <h2 className="font-display font-bold text-[#1C1C2E] leading-[1.08]"
-                  style={{ fontSize: 'clamp(32px, 4vw, 48px)' }}>
-                  Start with what you <em style={{ fontStyle: 'italic', color: '#B71E52' }}>need</em>
-                </h2>
+                </motion.span>
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="font-display font-bold text-[#1C1C2E] leading-[1.08]"
+                  style={{ fontSize: "clamp(32px, 4vw, 48px)" }}
+                >
+                  Start with what you{" "}
+                  <em style={{ fontStyle: "italic", color: "#B71E52" }}>
+                    need
+                  </em>
+                </motion.h2>
               </div>
-              <span className="font-mono-dm" style={{ fontSize: 11, color: '#9CA3AF', letterSpacing: '0.08em' }}>
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="font-mono-dm"
+                style={{
+                  fontSize: 11,
+                  color: "#9CA3AF",
+                  letterSpacing: "0.08em",
+                }}
+              >
                 {tools.length} tools available
-              </span>
+              </motion.span>
             </div>
 
             {/* Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5">
               {tools.map((tool, i) => (
-                <Link
-                  key={i}
-                  href={tool.link}
-                  className={`sr tool-card d${i + 1} group block bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden`}
-                  style={{ textDecoration: 'none' }}
+                <motion.div
+                initial= {{opacity:0,y:20}}
+                whileInView={{opacity:1,y:0}}
+                transition={{delay:i*0.09}}
+
                 >
-                  {/* Image */}
-                  <div className="relative overflow-hidden" style={{ height: 180 }}>
-                    <img
-                      src={tool.image}
-                      alt={tool.name}
-                      className="tool-img w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0"
-                      style={{ background: 'linear-gradient(to top, rgba(28,28,46,0.55) 0%, transparent 60%)' }} />
+                  <Link
+                    key={i}
+                    href={tool.link}
+                    className={`group block bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden hover:translate-y-[-2px] transition-all duration-100`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    {/* Image */}
+                    <div
+                      className="relative overflow-hidden"
+                      style={{ height: 180 }}
+                    >
+                      <img
+                        src={tool.image}
+                        alt={tool.name}
+                        className="tool-img w-full h-full object-cover"
+                      />
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          background:
+                            "linear-gradient(to top, rgba(28,28,46,0.55) 0%, transparent 60%)",
+                        }}
+                      />
 
-                    {/* Badges */}
-                    <div className="absolute top-3 left-3 flex items-center gap-1.5">
-                      <span className="font-mono-dm"
-                        style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '4px 10px', background: '#B71E52', color: '#fff', borderRadius: 3 }}>
-                        {tool.tag}
-                      </span>
-                      {tool.badge && (
-                        <span className="font-mono-dm"
-                          style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '4px 10px', background: '#1C1C2E', color: '#fff', borderRadius: 3 }}>
-                          {tool.badge}
+                      {/* Badges */}
+                      <div className="absolute top-3 left-3 flex items-center gap-1.5">
+                        <span
+                          className="font-mono-dm"
+                          style={{
+                            fontSize: 9,
+                            letterSpacing: "0.1em",
+                            textTransform: "uppercase",
+                            padding: "4px 10px",
+                            background: "#B71E52",
+                            color: "#fff",
+                            borderRadius: 3,
+                          }}
+                        >
+                          {tool.tag}
                         </span>
-                      )}
-                    </div>
+                        {tool.badge && (
+                          <span
+                            className="font-mono-dm"
+                            style={{
+                              fontSize: 9,
+                              letterSpacing: "0.1em",
+                              textTransform: "uppercase",
+                              padding: "4px 10px",
+                              background: "#1C1C2E",
+                              color: "#fff",
+                              borderRadius: 3,
+                            }}
+                          >
+                            {tool.badge}
+                          </span>
+                        )}
+                      </div>
 
-                    {/* Arrow — appears on hover */}
-                    <div className="tool-arrow absolute top-3 right-3">
-                      <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'rgba(255,255,255,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <ArrowUpRight size={13} style={{ color: '#1C1C2E' }} />
+                      {/* Arrow — appears on hover */}
+                      <div className="tool-arrow absolute top-3 right-3">
+                        <div
+                          style={{
+                            width: 28,
+                            height: 28,
+                            borderRadius: "50%",
+                            background: "rgba(255,255,255,0.9)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <ArrowUpRight
+                            size={13}
+                            style={{ color: "#1C1C2E" }}
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Card body */}
-                  <div style={{ padding: '20px 22px 24px' }}>
-                    {/* Icon + Title */}
-                    <div className="flex items-start gap-3 mb-3">
-                      <div style={{ width: 36, height: 36, borderRadius: 8, background: '#f5e8ed', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#B71E52', flexShrink: 0 }}>
-                        {tool.icon}
+                    {/* Card body */}
+                    <div style={{ padding: "20px 22px 24px" }}>
+                      {/* Icon + Title */}
+                      <div className="flex items-start gap-3 mb-3">
+                        <div
+                          style={{
+                            width: 36,
+                            height: 36,
+                            borderRadius: 8,
+                            background: "#f5e8ed",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "#B71E52",
+                            flexShrink: 0,
+                          }}
+                        >
+                          {tool.icon}
+                        </div>
+                        <h3
+                          className="font-display font-bold text-[#1C1C2E] leading-tight mt-1"
+                          style={{ fontSize: 18 }}
+                        >
+                          {tool.name}
+                        </h3>
                       </div>
-                      <h3 className="font-display font-bold text-[#1C1C2E] leading-tight mt-1"
-                        style={{ fontSize: 18 }}>
-                        {tool.name}
-                      </h3>
-                    </div>
 
-                    <p style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.75, marginBottom: 16 }}>
-                      {tool.description}
-                    </p>
+                      <p
+                        style={{
+                          fontSize: 13,
+                          color: "#6B7280",
+                          lineHeight: 1.75,
+                          marginBottom: 16,
+                        }}
+                      >
+                        {tool.description}
+                      </p>
 
-                    <div className="flex items-center gap-1.5" style={{ color: '#B71E52' }}>
-                      <span className="font-mono-dm" style={{ fontSize: 11, letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600 }}>
-                        Open Tool
-                      </span>
-                      <ArrowRight size={13} />
+                      <div className="relative inline-block">
+                        <div
+                          className="flex items-center   gap-1.5 group-hover:gap-2 transition-all duration-300  "
+                          style={{ color: "#B71E52" }}
+                        >
+                          <span
+                            className="font-mono-dm "
+                            style={{
+                              fontSize: 11,
+                              letterSpacing: "0.08em",
+                              textTransform: "uppercase",
+                              fontWeight: 600,
+                            }}
+                          >
+                            Open Tool
+                          </span>
+                          <ArrowRight size={13} />
+                        </div>
+                        <div className=" relative w-0 left-0 bottom-0 h-px group-hover:bg-[#B71E52] group-hover:w-full transition-all duration-300"></div>
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
         {/* ── BOTTOM CTA STRIP ──────────────────────────────────────────── */}
-        <section className="bg-[#F5F2ED] border-t border-[#E8E4DD] py-14">
+        {/* <section className="bg-[#F5F2ED] border-t border-[#E8E4DD] py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
               <div className="font-mono-dm mb-2" style={{ fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#B71E52' }}>
@@ -290,8 +434,7 @@ const ToolsPage = () => {
               Suggest a Tool <ArrowRight size={15} />
             </Link>
           </div>
-        </section>
-
+        </section> */}
       </div>
     </>
   )

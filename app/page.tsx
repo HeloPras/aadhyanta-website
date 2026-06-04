@@ -176,19 +176,27 @@ function Stats() {
     { end: 7, suffix: '', prefix: '', label: 'Provinces Covered', icon: <Globe size={16} /> },
   ]
   return (
-    <section className="  bg-[#F5F2ED] border-b border-[#E8E4DD]">
-      <div className=" max-w-1250 mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-[#E8E4DD]">
-        {stats.map((s, i) => (
-          <div key={i} className={`sr p-8 lg:p-10 `} style={{ animationDelay: `${i * 0.08}s` }}>
-            <div className="flex items-center gap-2 mb-3 text-[#B71E52]">
-              {s.icon}
-              <span className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase">{s.label}</span>
+    <section className="  bg-[#F5F2ED] border-b border-[#E8E4DD] ">
+      <div className="max-w-4/5 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="   grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-[#E8E4DD]">
+          {stats.map((s, i) => (
+            <div
+              key={i}
+              className={`sr p-8 lg:p-10 text-center`}
+              style={{ animationDelay: `${i * 0.08}s` }}
+            >
+              <div className="flex items-center gap-2 mb-3 text-[#B71E52]">
+                {s.icon}
+                <span className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase">
+                  {s.label}
+                </span>
+              </div>
+              <div className="font-display font-bold text-[42px] sm:text-[48px] text-[#1C1C2E] leading-none ">
+                <Counter end={s.end} suffix={s.suffix} prefix={s.prefix} />
+              </div>
             </div>
-            <div className="font-display font-bold text-[42px] sm:text-[48px] text-[#1C1C2E] leading-none ">
-              <Counter end={s.end} suffix={s.suffix} prefix={s.prefix} />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )
