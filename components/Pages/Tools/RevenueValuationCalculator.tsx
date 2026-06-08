@@ -6,9 +6,6 @@ import { TrendingUp, BarChart3, Zap, ArrowRight, Info } from 'lucide-react'
 /* ─── Global CSS — same token system ────────────────────────────────────── */
 const GLOBAL_CSS = `
 
-  .font-display { font-family: 'Cormorant Garamond', serif; }
-  .font-mono-dm { font-family: 'DM Mono', monospace; }
-  .font-sans-dm { font-family: 'Outfit', sans-serif; }
 
   /* Inputs */
   .vc-input {
@@ -98,7 +95,7 @@ const industries = [
   },
   {
     label: "High-Growth Agri-Tech",
-    multiple: 12,
+    multiple:  6,
     hint: "Digital agri solutions, food tech",
   },
   {
