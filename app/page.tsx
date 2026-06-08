@@ -7,6 +7,7 @@ import {
   ArrowUpRight, Globe, Award, Layers, MapPin, Phone, Mail, Menu, X
 } from 'lucide-react'
 import { Navbar } from '@/components/Layout/Navbar'
+import TextFlipper from '@/components/Pages/Landing/TextFlipper'
 
 
 /* ─── Minimal global CSS — only what Tailwind can't do ───────────────────── */
@@ -152,7 +153,7 @@ function Hero() {
         {/* CTAs */}
         <div className="sr d3 flex flex-col sm:flex-row gap-3">
           <a href="#" className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#B71E52]/30">
-            For Enterprises <ArrowRight size={16} />
+           <TextFlipper className='bg-transparent text-white font-semibold text-[15px]'>For&nbsp;Enterprises</TextFlipper> <ArrowRight size={16} />
           </a>
           <button className="flex items-center justify-center gap-2 text-white font-medium text-[15px] px-8 py-4 rounded border border-white/30 hover:bg-white/10 transition-all duration-200">
             For Investors
@@ -267,10 +268,12 @@ function About() {
           </div>
 
           <a
-            href="#"
+            href="/about"
             className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25"
           >
-            Our Story <ArrowUpRight size={14} />
+          <TextFlipper className='bg-transparent text-white font-semibold text-sm '>Our&nbsp;Story 
+          </TextFlipper>
+             <ArrowUpRight size={14} />
           </a>
         </div>
 
@@ -457,7 +460,7 @@ function Funds() {
               ))}
             </div>
             <a href={f.href} className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
-              Learn More <ArrowRight size={14} />
+              <TextFlipper>Learn&nbsp;More</TextFlipper> <ArrowRight size={14} />
             </a>
           </div>
         </div>
@@ -597,8 +600,8 @@ function CTA() {
             Join the growing community of investors who trust us with their financial future. Schedule a consultation with our expert advisors today.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="#" className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-7 py-3.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
-              Schedule Consultation <ArrowRight size={16} />
+            <a href="/contact-us" className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-7 py-3.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
+             <TextFlipper>Schedule&nbsp;Consultation</TextFlipper> <ArrowRight size={16} />
             </a>
             <a href="#" className="flex items-center justify-center gap-2 border border-[#1C1C2E] text-[#1C1C2E] hover:bg-[#1C1C2E] hover:text-white font-medium text-[15px] px-7 py-3.5 rounded transition-all duration-200">
               Download Deck

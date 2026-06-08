@@ -22,6 +22,7 @@ const GLOBAL_CSS = `
     appearance: none;
     -webkit-appearance: none;
   }
+
   .vc-input::placeholder { color: #9CA3AF; }
   .vc-input:focus {
     border-color: #B71E52;
