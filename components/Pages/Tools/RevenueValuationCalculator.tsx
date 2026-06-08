@@ -85,7 +85,7 @@ const industries = [
   },
   {
     label: "E-Commerce Brand",
-    multiple: 4,
+    multiple: 3,
     hint: "D2C, marketplace, retail tech",
   },
   {
@@ -115,7 +115,7 @@ const industries = [
   },
   {
     label: "Healthcare / HealthTech",
-    multiple: 5,
+    multiple: 4,
     hint: "Telemedicine, health data platforms, AI diagnostics, digital clinics",
   },
 ]
