@@ -3,68 +3,13 @@
 import React from "react"
 import Link from "next/link"
 import { Navbar } from "@/components/Layout/Navbar"
+import {sfl,container, sfd} from '@/util/animation/framer-helper'
 import {
   ArrowUpRight, BarChart3, FileText, Scale,
   TrendingUp, ArrowRight
 } from "lucide-react"
 import { motion } from "motion/react"
 
-/* ─── Global CSS — same token system ────────────────────────────────────── */
-// const global_css = `
-//   @import url('https://fonts.googleapis.com/css2?family=cormorant+garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=outfit:wght@300;400;500;600&family=dm+mono:wght@400;500&display=swap');
-
-//   .font-display { font-family: 'cormorant garamond', serif; }
-//   .font-mono-dm { font-family: 'dm mono', monospace; }
-
-//   @keyframes fadeup   { from { opacity:0; transform:translatey(24px); } to { opacity:1; transform:translatey(0); } }
-//   @keyframes fadeleft { from { opacity:0; transform:translatex(-24px);} to { opacity:1; transform:translatex(0); } }
-
-
-//   /* tool card */
-//   .tool-card {
-//     transition: transform 0.35s cubic-bezier(0.16,1,0.3,1),
-//                 box-shadow 0.35s,
-//                 border-color 0.2s;
-//   }
-//   .tool-card:hover {
-//     transform: translatey(-6px);
-//     box-shadow: 0 24px 56px rgba(0,0,0,0.1);
-//     border-color: #b71e52 !important;
-//   }
-//   .tool-card:hover .tool-img  { transform: scale(1.05); }
-//   .tool-card:hover .tool-arrow { opacity:1; transform:translate(0,0); }
-//   .tool-img   { transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
-//   .tool-arrow {
-//     opacity:0; transform:translate(-4px,4px);
-//     transition: opacity 0.2s, transform 0.2s;
-//   }
-
-//   /* hero subtle dot grid */
-//   .dot-grid {
-//     background-image: radial-gradient(#d6d0c7 1px, transparent 1px);
-//     background-size: 24px 24px;
-//   }
-// `
-
-/* ─── Reveal hook (client-side only via useEffect) ───────────────────────── */
-// Inline script so we don't need 'use client' — runs after hydration
-// const REVEAL_SCRIPT = `
-//   (function() {
-//     function init() {
-//       var els = document.querySelectorAll('.sr,.sr-l');
-//       var io = new IntersectionObserver(function(entries) {
-//         entries.forEach(function(e) {
-//           if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
-//         });
-//       }, { threshold: 0.08 });
-//       els.forEach(function(el) { io.observe(el); });
-//     }
-//     if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); }
-//     else { init(); }
-//   })();
-// `
-
-/* ─── Data ───────────────────────────────────────────────────────────────── */
 const tools = [
   {
     name: "Term Sheet Generator",
@@ -129,12 +74,14 @@ const ToolsPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
               {/* Left */}
               <motion.div
-                // initial = {{opacity:0, x:-10}}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                // whileInView={{opacity:1,  x:0}}
+              variants={container}
+              initial = 'hidden'
+              animate = 'visible'
               >
-                <div className="sr inline-flex items-center gap-2.5 mb-7 px-4 py-2 bg-white border border-[#E8E4DD] rounded-sm">
+                <motion.div
+                variants={sfl}
+
+                 className="sr inline-flex items-center gap-2.5 mb-7 px-4 py-2 bg-white border border-[#E8E4DD] rounded-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] shrink-0" />
                   <span
                     className="font-mono-dm"
@@ -147,9 +94,10 @@ const ToolsPage = () => {
                   >
                     Investment Tools
                   </span>
-                </div>
+                </motion.div>
 
-                <h1
+                <motion.h1
+                variants={sfl}
                   className="sr d1 font-display font-bold text-[#1C1C2E] leading-none mb-6"
                   style={{ fontSize: "clamp(48px, 6.5vw, 80px)" }}
                 >
@@ -158,22 +106,24 @@ const ToolsPage = () => {
                   <em style={{ fontStyle: "italic", color: "#B71E52" }}>
                     Business Tools
                   </em>
-                </h1>
+                </motion.h1>
 
-                <p
+                <motion.p
+                variants={sfl}
                   className="sr d2 leading-[1.85] max-w-md"
                   style={{ fontSize: 16, color: "#6B7280" }}
                 >
                   A suite of carefully crafted tools designed to simplify
                   complex financial decisions, improve accuracy, and accelerate
                   your path to institutional investment readiness.
-                </p>
+                </motion.p>
               </motion.div>
 
               {/* Right — stat chips */}
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
+                variants={container}
+                initial = "hidden"
+                animate = "visible"
                 className="grid grid-cols-2 gap-3"
               >
                 {[
@@ -182,7 +132,8 @@ const ToolsPage = () => {
                   { val: "1", label: "Deal Generator" },
                   { val: "0", label: "Sign-up Required" },
                 ].map((s, i) => (
-                  <div
+                  <motion.div
+                  variants={sfd}
                     key={i}
                     className="bg-white border border-[#E8E4DD] rounded-xl p-5"
                   >
@@ -203,7 +154,7 @@ const ToolsPage = () => {
                     >
                       {s.label}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </motion.div>
             </div>
@@ -264,7 +215,7 @@ const ToolsPage = () => {
                 <motion.div
                 initial= {{opacity:0,y:20}}
                 whileInView={{opacity:1,y:0}}
-                transition={{delay:i*0.09}}
+                transition={{delay:i*0.09, duration:0.3}}
 
                 >
                   <Link

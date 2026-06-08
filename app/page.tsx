@@ -635,49 +635,6 @@ function CTA() {
 /* ═══════════════════════════════════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════════════════════════════════ */
-function Footer() {
-  return (
-    <footer className="bg-[#1C1C2E] pt-16 pb-8 border-t-[3px] border-[#B71E52]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-md bg-[#B71E52] flex items-center justify-center">
-                <span className="font-display font-bold text-white text-[13px]">A</span>
-              </div>
-              <span className="font-display font-bold text-white text-base">Aadhyanta Fund</span>
-            </div>
-            <p className="text-[13px] text-white/35 leading-[1.75] max-w-[220px]">
-              Nepal's first SEBON-licensed institutional fund manager, deploying growth capital across all seven provinces.
-            </p>
-          </div>
-
-          {/* Link columns */}
-          {[
-            { title: 'Funds', links: ['NOF I', 'NOF II', 'Simrik Fund', 'Overview'] },
-            { title: 'Company', links: ['About', 'Team', 'Impact', 'Careers'] },
-            { title: 'Resources', links: ['Insights', 'Reports', 'News', 'Contact'] },
-          ].map((col, i) => (
-            <div key={i}>
-              <div className="font-mono-dm text-[10px] text-white/30 tracking-[0.12em] uppercase mb-5">{col.title}</div>
-              <div className="flex flex-col gap-3">
-                {col.links.map(l => (
-                  <a key={l} href="#" className="text-[13px] text-white/40 hover:text-white transition-colors duration-200">{l}</a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="border-t border-white/[0.07] pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-          <span className="text-[12px] text-white/20">© 2025 Aadhyanta Fund Management. All rights reserved. SEBON Licensed.</span>
-          <span className="font-mono-dm text-[10px] text-white/15 tracking-widest uppercase">Kathmandu, Nepal</span>
-        </div>
-      </div>
-    </footer>
-  )
-}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    ROOT

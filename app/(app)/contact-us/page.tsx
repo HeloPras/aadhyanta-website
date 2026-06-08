@@ -189,7 +189,7 @@ function Hero() {
 ═══════════════════════════════════════════════════════════════════════════ */
 function ContactMain() {
   const [topic, setTopic] = useState('General Inquiry')
-  const [form, setForm] = useState({ name: 'Prasiddha', org: 'nothing', email: 'nothing@nothing.com', phone:'', message: 'nothing' })
+  const [form, setForm] = useState({ name: '', org: '', email: '', phone:'', message: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)

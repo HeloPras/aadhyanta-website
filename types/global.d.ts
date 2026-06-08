@@ -46,7 +46,7 @@ type Company = {
   sector: string
   sectorIcon: React.ReactNode
   fund: 'NOF I' | 'NOF II' | 'Simrik'
-  status: 'Active' | 'Advancing to Exit' | 'Follow-on'
+  // status: 'Active' | 'Advancing to Exit' | 'Follow-on'
   statusCls: string
   province: string
   year: string

@@ -1,7 +1,9 @@
 "use client"
 
+
 import { useEffect, useRef, useState } from "react"
 import { Navbar } from "@/components/Layout/Navbar"
+import {motion} from 'framer-motion'
 import {
   Code,
   Network,
@@ -15,6 +17,7 @@ import {
   MapPin,
   Calendar,
 } from "lucide-react"
+import { container, sfd } from "@/util/animation/framer-helper"
 
 /* ─── Global CSS — same token system ────────────────────────────────────── */
 const GLOBAL_CSS = `
@@ -133,22 +136,7 @@ function StatValue({ value }: { value: string }) {
 /* ═══════════════════════════════════════════════════════════════════════════
    DATA
 ═══════════════════════════════════════════════════════════════════════════ */
-type Company = {
-  id: string
-  name: string
-  sector: string
-  sectorIcon: React.ReactNode
-  fund: "NOF I" | "NOF II" | "Simrik"
-  statusCls: string
-  province: string
-  year: string
-  description: string
-  tags: string[]
-  impacts: string[]
-  image: string
-  featured?: boolean
-  logoPlaceholder: string
-}
+
 
 const companies: Company[] = [
   {
@@ -640,9 +628,17 @@ function PortfolioGrid() {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <motion.div
+          variants={container}
+          initial = 'hidden'
+          animate = 'visible'
+
+           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((co, i) => (
-              <div>
+              <motion.div
+              variants={sfd}
+              // whileInView={sfd}
+              >
                 <div
                   key={co.id}
                   className={`sr on co-card d${Math.min(i + 1, 6)} bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden cursor-pointer`}
@@ -744,9 +740,9 @@ function PortfolioGrid() {
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
 
         {/* Result count */}

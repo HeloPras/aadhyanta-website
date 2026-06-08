@@ -81,11 +81,46 @@ const fmt = (n: number) =>
   n === 0 ? '—' : 'NPR ' + n.toLocaleString('en-IN', { maximumFractionDigits: 0 })
 
 const industries = [
-  { label: 'Traditional Business',       multiple: 3,  hint: 'Stable SMEs, manufacturing, services' },
-  { label: 'E-Commerce Brand',           multiple: 5,  hint: 'D2C, marketplace, retail tech' },
-  { label: 'SaaS / Tech Platform',       multiple: 7,  hint: 'Recurring revenue software' },
-  { label: 'High-Growth Agri-Tech',      multiple: 9,  hint: 'Digital agri solutions, food tech' },
-  { label: 'High-Growth Fintech / AI',   multiple: 12, hint: 'DFS, embedded finance, AI platforms' },
+  {
+    label: "Traditional Business",
+    multiple: 2.5,
+    hint: "Stable SMEs, manufacturing, services",
+  },
+  {
+    label: "E-Commerce Brand",
+    multiple: 4,
+    hint: "D2C, marketplace, retail tech",
+  },
+  {
+    label: "SaaS / Tech Platform",
+    multiple: 5,
+    hint: "Recurring revenue software",
+  },
+  {
+    label: "High-Growth Agri-Tech",
+    multiple: 12,
+    hint: "Digital agri solutions, food tech",
+  },
+  {
+    label: "High-Growth Fintech / AI",
+    multiple: 8,
+    hint: "DFS, embedded finance, AI platforms",
+  },
+  {
+    label: "EdTech / Online Learning",
+    multiple: 4,
+    hint: "LMS, AI tutoring, creator economy, subscription platforms",
+  },
+  {
+    label: "Tourism / Hospitality Tech",
+    multiple: 2.5,
+    hint: "Booking platforms, travel SaaS, hotel management, experience marketplaces",
+  },
+  {
+    label: "Healthcare / HealthTech",
+    multiple: 5,
+    hint: "Telemedicine, health data platforms, AI diagnostics, digital clinics",
+  },
 ]
 
 type StatusKey = 'premium' | 'strong' | 'moderate' | 'idle'
