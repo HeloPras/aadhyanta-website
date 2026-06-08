@@ -100,7 +100,7 @@ const industries = [
   },
   {
     label: "High-Growth Fintech / AI",
-    multiple: 8,
+    multiple: 6,
     hint: "DFS, embedded finance, AI platforms",
   },
   {
