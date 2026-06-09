@@ -1,5 +1,5 @@
 'use client'
-import {delay, motion} from 'framer-motion'
+import {delay, easeInOut, motion} from 'framer-motion'
 
 const TextFlipper = ({children,className}:{children?:string,className?:string}) => {
   return (
@@ -7,6 +7,7 @@ const TextFlipper = ({children,className}:{children?:string,className?:string}) 
       initial="initial"
       whileHover="hovered"
       className={`relative whitespace-nowrap overflow-hidden ${className}`}
+      style = {{lineHeight:0.75}}
     >
       <div
       >
@@ -18,7 +19,7 @@ const TextFlipper = ({children,className}:{children?:string,className?:string}) 
                 initial: { y: 0 },
                 hovered: { y: "-150%" },
               }}
-              transition={{ delay: 0.03 * i }}
+              transition={{ease:easeInOut, delay: 0.015 * i }}
               key={i}
             >
               {l}
@@ -38,7 +39,7 @@ const TextFlipper = ({children,className}:{children?:string,className?:string}) 
                 initial: { y: "100%" },
                 hovered: { y: 0 },
               }}
-              transition={{ delay: 0.03 * i }}
+              transition={{ease:easeInOut, delay: 0.015 * i }}
               key={i}
             >
               {l}
