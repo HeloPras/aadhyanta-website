@@ -7,7 +7,7 @@ const TextFlipper = ({children,className}:{children?:string,className?:string}) 
       initial="initial"
       whileHover="hovered"
       className={`relative whitespace-nowrap overflow-hidden ${className}`}
-      style = {{lineHeight:0.75}}
+      style = {{lineHeight:0.85}}
     >
       <div
       >
