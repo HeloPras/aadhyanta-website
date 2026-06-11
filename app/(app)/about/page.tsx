@@ -516,56 +516,56 @@ function Team() {
 /* ═══════════════════════════════════════════════════════════════════════════
    GLOBAL PRESENCE
 ═══════════════════════════════════════════════════════════════════════════ */
-function GlobalPresence() {
-  return (
-    <section className="bg-[#F5F2ED] py-20 md:py-28 lg:py-32 border-b border-[#E8E4DD]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+// function GlobalPresence() {
+//   return (
+//     <section className="bg-[#F5F2ED] py-20 md:py-28 lg:py-32 border-b border-[#E8E4DD]">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        {/* Left */}
-        <div className="sr-l">
-          <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Global Presence</span>
-          <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-6">
-            Operating across continents, thinking <em className="italic text-[#B71E52]">globally</em>
-          </h2>
-          <p className="text-stone-500 text-[15px] leading-[1.85] mb-8">
-            With offices spanning South Asia, North America, Europe, and Asia-Pacific, we bring a truly global
-            perspective to investment management. Our international footprint enables us to identify opportunities
-            and manage risks across diverse markets and asset classes.
-          </p>
-          <a href="#contact" className="inline-flex items-center gap-1.5 text-[#B71E52] font-semibold text-[14px] hover:gap-3 transition-all duration-200">
-            Find an office near you <ChevronRight size={16} />
-          </a>
-        </div>
+//         {/* Left */}
+//         <div className="sr-l">
+//           <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Global Presence</span>
+//           <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-6">
+//             Operating across continents, thinking <em className="italic text-[#B71E52]">globally</em>
+//           </h2>
+//           <p className="text-stone-500 text-[15px] leading-[1.85] mb-8">
+//             With offices spanning South Asia, North America, Europe, and Asia-Pacific, we bring a truly global
+//             perspective to investment management. Our international footprint enables us to identify opportunities
+//             and manage risks across diverse markets and asset classes.
+//           </p>
+//           <a href="#contact" className="inline-flex items-center gap-1.5 text-[#B71E52] font-semibold text-[14px] hover:gap-3 transition-all duration-200">
+//             Find an office near you <ChevronRight size={16} />
+//           </a>
+//         </div>
 
-        {/* Right — office cards */}
-        <div className="sr-r">
-          <div className="bg-white rounded-xl border border-[#E8E4DD] overflow-hidden shadow-sm">
-            {offices.map((o, i) => (
-              <div key={i} className={`flex items-start gap-5 p-6 sm:p-7 transition-colors duration-200 hover:bg-[#F5F2ED]
-                ${i < offices.length - 1 ? 'border-b border-[#E8E4DD]' : ''}`}>
-                <div className="w-9 h-9 rounded-lg bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] flex-shrink-0 mt-0.5">
-                  <MapPin size={15} />
-                </div>
-                <div>
-                  <div className="font-display font-bold text-[18px] text-[#1C1C2E] leading-tight">{o.city}</div>
-                  <div className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.1em] uppercase mt-0.5 mb-1">{o.label}</div>
-                  <div className="text-[13px] text-stone-400">{o.detail}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+//         {/* Right — office cards */}
+//         <div className="sr-r">
+//           <div className="bg-white rounded-xl border border-[#E8E4DD] overflow-hidden shadow-sm">
+//             {offices.map((o, i) => (
+//               <div key={i} className={`flex items-start gap-5 p-6 sm:p-7 transition-colors duration-200 hover:bg-[#F5F2ED]
+//                 ${i < offices.length - 1 ? 'border-b border-[#E8E4DD]' : ''}`}>
+//                 <div className="w-9 h-9 rounded-lg bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] flex-shrink-0 mt-0.5">
+//                   <MapPin size={15} />
+//                 </div>
+//                 <div>
+//                   <div className="font-display font-bold text-[18px] text-[#1C1C2E] leading-tight">{o.city}</div>
+//                   <div className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.1em] uppercase mt-0.5 mb-1">{o.label}</div>
+//                   <div className="text-[13px] text-stone-400">{o.detail}</div>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    CTA
 ═══════════════════════════════════════════════════════════════════════════ */
 function CTA() {
   return (
-    <section className="bg-white py-20 md:py-28 border-t border-[#E8E4DD]">
+    <section className="bg-[#F5F2ED] py-20 md:py-28 border-t border-[#E8E4DD]">
       <div className="sr-s max-w-2xl mx-auto px-4 text-center">
         <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-4 block">Partner With Us</span>
         <h2 className="font-display font-bold text-[clamp(36px,4.5vw,56px)] leading-[1.06] text-[#1C1C2E] mb-5">
@@ -605,7 +605,7 @@ export default function AboutPage() {
         <Approach />
         <Programs />
         <Team />
-        <GlobalPresence />
+        {/* <GlobalPresence /> */}
         <CTA />
       </div>
     </>

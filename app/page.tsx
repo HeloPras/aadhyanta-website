@@ -1,14 +1,31 @@
-'use client'
+"use client"
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from "react"
 import {
-  TrendingUp, Shield, Users, BarChart3,
-  ArrowRight, CheckCircle, ChevronRight, Building2,
-  ArrowUpRight, Globe, Award, Layers, MapPin, Phone, Mail, Menu, X
-} from 'lucide-react'
-import { Navbar } from '@/components/Layout/Navbar'
-import TextFlipper from '@/components/Pages/Landing/TextFlipper'
-
+  TrendingUp,
+  Shield,
+  Users,
+  BarChart3,
+  ArrowRight,
+  CheckCircle,
+  ChevronRight,
+  Building2,
+  ArrowUpRight,
+  Globe,
+  Award,
+  Layers,
+  MapPin,
+  Phone,
+  Mail,
+  Menu,
+  X,
+} from "lucide-react"
+import { Navbar } from "@/components/Layout/Navbar"
+import TextFlipper from "@/components/Pages/Landing/TextFlipper"
+import { companies } from "@/data/company"
+import { easeIn, easeInOut, easeOut, motion } from "motion/react"
+import { container, sfd } from "@/util/animation/framer-helper"
+import { Company } from "@/types/global"
 
 /* ─── Minimal global CSS — only what Tailwind can't do ───────────────────── */
 const GLOBAL_CSS = `
@@ -59,19 +76,25 @@ const GLOBAL_CSS = `
   .stat-bar { animation: barGrow 1.4s cubic-bezier(0.16,1,0.3,1) 0.4s forwards; width:0; }
 
   /* Image zoom on card hover */
-  .card-img-wrap:hover .card-img { transform: scale(1.05); }
+  // .card-img-wrap:hover .card-img { transform: scale(1.05); }
   .card-img { transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
 `
 
 /* ─── Intersection-observer reveal ──────────────────────────────────────── */
 function useReveal() {
   useEffect(() => {
-    const els = document.querySelectorAll('.sr,.sr-l,.sr-r,.sr-s')
+    const els = document.querySelectorAll(".sr,.sr-l,.sr-r,.sr-s")
     const io = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target) } }),
-      { threshold: 0.1 }
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("on")
+            io.unobserve(e.target)
+          }
+        }),
+      { threshold: 0.1 },
     )
-    els.forEach(el => io.observe(el))
+    els.forEach((el) => io.observe(el))
     return () => io.disconnect()
   }, [])
 }
@@ -80,38 +103,195 @@ function useReveal() {
 function useScrollPct() {
   const [p, setP] = useState(0)
   useEffect(() => {
-    const fn = () => { const s = document.documentElement; setP((s.scrollTop / (s.scrollHeight - s.clientHeight)) * 100) }
-    window.addEventListener('scroll', fn, { passive: true })
-    return () => window.removeEventListener('scroll', fn)
+    const fn = () => {
+      const s = document.documentElement
+      setP((s.scrollTop / (s.scrollHeight - s.clientHeight)) * 100)
+    }
+    window.addEventListener("scroll", fn, { passive: true })
+    return () => window.removeEventListener("scroll", fn)
   }, [])
   return p
 }
 
 /* ─── Animated counter ───────────────────────────────────────────────────── */
-function Counter({ end=-1, suffix = '', prefix = '', duration = 1600 }) {
+function Counter({ end = -1, suffix = "", prefix = "", duration = 1600 }) {
   const [v, setV] = useState(0)
   const ref = useRef(null)
   const started = useRef(false)
   useEffect(() => {
-    const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting || started.current) return
-      started.current = true
-      const t0 = performance.now()
-      const tick = (now:number) => {
-        const t = Math.min((now - t0) / duration, 1)
-        setV(Math.round((1 - Math.pow(1 - t, 3)) * end * 10) / 10)
-        if (t < 1) requestAnimationFrame(tick)
-      }
-      requestAnimationFrame(tick)
-    }, { threshold: 0.3 })
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (!e.isIntersecting || started.current) return
+        started.current = true
+        const t0 = performance.now()
+        const tick = (now: number) => {
+          const t = Math.min((now - t0) / duration, 1)
+          setV(Math.round((1 - Math.pow(1 - t, 3)) * end * 10) / 10)
+          if (t < 1) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+      },
+      { threshold: 0.3 },
+    )
     if (ref.current) io.observe(ref.current)
     return () => io.disconnect()
   }, [end, duration])
-  return <span ref={ref}>{prefix}{v}{suffix}</span>
+  return (
+    <span ref={ref}>
+      {prefix}
+      {v}
+      {suffix}
+    </span>
+  )
 }
 
+function CompanyCard({
+  company,
+  tall = false,
+}: {
+  company: Company
+  tall?: boolean
+}) {
+  return (
+    <motion.div
+      // href={`/portfolio/${company.id}`}
+      variants={sfd}
+      className="group relative overflow-hidden rounded-2xl border border-[#E8E4DD] block"
+      style={{
+        height: tall ? "100%" : 300,
+        minHeight: tall ? 500 : 300,
+        textDecoration: "none",
+      }}
+    >
+      {/* Photo */}
+      <img
+        src={company.image}
+        alt={company.name}
+        className="card-img w-full h-full object-cover absolute inset-0"
+        style={{ transition: "transform 0.7s cubic-bezier(0.16,1,0.3,1)" }}
+      />
 
+      {/* Always-visible subtle scrim at bottom so text reads */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(28,28,46,0.75) 0%, rgba(28,28,46,0.15) 45%, transparent 70%)",
+        }}
+      />
 
+      {/* Hover — extra darkening */}
+      {/* <motion.div
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 1 }}
+        transition={{ duration: 0.3, ease: easeOut }}
+        className="absolute inset-0"
+        style={{ background: 'rgba(28,28,46,0.25)' }}
+      /> */}
+
+      {/* Top badges */}
+      <div className="absolute top-4 left-4 flex items-center gap-1.5 z-10">
+        <span
+          style={{
+            fontFamily: "'DM Mono', monospace",
+            fontSize: 9,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            padding: "4px 10px",
+            background: "#B71E52",
+            color: "#fff",
+            borderRadius: 3,
+          }}
+        >
+          {company.fund}
+        </span>
+        <span
+          style={{
+            fontFamily: "'DM Mono', monospace",
+            fontSize: 9,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            padding: "4px 10px",
+            background: "rgba(255,255,255,0.15)",
+            color: "#fff",
+            borderRadius: 3,
+            backdropFilter: "blur(8px)",
+          }}
+        >
+          {company.sector}
+        </span>
+      </div>
+
+      {/* Arrow — appears on hover */}
+      <motion.div
+        initial={{ opacity: 0, x: -4, y: 4 }}
+        whileHover={{ opacity: 1, x: 0, y: 0 }}
+        transition={{ duration: 0.2 }}
+        className="absolute top-4 right-4 z-10"
+      >
+        <div
+          style={{
+            width: 32,
+            height: 32,
+            borderRadius: "50%",
+            background: "rgba(255,255,255,0.9)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <ArrowUpRight size={14} style={{ color: "#1C1C2E" }} />
+        </div>
+      </motion.div>
+
+      {/* Bottom info — slides up slightly on hover */}
+      <motion.div
+        // initial={{ y: 8 }}
+        // whileHover={{ y: 0 }}
+        transition={{ duration: 0.35, ease: easeOut }}
+        className="absolute bottom-0 left-0 right-0 z-10 p-5"
+      >
+        <h3
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 700,
+            fontSize: tall ? 26 : 20,
+            color: "#fff",
+            lineHeight: 1.2,
+            marginBottom: 6,
+          }}
+        >
+          {company.name}
+        </h3>
+
+        <div className="flex items-center gap-3">
+          <div
+            className="flex items-center gap-1"
+            style={{ color: "rgba(255,255,255,0.55)" }}
+          >
+            <MapPin size={10} />
+            <span
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: 10,
+                letterSpacing: "0.06em",
+              }}
+            >
+              {company.province}
+            </span>
+          </div>
+          {/* Animated underline on hover */}
+          <motion.div
+            initial={{ width: 0 }}
+            whileHover={{ width: 24 }}
+            transition={{ duration: 0.3 }}
+            style={{ height: 1.5, background: "#B71E52", borderRadius: 1 }}
+          />
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
 
 function Hero() {
   return (
@@ -125,8 +305,14 @@ function Hero() {
       <div className="absolute inset-0 bg-linear-to-r from-[#1C1C2E]/90 via-[#1C1C2E]/60 to-[#1C1C2E]/25" />
       <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/70 via-transparent to-transparent" />
       {/* Subtle grid */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '72px 72px' }} />
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
+        }}
+      />
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-36 md:pt-44">
         {/* Badge */}
@@ -138,22 +324,33 @@ function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="sr d1 font-display font-bold text-white leading-none mb-7
-          text-[clamp(48px,8vw,92px)]">
+        <h1
+          className="sr d1 font-display font-bold text-white leading-none mb-7
+          text-[clamp(48px,8vw,92px)]"
+        >
           Transforming the <br />
-          <em className="italic text-white/45">Approach to Capital</em><br />
-           Mobilization
+          <em className="italic text-white/45">Approach to Capital</em>
+          <br />
+          Mobilization
         </h1>
 
         {/* Sub */}
         <p className="sr d2 text-white/60 text-base sm:text-lg leading-[1.8] max-w-md mb-10">
-          We deploy growth capital and build investment-ready ecosystems across Nepal, bridging the gap between ambitious enterprises and institutional investors.
+          We deploy growth capital and build investment-ready ecosystems across
+          Nepal, bridging the gap between ambitious enterprises and
+          institutional investors.
         </p>
 
         {/* CTAs */}
         <div className="sr d3 flex flex-col sm:flex-row gap-3">
-          <a href="#" className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#B71E52]/30">
-           <TextFlipper className='bg-transparent text-white font-semibold text-[15px]'>For&nbsp;Enterprises</TextFlipper> <ArrowRight size={16} />
+          <a
+            href="#"
+            className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#B71E52]/30"
+          >
+            <TextFlipper className="bg-transparent text-white font-semibold text-[15px]">
+              For&nbsp;Enterprises
+            </TextFlipper>{" "}
+            <ArrowRight size={16} />
           </a>
           <button className="flex items-center justify-center gap-2 text-white font-medium text-[15px] px-8 py-4 rounded border border-white/30 hover:bg-white/10 transition-all duration-200">
             For Investors
@@ -171,10 +368,34 @@ function Hero() {
 ═══════════════════════════════════════════════════════════════════════════ */
 function Stats() {
   const stats = [
-    { end: 320, suffix: 'M+', prefix: 'NPR ', label: 'Capital Mobilized', icon: <TrendingUp size={16} /> },
-    { end: 200, suffix: '+', prefix: '', label: 'Enterprises Supported', icon: <Building2 size={16} /> },
-    { end: 1, suffix: '', prefix: '', label: 'Active Funds', icon: <Layers size={16} /> },
-    { end: 7, suffix: '', prefix: '', label: 'Provinces Covered', icon: <Globe size={16} /> },
+    {
+      end: 320,
+      suffix: "M+",
+      prefix: "NPR ",
+      label: "Capital Mobilized",
+      icon: <TrendingUp size={16} />,
+    },
+    {
+      end: 200,
+      suffix: "+",
+      prefix: "",
+      label: "Enterprises Supported",
+      icon: <Building2 size={16} />,
+    },
+    {
+      end: 1,
+      suffix: "",
+      prefix: "",
+      label: "Active Funds",
+      icon: <Layers size={16} />,
+    },
+    {
+      end: 7,
+      suffix: "",
+      prefix: "",
+      label: "Provinces Covered",
+      icon: <Globe size={16} />,
+    },
   ]
   return (
     <section className="  bg-[#F5F2ED] border-b border-[#E8E4DD] ">
@@ -207,16 +428,27 @@ function Stats() {
    TRUST BAR
 ═══════════════════════════════════════════════════════════════════════════ */
 function TrustBar() {
-  const badges = ['SEBON Licensed', 'SDG Aligned', 'Gender-Smart', 'IFC Supported', 'Impact Verified']
+  const badges = [
+    "SEBON Licensed",
+    "SDG Aligned",
+    "Gender-Smart",
+    "IFC Supported",
+    "Impact Verified",
+  ]
   return (
     <section className="bg-white border-b border-[#E8E4DD] py-4 px-4 overflow-x-auto">
       <div className="max-w-7xl mx-auto flex items-center justify-start md:justify-center min-w-max md:min-w-0 gap-0">
         {badges.map((b, i) => (
-          <div key={i} className={`flex items-center gap-2 px-5 sm:px-7 ${i < badges.length - 1 ? 'border-r border-[#E8E4DD]' : ''}`}>
+          <div
+            key={i}
+            className={`flex items-center gap-2 px-5 sm:px-7 ${i < badges.length - 1 ? "border-r border-[#E8E4DD]" : ""}`}
+          >
             <div className="w-4 h-4 rounded-full bg-[#f5e8ed] flex items-center justify-center shrink-0">
               <div className="w-1.5 h-1.5 rounded-full bg-[#B71E52]" />
             </div>
-            <span className="font-medium text-[13px] text-stone-500 whitespace-nowrap">{b}</span>
+            <span className="font-medium text-[13px] text-stone-500 whitespace-nowrap">
+              {b}
+            </span>
           </div>
         ))}
       </div>
@@ -229,10 +461,10 @@ function TrustBar() {
 ═══════════════════════════════════════════════════════════════════════════ */
 function About() {
   const points = [
-    'Establish and manage sector-focused investment funds by mobilizing domestic and foreign capital',
-    'Invest in and restructure high-potential companies, partnering with institutions to provide advisory and technical support',
-    'Facilitate foreign investment and manage foreign exchange risk',
-    'Manage assets and securities, deploying capital through flexible instruments — equity, debt, and hybrid structures',
+    "Establish and manage sector-focused investment funds by mobilizing domestic and foreign capital",
+    "Invest in and restructure high-potential companies, partnering with institutions to provide advisory and technical support",
+    "Facilitate foreign investment and manage foreign exchange risk",
+    "Manage assets and securities, deploying capital through flexible instruments — equity, debt, and hybrid structures",
   ]
   return (
     <section className="bg-white py-20 md:py-28 lg:py-32">
@@ -271,9 +503,10 @@ function About() {
             href="/about"
             className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25"
           >
-          <TextFlipper className='bg-transparent text-white font-semibold text-sm '>Our&nbsp;Story 
-          </TextFlipper>
-             <ArrowUpRight size={14} />
+            <TextFlipper className="bg-transparent text-white font-semibold text-sm ">
+              Our&nbsp;Story
+            </TextFlipper>
+            <ArrowUpRight size={14} />
           </a>
         </div>
 
@@ -315,19 +548,40 @@ function About() {
 function Services() {
   const services = [
     {
-      num: '01', icon: <TrendingUp size={20} />, title: 'Fund Management',
-      desc: 'We manage three institutional funds totaling NPR 320M+ in committed capital, deploying growth equity to market-proven enterprises across all seven provinces of Nepal.',
-      items: ['Nepal Opportunity Fund I & II', 'Simrik Fund (gender-lens)', 'Sector-agnostic approach', '5–7 year hold periods'],
+      num: "01",
+      icon: <TrendingUp size={20} />,
+      title: "Fund Management",
+      desc: "We manage three institutional funds totaling NPR 320M+ in committed capital, deploying growth equity to market-proven enterprises across all seven provinces of Nepal.",
+      items: [
+        "Nepal Opportunity Fund I & II",
+        "Simrik Fund (gender-lens)",
+        "Sector-agnostic approach",
+        "5–7 year hold periods",
+      ],
     },
     {
-      num: '02', icon: <Award size={20} />, title: 'Ecosystem Building',
-      desc: 'Through targeted accelerator programs and technical assistance, we transform early-stage ventures into investment-ready enterprises capable of absorbing institutional capital.',
-      items: ['Comprehensive accelerator programs', 'Investment readiness training', 'Market linkage support', 'Governance strengthening'],
+      num: "02",
+      icon: <Award size={20} />,
+      title: "Ecosystem Building",
+      desc: "Through targeted accelerator programs and technical assistance, we transform early-stage ventures into investment-ready enterprises capable of absorbing institutional capital.",
+      items: [
+        "Comprehensive accelerator programs",
+        "Investment readiness training",
+        "Market linkage support",
+        "Governance strengthening",
+      ],
     },
     {
-      num: '03', icon: <Shield size={20} />, title: 'Impact & Inclusion',
-      desc: 'Every investment integrates rigorous impact measurement, targeting job creation, gender inclusion, climate resilience, and sustainable development aligned with national priorities.',
-      items: ['SDG-aligned investments', 'Gender lens integration', 'Climate impact measurement', 'Livelihood creation focus'],
+      num: "03",
+      icon: <Shield size={20} />,
+      title: "Impact & Inclusion",
+      desc: "Every investment integrates rigorous impact measurement, targeting job creation, gender inclusion, climate resilience, and sustainable development aligned with national priorities.",
+      items: [
+        "SDG-aligned investments",
+        "Gender lens integration",
+        "Climate impact measurement",
+        "Livelihood creation focus",
+      ],
     },
   ]
   return (
@@ -336,31 +590,50 @@ function Services() {
         {/* Header */}
         <div className="sr grid grid-cols-1 lg:grid-cols-2 gap-8 items-end mb-16">
           <div>
-            <span className="font-mono-dm text-sm tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">What We Do</span>
+            <span className="font-mono-dm text-sm tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
+              What We Do
+            </span>
             <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E]">
-              Capital Meets <em className="italic text-[#B71E52]">Capability</em>
+              Capital Meets{" "}
+              <em className="italic text-[#B71E52]">Capability</em>
             </h2>
           </div>
           <p className="text-stone-500 text-[18px] leading-[1.85] lg:pt-4">
-            Aadhyanta stands at the intersection of institutional finance and transformative impact — building the entire ecosystem that makes growth sustainable, inclusive, and scalable across Nepal.
+            Aadhyanta stands at the intersection of institutional finance and
+            transformative impact — building the entire ecosystem that makes
+            growth sustainable, inclusive, and scalable across Nepal.
           </p>
         </div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((s, i) => (
-            <div key={i} className={`sr d${i + 1} relative bg-white rounded-xl border border-[#E8E4DD] p-8 sm:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-stone-200`}>
+            <div
+              key={i}
+              className={`sr d${i + 1} relative bg-white rounded-xl border border-[#E8E4DD] p-8 sm:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-stone-200`}
+            >
               {/* Ghost number */}
-              <span className="absolute top-4 right-5 font-display font-bold text-[96px] text-[#1C1C2E]/15 leading-none select-none pointer-events-none">{s.num}</span>
+              <span className="absolute top-4 right-5 font-display font-bold text-[96px] text-[#1C1C2E]/15 leading-none select-none pointer-events-none">
+                {s.num}
+              </span>
 
-              <div className="w-11 h-11 rounded-lg bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] mb-6">{s.icon}</div>
-              <h3 className="font-display font-bold text-[24px] text-[#1C1C2E] mb-3 leading-tight">{s.title}</h3>
-              <p className="text-[16px] text-stone-500 leading-[1.8] mb-6">{s.desc}</p>
+              <div className="w-11 h-11 rounded-lg bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] mb-6">
+                {s.icon}
+              </div>
+              <h3 className="font-display font-bold text-[24px] text-[#1C1C2E] mb-3 leading-tight">
+                {s.title}
+              </h3>
+              <p className="text-[16px] text-stone-500 leading-[1.8] mb-6">
+                {s.desc}
+              </p>
               <hr className="border-[#E8E4DD] mb-6" />
               <ul className="space-y-2.5">
                 {s.items.map((item, j) => (
                   <li key={j} className="flex items-start gap-2.5">
-                    <ChevronRight size={13} className="text-[#B71E52] mt-0.5 shrink-0" />
+                    <ChevronRight
+                      size={13}
+                      className="text-[#B71E52] mt-0.5 shrink-0"
+                    />
                     <span className="text-[14px] text-stone-600">{item}</span>
                   </li>
                 ))}
@@ -380,28 +653,55 @@ function Funds() {
   const [active, setActive] = useState(0)
   const funds = [
     {
-      tag: 'NOF I', title: 'Nepal Opportunity Fund I', subtitle: 'Our flagship growth equity vehicle',
-      desc: 'NOF I targets established businesses with proven models, strong management, and clear growth trajectories. We provide patient capital with active governance support and strategic value-add.',
-      items: ['Sector-agnostic', 'All 7 provinces', 'NPR 10–50M tickets', '5–7 year hold periods', 'Board representation'],
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80',
-      capital: 'NPR 120M+',
-      href: '/fund/nofone'
+      tag: "NOF I",
+      title: "Nepal Opportunity Fund I",
+      subtitle: "Our flagship growth equity vehicle",
+      desc: "NOF I targets established businesses with proven models, strong management, and clear growth trajectories. We provide patient capital with active governance support and strategic value-add.",
+      items: [
+        "Sector-agnostic",
+        "All 7 provinces",
+        "NPR 10–50M tickets",
+        "5–7 year hold periods",
+        "Board representation",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80",
+      capital: "NPR 120M+",
+      href: "/fund/nofone",
     },
     {
-      tag: 'NOF II', title: 'Nepal Opportunity Fund II', subtitle: 'Building on a proven track record',
-      desc: 'Our second fund continues supporting portfolio companies while identifying new high-potential enterprises ready for institutional capital and strategic growth partnerships across Nepal.',
-      items: ['Follow-on capacity', 'Larger ticket sizes', 'Enhanced due diligence', 'Portfolio synergies', 'Active value creation'],
-      image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80',
-      capital: 'NPR 140M+',
-      href: '/fund/noftwo'
+      tag: "NOF II",
+      title: "Nepal Opportunity Fund II",
+      subtitle: "Building on a proven track record",
+      desc: "Our second fund continues supporting portfolio companies while identifying new high-potential enterprises ready for institutional capital and strategic growth partnerships across Nepal.",
+      items: [
+        "Follow-on capacity",
+        "Larger ticket sizes",
+        "Enhanced due diligence",
+        "Portfolio synergies",
+        "Active value creation",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80",
+      capital: "NPR 140M+",
+      href: "/fund/noftwo",
     },
     {
-      tag: 'Simrik', title: 'Simrik Fund', subtitle: "Nepal's first gender-lens investment fund",
-      desc: 'Managed by an all-women deal team, Simrik targets women-led enterprises and businesses with significant women beneficiaries, addressing critical financing gaps with measurable gender impact.',
-      items: ['Women-led businesses', 'Women workforce focus', 'All-women deal team', 'Gender-smart design', 'Inclusion metrics'],
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80',
-      capital: 'NPR 60M+',
-      href: '/fund/simrik'
+      tag: "Simrik",
+      title: "Simrik Fund",
+      subtitle: "Nepal's first gender-lens investment fund",
+      desc: "Managed by an all-women deal team, Simrik targets women-led enterprises and businesses with significant women beneficiaries, addressing critical financing gaps with measurable gender impact.",
+      items: [
+        "Women-led businesses",
+        "Women workforce focus",
+        "All-women deal team",
+        "Gender-smart design",
+        "Inclusion metrics",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80",
+      capital: "NPR 60M+",
+      href: "/fund/simrik",
     },
   ]
   const f = funds[active]
@@ -412,17 +712,23 @@ function Funds() {
         {/* Header */}
         <div className="sr flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
-            <span className="font-mono-dm text-sm tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Our Funds</span>
+            <span className="font-mono-dm text-sm tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
+              Our Funds
+            </span>
             <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E]">
-              Three Vehicles, <em className="italic text-[#B71E52]">One Mission</em>
+              Three Vehicles,{" "}
+              <em className="italic text-[#B71E52]">One Mission</em>
             </h2>
           </div>
           {/* Tabs */}
           <div className="flex gap-1 bg-[#F5F2ED] p-1 rounded-lg border border-[#E8E4DD] self-start sm:self-auto">
             {funds.map((fund, i) => (
-              <button key={i} onClick={() => setActive(i)}
+              <button
+                key={i}
+                onClick={() => setActive(i)}
                 className={`fund-tab px-4 sm:px-5 py-2.5 rounded-md text-[13px] font-medium transition-all duration-200 cursor-pointer
-                  ${active === i ? 'bg-[#1C1C2E] text-white' : 'text-stone-400 hover:text-stone-600'}`}>
+                  ${active === i ? "bg-[#1C1C2E] text-white" : "text-stone-400 hover:text-stone-600"}`}
+              >
                 {fund.tag}
               </button>
             ))}
@@ -430,27 +736,47 @@ function Funds() {
         </div>
 
         {/* Fund panel */}
-        <div key={active} className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
-          style={{ animation: 'fadeUp 0.4s cubic-bezier(0.16,1,0.3,1) forwards' }}>
-
+        <div
+          key={active}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+          style={{
+            animation: "fadeUp 0.4s cubic-bezier(0.16,1,0.3,1) forwards",
+          }}
+        >
           {/* Image */}
           <div className="relative rounded-xl overflow-hidden aspect-4/3 shadow-2xl shadow-stone-200">
-            <img src={f.image} alt={f.title} className="w-full h-full object-cover" />
+            <img
+              src={f.image}
+              alt={f.title}
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/60 via-transparent to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
               <div>
-                <div className="font-display font-bold text-[30px] text-white leading-none">{f.capital}</div>
-                <div className="text-[11px] text-white/60 mt-1">Committed Capital</div>
+                <div className="font-display font-bold text-[30px] text-white leading-none">
+                  {f.capital}
+                </div>
+                <div className="text-[11px] text-white/60 mt-1">
+                  Committed Capital
+                </div>
               </div>
-              <span className="px-3 py-1.5 bg-[#B71E52] rounded font-mono-dm text-[9px] text-white tracking-widest uppercase">{f.tag}</span>
+              <span className="px-3 py-1.5 bg-[#B71E52] rounded font-mono-dm text-[9px] text-white tracking-widest uppercase">
+                {f.tag}
+              </span>
             </div>
           </div>
 
           {/* Content */}
           <div>
-            <h3 className="font-display font-bold text-[28px] sm:text-[32px] text-[#1C1C2E] mb-2 leading-tight">{f.title}</h3>
-            <p className="text-[14px] text-[#B71E52] italic mb-5">{f.subtitle}</p>
-            <p className="text-[16px] text-stone-500 leading-[1.85] mb-8">{f.desc}</p>
+            <h3 className="font-display font-bold text-[28px] sm:text-[32px] text-[#1C1C2E] mb-2 leading-tight">
+              {f.title}
+            </h3>
+            <p className="text-[14px] text-[#B71E52] italic mb-5">
+              {f.subtitle}
+            </p>
+            <p className="text-[16px] text-stone-500 leading-[1.85] mb-8">
+              {f.desc}
+            </p>
             <div className="space-y-3 mb-10">
               {f.items.map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
@@ -459,8 +785,12 @@ function Funds() {
                 </div>
               ))}
             </div>
-            <a href={f.href} className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
-              <TextFlipper>Learn&nbsp;More</TextFlipper> <ArrowRight size={14} />
+            <a
+              href={f.href}
+              className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25"
+            >
+              <TextFlipper>Learn&nbsp;More</TextFlipper>{" "}
+              <ArrowRight size={14} />
             </a>
           </div>
         </div>
@@ -472,47 +802,132 @@ function Funds() {
 /* ═══════════════════════════════════════════════════════════════════════════
    HIGHLIGHTS
 ═══════════════════════════════════════════════════════════════════════════ */
-function Highlights() {
-  const items = [
-    { tag: 'Gender Finance', title: 'Simrik Fund Launch', desc: "Nepal's first gender-lens investment fund, managed by an all-women deal team, targeting women-led and women-benefiting enterprises.", image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80' },
-    { tag: 'Provincial Dev.', title: 'Koshi Accelerator', desc: 'A targeted initiative supporting enterprises in Koshi Province through capital access, technical assistance, and market linkages.', image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&q=80' },
-    { tag: 'Portfolio', title: 'DV Excellus Partnership', desc: "Strategic growth investment in one of Nepal's leading manufacturers, showcasing value creation through governance strengthening.", image: 'https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=700&q=80' },
-  ]
+function Highlights({ companies }: { companies: Company[] }) {
+  const highlighted = companies.filter((c) => c.highlight)
+  const featured = highlighted.find((c) => c.featured)
+  const rest = highlighted.filter((c) => !c.featured).slice(0, 3)
+
   return (
     <section className="bg-[#F5F2ED] py-20 md:py-28 lg:py-32 border-t border-[#E8E4DD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="sr flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-12">
           <div>
-            <span className="font-mono-dm text-sm tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Recent Highlights</span>
-            <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E]">
-              Building Nepal's <em className="italic text-[#B71E52]">Investment Future</em>
+            <span
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: 11,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "#B71E52",
+                display: "block",
+                marginBottom: 12,
+              }}
+            >
+              Portfolio Highlights
+            </span>
+            <h2
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 700,
+                fontSize: "clamp(34px, 4vw, 52px)",
+                lineHeight: 1.08,
+                color: "#1C1C2E",
+              }}
+            >
+              Building Nepal's{" "}
+              <em style={{ fontStyle: "italic", color: "#B71E52" }}>
+                Investment Future
+              </em>
             </h2>
           </div>
-          <a href="/fund" className="inline-flex items-center gap-1.5 text-[#B71E52] font-semibold text-[14px] hover:gap-3 transition-all duration-200 self-start sm:self-auto shrink-0">
+          <a
+            href="/portfolio"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+              color: "#B71E52",
+              fontFamily: "'Outfit', sans-serif",
+              fontWeight: 600,
+              fontSize: 14,
+              textDecoration: "none",
+              flexShrink: 0,
+              alignSelf: "flex-start",
+              transition: "gap 0.2s",
+            }}
+            onMouseEnter={(e) =>
+              ((e.currentTarget as HTMLElement).style.gap = "12px")
+            }
+            onMouseLeave={(e) =>
+              ((e.currentTarget as HTMLElement).style.gap = "6px")
+            }
+          >
             View All <ArrowRight size={15} />
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {items.map((item, i) => (
-            <div key={i} className={`sr d${i + 1} card-img-wrap bg-white rounded-xl overflow-hidden border border-[#E8E4DD] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-stone-200`}>
-              <div className="relative h-52 overflow-hidden">
-                <img src={item.image} alt={item.title} className="card-img w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/40 to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 bg-[#B71E52] rounded font-mono-dm text-[9px] text-white tracking-widest uppercase">
-                  {item.tag}
-                </span>
-              </div>
-              <div className="p-6 sm:p-7">
-                <h3 className="font-display font-bold text-[22px] text-[#1C1C2E] mb-2.5 leading-snug">{item.title}</h3>
-                <p className="text-[14px] text-stone-500 leading-[1.75] mb-5">{item.desc}</p>
-                <a href="#" className="inline-flex items-center gap-1.5 text-[#B71E52] font-semibold text-[13px] hover:gap-3 transition-all duration-200">
-                  Read More <ArrowUpRight size={13} />
-                </a>
-              </div>
-            </div>
+        {/* ── EDITORIAL GRID ── */}
+
+        {/* Desktop: featured left (tall) + 3 cards right in 2-row arrangement */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="hidden md:grid"
+          style={{
+            gridTemplateColumns: "2fr 1fr 1fr",
+            gridTemplateRows: "300px 300px",
+            gap: 16,
+          }}
+        >
+          {/* Featured — spans both rows */}
+          {featured && (
+            <motion.div
+              variants={sfd}
+              style={{ gridColumn: "1", gridRow: "1 / span 2" }}
+            >
+              <CompanyCard company={featured} tall />
+            </motion.div>
+          )}
+
+          {/* Top-right two */}
+          {rest.slice(0, 2).map((co, i) => (
+            <motion.div
+              key={co.id}
+              variants={sfd}
+              style={{ gridColumn: `${i + 2}`, gridRow: "1" }}
+            >
+              <CompanyCard company={co} />
+            </motion.div>
           ))}
-        </div>
+
+          {/* Bottom-right: one card spans both cols, or two if we have enough */}
+          {rest[2] && (
+            <motion.div
+              variants={sfd}
+              style={{ gridColumn: "2 / span 2", gridRow: "2" }}
+            >
+              <CompanyCard company={rest[2]} />
+            </motion.div>
+          )}
+        </motion.div>
+
+        {/* Mobile: simple single column */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="flex md:hidden flex-col gap-4"
+        >
+          {highlighted.map((co) => (
+            <motion.div key={co.id} variants={sfd} style={{ height: 280 }}>
+              <CompanyCard company={co} />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )
@@ -523,30 +938,56 @@ function Highlights() {
 ═══════════════════════════════════════════════════════════════════════════ */
 function Features() {
   const feats = [
-    { icon: <TrendingUp size={20} />, title: 'Expert Portfolio Management', body: "Strategic investment solutions tailored to your financial goals with proven track records across Nepal's diverse sectors." },
-    { icon: <Shield size={20} />, title: 'Risk Management', body: 'Comprehensive risk assessment and mitigation strategies to protect and grow your investments over the long term.' },
-    { icon: <Users size={20} />, title: 'Dedicated Advisory', body: 'Personalized guidance from experienced financial advisors committed to your success at every stage of your journey.' },
-    { icon: <BarChart3 size={20} />, title: 'Real-Time Analytics', body: 'Advanced reporting and insights to keep you fully informed about your portfolio performance and opportunities.' },
+    {
+      icon: <TrendingUp size={20} />,
+      title: "Expert Portfolio Management",
+      body: "Strategic investment solutions tailored to your financial goals with proven track records across Nepal's diverse sectors.",
+    },
+    {
+      icon: <Shield size={20} />,
+      title: "Risk Management",
+      body: "Comprehensive risk assessment and mitigation strategies to protect and grow your investments over the long term.",
+    },
+    {
+      icon: <Users size={20} />,
+      title: "Dedicated Advisory",
+      body: "Personalized guidance from experienced financial advisors committed to your success at every stage of your journey.",
+    },
+    {
+      icon: <BarChart3 size={20} />,
+      title: "Real-Time Analytics",
+      body: "Advanced reporting and insights to keep you fully informed about your portfolio performance and opportunities.",
+    },
   ]
   return (
     <section className="bg-white py-20 md:py-28 lg:py-32 border-t border-[#E8E4DD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="sr text-center max-w-xl mx-auto mb-16">
-          <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Why Choose Us</span>
+          <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
+            Why Choose Us
+          </span>
           <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E]">
-            The Difference of <em className="italic text-[#B71E52]">Premier Fund Management</em>
+            The Difference of{" "}
+            <em className="italic text-[#B71E52]">Premier Fund Management</em>
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-[#E8E4DD] divide-y sm:divide-y-0 divide-x-0 sm:divide-x divide-[#E8E4DD]">
           {feats.map((f, i) => (
-            <div key={i} className={`sr feat-card d${i + 1} p-8 sm:p-9 bg-white transition-all duration-300 cursor-default
-              ${i < 3 ? 'lg:border-r lg:border-[#E8E4DD]' : ''}`}>
+            <div
+              key={i}
+              className={`sr feat-card d${i + 1} p-8 sm:p-9 bg-white transition-all duration-300 cursor-default
+              ${i < 3 ? "lg:border-r lg:border-[#E8E4DD]" : ""}`}
+            >
               <div className="feat-icon w-11 h-11 rounded-lg bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] mb-5 transition-all duration-300">
                 {f.icon}
               </div>
-              <h3 className="feat-title font-display font-bold text-[22px] text-[#1C1C2E] mb-3 leading-tight transition-colors duration-300">{f.title}</h3>
-              <p className="feat-body text-[16px] text-stone-500 leading-[1.75] transition-colors duration-300">{f.body}</p>
+              <h3 className="feat-title font-display font-bold text-[22px] text-[#1C1C2E] mb-3 leading-tight transition-colors duration-300">
+                {f.title}
+              </h3>
+              <p className="feat-body text-[16px] text-stone-500 leading-[1.75] transition-colors duration-300">
+                {f.body}
+              </p>
             </div>
           ))}
         </div>
@@ -562,18 +1003,29 @@ function Testimonial() {
   return (
     <section className="bg-[#F5F2ED] py-20 md:py-24 border-t border-b border-[#E8E4DD] px-4">
       <div className="sr-s max-w-2xl mx-auto text-center">
-        <div className='flex'>
-        <div className="font-display text-[72px] text-[#B71E52]/25 leading-[0.6] mb-6">"</div>
-        <blockquote className="font-display italic text-[clamp(20px,3vw,34px)] text-[#1C1C2E] leading-[1.6] mb-8">
-          Aadhyanta has been instrumental in our growth. Their disciplined approach to capital deployment and hands-on governance support set them apart from any other investor we've worked with.
-        </blockquote>
-        <div className="font-display text-[72px] text-[#B71E52]/25 leading-[0.6] mb-6">"</div>
-</div>
+        <div className="flex">
+          <div className="font-display text-[72px] text-[#B71E52]/25 leading-[0.6] mb-6">
+            "
+          </div>
+          <blockquote className="font-display italic text-[clamp(20px,3vw,34px)] text-[#1C1C2E] leading-[1.6] mb-8">
+            Aadhyanta has been instrumental in our growth. Their disciplined
+            approach to capital deployment and hands-on governance support set
+            them apart from any other investor we've worked with.
+          </blockquote>
+          <div className="font-display text-[72px] text-[#B71E52]/25 leading-[0.6] mb-6">
+            "
+          </div>
+        </div>
         <div className="flex items-center justify-center gap-3">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&q=80"
-            alt="CEO" className="w-11 h-11 rounded-full object-cover border-2 border-[#E8E4DD]" />
+          <img
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&q=80"
+            alt="CEO"
+            className="w-11 h-11 rounded-full object-cover border-2 border-[#E8E4DD]"
+          />
           <div className="text-left">
-            <div className="font-semibold text-[14px] text-[#1C1C2E]">Rajiv Sharma</div>
+            <div className="font-semibold text-[14px] text-[#1C1C2E]">
+              Rajiv Sharma
+            </div>
             <div className="text-[12px] text-stone-400">CEO, DV Excellus</div>
           </div>
         </div>
@@ -589,42 +1041,74 @@ function CTA() {
   return (
     <section className="bg-white py-20 md:py-28 lg:py-32 border-t border-[#E8E4DD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
         {/* Left */}
         <div className="sr-l">
-          <span className="font-mono-dm text-sm tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Get Started</span>
+          <span className="font-mono-dm text-sm tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
+            Get Started
+          </span>
           <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-5">
-            Ready to Grow <em className="italic text-[#B71E52]">Your Wealth?</em>
+            Ready to Grow{" "}
+            <em className="italic text-[#B71E52]">Your Wealth?</em>
           </h2>
           <p className="text-stone-500 text-base leading-[1.85] mb-10">
-            Join the growing community of investors who trust us with their financial future. Schedule a consultation with our expert advisors today.
+            Join the growing community of investors who trust us with their
+            financial future. Schedule a consultation with our expert advisors
+            today.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="/contact-us" className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-7 py-3.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
-             <TextFlipper>Schedule&nbsp;Consultation</TextFlipper> <ArrowRight size={16} />
+            <a
+              href="/contact-us"
+              className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-7 py-3.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25"
+            >
+              <TextFlipper>Schedule&nbsp;Consultation</TextFlipper>{" "}
+              <ArrowRight size={16} />
             </a>
-            <a href="#" className="flex items-center justify-center gap-2 border border-[#1C1C2E] text-[#1C1C2E] hover:bg-[#1C1C2E] hover:text-white font-medium text-[15px] px-7 py-3.5 rounded transition-all duration-200">
+            {/* <a
+              href="#"
+              className="flex items-center justify-center gap-2 border border-[#1C1C2E] text-[#1C1C2E] hover:bg-[#1C1C2E] hover:text-white font-medium text-[15px] px-7 py-3.5 rounded transition-all duration-200"
+            >
               Download Deck
-            </a>
+            </a> */}
           </div>
         </div>
 
         {/* Right — contact card */}
         <div className="sr-r">
           <div className="bg-[#F5F2ED] rounded-xl p-8 sm:p-10 border border-[#E8E4DD]">
-            <p className="font-semibold text-[15px] text-[#1C1C2E] mb-7">Contact Us Directly</p>
+            <p className="font-semibold text-[15px] text-[#1C1C2E] mb-7">
+              Contact Us Directly
+            </p>
             {[
-              { icon: <MapPin size={15} />, label: 'Address', val: 'Lazimpat, Kathmandu, Nepal' },
-              { icon: <Phone size={15} />, label: 'Phone', val: '+977 1 XXXXXXX' },
-              { icon: <Mail size={15} />, label: 'Email', val: 'invest@aadhyanta.com' },
+              {
+                icon: <MapPin size={15} />,
+                label: "Address",
+                val: "Lazimpat, Kathmandu, Nepal",
+              },
+              {
+                icon: <Phone size={15} />,
+                label: "Phone",
+                val: "01-4526601, 01-4526603",
+              },
+              {
+                icon: <Mail size={15} />,
+                label: "Email",
+                val: "contact@aadhyanta.com",
+              },
             ].map((c, i) => (
-              <div key={i} className={`flex gap-4 items-start ${i < 2 ? 'mb-6 pb-6 border-b border-[#E8E4DD]' : ''}`}>
+              <div
+                key={i}
+                className={`flex gap-4 items-start ${i < 2 ? "mb-6 pb-6 border-b border-[#E8E4DD]" : ""}`}
+              >
                 <div className="w-9 h-9 rounded-lg bg-white border border-[#E8E4DD] flex items-center justify-center text-[#B71E52] shrink-0">
                   {c.icon}
                 </div>
                 <div>
-                  <div className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-1">{c.label}</div>
-                  <div className="text-[14px] text-[#1C1C2E] font-medium">{c.val}</div>
+                  <div className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-1">
+                    {c.label}
+                  </div>
+                  <div className="text-[14px] text-[#1C1C2E] font-medium">
+                    {c.val}
+                  </div>
                 </div>
               </div>
             ))}
@@ -664,7 +1148,7 @@ export default function LandingPage() {
       <About />
       <Services />
       <Funds />
-      <Highlights />
+      <Highlights companies={companies} />
       <Features />
       <Testimonial />
       <CTA />

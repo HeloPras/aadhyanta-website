@@ -18,6 +18,7 @@ import {
   Calendar,
 } from "lucide-react"
 import { container, sfd } from "@/util/animation/framer-helper"
+import {companies} from '@/data/company'
 
 /* ─── Global CSS — same token system ────────────────────────────────────── */
 const GLOBAL_CSS = `
@@ -138,313 +139,7 @@ function StatValue({ value }: { value: string }) {
 ═══════════════════════════════════════════════════════════════════════════ */
 
 
-const companies: Company[] = [
-  {
-    id: "riddhi-siddhi-cement",
-    name: "Riddhi Siddhi Cement",
-    sector: "Manufacturing",
-    sectorIcon: <Factory size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Bagmati Province",
-    year: "2019",
-    description:
-      "Integrated cement and clinker manufacturer based in Hetauda, established as a joint venture between Shanker Group and Ambe Group. The company focuses on high-quality, technology-driven cement production using robotic quality control systems, VRM grinding technology, and energy-efficient manufacturing processes.",
-    tags: ["Cement", "Infrastructure", "Manufacturing"],
-    impacts: [
-      "Advanced robotic quality control in cement manufacturing",
-      "Energy-efficient VRM production technology",
-      "Nationwide cement distribution and infrastructure support",
-    ],
-    image:
-      "/aadhyanta/Portfolio/riddhisiddhi.jpg",
-    featured: true,
-    logoPlaceholder: "RS",
-  },
 
-  {
-    id: "dishhome",
-    name: "DishHome",
-    sector: "Telecommunications & Digital Services",
-    sectorIcon: <Network size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Bagmati Province",
-    year: "2010",
-    description:
-      "Leading Nepalese digital service provider offering direct-to-home television, high-speed fiber internet, OTT streaming, and enterprise connectivity solutions. Expanded nationwide digital access through integrated entertainment and broadband infrastructure.",
-    tags: ["Fiber Internet", "Digital TV", "OTT Services"],
-    impacts: [
-      "Nationwide broadband connectivity",
-      "Expanded digital entertainment access",
-      "Strengthened digital infrastructure in Nepal",
-    ],
-    image: "/aadhyanta/Portfolio/dishhome.webp",
-    featured: true,
-    logoPlaceholder: "DH",
-  },
-
-  {
-    id: "jagadamba-hospitality",
-    name: "Jagadamba Hospitality Limited (Hilton)",
-    sector: "Hospitality & Tourism",
-    sectorIcon: <Building2 size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Bagmati Province",
-    year: "2024",
-    description:
-      "Luxury five-star hotel located in Naxal, Kathmandu, developed in partnership with Hilton and Shanker Group. The property combines modern hospitality with Nepalese cultural design elements, offering premium accommodation, rooftop dining, wellness facilities, and event spaces for international and domestic travelers.",
-    tags: ["Hospitality", "Tourism", "Luxury Hotel"],
-    impacts: [
-      "Strengthened Nepal’s premium tourism infrastructure",
-      "Created high-value hospitality employment",
-      "Expanded international hotel investment in Nepal",
-    ],
-    image: "/aadhyanta/Portfolio/hilton.jpg",
-    featured: true,
-    logoPlaceholder: "HK",
-  },
-  {
-    id: "aarati-power",
-    name: "Aarati Power Company Limited",
-    sector: "Renewable Energy",
-    sectorIcon: <Zap size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Koshi Province",
-    year: "2016",
-    description:
-      "Aarati Power Company Limited is developing the 14.5 MW Upper Irkhuwa Hydropower Project, a run-of-river hydroelectric scheme located in Bhojpur District. The project aims to utilize Nepal’s water resources for sustainable energy generation and contribute to national grid expansion.",
-    tags: ["Hydropower", "Clean Energy", "Infrastructure"],
-    impacts: [
-      "14.5 MW renewable energy generation",
-      "Grid-connected hydropower development in eastern Nepal",
-      "Promotion of sustainable water resource utilization",
-    ],
-    image: "/aadhyanta/Portfolio/aarati.jpg",
-    featured: true,
-    logoPlaceholder: "AP",
-  },
-  {
-    id: "kbnr-isuwa-power",
-    name: "K.B.N.R Isuwa Power Limited",
-    sector: "Renewable Energy",
-    sectorIcon: <Zap size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Koshi Province",
-    year: "2020",
-    description:
-      "Developer of the 97.2 MW Isuwa Khola Hydropower Project in Sankhuwasabha, focused on sustainable clean energy generation, national grid contribution, and community infrastructure development through a peaking run-of-river hydropower scheme.",
-    tags: ["Hydropower", "Clean Energy", "Infrastructure"],
-    impacts: [
-      "97.2 MW renewable energy generation",
-      "674.30 GWh annual electricity production",
-      "50,000+ tons CO₂ emissions avoided annually",
-    ],
-    image: "/aadhyanta/Portfolio/kbnr.jpg",
-    featured: true,
-    logoPlaceholder: "KB",
-  },
-
-  {
-    id: "madame-khola-hydropower",
-    name: "Madame Khola Hydropower Project",
-    sector: "Renewable Energy",
-    sectorIcon: <Zap size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Gandaki Province",
-    year: "2015",
-    description:
-      "Madame Khola Hydropower Project is a 24 MW run-of-river hydroelectric project located in the Annapurna Conservation Area in Madi Rural Municipality, Kaski District. The project focuses on harnessing river flow from the Madme Khola system to generate clean electricity and contribute to Nepal’s national grid while following environmental and conservation guidelines.",
-    tags: ["Hydropower", "Clean Energy", "Infrastructure"],
-    impacts: [
-      "24 MW renewable energy generation",
-      "Contribution to national grid stability",
-      "Support for rural electrification and local infrastructure development",
-    ],
-    image:
-      "/aadhyanta/Portfolio/Madame.jpeg",
-    featured: true,
-    logoPlaceholder: "MK",
-  },
-  {
-    id: "siddhi-hydropower",
-    name: "Siddhi Hydropower Company Limited",
-    sector: "Renewable Energy",
-    sectorIcon: <Zap size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Koshi Province",
-    year: "2012",
-    description:
-      "Siddhi Hydropower Company Limited is a Nepal-based renewable energy developer focused on run-of-river hydropower generation. The company operates a 10 MW hydroelectric project in Ilam District, aiming to harness river energy for sustainable electricity production while supporting Nepal’s growing power demand and environmental goals.",
-    tags: ["Hydropower", "Clean Energy", "Infrastructure"],
-    impacts: [
-      "10 MW renewable energy generation",
-      "Contribution to Nepal’s national grid",
-      "Support for rural electrification and energy security",
-    ],
-    image: "/aadhyanta/Portfolio/siddhi.jpg",
-    featured: true,
-    logoPlaceholder: "SH",
-  },
-  {
-    id: "daunne-agro",
-    name: "Daunne Agro Farm Limited",
-    sector: "Agriculture & Poultry",
-    sectorIcon: <Leaf size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Gandaki Province",
-    year: "2018",
-    description:
-      "Daunne Agro Farm Limited is one of Nepal’s largest commercial egg production companies, specializing in large-scale layer poultry farming. The company operates highly automated farms using imported German and Malaysian technology, producing eggs for nationwide distribution while expanding capacity through modern, technology-driven agriculture systems.",
-    tags: ["Poultry", "Egg Production", "Agri-Tech"],
-    impacts: [
-      "400,000+ layer chickens in operation",
-      "Approx. 1,700 cartons of eggs produced daily",
-      "Advanced automated poultry farming systems",
-      "Supports national food supply and agro-industrial growth",
-    ],
-    image: "/aadhyanta/Portfolio/daunne.jfif",
-    featured: true,
-    logoPlaceholder: "DA",
-  },
-  {
-    id: "doodhpokhari-chepe-hydropower",
-    name: "Doodhpokhari Chepe Hydropower Public Limited",
-    sector: "Renewable Energy",
-    sectorIcon: <Zap size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Gandaki Province",
-    year: "2017",
-    description:
-      "Doodhpokhari Chepe Hydropower Public Limited is a run-of-river hydropower developer promoting the 11 MW Chepe Khola Hydropower Project located on the Chepe River, a tributary of the Marsyangdi River along the Gorkha–Lamjung border. The project is focused on generating clean electricity for Nepal’s national grid while supporting local infrastructure development and sustainable resource utilization.",
-    tags: ["Hydropower", "Clean Energy", "Infrastructure"],
-    impacts: [
-      "11 MW renewable energy generation",
-      "Contribution to national grid expansion",
-      "Local employment and infrastructure development in Chepe corridor",
-    ],
-    image: "/aadhyanta/Portfolio/doodhpokhari.png",
-    featured: true,
-    logoPlaceholder: "DC",
-  },
-  {
-    id: "shikhar-power-development",
-    name: "Shikhar Power Development Limited",
-    sector: "Renewable Energy",
-    sectorIcon: <Zap size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Gandaki Province",
-    year: "2015",
-    description:
-      "Shikhar Power Development Limited is a Nepal-based hydropower company focused on developing run-of-river hydroelectric projects. The company was established to harness Nepal’s hydropower potential and currently operates and develops multiple projects contributing clean electricity to the national grid.",
-    tags: ["Hydropower", "Clean Energy", "Infrastructure"],
-    impacts: [
-      "Run-of-river hydropower generation for national grid",
-      "Support for Nepal’s renewable energy expansion",
-      "Contribution to rural electrification and energy security",
-    ],
-    image: "/aadhyanta/Portfolio/shikhar.JPG",
-    featured: true,
-    logoPlaceholder: "SP",
-  },
-  {
-    id: "radiant-nepal",
-    name: "Radiant InfoTech Nepal Pvt. Ltd.",
-    sector: "Information Technology & Digital Services",
-    sectorIcon: <Code size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Bagmati Province",
-    year: "2003",
-    description:
-      "Radiant InfoTech Nepal is a long-established IT company providing end-to-end digital solutions including web development, software development, mobile applications, graphic design, digital marketing, hosting, domain registration, and IT infrastructure services. It serves businesses, government agencies, and institutions in Nepal and abroad.",
-    tags: ["IT Services", "Software Development", "Web Development"],
-    impacts: [
-      "20+ years of IT service experience in Nepal",
-      "Digital transformation for SMEs and institutions",
-      "Web and software solutions for public and private sectors",
-      "Support for digital infrastructure and online services",
-    ],
-    image: "/aadhyanta/Portfolio/radiant infotech.jpg",
-    featured: true,
-    logoPlaceholder: "RN",
-  },
-  {
-    id: "fikkal-tea-coffee-farm",
-    name: "Fikkal Tea & Coffee Farm",
-    sector: "Agriculture & Agro-Industry",
-    sectorIcon: <Leaf size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Koshi Province",
-    year: "2015",
-    description:
-      "Fikkal Tea & Coffee Farm is one of Nepal’s largest operational coffee farms located in Ilam district, spanning over 800 ropanis (around 100 acres). The farm focuses on specialty coffee cultivation, processing, and agro-tourism, aiming to position Nepal as a global producer of premium coffee while integrating sustainable farming practices and value-added processing.",
-    tags: ["Coffee Farming", "Agro Tourism", "Agriculture"],
-    impacts: [
-      "800+ ropani large-scale coffee farming operation",
-      "65,000+ coffee plants with expansion plans up to 100,000",
-      "Supports Nepal’s specialty coffee export ecosystem",
-      "Promotes sustainable agro-tourism and rural livelihoods",
-    ],
-    image:
-      "/aadhyanta/Portfolio/Fikkal.jpg",
-    featured: true,
-    logoPlaceholder: "FTC",
-  },
-  {
-    id: "dv-excellus",
-    name: "DV Excellus Pvt. Ltd.",
-    sector: "Agri-Tech & Information Technology",
-    sectorIcon: <Cpu size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Bagmati Province",
-    year: "2016",
-    description:
-      "DV Excellus is an agri-tech and digital solutions company based in Nepal, focused on building integrated agricultural ecosystems through technology. It develops platforms such as Kheti, connecting farmers, input suppliers, financial institutions, and markets through digital tools to improve access to finance, advisory services, and market linkages.",
-    tags: ["Agri-Tech", "Fintech", "Digital Agriculture"],
-    impacts: [
-      "Digital platform connecting farmers and agri-markets (Kheti ecosystem)",
-      "Improved access to agricultural finance and advisory services",
-      "Onboarding of hundreds of farmers and agri-vendors in Nepal",
-      "Support for rural digitization and agri-fintech innovation",
-    ],
-    image: "",
-    featured: true,
-    logoPlaceholder: "DV",
-  },
-  {
-    id: "saf-nepal",
-    name: "Shreenagar Agritech Industries Ltd. (SAF / SAIL)",
-    sector: "Agriculture & Agro-Industry",
-    sectorIcon: <Leaf size={15} />,
-    fund: "NOF I",
-    statusCls: "status-active",
-    province: "Lumbini Province",
-    year: "2002",
-    description:
-      "Shreenagar Agritech Industries Ltd. (SAF/SAIL) is a leading integrated agri-business in Nepal providing end-to-end solutions for farmers, including poultry, fish, feed production, technical services, and market linkages. The company operates on a “farm–feed–food–facilitation” model to improve productivity and strengthen Nepal’s agricultural ecosystem.",
-    tags: ["Agri-Business", "Poultry", "Fish Farming", "Feed Production"],
-    impacts: [
-      "Integrated support system for 5,000+ farmers",
-      "Provision of day-old chicks and fish hatchlings nationwide",
-      "Introduction of advanced feed and extrusion technology in Nepal",
-      "Strengthening of contract farming and rural agribusiness systems",
-    ],
-    image: "/aadhyanta/Portfolio/shreenagar.jpg",
-    featured: true,
-    logoPlaceholder: "SAF",
-  },
-]
 
 const FUNDS = ["All", "NOF I", "NOF II", "Simrik"]
 const SECTORS = [
@@ -638,6 +333,7 @@ function PortfolioGrid() {
               <motion.div
               variants={sfd}
               // whileInView={sfd}
+              key={i}
               >
                 <div
                   key={co.id}
@@ -665,7 +361,7 @@ function PortfolioGrid() {
                   <div className="p-5 sm:p-6">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-5 h-5 rounded bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] flex-shrink-0">
-                        {co.sectorIcon}
+                        <co.sectorIcon size = {15}>/</co.sectorIcon>
                       </div>
                       <span className="font-mono-dm text-[10px] text-stone-400 tracking-[0.08em] uppercase truncate">
                         {co.sector}
@@ -729,13 +425,6 @@ function PortfolioGrid() {
                             </li>
                           ))}
                         </ul>
-                        <a
-                          href={`/portfolio/${co.id}`}
-                          className="mt-5 inline-flex items-center gap-1.5 text-[#B71E52] font-semibold text-[13px] hover:gap-3 transition-all duration-200"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Full Profile <ArrowUpRight size={13} />
-                        </a>
                       </div>
                     </div>
                   )}

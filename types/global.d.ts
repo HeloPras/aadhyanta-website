@@ -1,3 +1,5 @@
+import {type icon} from 'lucide-react'
+
 interface TeamMember {
   name: string;
   position: string;
@@ -44,9 +46,10 @@ type Company = {
   id: string
   name: string
   sector: string
-  sectorIcon: React.ReactNode
+  sectorIcon: icon,
   fund: 'NOF I' | 'NOF II' | 'Simrik'
   // status: 'Active' | 'Advancing to Exit' | 'Follow-on'
+  highlight:boolean,
   statusCls: string
   province: string
   year: string

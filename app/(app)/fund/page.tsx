@@ -450,7 +450,7 @@ function ValueBeyondCapital() {
                   Explore opportunities across our three institutional funds and join Nepal's investment future.
                 </p>
               </div>
-              <a href="#contact" className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[14px] px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/30 self-start">
+              <a href="/contact-us" className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[14px] px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/30 self-start">
                 Get in Touch <ArrowRight size={15} />
               </a>
             </div>

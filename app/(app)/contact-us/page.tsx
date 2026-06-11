@@ -2,6 +2,7 @@
 
 
 import { Navbar } from '@/components/Layout/Navbar'
+import toast,{Toaster} from 'react-hot-toast'
 import { useEffect, useRef, useState } from 'react'
 import {
   MapPin, Phone, Mail, Clock, ArrowRight,
@@ -10,11 +11,6 @@ import {
 
 /* ─── Global CSS — same token system ────────────────────────────────────── */
 const GLOBAL_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
-
-  body { font-family: 'Outfit', sans-serif; }
-  .font-display { font-family: 'Cormorant Garamond', serif; }
-  .font-mono-dm { font-family: 'DM Mono', monospace; }
 
   @keyframes fadeUp    { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
   @keyframes fadeLeft  { from { opacity:0; transform:translateX(-28px); } to { opacity:1; transform:translateX(0); } }
@@ -96,9 +92,9 @@ const offices = [
     city: 'Kathmandu',
     label: 'Headquarters',
     address: 'Lazimpat, Ward No. 2\nKathmandu 44600, Nepal',
-    phone: '+977 1 4411234',
-    email: 'info@aadhyanta.com',
-    hours: 'Sun – Fri, 9:00 AM – 6:00 PM NPT',
+    phone: ' 01-4526601',
+    email: 'contact@aadhyanta.com',
+    hours: 'Mon – Fri, 9:30 AM – 5:3-*0 PM NPT',
     primary: true,
   },
 ]
@@ -159,23 +155,27 @@ function Hero() {
           </div>
 
           {/* Right — three quick contact chips */}
-          <div className="sr-r flex flex-col gap-3">
+          <div className="sr-r flex flex-col gap-3 align-middle">
             {[
-              { icon: <Mail size={16} />, label: 'General Inquiries', value: 'info@aadhyanta.com', href: 'mailto:info@aadhyanta.com' },
-              { icon: <Mail size={16} />, label: 'Investor Relations', value: 'invest@aadhyanta.com', href: 'mailto:invest@aadhyanta.com' },
-              { icon: <Phone size={16} />, label: 'Kathmandu Office', value: '+977 1 4411234', href: 'tel:+97714411234' },
+              { icon: <Mail size={16} />, label: 'General Inquiries', value: 'contact@aadhyanta.com' },
+              // { icon: <Mail size={16} />, label: 'Investor Relations', value: 'invest@aadhyanta.com', href: 'mailto:invest@aadhyanta.com' },
+              { icon: <Phone size={16} />, label: 'Kathmandu Office (1. num)', value: '01-4526601'},
+              { icon: <Phone size={16} />, label: 'Kathmandu Office (2. num)', value: ' 01-4526603'},
             ].map((c, i) => (
-              <a key={i} href={c.href}
-                className="group flex items-center gap-4 bg-white border border-[#E8E4DD] rounded-xl px-5 py-4 hover:border-[#B71E52] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+              <div key={i} 
+              onClick={()=>{navigator.clipboard.writeText(c.value); toast.success("Copied to Clipboard")
+
+              }}
+                className="group flex items-center gap-4 bg-white border border-[#E8E4DD] rounded-xl px-5 py-4 hover:border-[#B71E52] cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
                 <div className="w-9 h-9 rounded-lg bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] flex-shrink-0">
                   {c.icon}
                 </div>
                 <div className="min-w-0">
                   <div className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-0.5">{c.label}</div>
                   <div className="font-semibold text-[14px] text-[#1C1C2E] truncate group-hover:text-[#B71E52] transition-colors duration-200">{c.value}</div>
-                </div>
+               </div>
                 <ChevronRight size={15} className="text-stone-300 group-hover:text-[#B71E52] ml-auto flex-shrink-0 transition-colors duration-200" />
-              </a>
+              </div>
             ))}
           </div>
         </div>
@@ -189,10 +189,16 @@ function Hero() {
 ═══════════════════════════════════════════════════════════════════════════ */
 function ContactMain() {
   const [topic, setTopic] = useState('General Inquiry')
-  const [form, setForm] = useState({ name: '', org: '', email: '', phone:'', message: '' })
+  const [form, setForm] = useState({ name: 'nothing', org: 'nothing', email: 'maharjanprasiddha8@gmail.com', phone:'nothing', message: 'nothing', topic:topic})
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+
+  useEffect(()=>{
+
+    setForm({...form,topic:topic})
+
+  },[topic])
 
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm(f => ({ ...f, [k]: e.target.value }))
@@ -220,9 +226,12 @@ function ContactMain() {
         method: "POST",
         body: JSON.stringify(form),
       })
-      
-      console.log(response)
+      // console.log(response)
+
+      // setSubmitted(true)
       setLoading(false)
+
+
     } catch (error) {
       setLoading(false)
     }
@@ -596,6 +605,7 @@ export default function ContactPage() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-white">
+        <Toaster position='bottom-center'/>
         <Navbar variant='nontransparent'/>
         <Hero />
         <ContactMain />
