@@ -1,5 +1,7 @@
 // data/articles.ts
 
+import { Article } from "@/types/global";
+
 
 export const articles: Article[] = [
   {

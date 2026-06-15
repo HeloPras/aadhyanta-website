@@ -20,6 +20,7 @@ import {
 } from "lucide-react"
 import { articles } from "@/data/articles" // adjust path if needed
 import { useParams } from "next/navigation"
+import { Section } from "@/types/global"
 
 /* ─── Global CSS ─────────────────────────────────────────────────────────── */
 const GLOBAL_CSS = `
