@@ -8,6 +8,8 @@ import {
   MapPin, Phone, Mail, Clock, ArrowRight,
   CheckCircle, Linkedin, Twitter, ChevronRight
 } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
+import ContactMain from '@/components/Pages/Contact/ContactForm'
 
 /* ─── Global CSS — same token system ────────────────────────────────────── */
 const GLOBAL_CSS = `
@@ -29,15 +31,75 @@ const GLOBAL_CSS = `
 
   /* Form inputs */
   .cf-input {
-    width:100%; padding:12px 16px;
-    border:1.5px solid #E8E4DD; border-radius:8px;
-    background:#F5F2ED; color:#1C1C2E;
-    font-family:'Outfit',sans-serif; font-size:14px;
-    transition:all 0.2s; outline:none;
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #E8E4DD;
+    border-radius: 8px;
+    background: #F5F2ED;
+    color: #1C1C2E;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s;
+    appearance: none;
   }
-  .cf-input::placeholder { color:#9CA3AF; }
-  .cf-input:focus { border-color:#B71E52; background:#fff; box-shadow:0 0 0 3px rgba(183,30,82,0.09); }
-  .cf-input.error { border-color:#EF4444; background:#FFF5F5; }
+  .cf-input::placeholder { color: #9CA3AF; }
+  .cf-input:focus {
+    border-color: #B71E52;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(183,30,82,0.09);
+  }
+  .cf-input.error { border-color: #EF4444; background: #FFF5F5; }
+  textarea.cf-input { resize: vertical; min-height: 120px; }
+ 
+  .topic-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border: 1.5px solid #E8E4DD;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #F5F2ED;
+    text-align: left;
+    width: 100%;
+  }
+  .topic-tab:hover { border-color: #1C1C2E; }
+  .topic-tab.active {
+    border-color: #B71E52;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(183,30,82,0.08);
+  }
+  .topic-tab.active .tab-icon { background: #B71E52; color: #fff; }
+ 
+  .tab-icon {
+    width: 32px; height: 32px;
+    border-radius: 7px;
+    background: #E8E4DD;
+    color: #9CA3AF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+ 
+  /* Form section fade transition */
+  @keyframes formFadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+  .form-fade { animation: formFadeIn 0.35s cubic-bezier(0.16,1,0.3,1) forwards; }
+ 
+  /* Select arrow */
+  .cf-select-wrap { position: relative; }
+  .cf-select-wrap::after {
+    content: '';
+    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    width: 0; height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #9CA3AF;
+    pointer-events: none;
+  }
 
   textarea.cf-input { resize:vertical; min-height:130px; }
 
@@ -187,251 +249,254 @@ function Hero() {
 /* ═══════════════════════════════════════════════════════════════════════════
    CONTACT FORM + OFFICES
 ═══════════════════════════════════════════════════════════════════════════ */
-function ContactMain() {
-  const [topic, setTopic] = useState('General Inquiry')
-  const [form, setForm] = useState({ name: 'nothing', org: 'nothing', email: 'maharjanprasiddha8@gmail.com', phone:'nothing', message: 'nothing', topic:topic})
-  const [errors, setErrors] = useState<Record<string, string>>({})
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-
-  useEffect(()=>{
-
-    setForm({...form,topic:topic})
-
-  },[topic])
-
-  const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setForm(f => ({ ...f, [k]: e.target.value }))
-
-  const validate = () => {
-    const e: Record<string, string> = {}
-    if (!form.name.trim())    e.name    = 'Name is required'
-    if (!form.email.trim())   e.email   = 'Email is required'
-    else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = 'Enter a valid email'
-    if (!form.message.trim()) e.message = 'Message is required'
-    return e
-  }
-
-  const submit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const errs = validate()
-    if (Object.keys(errs).length) {
-      setErrors(errs)
-      return
-    }
-    setLoading(true)
-    // setTimeout(() => { setLoading(false); setSubmitted(true) }, 1200)
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify(form),
-      })
-      // console.log(response)
-
-      // setSubmitted(true)
-      setLoading(false)
+// function ContactMain({paramTopic}:{paramTopic:string}) {
 
 
-    } catch (error) {
-      setLoading(false)
-    }
-  }
 
-  return (
-    <section className="bg-white py-20 md:py-28 border-b border-[#E8E4DD]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+//   const [topic, setTopic] = useState(paramTopic || "General Inquiry")
+//   const [form, setForm] = useState({ name: 'nothing', org: 'nothing', email: 'maharjanprasiddha8@gmail.com', phone:'nothing', message: 'nothing', topic:topic})
+//   const [errors, setErrors] = useState<Record<string, string>>({})
+//   const [submitted, setSubmitted] = useState(false)
+//   const [loading, setLoading] = useState(false)
 
-        {/* ── FORM ── */}
-        <div className="sr-l">
-          <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Send a Message</span>
-          <h2 className="font-display font-bold text-[clamp(30px,3.5vw,44px)] leading-[1.08] text-[#1C1C2E] mb-8">
-            How can we <em className="italic text-[#B71E52]">help you?</em>
-          </h2>
+//   // useEffect(()=>{
 
-          {submitted ? (
-            /* ── Success state ── */
-            <div className="bg-[#F0FDF4] border border-[#BBF7D0] rounded-2xl p-10 text-center">
-              <div className="w-14 h-14 rounded-full bg-[#DCFCE7] flex items-center justify-center mx-auto mb-5">
-                <CheckCircle size={26} className="text-[#16A34A]" />
-              </div>
-              <div className="font-display font-bold text-[28px] text-[#15803D] mb-2">Message sent.</div>
-              <p className="text-[#166534] text-[14px] leading-[1.75] max-w-sm mx-auto">
-                Thank you for reaching out. A member of our team will respond within 2–3 business days.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={submit} className="flex flex-col gap-6" noValidate>
+//   //   setForm({ ...form, topic: topic })
 
-              {/* Topic selector */}
-              <div>
-                <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-3 block">
-                  What's this about?
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {topics.map(t => (
-                    <button key={t} type="button" onClick={() => setTopic(t)}
-                      className={`topic-pill px-4 py-2 rounded-full border text-[13px] font-medium
-                        ${topic === t ? 'active' : 'border-[#E8E4DD] text-stone-500 bg-[#F5F2ED]'}`}>
-                      {t}
-                    </button>
-                  ))}
-                </div>
-              </div>
+//   // },[topic])
 
-              {/* Name + Org */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
-                    Full Name <span className="text-[#B71E52]">*</span>
-                  </label>
-                  <input
-                    type="text" value={form.name} onChange={set('name')} placeholder="Your Name"
-                    className={`cf-input ${errors.name ? 'error' : ''}`}
-                  />
-                  {errors.name && <p className="text-[11px] text-red-500 mt-1.5">{errors.name}</p>}
-                </div>
-                <div>
-                  <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
-                    Organisation
-                  </label>
-                  <input
-                    type="text" value={form.org} onChange={set('org')} placeholder="Company or Fund"
-                    className="cf-input"
-                  />
-                </div>
-              </div>
+//   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+//     setForm(f => ({ ...f, [k]: e.target.value }))
 
-              {/* Email + Phone */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
-                    Email <span className="text-[#B71E52]">*</span>
-                  </label>
-                  <input
-                    type="email" value={form.email} onChange={set('email')} placeholder="you@company.com"
-                    className={`cf-input ${errors.email ? 'error' : ''}`}
-                  />
-                  {errors.email && <p className="text-[11px] text-red-500 mt-1.5">{errors.email}</p>}
-                </div>
-                <div>
-                  <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
-                    Phone
-                  </label>
-                  <input
-                    type="tel" value={form.phone} onChange={set('phone')} placeholder="+977 98XXXXXXXX"
-                    className="cf-input"
-                  />
-                </div>
-              </div>
+//   const validate = () => {
+//     const e: Record<string, string> = {}
+//     if (!form.name.trim())    e.name    = 'Name is required'
+//     if (!form.email.trim())   e.email   = 'Email is required'
+//     else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = 'Enter a valid email'
+//     if (!form.message.trim()) e.message = 'Message is required'
+//     return e
+//   }
 
-              {/* Message */}
-              <div>
-                <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
-                  Message <span className="text-[#B71E52]">*</span>
-                </label>
-                <textarea
-                  value={form.message} onChange={set('message')}
-                  placeholder="Tell us what you're working on, what you're looking for, or how we can help…"
-                  className={`cf-input ${errors.message ? 'error' : ''}`}
-                />
-                {errors.message && <p className="text-[11px] text-red-500 mt-1.5">{errors.message}</p>}
-              </div>
+//   const submit = async (e: React.FormEvent) => {
+//     e.preventDefault()
+//     const errs = validate()
+//     if (Object.keys(errs).length) {
+//       setErrors(errs)
+//       return
+//     }
+//     setLoading(true)
+//     // setTimeout(() => { setLoading(false); setSubmitted(true) }, 1200)
+//     try {
+//       const response = await fetch("/api/contact", {
+//         method: "POST",
+//         body: JSON.stringify({ ...form, topic: topic }),
+//       })
+//       // console.log(response)
 
-              {/* Submit */}
-              <button
-                type="submit"
-                disabled={loading}
-                className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] disabled:bg-[#d88fa5] text-white font-semibold text-[15px] px-8 py-4 rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25 self-start"
-              >
-                {loading ? (
-                  <>
-                    <svg className="animate-spin" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <circle cx="8" cy="8" r="6" stroke="rgba(255,255,255,0.4)" strokeWidth="2"/>
-                      <path d="M8 2a6 6 0 0 1 6 6" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                    Sending…
-                  </>
-                ) : (
-                  <>Send Message <ArrowRight size={16} /></>
-                )}
-              </button>
+//       // setSubmitted(true)
+//       setLoading(false)
 
-              <p className="text-[11px] text-stone-400 leading-[1.6]">
-                We respond to all inquiries within 2–3 business days. Your information is never shared with third parties.
-              </p>
-            </form>
-          )}
-        </div>
 
-        {/* ── OFFICES ── */}
-        <div className="sr-r flex flex-col gap-5">
-          {offices.map((o, i) => (
-            <div key={i} className={` bg-[#F5F2ED] rounded-xl border overflow-hidden
-              ${o.primary ? 'border-[#B71E52]' : 'border-[#E8E4DD]'}`}>
+//     } catch (error) {
+//       setLoading(false)
+//     }
+//   }
 
-              {/* Card header */}
-              <div className={`px-6 py-4 border-b flex items-center justify-between
-                ${o.primary ? 'bg-[#B71E52]/5 border-[#B71E52]/20' : 'bg-white border-[#E8E4DD]'}`}>
-                <div>
-                  <div className="font-display font-bold text-[18px] text-[#1C1C2E] leading-tight">{o.city}</div>
-                  <div className="font-mono-dm text-[9px] tracking-[0.12em] uppercase mt-0.5"
-                    style={{ color: o.primary ? '#B71E52' : '#9CA3AF' }}>{o.label}</div>
-                </div>
-                {o.primary && (
-                  <span className="font-mono-dm text-[9px] tracking-widest uppercase px-2.5 py-1 bg-[#B71E52] text-white rounded">
-                    HQ
-                  </span>
-                )}
-              </div>
+//   return (
+//     <section className="bg-white py-20 md:py-28 border-b border-[#E8E4DD]">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
 
-              {/* Card body */}
-              <div className="px-6 py-5 flex flex-col gap-4">
-                {[
-                  { icon: <MapPin size={13} />, text: o.address },
-                  { icon: <Phone size={13} />, text: o.phone, href: `tel:${o.phone.replace(/\s/g,'')}` },
-                  { icon: <Mail size={13} />, text: o.email, href: `mailto:${o.email}` },
-                  { icon: <Clock size={13} />, text: o.hours },
-                ].map((row, j) => (
-                  <div key={j} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#f5e8ed] flex items-center justify-center flex-shrink-0 text-[#B71E52] mt-0.5">
-                      {row.icon}
-                    </div>
-                    {row.href ? (
-                      <a href={row.href}
-                        className="text-[13px] text-stone-600 leading-[1.65] hover:text-[#B71E52] transition-colors duration-200 whitespace-pre-line">
-                        {row.text}
-                      </a>
-                    ) : (
-                      <span className="text-[13px] text-stone-600 leading-[1.65] whitespace-pre-line">{row.text}</span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+//         {/* ── FORM ── */}
+//         <div className="sr-l">
+//           <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Send a Message</span>
+//           <h2 className="font-display font-bold text-[clamp(30px,3.5vw,44px)] leading-[1.08] text-[#1C1C2E] mb-8">
+//             How can we <em className="italic text-[#B71E52]">help you?</em>
+//           </h2>
 
-          {/* Social links */}
-          {/* <div className="bg-white border border-[#E8E4DD] rounded-xl p-5 flex items-center justify-between">
-            <span className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase">Follow us</span>
-            <div className="flex gap-3">
-              {[
-                { icon: <Linkedin size={15} />, href: 'https://linkedin.com', label: 'LinkedIn' },
-                { icon: <Twitter size={15} />, href: 'https://twitter.com', label: 'Twitter' },
-              ].map((s, i) => (
-                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="w-9 h-9 rounded-full border border-[#E8E4DD] bg-[#F5F2ED] flex items-center justify-center text-stone-400 hover:text-[#B71E52] hover:border-[#B71E52] transition-all duration-200">
-                  {s.icon}
-                </a>
-              ))}
-            </div>
-          </div> */}
-        </div>
+//           {submitted ? (
+//             /* ── Success state ── */
+//             <div className="bg-[#F0FDF4] border border-[#BBF7D0] rounded-2xl p-10 text-center">
+//               <div className="w-14 h-14 rounded-full bg-[#DCFCE7] flex items-center justify-center mx-auto mb-5">
+//                 <CheckCircle size={26} className="text-[#16A34A]" />
+//               </div>
+//               <div className="font-display font-bold text-[28px] text-[#15803D] mb-2">Message sent.</div>
+//               <p className="text-[#166534] text-[14px] leading-[1.75] max-w-sm mx-auto">
+//                 Thank you for reaching out. A member of our team will respond within 2–3 business days.
+//               </p>
+//             </div>
+//           ) : (
+//             <form onSubmit={submit} className="flex flex-col gap-6" noValidate>
 
-      </div>
-    </section>
-  )
-}
+//               {/* Topic selector */}
+//               <div>
+//                 <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-3 block">
+//                   What's this about?
+//                 </label>
+//                 <div className="flex flex-wrap gap-2">
+//                   {topics.map(t => (
+//                     <button key={t} type="button" onClick={() => setTopic(t)}
+//                       className={`topic-pill px-4 py-2 rounded-full border text-[13px] font-medium
+//                         ${topic === t ? 'active' : 'border-[#E8E4DD] text-stone-500 bg-[#F5F2ED]'}`}>
+//                       {t}
+//                     </button>
+//                   ))}
+//                 </div>
+//               </div>
+
+//               {/* Name + Org */}
+//               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+//                 <div>
+//                   <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
+//                     Full Name <span className="text-[#B71E52]">*</span>
+//                   </label>
+//                   <input
+//                     type="text" value={form.name} onChange={set('name')} placeholder="Your Name"
+//                     className={`cf-input ${errors.name ? 'error' : ''}`}
+//                   />
+//                   {errors.name && <p className="text-[11px] text-red-500 mt-1.5">{errors.name}</p>}
+//                 </div>
+//                 <div>
+//                   <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
+//                     Organisation
+//                   </label>
+//                   <input
+//                     type="text" value={form.org} onChange={set('org')} placeholder="Company or Fund"
+//                     className="cf-input"
+//                   />
+//                 </div>
+//               </div>
+
+//               {/* Email + Phone */}
+//               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+//                 <div>
+//                   <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
+//                     Email <span className="text-[#B71E52]">*</span>
+//                   </label>
+//                   <input
+//                     type="email" value={form.email} onChange={set('email')} placeholder="you@company.com"
+//                     className={`cf-input ${errors.email ? 'error' : ''}`}
+//                   />
+//                   {errors.email && <p className="text-[11px] text-red-500 mt-1.5">{errors.email}</p>}
+//                 </div>
+//                 <div>
+//                   <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
+//                     Phone
+//                   </label>
+//                   <input
+//                     type="tel" value={form.phone} onChange={set('phone')} placeholder="+977 98XXXXXXXX"
+//                     className="cf-input"
+//                   />
+//                 </div>
+//               </div>
+
+//               {/* Message */}
+//               <div>
+//                 <label className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase mb-2 block">
+//                   Message <span className="text-[#B71E52]">*</span>
+//                 </label>
+//                 <textarea
+//                   value={form.message} onChange={set('message')}
+//                   placeholder="Tell us what you're working on, what you're looking for, or how we can help…"
+//                   className={`cf-input ${errors.message ? 'error' : ''}`}
+//                 />
+//                 {errors.message && <p className="text-[11px] text-red-500 mt-1.5">{errors.message}</p>}
+//               </div>
+
+//               {/* Submit */}
+//               <button
+//                 type="submit"
+//                 disabled={loading}
+//                 className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] disabled:bg-[#d88fa5] text-white font-semibold text-[15px] px-8 py-4 rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25 self-start"
+//               >
+//                 {loading ? (
+//                   <>
+//                     <svg className="animate-spin" width="16" height="16" viewBox="0 0 16 16" fill="none">
+//                       <circle cx="8" cy="8" r="6" stroke="rgba(255,255,255,0.4)" strokeWidth="2"/>
+//                       <path d="M8 2a6 6 0 0 1 6 6" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
+//                     </svg>
+//                     Sending…
+//                   </>
+//                 ) : (
+//                   <>Send Message <ArrowRight size={16} /></>
+//                 )}
+//               </button>
+
+//               <p className="text-[11px] text-stone-400 leading-[1.6]">
+//                 We respond to all inquiries within 2–3 business days. Your information is never shared with third parties.
+//               </p>
+//             </form>
+//           )}
+//         </div>
+
+//         {/* ── OFFICES ── */}
+//         <div className="sr-r flex flex-col gap-5">
+//           {offices.map((o, i) => (
+//             <div key={i} className={` bg-[#F5F2ED] rounded-xl border overflow-hidden
+//               ${o.primary ? 'border-[#B71E52]' : 'border-[#E8E4DD]'}`}>
+
+//               {/* Card header */}
+//               <div className={`px-6 py-4 border-b flex items-center justify-between
+//                 ${o.primary ? 'bg-[#B71E52]/5 border-[#B71E52]/20' : 'bg-white border-[#E8E4DD]'}`}>
+//                 <div>
+//                   <div className="font-display font-bold text-[18px] text-[#1C1C2E] leading-tight">{o.city}</div>
+//                   <div className="font-mono-dm text-[9px] tracking-[0.12em] uppercase mt-0.5"
+//                     style={{ color: o.primary ? '#B71E52' : '#9CA3AF' }}>{o.label}</div>
+//                 </div>
+//                 {o.primary && (
+//                   <span className="font-mono-dm text-[9px] tracking-widest uppercase px-2.5 py-1 bg-[#B71E52] text-white rounded">
+//                     HQ
+//                   </span>
+//                 )}
+//               </div>
+
+//               {/* Card body */}
+//               <div className="px-6 py-5 flex flex-col gap-4">
+//                 {[
+//                   { icon: <MapPin size={13} />, text: o.address },
+//                   { icon: <Phone size={13} />, text: o.phone, href: `tel:${o.phone.replace(/\s/g,'')}` },
+//                   { icon: <Mail size={13} />, text: o.email, href: `mailto:${o.email}` },
+//                   { icon: <Clock size={13} />, text: o.hours },
+//                 ].map((row, j) => (
+//                   <div key={j} className="flex items-start gap-3">
+//                     <div className="w-5 h-5 rounded-full bg-[#f5e8ed] flex items-center justify-center flex-shrink-0 text-[#B71E52] mt-0.5">
+//                       {row.icon}
+//                     </div>
+//                     {row.href ? (
+//                       <a href={row.href}
+//                         className="text-[13px] text-stone-600 leading-[1.65] hover:text-[#B71E52] transition-colors duration-200 whitespace-pre-line">
+//                         {row.text}
+//                       </a>
+//                     ) : (
+//                       <span className="text-[13px] text-stone-600 leading-[1.65] whitespace-pre-line">{row.text}</span>
+//                     )}
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+//           ))}
+
+//           {/* Social links */}
+//           {/* <div className="bg-white border border-[#E8E4DD] rounded-xl p-5 flex items-center justify-between">
+//             <span className="font-mono-dm text-[10px] text-stone-400 tracking-[0.1em] uppercase">Follow us</span>
+//             <div className="flex gap-3">
+//               {[
+//                 { icon: <Linkedin size={15} />, href: 'https://linkedin.com', label: 'LinkedIn' },
+//                 { icon: <Twitter size={15} />, href: 'https://twitter.com', label: 'Twitter' },
+//               ].map((s, i) => (
+//                 <a key={i} href={s.href} target="_blank" rel="noopener noreferrer"
+//                   aria-label={s.label}
+//                   className="w-9 h-9 rounded-full border border-[#E8E4DD] bg-[#F5F2ED] flex items-center justify-center text-stone-400 hover:text-[#B71E52] hover:border-[#B71E52] transition-all duration-200">
+//                   {s.icon}
+//                 </a>
+//               ))}
+//             </div>
+//           </div> */}
+//         </div>
+
+//       </div>
+//     </section>
+//   )
+// }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    MAP SECTION
@@ -601,6 +666,10 @@ function IntentCards() {
 ═══════════════════════════════════════════════════════════════════════════ */
 export default function ContactPage() {
   useReveal()
+  const searchParams = useSearchParams()
+  const topic = searchParams.get('topic')||""
+
+
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
@@ -608,7 +677,8 @@ export default function ContactPage() {
         <Toaster position='bottom-center'/>
         <Navbar variant='nontransparent'/>
         <Hero />
-        <ContactMain />
+        {/* <ContactMain  paramTopic = {topic}/> */}
+        <ContactMain paramTopic={topic}/>
         <MapSection />
         <FAQ />
         <IntentCards />

@@ -145,17 +145,17 @@ const TeamPage: React.FC = () => {
   const testimonials = [
     {
       quote:
-        "The collaborative environment and access to sophisticated investment strategies make every day a learning opportunity. I've grown more here in three years than in the previous decade of my career.",
-      name: "James Anderson",
-      role: "Senior Portfolio Manager",
-      initials: "JA",
+        "Aadhyanta's team brings together deep expertise, strategic thinking, and a strong commitment to helping businesses grow. Their approach goes beyond investment by creating long-term value.",
+      name: "Nischal Singh Bhandari",
+      role: "Partnerships and Communication Manager",
+      initials: "NSB",
     },
     {
       quote:
-        "What sets Aadhyanta apart is the genuine commitment to both client success and employee development. The leadership truly invests in helping us reach our full potential.",
-      name: "Jennifer Lee",
-      role: "Director of Client Relations",
-      initials: "JL",
+        "There’s a strong emphasis on learning, data-driven thinking, and accountability. Every decision is backed by discussion and analysis.",
+      name: "Bijesh Rajkarnikar",
+      role: "Financial Analyst",
+      initials: "BR",
     },
   ]
 
@@ -250,6 +250,13 @@ const TeamPage: React.FC = () => {
               description="Expert portfolio managers and analysts identifying and nurturing Nepal's most compelling growth opportunities."
               department="Management"
             />
+
+            <DepartmentSection
+              label="Business Developement"
+              title="Acceletor Team"
+              description="Building partnerships, accelerating ventures, and creating opportunities that drive sustainable business growth."
+              department="Programs"
+            />
             {/* <DepartmentSection
               label="Support Teams"
               title="Operations & Client Relations"
@@ -260,71 +267,6 @@ const TeamPage: React.FC = () => {
         </section>
 
         {/* ── CULTURE & VALUES ─────────────────────────────────────────────── */}
-        <section className="bg-[#F5F2ED] py-20 md:py-28 border-b border-[#E8E4DD]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Left */}
-            <div className="sr-l">
-              <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
-                Our Culture
-              </span>
-              <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-6">
-                Where talent meets{" "}
-                <em className="italic text-[#B71E52]">opportunity</em>
-              </h2>
-              <p className="text-stone-500 text-[15px] leading-[1.85] mb-5">
-                At Aadhyanta Fund, we cultivate an environment where exceptional
-                professionals can thrive, innovate, and make meaningful
-                contributions to our clients' success. Our culture emphasizes
-                collaboration, continuous learning, and excellence in everything
-                we do.
-              </p>
-              <p className="text-stone-500 text-[15px] leading-[1.85] mb-8">
-                We invest in our team through professional development programs,
-                industry certifications, and opportunities to work on
-                challenging, high-impact projects alongside some of the
-                brightest minds in finance.
-              </p>
-              <a
-                href="#careers"
-                className="inline-flex items-center gap-2 text-[#B71E52] font-semibold text-[14px] hover:gap-4 transition-all duration-200"
-              >
-                Explore career opportunities <ChevronRight size={15} />
-              </a>
-            </div>
-
-            {/* Right — what we offer */}
-            <div className="sr-r">
-              <div className="bg-white rounded-xl border border-[#E8E4DD] overflow-hidden shadow-sm">
-                <div className="px-8 py-6 border-b border-[#E8E4DD]">
-                  <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-stone-400">
-                    What We Offer
-                  </span>
-                </div>
-                <div className="divide-y divide-[#E8E4DD]">
-                  {offers.map((o, i) => (
-                    <div
-                      key={i}
-                      className="offer-item flex items-start gap-4 px-8 py-5 bg-white"
-                    >
-                      <div className="w-5 h-5 rounded-full bg-[#f5e8ed] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <ChevronRight size={10} className="text-[#B71E52]" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-[14px] text-[#1C1C2E] mb-0.5">
-                          {o.title}
-                        </div>
-                        <div className="text-[13px] text-stone-500 leading-[1.65]">
-                          {o.desc}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
         <section className="bg-white py-20 md:py-24 border-b border-[#E8E4DD]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -344,26 +286,32 @@ const TeamPage: React.FC = () => {
                   className={`sr d${i + 1} testi-card bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl p-8`}
                 >
                   {/* Quote mark */}
-                  <div className="font-display font-bold text-[56px] text-[#B71E52]/20 leading-[0.7] mb-5 select-none">
-                    "
-                  </div>
+                  <div className="flex justify-between h-full  w-full flex-col">
+                    <div>
+                      <div className="font-display font-bold text-[56px] text-[#B71E52]/20 leading-[0.7] mb-5 select-none">
+                        "
+                      </div>
 
-                  <blockquote className="font-display italic text-[19px] text-[#1C1C2E] leading-[1.6] mb-8">
-                    {t.quote}
-                  </blockquote>
-
-                  <div className="flex items-center gap-3 pt-5 border-t border-[#E8E4DD]">
-                    <div className="w-10 h-10 rounded-full bg-[#1C1C2E] flex items-center justify-center flex-shrink-0">
-                      <span className="font-mono-dm text-[11px] text-white">
-                        {t.initials}
-                      </span>
+                      <blockquote className="font-display italic text-[19px] text-[#1C1C2E] leading-[1.6] mb-8">
+                        {t.quote}
+                      </blockquote>
                     </div>
                     <div>
-                      <div className="font-semibold text-[14px] text-[#1C1C2E]">
-                        {t.name}
-                      </div>
-                      <div className="font-mono-dm text-[10px] text-stone-400 tracking-[0.08em] uppercase mt-0.5">
-                        {t.role}
+                      <div className="flex  items-center gap-3 pt-5 border-t border-[#E8E4DD]">
+                        <div className="w-10 h-10 rounded-full bg-[#1C1C2E] flex items-center justify-center flex-shrink-0">
+                          <span className="font-mono-dm text-[11px] text-white">
+                            {t.initials}
+                          </span>
+                        </div>
+
+                        <div>
+                          <div className="font-semibold text-[14px] text-[#1C1C2E]">
+                            {t.name}
+                          </div>
+                          <div className="font-mono-dm text-[10px] text-stone-400 tracking-[0.08em] uppercase mt-0.5">
+                            {t.role}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

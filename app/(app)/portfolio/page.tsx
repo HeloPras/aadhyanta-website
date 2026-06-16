@@ -5,20 +5,14 @@ import { useEffect, useRef, useState } from "react"
 import { Navbar } from "@/components/Layout/Navbar"
 import {motion} from 'framer-motion'
 import {
-  Code,
-  Network,
   ArrowUpRight,
-  Zap,
-  Building2,
-  Leaf,
-  Cpu,
-  Factory,
   Search,
   MapPin,
   Calendar,
 } from "lucide-react"
 import { container, sfd } from "@/util/animation/framer-helper"
 import {companies} from '@/data/company'
+import ExitsSection from "@/components/Pages/Portfolio/ExitSection"
 
 /* ─── Global CSS — same token system ────────────────────────────────────── */
 const GLOBAL_CSS = `
@@ -566,6 +560,7 @@ export default function PortfolioPage() {
         <Navbar variant="nontransparent" />
         <Hero />
         <PortfolioGrid />
+        <ExitsSection/>
         {/* <ProvinceBreakdown /> */}
       </div>
     </>

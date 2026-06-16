@@ -21,6 +21,7 @@ interface TeamMember {
   type: 'Blog' | 'Article' | 'Report'
   typeCls: string
   tag: string
+  featured: boolean
   title: string
   excerpt: string
   author: string
