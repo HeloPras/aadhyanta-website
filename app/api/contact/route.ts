@@ -38,7 +38,9 @@ export async function POST(req: NextRequest) {
     // // Preview URL is only available when using an Ethereal test account
     // console.log("Preview URL: %s", getTestMessageUrl(info));
     // const info =  await transpoerter.''
-    sendAutoReply(body.email, body.name)
+
+    // sendAutoReply(body.email, body.name)
+
   } catch (err) {
     throw new Error("There is error")
   }

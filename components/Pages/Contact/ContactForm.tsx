@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, SetStateAction, Dispatch } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import {
   ArrowRight,
@@ -101,12 +101,14 @@ type FieldType =
   | "textarea"
   | "number"
   | "checkbox"
+  | "net profit"
 
 interface ExtraField {
   key: string
   label: string
   placeholder: string
   type: FieldType
+  dependent?: boolean
   required?: boolean
   options?: string[] // for select
   hint?: string // helper text below
@@ -300,7 +302,7 @@ const TOPICS: TopicConfig[] = [
         label: "launched",
         placeholder: "e.g. 50,000,000",
         type: "checkbox",
-        required: true,
+        required: false,
         hint: "Have launched the business and started to generate revenue. ",
       },
 
@@ -308,32 +310,36 @@ const TOPICS: TopicConfig[] = [
         key: "share capital",
         label: "Share Capital (NPR)",
         placeholder: "e.g. 10,000,000",
+        dependent: true,
         type: "text",
-        required: true,
+        required: false,
         hint: "Total value of shares issued by the company.",
       },
       {
         key: "book networth",
         label: "Book Networth (NPR)",
         placeholder: "e.g. 25,000,000",
+        dependent: true,
         type: "text",
-        required: true,
+        required: false,
         hint: "Total assets minus total liabilities as per your financial statements.",
       },
       {
         key: "annualRevenue",
         label: "Annual Revenue (NPR)",
         placeholder: "e.g. 50,000,000",
+        dependent: true,
         type: "text",
-        required: true,
+        required: false,
         hint: "We typically invest in businesses with NPR 10M+ in annual revenue.",
       },
       {
         key: "net profit",
         label: "Net Profit (NPR)",
         placeholder: "e.g. 50,000,000",
-        type: "text",
-        required: true,
+        type: "net profit",
+        dependent:true,
+        required: false,
         hint: "We typically invest in businesses with NPR 10M+ in annual revenue.",
       },
       {
@@ -341,7 +347,8 @@ const TOPICS: TopicConfig[] = [
         label: "Province of Operation",
         placeholder: "",
         type: "select",
-        required: true,
+        required: false,
+        dependent:true,
         options: [
           "Koshi Province",
           "Madhesh Province",
@@ -358,7 +365,8 @@ const TOPICS: TopicConfig[] = [
         label: "Years in Operation",
         placeholder: "eg. 10",
         type: "text",
-        required: true,
+        required: false,
+        dependent:true,
       },
     ],
     submitLabel: "Submit Investment Inquiry",
@@ -466,21 +474,31 @@ const offices = [
 /* ─── Field renderer ─────────────────────────────────────────────────────── */
 function Field({
   field,
+  clearValue,
+  isChecked,
   value,
   onChange,
   error,
 }: {
   field: ExtraField
+  clearValue: Dispatch<SetStateAction<Record<string, string> >>;
+  isChecked:boolean
   value: string
   onChange: (v: string) => void
   error?: string
 }) {
+
+  const [Net, setNet] = useState('profit')
+
+    const checked = isChecked && field.dependent
+
+    
   if (field.type === "select") {
     return (
       <div>
         <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-2 block">
           {field.label}{" "}
-          {field.required && <span className="text-[#B71E52]">*</span>}
+          {(field.required || checked) && <span className="text-[#B71E52]">*</span>}
         </label>
         <div className="cf-select-wrap">
           <select
@@ -509,7 +527,7 @@ function Field({
       <div>
         <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-2 block">
           {field.label}{" "}
-          {field.required && <span className="text-[#B71E52]">*</span>}
+          {(field.required || checked) && <span className="text-[#B71E52]">*</span>}
         </label>
         <textarea
           value={value}
@@ -537,12 +555,17 @@ function Field({
         <input
           type="checkbox"
           //   value={value}
-          onChange={(e) => onChange(e.target.checked?'on':'off')}
+          onChange={(e) => {onChange(e.target.checked ? "on" : "off");
+            
+            if(!e.target.checked){
+              clearValue({})
+            }
+          }}
           //   placeholder={field.placeholder}
           className={` ${error ? "error" : ""}`}
         />
         {field.hint && !error && (
-          <p style={{ fontSize: 14 }} className="text-[11px] text-stone-400 ">
+          <p style={{ fontSize: 14 }} className=" text-stone-400 ">
             {field.hint}
           </p>
         )}
@@ -551,11 +574,54 @@ function Field({
     )
   }
 
+  if (field.type === "net profit") {
+    return (
+      <div>
+        <div className="font-mono-dm text-[12px]  text-stone-400 flex  uppercase mb-2  gap-3 ">
+          <div
+            onClick={() => {
+              setNet("profit")
+            }}
+            className={`uppercase  p-0.5 px-1 rounded  cursor-pointer ${Net == "profit" ? "bg-[#B71E52] text-[#F5F2ED] " : " hover:bg-gray-100 border"}   `}
+          >
+            Net Profit
+          </div>
+          /
+          <div
+            onClick={() => {
+              setNet("loss")
+            }}
+            className={`uppercase  p-0.5 px-1 rounded  cursor-pointer ${Net == "loss" ? "bg-[#B71E52] text-[#F5F2ED] " : " hover:bg-gray-100 border"}   `}
+          >
+            Net Loss
+          </div>
+          {"in (NPR)"}
+          {(field.required || checked) && <span className="text-[#B71E52]">*</span>}
+        </div>
+        <div className="">
+          <input
+            type={field.type}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder={field.placeholder}
+            className={`cf-input ${error ? "error" : ""}`}
+          />
+        </div>
+
+        {field.hint && !error && (
+          <p style={{ fontSize: 10 }} className="text-[11px] pt-1 text-stone-400 ">
+            {field.hint}
+          </p>
+        )}
+      </div>
+    )
+  }
+
   return (
     <div>
       <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-2 block">
         {field.label}{" "}
-        {field.required && <span className="text-[#B71E52]">*</span>}
+        {(field.required || checked) && <span className="text-[#B71E52]">*</span>}
       </label>
       <input
         type={field.type}
@@ -624,7 +690,6 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
   const setExtra = (k: string) => (v: string) =>
     setExtraValues((prev) => ({ ...prev, [k]: v }))
 
-
   /* ─── Switch topic & update URL ─── */
   const switchTopic = (id: string) => {
     setActiveId(id)
@@ -644,7 +709,7 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
     else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = "Enter a valid email"
     if (!form.message.trim()) e.message = "Message is required"
     activeTopic.extraFields
-      .filter((f) => f.required)
+      .filter((f) => f.required || (extraValues['successfully launched'] === 'on' && f.dependent ))
       .forEach((f) => {
         if (!extraValues[f.key]?.trim()) e[f.key] = `${f.label} is required`
       })
@@ -759,7 +824,7 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
                     })
                     setExtraValues({})
                   }}
-                  className="mt-6 text-[13px] text-[#166534] underline underline-offset-2"
+                  className="mt-6 text-[13px] text-[#166534] underline underline-offset-2 cursor-pointer"
                 >
                   Send another message
                 </button>
@@ -873,14 +938,21 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
                           i++
                         }
                       }
-                      return (extraValues['successfully launched'] && extraValues['successfully launched'] == 'on' ? rows : rows.slice(0,4) ).map((row, ri) => (
+                      return (
+                        extraValues["successfully launched"] &&
+                        extraValues["successfully launched"] == "on"
+                          ? rows
+                          : rows.slice(0, 4)
+                      ).map((row, ri) => (
                         <div
                           key={ri}
                           className={`grid gap-4 ${row.length === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1"}`}
                         >
                           {row.map((field) => (
                             <Field
+                              isChecked = {extraValues["successfully launched"] == "on"}
                               key={field.key}
+                              clearValue = {setExtraValues}
                               field={field}
                               value={extraValues[field.key] ?? ""}
                               onChange={setExtra(field.key)}

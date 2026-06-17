@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import ContactMain from '@/components/Pages/Contact/ContactForm'
+import Loader from '@/components/Loader'
 
 /* ─── Global CSS — same token system ────────────────────────────────────── */
 const GLOBAL_CSS = `
@@ -333,88 +334,88 @@ function FAQ() {
 /* ═══════════════════════════════════════════════════════════════════════════
    INTENT CARDS — quick pathway chooser
 ═══════════════════════════════════════════════════════════════════════════ */
-function IntentCards() {
-  const cards = [
-    {
-      tag: 'Enterprises',
-      title: 'Seeking growth capital',
-      desc: 'Growth-stage business with proven revenue and clear expansion plans? Apply to our accelerator or reach out directly.',
-      cta: 'Apply for Investment',
-      href: '/accelerator#apply',
-      dark: false,
-    },
-    {
-      tag: 'Investors',
-      title: 'Exploring fund opportunities',
-      desc: 'Institutional or development finance investor interested in Nepal\'s private equity market? Let\'s talk.',
-      cta: 'Investor Inquiry',
-      href: 'mailto:invest@aadhyanta.com',
-      dark: true,
-    },
-    {
-      tag: 'Partners',
-      title: 'Looking to collaborate',
-      desc: 'Development partner, government body, or ecosystem builder? We design programs and partnerships that create lasting impact.',
-      cta: 'Partnership Inquiry',
-      href: 'mailto:partnerships@aadhyanta.com',
-      dark: false,
-    },
-  ]
+// function IntentCards() {
+//   const cards = [
+//     {
+//       tag: 'Enterprises',
+//       title: 'Seeking growth capital',
+//       desc: 'Growth-stage business with proven revenue and clear expansion plans? Apply to our accelerator or reach out directly.',
+//       cta: 'Apply for Investment',
+//       href: '/accelerator#apply',
+//       dark: false,
+//     },
+//     {
+//       tag: 'Investors',
+//       title: 'Exploring fund opportunities',
+//       desc: 'Institutional or development finance investor interested in Nepal\'s private equity market? Let\'s talk.',
+//       cta: 'Investor Inquiry',
+//       href: 'mailto:invest@aadhyanta.com',
+//       dark: true,
+//     },
+//     {
+//       tag: 'Partners',
+//       title: 'Looking to collaborate',
+//       desc: 'Development partner, government body, or ecosystem builder? We design programs and partnerships that create lasting impact.',
+//       cta: 'Partnership Inquiry',
+//       href: 'mailto:partnerships@aadhyanta.com',
+//       dark: false,
+//     },
+//   ]
 
-  return (
-    <section className="bg-[#F5F2ED] py-20 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="sr text-center mb-12">
-          <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Quick Paths</span>
-          <h2 className="font-display font-bold text-[clamp(30px,3.5vw,44px)] leading-[1.08] text-[#1C1C2E]">
-            What brings you <em className="italic text-[#B71E52]">here?</em>
-          </h2>
-        </div>
+//   return (
+//     <section className="bg-[#F5F2ED] py-20 md:py-24">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="sr text-center mb-12">
+//           <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Quick Paths</span>
+//           <h2 className="font-display font-bold text-[clamp(30px,3.5vw,44px)] leading-[1.08] text-[#1C1C2E]">
+//             What brings you <em className="italic text-[#B71E52]">here?</em>
+//           </h2>
+//         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {cards.map((c, i) => (
-            <div key={i}
-              className={`sr d${i + 1} rounded-2xl p-8 flex flex-col justify-between border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl
-                ${c.dark
-                  ? 'bg-[#1C1C2E] border-transparent hover:shadow-[#1C1C2E]/20'
-                  : 'bg-white border-[#E8E4DD] hover:shadow-stone-200'}`}>
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+//           {cards.map((c, i) => (
+//             <div key={i}
+//               className={`sr d${i + 1} rounded-2xl p-8 flex flex-col justify-between border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl
+//                 ${c.dark
+//                   ? 'bg-[#1C1C2E] border-transparent hover:shadow-[#1C1C2E]/20'
+//                   : 'bg-white border-[#E8E4DD] hover:shadow-stone-200'}`}>
 
-              <div>
-                <span className="font-mono-dm text-[9px] tracking-widest uppercase px-2.5 py-1 bg-[#B71E52] text-white rounded mb-5 inline-block">
-                  {c.tag}
-                </span>
-                <div className="w-8 h-[2px] bg-[#B71E52] rounded-full mb-5" />
-                <h3 className={`font-display font-bold text-[24px] leading-tight mb-3
-                  ${c.dark ? 'text-white' : 'text-[#1C1C2E]'}`}>
-                  {c.title}
-                </h3>
-                <p className={`text-[14px] leading-[1.8] mb-8
-                  ${c.dark ? 'text-white/50' : 'text-stone-500'}`}>
-                  {c.desc}
-                </p>
-              </div>
+//               <div>
+//                 <span className="font-mono-dm text-[9px] tracking-widest uppercase px-2.5 py-1 bg-[#B71E52] text-white rounded mb-5 inline-block">
+//                   {c.tag}
+//                 </span>
+//                 <div className="w-8 h-[2px] bg-[#B71E52] rounded-full mb-5" />
+//                 <h3 className={`font-display font-bold text-[24px] leading-tight mb-3
+//                   ${c.dark ? 'text-white' : 'text-[#1C1C2E]'}`}>
+//                   {c.title}
+//                 </h3>
+//                 <p className={`text-[14px] leading-[1.8] mb-8
+//                   ${c.dark ? 'text-white/50' : 'text-stone-500'}`}>
+//                   {c.desc}
+//                 </p>
+//               </div>
 
-              <a href={c.href}
-                className={`inline-flex items-center gap-2 font-semibold text-[14px] px-5 py-3 rounded-lg self-start transition-all duration-200 hover:-translate-y-0.5
-                  ${c.dark
-                    ? 'bg-[#B71E52] hover:bg-[#9e1847] text-white hover:shadow-lg hover:shadow-[#B71E52]/30'
-                    : 'bg-[#1C1C2E] hover:bg-[#B71E52] text-white'}`}>
-                {c.cta} <ArrowRight size={14} />
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
+//               <a href={c.href}
+//                 className={`inline-flex items-center gap-2 font-semibold text-[14px] px-5 py-3 rounded-lg self-start transition-all duration-200 hover:-translate-y-0.5
+//                   ${c.dark
+//                     ? 'bg-[#B71E52] hover:bg-[#9e1847] text-white hover:shadow-lg hover:shadow-[#B71E52]/30'
+//                     : 'bg-[#1C1C2E] hover:bg-[#B71E52] text-white'}`}>
+//                 {c.cta} <ArrowRight size={14} />
+//               </a>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    ROOT
 ═══════════════════════════════════════════════════════════════════════════ */
 export default function ContactPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader/>}>
       <ContactPageContent />
     </Suspense>
   )
@@ -436,7 +437,7 @@ function ContactPageContent() {
         <ContactMain paramTopic={topic} />
         <MapSection />
         <FAQ />
-        <IntentCards />
+        {/* <IntentCards /> */}
       </div>
     </>
   )
