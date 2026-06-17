@@ -240,6 +240,7 @@ function Hero() {
         {featured.map((a) => {
           return (
             <a
+            key={a.title}
             href={`/articles/${a.id}`}>
               <div className=" sr grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-0 border-b border-[#E8E4DD]">
                 {/* Left — image */}

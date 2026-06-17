@@ -259,7 +259,7 @@ function Footer() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
                 {[
                   { icon: <MapPin size={11} />, text: 'Lazimpat, Kathmandu, Nepal' },
-                  { icon: <Phone size={11} />, text: '+977 1 4411234', href: '' },
+                  { icon: <Phone size={11} />, text: '01-4526601 , 01-4526603', href: '' },
                   { icon: <Mail size={11} />, text: 'contact@aadhyanta.com', href: 'mailto:info@aadhyanta.com' },
                 ].map((c, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'rgba(255,255,255,0.35)' }}>
