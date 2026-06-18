@@ -11,16 +11,16 @@ import {
 import { motion } from "motion/react"
 
 const tools = [
-  {
-    name: "Term Sheet Generator",
-    link: "/tools/term-sheet-generator",
-    tag: "Legal & Deal",
-    description:
-      "Generate clean, investor-ready term sheets in minutes. Covers equity structure, valuation cap, liquidation preferences, and governance rights.",
-    icon: <FileText size={20} />,
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
-    badge: "New",
-  },
+  // {
+  //   name: "Term Sheet Generator",
+  //   link: "/tools/term-sheet-generator",
+  //   tag: "Legal & Deal",
+  //   description:
+  //     "Generate clean, investor-ready term sheets in minutes. Covers equity structure, valuation cap, liquidation preferences, and governance rights.",
+  //   icon: <FileText size={20} />,
+  //   image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
+  //   badge: "New",
+  // },
   {
     name: "Balance Sheet Calculator",
     link: "/tools/balance-sheet-calculator",

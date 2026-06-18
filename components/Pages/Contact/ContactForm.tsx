@@ -236,6 +236,7 @@ const TOPICS: TopicConfig[] = [
     messageLabel: "Investment thesis & use of capital",
     messagePlaceholder:
       "Describe your business model, current traction, and how you plan to use the capital. Include any specific milestones you're targeting.",
+
     extraFields: [
       {
         key: "companyName",
@@ -338,7 +339,7 @@ const TOPICS: TopicConfig[] = [
         label: "Net Profit (NPR)",
         placeholder: "e.g. 50,000,000",
         type: "net profit",
-        dependent:true,
+        dependent: true,
         required: false,
         hint: "We typically invest in businesses with NPR 10M+ in annual revenue.",
       },
@@ -348,7 +349,7 @@ const TOPICS: TopicConfig[] = [
         placeholder: "",
         type: "select",
         required: false,
-        dependent:true,
+        dependent: true,
         options: [
           "Koshi Province",
           "Madhesh Province",
@@ -366,7 +367,7 @@ const TOPICS: TopicConfig[] = [
         placeholder: "eg. 10",
         type: "text",
         required: false,
-        dependent:true,
+        dependent: true,
       },
     ],
     submitLabel: "Submit Investment Inquiry",
@@ -481,24 +482,24 @@ function Field({
   error,
 }: {
   field: ExtraField
-  clearValue: Dispatch<SetStateAction<Record<string, string> >>;
-  isChecked:boolean
+  clearValue: Dispatch<SetStateAction<Record<string, string>>>
+  isChecked: boolean
   value: string
   onChange: (v: string) => void
   error?: string
 }) {
+  const [Net, setNet] = useState("profit")
 
-  const [Net, setNet] = useState('profit')
+  const checked = isChecked && field.dependent
 
-    const checked = isChecked && field.dependent
-
-    
   if (field.type === "select") {
     return (
       <div>
         <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-2 block">
           {field.label}{" "}
-          {(field.required || checked) && <span className="text-[#B71E52]">*</span>}
+          {(field.required || checked) && (
+            <span className="text-[#B71E52]">*</span>
+          )}
         </label>
         <div className="cf-select-wrap">
           <select
@@ -527,7 +528,9 @@ function Field({
       <div>
         <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-2 block">
           {field.label}{" "}
-          {(field.required || checked) && <span className="text-[#B71E52]">*</span>}
+          {(field.required || checked) && (
+            <span className="text-[#B71E52]">*</span>
+          )}
         </label>
         <textarea
           value={value}
@@ -555,9 +558,10 @@ function Field({
         <input
           type="checkbox"
           //   value={value}
-          onChange={(e) => {onChange(e.target.checked ? "on" : "off");
-            
-            if(!e.target.checked){
+          onChange={(e) => {
+            onChange(e.target.checked ? "on" : "off")
+
+            if (!e.target.checked) {
               clearValue({})
             }
           }}
@@ -596,20 +600,29 @@ function Field({
             Net Loss
           </div>
           {"in (NPR)"}
-          {(field.required || checked) && <span className="text-[#B71E52]">*</span>}
+          {(field.required || checked) && (
+            <span className="text-[#B71E52]">*</span>
+          )}
         </div>
         <div className="">
           <input
             type={field.type}
             value={value}
-            onChange={(e) => onChange(e.target.value)}
+            onChange={(e) =>
+              onChange(
+                Net == "profit" ? "Profit of " : "Lost of " + e.target.value,
+              )
+            }
             placeholder={field.placeholder}
             className={`cf-input ${error ? "error" : ""}`}
           />
         </div>
 
         {field.hint && !error && (
-          <p style={{ fontSize: 10 }} className="text-[11px] pt-1 text-stone-400 ">
+          <p
+            style={{ fontSize: 10 }}
+            className="text-[11px] pt-1 text-stone-400 "
+          >
             {field.hint}
           </p>
         )}
@@ -617,11 +630,36 @@ function Field({
     )
   }
 
+  // if(field.type === 'attachment'){
+  //   return (
+  //     <div className="flex gap-2 font-black content-centre items-center  ">
+  //       <input
+  //         type="file"
+  //         max={10}
+  //         //   value={value}
+  //         onChange={(e) => {
+
+  //         }}
+  //         //   placeholder={field.placeholder}
+  //         className={` ${error ? "error" : ""}`}
+  //       />
+  //       {field.hint && !error && (
+  //         <p style={{ fontSize: 14 }} className=" text-stone-400 ">
+  //           {field.hint}
+  //         </p>
+  //       )}
+  //       {error && <p className="text-[11px] text-red-500 ">{error}</p>}
+  //     </div>
+  //   )
+  // }
+
   return (
     <div>
       <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-2 block">
         {field.label}{" "}
-        {(field.required || checked) && <span className="text-[#B71E52]">*</span>}
+        {(field.required || checked) && (
+          <span className="text-[#B71E52]">*</span>
+        )}
       </label>
       <input
         type={field.type}
@@ -677,6 +715,8 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
     phone: "",
     message: "",
   })
+  
+  const [file, setFile] = useState<File|null>(null)
 
   const [extraValues, setExtraValues] = useState<Record<string, string>>({})
   const [errors, setErrors] = useState<Record<string, string>>({})
@@ -704,22 +744,46 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
   /* ─── Validate ─── */
   const validate = () => {
     const e: Record<string, string> = {}
+
     if (!form.name.trim()) e.name = "Name is required"
     if (!form.email.trim()) e.email = "Email is required"
     else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = "Enter a valid email"
     if (!form.message.trim()) e.message = "Message is required"
     activeTopic.extraFields
-      .filter((f) => f.required || (extraValues['successfully launched'] === 'on' && f.dependent ))
+      .filter(
+        (f) =>
+          f.required ||
+          (extraValues["successfully launched"] === "on" && f.dependent),
+      )
       .forEach((f) => {
         if (!extraValues[f.key]?.trim()) e[f.key] = `${f.label} is required`
       })
     return e
   }
 
+
+  const fileChange = (file: File) => {
+    setFile(file)
+  }
+
   /* ─── Submit ─── */
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
     const errs = validate()
+    const formData = new FormData()
+
+    formData.append (
+      "data",
+      JSON.stringify({
+        ...form,
+        ...extraValues,
+        topic: activeTopic.label,
+      }),
+    )
+
+    if (file) {
+      formData.append("attachment", file)
+    }
     if (Object.keys(errs).length) {
       setErrors(errs)
       return
@@ -728,12 +792,8 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
     try {
       await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...form,
-          ...extraValues,
-          topic: activeTopic.label,
-        }),
+        // headers: { "Content-Type": "application/json" },
+        body: formData,
       })
       setSubmitted(true)
     } catch {
@@ -950,9 +1010,11 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
                         >
                           {row.map((field) => (
                             <Field
-                              isChecked = {extraValues["successfully launched"] == "on"}
+                              isChecked={
+                                extraValues["successfully launched"] == "on"
+                              }
                               key={field.key}
-                              clearValue = {setExtraValues}
+                              clearValue={setExtraValues}
                               field={field}
                               value={extraValues[field.key] ?? ""}
                               onChange={setExtra(field.key)}
@@ -965,6 +1027,50 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
                   </>
                 )}
 
+                {/*  Investment seeker /  pitch deck attachment*/}
+                {paramTopic == "investment" && (
+                  <div>
+                    <div className="flex flex-col ">
+                      <div className=" mb-2">
+                        <label
+                          htmlFor="attachment"
+                          className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase  inline-block"
+                        >
+                          attachment
+                        </label>{" "}
+                        <span className="text-[#B71E52]">*</span>
+                      </div>
+                      <input
+                        id="attachment"
+                        required
+                        onChange={(e) => {
+                          if (!e.target.files) return
+                          fileChange(e.target.files[0])
+                        }}
+                        type="file"
+                        className=" block w-1/2
+    rounded-3xl
+    border border-stone-200
+    bg-[#F5F2ED]
+    px-4 py-3
+    text-sm text-stone-600
+    file:mr-4
+    file:rounded-xl
+    file:border-0
+    file:bg-stone-800
+    file:px-4
+    file:py-2
+    file:cursor-pointer
+    file:text-sm
+    file:font-medium
+    file:text-white
+    hover:file:bg-stone-700
+    cursor-pointer
+  "
+                      />
+                    </div>
+                  </div>
+                )}
                 {/* ── Message ── */}
                 <div>
                   <label className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-2 block">
