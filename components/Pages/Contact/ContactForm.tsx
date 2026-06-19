@@ -777,7 +777,7 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
       JSON.stringify({
         ...form,
         ...extraValues,
-        topic: activeTopic.label,
+        topic: activeTopic.id,
       }),
     )
 
