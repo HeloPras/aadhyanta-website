@@ -216,7 +216,7 @@ export function Navbar({variant = "transparent"}:NavbarProp) {
             </a>
           ))}
           <a
-            href="#"
+            href="/contact-us?topic=investor"
             className="flex items-center gap-1.5 bg-[#B71E52] hover:bg-[#9e1847] text-white text-sm font-semibold px-5 py-2.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25"
           >
             Invest Now <ArrowUpRight size={13} />

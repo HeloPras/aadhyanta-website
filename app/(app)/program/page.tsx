@@ -607,7 +607,7 @@ function CTA() {
               ))}
             </div>
 
-            <a href="#" className="mt-auto flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-7 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
+            <a href="/contact-us?topic=accelerator" className="mt-auto flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-7 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
               Apply Now <ArrowRight size={16} />
             </a>
           </div>
@@ -638,7 +638,7 @@ function CTA() {
                 ))}
               </ul>
 
-              <a href="mailto:partnerships@aadhyanta.com"
+              <a href="/contact-us?topic=investor"
                 className="mt-auto flex items-center justify-center gap-2 border border-white/20 hover:border-white/50 text-white hover:bg-white/5 font-medium text-[15px] px-7 py-4 rounded-xl transition-all duration-200">
                 <Mail size={16} /> Partner With Us
               </a>
