@@ -507,22 +507,7 @@ export default function ArticlePage() {
                 </div>
 
                 {/* Newsletter mini */}
-                <div className="bg-[#1C1C2E] rounded-xl p-6">
-                  <div className="w-7 h-[2px] bg-[#B71E52] rounded-full mb-4" />
-                  <div className="font-display font-bold text-[18px] text-white leading-tight mb-2">
-                    Get the Dispatch
-                  </div>
-                  <p className="text-[12px] text-white/45 leading-[1.7] mb-4">
-                    Weekly insights on Nepal's capital markets, delivered to
-                    your inbox.
-                  </p>
-                  <a
-                    href="/insights#newsletter"
-                    className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[12px] px-4 py-2.5 rounded transition-all duration-200 hover:-translate-y-0.5"
-                  >
-                    Subscribe Free <ArrowUpRight size={12} />
-                  </a>
-                </div>
+                
               </aside>
             </div>
           </div>
@@ -594,35 +579,7 @@ export default function ArticlePage() {
         )}
 
         {/* ── BACK TO INSIGHTS CTA ──────────────────────────────────────── */}
-        <section className="bg-white py-14">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="sr-s flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 bg-[#F5F2ED] rounded-2xl border border-[#E8E4DD]">
-              <div>
-                <div className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.12em] uppercase mb-2">
-                  Explore More
-                </div>
-                <div className="font-display font-bold text-[22px] text-[#1C1C2E] leading-tight">
-                  More ideas from{" "}
-                  <em className="italic text-[#B71E52]">Aadhyanta</em>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <a
-                  href="/insights"
-                  className="inline-flex items-center gap-2 bg-[#1C1C2E] hover:bg-[#B71E52] text-white font-semibold text-[14px] px-6 py-3 rounded transition-all duration-300"
-                >
-                  <BookOpen size={14} /> All Insights
-                </a>
-                <a
-                  href="/insights#newsletter"
-                  className="inline-flex items-center gap-2 border border-[#1C1C2E] text-[#1C1C2E] hover:bg-[#1C1C2E] hover:text-white font-medium text-[14px] px-6 py-3 rounded transition-all duration-200"
-                >
-                  Subscribe
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+       
       </div>
     </>
   )

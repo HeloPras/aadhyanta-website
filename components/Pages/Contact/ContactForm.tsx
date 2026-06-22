@@ -165,12 +165,15 @@ const TOPICS: TopicConfig[] = [
         required: true,
         options: [
           "Agriculture & Agro-Processing",
+          "Agritech & Digital Agriculture",
+          "Forest & Farm Products",
           "Manufacturing",
           "Technology / Digital",
           "Hospitality & Tourism",
           "Renewable Energy",
           "Trade & Logistics",
           "Financial Services",
+          "Sustainable Fashion & Handicrafts",
           "Health & Education",
           "Other",
         ],
@@ -202,7 +205,7 @@ const TOPICS: TopicConfig[] = [
         label: "Province",
         placeholder: "",
         type: "select",
-        required: true,
+        required: false,
         options: [
           "Koshi Province",
           "Madhesh Province",
@@ -418,8 +421,8 @@ const TOPICS: TopicConfig[] = [
       },
       {
         key: "commitmentSize",
-        label: "Indicative Commitment Size (NPR)",
-        placeholder: "e.g. 100,000,000",
+        label: "Indicative Commitment Size (NPR in words)",
+        placeholder: "e.g. fifty crores seventy lakhs",
         type: "text",
         required: false,
         hint: "Indicative only — helps us send the most relevant materials.",
@@ -452,6 +455,13 @@ const TOPICS: TopicConfig[] = [
           "Research only",
         ],
       },
+      {
+        key: "expectedReturn",
+        label: "Expected Return (in %)",
+        placeholder: "e.g. 10",
+        type: "text",
+        required: true,
+      },
     ],
     submitLabel: "Submit Investor Inquiry",
     successNote:
@@ -466,8 +476,8 @@ const offices = [
     label: "Headquarters",
     address: "Lazimpat, Ward No. 2\nKathmandu 44600, Nepal",
     phone: "01-4526601",
-    email: "info@aadhyanta.com",
-    hours: "Sun – Fri, 9:00 AM – 6:00 PM NPT",
+    email: "contact@aadhyanta.com",
+    hours: "Mon – Fri, 9:30 AM – 5:30 PM NPT",
     primary: true,
   },
 ]
@@ -715,8 +725,8 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
     phone: "",
     message: "",
   })
-  
-  const [file, setFile] = useState<File|null>(null)
+
+  const [file, setFile] = useState<File | null>(null)
 
   const [extraValues, setExtraValues] = useState<Record<string, string>>({})
   const [errors, setErrors] = useState<Record<string, string>>({})
@@ -761,7 +771,6 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
     return e
   }
 
-
   const fileChange = (file: File) => {
     setFile(file)
   }
@@ -772,7 +781,7 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
     const errs = validate()
     const formData = new FormData()
 
-    formData.append (
+    formData.append(
       "data",
       JSON.stringify({
         ...form,
@@ -1028,7 +1037,8 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
                 )}
 
                 {/*  Investment seeker /  pitch deck attachment*/}
-                {paramTopic == "investment" && (
+                {(paramTopic == "investment" ||
+                  paramTopic == "accelerator") && (
                   <div>
                     <div className="flex flex-col ">
                       <div className=" mb-2">
@@ -1038,36 +1048,70 @@ function ContactMain({ paramTopic }: { paramTopic: string }) {
                         >
                           attachment
                         </label>{" "}
-                        <span className="text-[#B71E52]">*</span>
+                        {paramTopic == "investment" && (
+                          <span className="text-[#B71E52]">*</span>
+                        )}
                       </div>
-                      <input
-                        id="attachment"
-                        required
-                        onChange={(e) => {
-                          if (!e.target.files) return
-                          fileChange(e.target.files[0])
-                        }}
-                        type="file"
-                        className=" block w-1/2
-    rounded-3xl
-    border border-stone-200
-    bg-[#F5F2ED]
-    px-4 py-3
-    text-sm text-stone-600
-    file:mr-4
-    file:rounded-xl
-    file:border-0
-    file:bg-stone-800
-    file:px-4
-    file:py-2
-    file:cursor-pointer
-    file:text-sm
-    file:font-medium
-    file:text-white
-    hover:file:bg-stone-700
-    cursor-pointer
-  "
-                      />
+
+                      {paramTopic == "investment" && (
+                        <input
+                          id="attachment"
+                          required
+                          onChange={(e) => {
+                            if (!e.target.files) return
+                            fileChange(e.target.files[0])
+                          }}
+                          type="file"
+                          className=" block w-1/2
+                            rounded-3xl
+                            border border-stone-200
+                            bg-[#F5F2ED]
+                            px-4 py-3
+                            text-sm text-stone-600
+                            e=file:mr-4
+                            file:rounded-xl
+                            file:border-0
+                            file:bg-stone-800
+                            file:px-4
+                            file:py-2
+                            file:cursor-pointer
+                            file:text-sm
+                            file:font-medium
+                            file:text-white
+                            hover:file:bg-stone-700
+                            cursor-pointer
+                          "
+                        />
+                      )}
+                      {paramTopic == "accelerator" && (
+                        <input
+                          id="attachment"
+                          onChange={(e) => {
+                            if (!e.target.files) return
+                            fileChange(e.target.files[0])
+                          }}
+                          type="file"
+                          className=" block w-1/2
+                            rounded-3xl
+                            border border-stone-200
+                            bg-[#F5F2ED]
+                            px-4 py-3
+                            text-sm text-stone-600
+                            file:mr-4
+                            file:rounded-xl
+                            file:border-0
+                            file:bg-stone-800
+                            file:px-4
+                            file:py-2
+                            file:cursor-pointer
+                            file:text-sm
+                            file:font-medium
+                            file:text-white
+                            hover:file:bg-stone-700
+                            cursor-pointer
+                          "
+                        />
+                      )}
                     </div>
                   </div>
                 )}

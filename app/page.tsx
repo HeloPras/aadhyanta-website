@@ -26,6 +26,7 @@ import { companies } from "@/data/company"
 import { easeIn, easeInOut, easeOut, motion } from "motion/react"
 import { container, sfd } from "@/util/animation/framer-helper"
 import { Company } from "@/types/global"
+import IPOPipeline from "@/components/Pages/Home/IPOpipeline"
 
 /* ─── Minimal global CSS — only what Tailwind can't do ───────────────────── */
 const GLOBAL_CSS = `
@@ -803,7 +804,7 @@ function Funds() {
    HIGHLIGHTS
 ═══════════════════════════════════════════════════════════════════════════ */
 function Highlights({ companies }: { companies: Company[] }) {
-  const highlighted = companies.filter((c) => c.highlight)
+  const highlighted = companies.filter((c) => c.ipo)
   const featured = highlighted.find((c) => c.featured)
   const rest = highlighted.filter((c) => !c.featured).slice(0, 3)
 
@@ -824,7 +825,7 @@ function Highlights({ companies }: { companies: Company[] }) {
                 marginBottom: 12,
               }}
             >
-              Portfolio Highlights
+              Path to Public Markets
             </span>
             <h2
               style={{
@@ -835,9 +836,9 @@ function Highlights({ companies }: { companies: Company[] }) {
                 color: "#1C1C2E",
               }}
             >
-              Building Nepal's{" "}
+              Portfolio companies{" "}
               <em style={{ fontStyle: "italic", color: "#B71E52" }}>
-                Investment Future
+                heading to NEPSE
               </em>
             </h2>
           </div>
@@ -892,19 +893,40 @@ function Highlights({ companies }: { companies: Company[] }) {
             </motion.div>
           )}
 
+          {rest.length <= 3 &&
+            rest.slice(0, 1).map((co, i) => (
+              <motion.div
+                key={co.id}
+                variants={sfd}
+                style={{ gridColumn: `2 / span 2`, gridRow: "1" }}
+              >
+                <CompanyCard company={co} />
+              </motion.div>
+            ))}
+
           {/* Top-right two */}
-          {rest.slice(0, 2).map((co, i) => (
-            <motion.div
-              key={co.id}
-              variants={sfd}
-              style={{ gridColumn: `${i + 2}`, gridRow: "1" }}
-            >
-              <CompanyCard company={co} />
-            </motion.div>
-          ))}
+          {rest.length > 3 &&
+            rest.slice(0, 2).map((co, i) => (
+              <motion.div
+                key={co.id}
+                variants={sfd}
+                style={{ gridColumn: `${i + 2}`, gridRow: "1" }}
+              >
+                <CompanyCard company={co} />
+              </motion.div>
+            ))}
 
           {/* Bottom-right: one card spans both cols, or two if we have enough */}
-          {rest[2] && (
+          {rest.length <= 3 && rest[1] && (
+            <motion.div
+              variants={sfd}
+              style={{ gridColumn: "2 / span 2", gridRow: "2" }}
+            >
+              <CompanyCard company={rest[2]} />
+            </motion.div>
+          )}
+
+          {rest.length >3 && rest[2] && (
             <motion.div
               variants={sfd}
               style={{ gridColumn: "2 / span 2", gridRow: "2" }}
@@ -1146,6 +1168,7 @@ export default function LandingPage() {
       <Stats />
       <TrustBar />
       <About />
+      {/* <IPOPipeline/> */}
       <Services />
       <Funds />
       <Highlights companies={companies} />

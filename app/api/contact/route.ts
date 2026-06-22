@@ -35,7 +35,7 @@ async function sendAutoReplyToUs(
   }[],
 ) {
   const mailOptions = {
-    from: "This is whattt",
+    from: senderEmail,
     // to: userEmail,
     to: receiverEmail,
     subject: subject,
@@ -54,6 +54,174 @@ const emailContent = (
 
   switch (topic) {
     case "accelerator":
+      content = `
+      
+
+<!DOCTYPE html>
+
+<html>
+<body style="margin:0;padding:0;background:#f8f7f4;font-family:Arial,Helvetica,sans-serif;color:#292524;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8f7f4;padding:32px 16px;">
+    <tr>
+      <td align="center">
+
+    <table width="700" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e7e5e4;">
+
+      <!-- Header -->
+      <tr>
+        <td style="background:#1c1917;padding:24px 32px;">
+          <h1 style="margin:0;color:#ffffff;font-size:22px;font-weight:600;">
+            New Accelerator Program Application
+          </h1>
+          <p style="margin:8px 0 0;color:#d6d3d1;font-size:14px;">
+            Submitted through the Aadhyanta website accelerator inquiry form
+          </p>
+        </td>
+      </tr>
+
+      <!-- Content -->
+      <tr>
+        <td style="padding:28px 32px;">
+
+          <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;">
+
+            <tr>
+              <td colspan="2" style="padding:12px 0 16px;font-size:16px;font-weight:700;color:#1c1917;">
+                Applicant Information
+              </td>
+            </tr>
+
+            <tr>
+              <td style="width:35%;padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">
+                Name
+              </td>
+              <td style="padding:10px;border:1px solid #e7e5e4;">
+                ${data.name || "Not Provided"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">
+                Email Address
+              </td>
+              <td style="padding:10px;border:1px solid #e7e5e4;">
+                ${data.email || "Not Provided"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">
+                Phone Number
+              </td>
+              <td style="padding:10px;border:1px solid #e7e5e4;">
+                ${data.phone || "Not Provided"}
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2" style="padding:24px 0 16px;font-size:16px;font-weight:700;color:#1c1917;">
+                Business Details
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">
+                Business Name
+              </td>
+              <td style="padding:10px;border:1px solid #e7e5e4;">
+                ${data.businessName || "Not Provided"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">
+                Primary Sector
+              </td>
+              <td style="padding:10px;border:1px solid #e7e5e4;">
+                ${data.sector || "Not Provided"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">
+                Approximate Annual Revenue
+              </td>
+              <td style="padding:10px;border:1px solid #e7e5e4;">
+                ${data.annualRevenue || "Not Provided"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">
+                Years in Operation
+              </td>
+              <td style="padding:10px;border:1px solid #e7e5e4;">
+                ${data.yearsOperating || "Not Provided"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">
+                Province
+              </td>
+              <td style="padding:10px;border:1px solid #e7e5e4;">
+                ${data.province || "Not Provided"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">
+                Capital Sought
+              </td>
+              <td style="padding:10px;border:1px solid #e7e5e4;">
+                ${data.capitalNeeded || "Not Provided"}
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2" style="padding:24px 0 16px;font-size:16px;font-weight:700;color:#1c1917;">
+                Business Description & Support Required
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2" style="
+                padding:16px;
+                border:1px solid #e7e5e4;
+                background:#fafaf9;
+                line-height:1.7;
+                white-space:pre-wrap;
+              ">
+                ${data.message || "No message provided"}
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td style="background:#fafaf9;padding:18px 32px;border-top:1px solid #e7e5e4;">
+          <p style="margin:0;font-size:12px;color:#78716c;">
+            This email was automatically generated from the Aadhyanta website accelerator program form.
+          </p>
+        </td>
+      </tr>
+
+    </table>
+
+  </td>
+</tr>
+
+  </table>
+
+</body>
+</html>
+
+      `
       break
 
     case "investment":
@@ -261,21 +429,21 @@ const emailContent = (
             <tr>
               <td style="width:35%;padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">Name</td>
               <td style="padding:10px;border:1px solid #e7e5e4;">
-                \${data.name || 'Not Provided'}
+                ${data.name || 'Not Provided'}
               </td>
             </tr>
 
             <tr>
               <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">Email Address</td>
               <td style="padding:10px;border:1px solid #e7e5e4;">
-                \${data.email || 'Not Provided'}
+                ${data.email || 'Not Provided'}
               </td>
             </tr>
 
             <tr>
               <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">Phone Number</td>
               <td style="padding:10px;border:1px solid #e7e5e4;">
-                \${data.phone || 'Not Provided'}
+                ${data.phone || 'Not Provided'}
               </td>
             </tr>
 
@@ -288,35 +456,41 @@ const emailContent = (
             <tr>
               <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">Investor Type</td>
               <td style="padding:10px;border:1px solid #e7e5e4;">
-                \${data.investorType || 'Not Provided'}
+                ${data.investorType || 'Not Provided'}
               </td>
             </tr>
 
             <tr>
               <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">Fund of Interest</td>
               <td style="padding:10px;border:1px solid #e7e5e4;">
-                \${data.fundInterest || 'Not Provided'}
+                ${data.fundInterest || 'Not Provided'}
               </td>
             </tr>
 
             <tr>
               <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">Indicative Commitment Size</td>
               <td style="padding:10px;border:1px solid #e7e5e4;">
-                \${data.commitmentSize || 'Not Provided'}
+                ${data.commitmentSize || 'Not Provided'}
               </td>
             </tr>
 
             <tr>
               <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">Impact / ESG Priorities</td>
               <td style="padding:10px;border:1px solid #e7e5e4;">
-                \${data.impactFocus || 'Not Provided'}
+                ${data.impactFocus || 'Not Provided'}
               </td>
             </tr>
 
             <tr>
               <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">Decision Timeline</td>
               <td style="padding:10px;border:1px solid #e7e5e4;">
-                \${data.decisionTimeline || 'Not Provided'}
+                ${data.decisionTimeline || 'Not Provided'}
+              </td>
+            </tr>
+              <tr>
+              <td style="padding:10px;border:1px solid #e7e5e4;background:#fafaf9;font-weight:600;">Expected Return</td>
+              <td style="padding:10px;border:1px solid #e7e5e4;">
+                ${data.expectedReturn || 'Not Provided'} %
               </td>
             </tr>
 
@@ -334,7 +508,7 @@ const emailContent = (
                 line-height:1.7;
                 white-space:pre-wrap;
               ">
-                \${data.message || 'No message provided'}
+                ${data.message || 'No message provided'}
               </td>
             </tr>
 
@@ -497,6 +671,7 @@ export async function POST(req: NextRequest) {
   let senderEmail = " "
   let attachments = []
 
+
   // console.log(parsedData)
 
   if (file) {
@@ -511,34 +686,38 @@ export async function POST(req: NextRequest) {
   switch (parsedData.topic) {
     case "accelerator":
       content = emailContent(parsedData, "accelerator")
-      
+      subject = `Accelerator Inquiry`
+      receiverEmail = ["application@aadhyanta.com"]
+      // receiverEmail = ["maharjanprasiddha8@gmail.com"]
+      senderEmail = `"${parsedData.businessName}" <${parsedData.email}>`
       break
 
     case "investment":
       content = emailContent(parsedData, "investment")
-      subject = `Investment Inquiry From ${parsedData.companyName}`
-      receiverEmail = ["contact@aadhyanta.com"]
-      senderEmail = parsedData.email
+      subject = `Investment Inquiry`
+      // receiverEmail = ["swastika@aadhyanta.com"]
+      receiverEmail = ["maharjanprasiddha8@gmail.com"]
+      senderEmail = `"${parsedData.companyName}" <${parsedData.email}>`
       break
 
     case "investor":
       content = emailContent(parsedData, "investor")
-      subject = `Investor's Inquiry  From ${parsedData.companyName}`
-      receiverEmail = ["contact@aadhyanta.com"]
-      senderEmail = parsedData.email
+      subject = `Investor's Inquiry`
+      receiverEmail = ["swastika@aadhyanta.com"]
+      senderEmail = `"${parsedData.name}" <${parsedData.email}>`
       break
 
     default:
       content = emailContent(parsedData, "general")
-      subject = `General Inquiry From ${parsedData.name}`
+      subject = `General Inquiry`
       receiverEmail = ["contact@aadhyanta.com"]
-      senderEmail = parsedData.email
+      senderEmail = `"${parsedData.name}" <${parsedData.email}>`
       break
   }
 
   try {
     // sendAutoReply(body.email, body.name)
-    // await sendAutoReplyToClient(senderEmail, parsedData.name)
+    await sendAutoReplyToClient(senderEmail, parsedData.name)
 
     receiverEmail.forEach(async (email) => {
       await sendAutoReplyToUs(subject, content, email, senderEmail, attachments)
@@ -550,3 +729,4 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({ message: "success", code: "200" })
 }
 ;``
+;

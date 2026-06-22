@@ -50,7 +50,7 @@ type Company = {
   sectorIcon: icon,
   fund: 'NOF I' | 'NOF II' | 'Simrik'
   // status: 'Active' | 'Advancing to Exit' | 'Follow-on'
-  highlight:boolean,
+  ipo:boolean,
   statusCls: string
   province: string
   year: string
