@@ -555,7 +555,7 @@ function Services() {
       desc: "We manage three institutional funds totaling NPR 320M+ in committed capital, deploying growth equity to market-proven enterprises across all seven provinces of Nepal.",
       items: [
         "Nepal Opportunity Fund I & II",
-        "Simrik Fund (gender-lens)",
+        // "Simrik Fund (gender-lens)",
         "Sector-agnostic approach",
         "5–7 year hold periods",
       ],
@@ -687,23 +687,23 @@ function Funds() {
       capital: "NPR 140M+",
       href: "/fund/noftwo",
     },
-    {
-      tag: "Simrik",
-      title: "Simrik Fund",
-      subtitle: "Nepal's first gender-lens investment fund",
-      desc: "Managed by an all-women deal team, Simrik targets women-led enterprises and businesses with significant women beneficiaries, addressing critical financing gaps with measurable gender impact.",
-      items: [
-        "Women-led businesses",
-        "Women workforce focus",
-        "All-women deal team",
-        "Gender-smart design",
-        "Inclusion metrics",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80",
-      capital: "NPR 60M+",
-      href: "/fund/simrik",
-    },
+    // {
+    //   tag: "Simrik",
+    //   title: "Simrik Fund",
+    //   subtitle: "Nepal's first gender-lens investment fund",
+    //   desc: "Managed by an all-women deal team, Simrik targets women-led enterprises and businesses with significant women beneficiaries, addressing critical financing gaps with measurable gender impact.",
+    //   items: [
+    //     "Women-led businesses",
+    //     "Women workforce focus",
+    //     "All-women deal team",
+    //     "Gender-smart design",
+    //     "Inclusion metrics",
+    //   ],
+    //   image:
+    //     "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80",
+    //   capital: "NPR 60M+",
+    //   href: "/fund/simrik",
+    // },
   ]
   const f = funds[active]
 

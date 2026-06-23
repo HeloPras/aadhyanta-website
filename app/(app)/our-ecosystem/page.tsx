@@ -145,9 +145,9 @@ const programs: Program[] = [
     name: 'Code for Impact',
     funder: 'US Embassy',
     description: 'A national tech innovation hackathon series across all 7 provinces of Nepal — delivered with Georgia Tech Enterprise Innovation Institute.',
-    chips: ['175 Innovators', '35 Teams', '7 Provinces', 'Oct 2025 – Aug 2026'],
+    chips: ['175 Innovators', '7 Provinces'],
     image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80',
-    href: '/program/code-for-impact',
+    href: '/our-ecosystem/code-for-impact',
   },
   {
     id: 'seeding-scaling',
@@ -157,7 +157,7 @@ const programs: Program[] = [
     description: 'U.S.–Nepal pre-accelerator connecting 20 early-stage entrepreneurs to AI tools, U.S. innovation frameworks, and dual-mentorship support.',
     chips: ['20 Entrepreneurs', '100+ Ecosystem Participants'],
     image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
-    href: '/program/seeding-and-scaling-innovation-ai-entrepreneurs-lab',
+    href: '/our-ecosystem/seeding-and-scaling-innovation-ai-entrepreneurs-lab',
   },
   {
     id: 'fao-sdg-fund',
@@ -167,7 +167,7 @@ const programs: Program[] = [
     description: 'Two-component programme: SME investment-readiness accelerator for 25+ agribusiness SMEs + Women Agro Guarantee Facility for women agro-entrepreneurs.',
     chips: ['25+ SMEs', '100% Women-led enterprises'],
     image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
-    href: '/program/fao-joint-sdg-fund-agribusiness-accelerator-women-agro-guarantee-facility',
+    href: '/our-ecosystem/fao-joint-sdg-fund-agribusiness-accelerator-women-agro-guarantee-facility',
   },
   {
     id: 'ffpo-matchmaking',
@@ -177,7 +177,7 @@ const programs: Program[] = [
     description: 'Financing and partnership readiness for 5 Forest and Farm Producer Organization enterprises — culminating in a full-day B2B and B2F pitching event.',
     chips: ['5 FFPO Enterprises', '5 Value Chains'],
     image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80',
-    href: '/program/ffpo-matchmaking-and-business-pitching-event',
+    href: '/our-ecosystem/ffpo-matchmaking-and-business-pitching-event',
   },
 
   /* ── COMPLETED ── */
@@ -187,9 +187,9 @@ const programs: Program[] = [
     name: 'Aadhyanta Accelerator – Koshi Chapter',
     funder: 'Swisscontact NAMDP (Sahaj Phase II)',
     description: 'Investment-readiness acceleration for agri-enterprises across 5 districts of Koshi Province — 24 selected enterprises, USD 600K+ financing mobilised.',
-    chips: ['166 Applicants', '24 Selected', '5 Districts'],
+    chips: ['166 Applicants', '5 Districts'],
     image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80',
-    href: '/program/aadhyanta-accelerator-koshi-chapter',
+    href: '/our-ecosystem/aadhyanta-accelerator-koshi-chapter',
   },
   {
     id: 'roof-of-the-world',
@@ -199,7 +199,7 @@ const programs: Program[] = [
     description: 'Multi-province accelerator for export-oriented SMEs in agriculture, tourism, and digital services. 4 alumni secured NOF I equity investment.',
     chips: ['4 Alumni → NOF I Equity'],
     image: 'https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?w=800&q=80',
-    href: '/program/roof-of-the-world-accelerator-programme',
+    href: '/our-ecosystem/roof-of-the-world-accelerator-programme',
   },
   {
     id: 'dial',
@@ -209,7 +209,7 @@ const programs: Program[] = [
     description: 'Early-stage acceleration for agritech-logistics startups — 7 enterprises, 32-hour hackathon, and product showcase.',
     chips: ['7 Enterprises', '32-Hr Hackathon'],
     image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',
-    href: '/program/digital-innovation-in-agriculture-and-logistics',
+    href: '/our-ecosystem/digital-innovation-in-agriculture-and-logistics',
   },
   {
     id: 'feed-the-future',
@@ -219,7 +219,7 @@ const programs: Program[] = [
     description: 'Investment-readiness for agri-input enterprises across USAID Zones of Influence. Research-led diagnostics, investor matchmaking, and legal due-diligence support.',
     chips: ['20–30 Enterprises Scouted'],
     image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80',
-    href: '/program/feed-the-future',
+    href: '/our-ecosystem/feed-the-future',
   },
 ]
 

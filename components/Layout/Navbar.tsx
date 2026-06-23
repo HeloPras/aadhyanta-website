@@ -32,7 +32,7 @@ const navItems: NavItem[] = [
       // { name: "Simrik Fund", href: "/fund/simrik", tag: "Gender-Lens" },
     ],
   },
-  { name: "Our Ecosystem", href: "/program" },
+  { name: "Our Ecosystem", href: "/our-ecosystem" },
   { name: "Team", href: "/team" },
   { name: "Insights", href: "/insights" },
   { name: "Tools", href: "/tools" },

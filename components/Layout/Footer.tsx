@@ -97,7 +97,7 @@ const FOOTER_CSS = `
 const funds = [
   { name: 'NOF I', href: '/fund/nofone', tag: 'Fully Deployed' },
   { name: 'NOF II', href: '/fund/noftwo', tag: 'Active' },
-  { name: 'Simrik Fund', href: '/fund/simrik', tag: 'Gender-Lens' },
+  // { name: 'Simrik Fund', href: '/fund/simrik', tag: 'Gender-Lens' },
   { name: 'Fund Overview', href: '/fund', tag: null },
 ]
 
@@ -105,7 +105,7 @@ const company = [
   { name: 'About Us', href: '/about' },
   { name: 'Our Team', href: '/team' },
   { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Accelerator', href: '/program' },
+  { name: 'Accelerator', href: '/our-ecosystem' },
   { name: 'Contact', href: '/contact-us' },
 ]
 

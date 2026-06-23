@@ -414,7 +414,7 @@ const TOPICS: TopicConfig[] = [
         options: [
           "Nepal Opportunity Fund I (NOF I)",
           "Nepal Opportunity Fund II (NOF II)",
-          "Simrik Fund (Gender-Lens)",
+          // "Simrik Fund (Gender-Lens)",
           "All Funds — General LP Interest",
           "Co-investment Opportunities",
         ],

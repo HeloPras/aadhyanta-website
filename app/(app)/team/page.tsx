@@ -118,7 +118,7 @@ const TeamPage: React.FC = () => {
 
   const stats = [
     { value: "20+", label: "Team Members", icon: <Users size={16} /> },
-    { value: "3", label: "Active Funds", icon: <TrendingUp size={16} /> },
+    { value: "1", label: "Active Funds", icon: <TrendingUp size={16} /> },
     { value: "7", label: "Provinces Reached", icon: <Globe size={16} /> },
     { value: "15+", label: "Years Experience", icon: <Award size={16} /> },
   ]

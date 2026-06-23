@@ -135,7 +135,8 @@ function StatValue({ value }: { value: string }) {
 
 
 
-const FUNDS = ["All", "NOF I", "NOF II", "Simrik"]
+// const FUNDS = ["All", "NOF I", "NOF II", "Simrik"]
+const FUNDS = ["All", "NOF I", "NOF II"]
 const SECTORS = [
   "All",
   "Renewable Energy",

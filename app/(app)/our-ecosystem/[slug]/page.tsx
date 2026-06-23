@@ -176,7 +176,7 @@ function SidebarInner({
           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%231C1C2E' d='M5 6L0 0h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'calc(100% - 10px) center', appearance: 'none' }}
         >
           {programs.map(p => (
-            <option key={p.slug} value={p.slug}>{p.programName}</option>
+            <option className='rounded' key={p.slug} value={p.slug}>{p.programName}</option>
           ))}
         </select>
       </div>
@@ -258,7 +258,7 @@ function ProgramHero({ program }: { program: ProgramPage }) {
             {program.oneLiner}
           </p>
 
-          <p className="font-mono-dm text-[10px] text-white/30 leading-[1.7]">{program.funderTag}</p>
+          <p className="font-mono-dm text-[10px] text-white/50 leading-[1.7]">{program.funderTag}</p>
         </div>
 
         {/* Stats strip */}
@@ -272,7 +272,7 @@ function ProgramHero({ program }: { program: ProgramPage }) {
                 style={{ fontSize: 'clamp(22px, 3vw, 36px)' }}>
                 {kn.value}
               </div>
-              <div className="font-mono-dm text-[9px] tracking-[0.1em] uppercase text-white/30">{kn.label}</div>
+              <div className="font-mono-dm text-[9px] tracking-[0.1em] uppercase text-white/50">{kn.label}</div>
             </div>
           ))}
         </div>
@@ -304,7 +304,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
     <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-10 sm:py-14 space-y-14 sm:space-y-20">
 
       {/* OVERVIEW */}
-      <section id="sec-overview" className="reveal-section">
+      <section id="sec-overview" className="reveal-section scroll-mt-44 ">
         <SectionHeader label="Overview" title={<>About the <em className="italic text-[#B71E52]">Programme</em></>} />
         <div className="space-y-4">
           {program.overview.map((o, i) => (
@@ -315,7 +315,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
 
       {/* WHO */}
       {program.whoWasThisFor && (
-        <section id="sec-who" className="reveal-section">
+        <section id="sec-who" className="reveal-section scroll-mt-44">
           <SectionHeader label="Eligibility" title={<>Who was this <em className="italic text-[#B71E52]">for?</em></>} />
           <ul className="space-y-3">
             {program.whoWasThisFor.map((w, i) => (
@@ -330,7 +330,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
 
       {/* COMPONENTS */}
       {program.components && (
-        <section id="sec-components" className="reveal-section">
+        <section id="sec-components" className="reveal-section scroll-mt-44">
           <SectionHeader label="Structure" title={<>Programme <em className="italic text-[#B71E52]">Components</em></>} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {program.components.map((c, i) => (
@@ -351,7 +351,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
       )}
 
       {/* JOURNEY */}
-      <section id="sec-journey" className="reveal-section">
+      <section id="sec-journey" className="reveal-section scroll-mt-44">
         <SectionHeader label="Programme Journey" title={<>The <em className="italic text-[#B71E52]">Pathway</em></>} />
         {/* Mobile: stacked, Desktop: timeline */}
         <div className="block sm:hidden space-y-4">
@@ -378,7 +378,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
       </section>
 
       {/* DELIVERABLES */}
-      <section id="sec-deliverables" className="reveal-section">
+      <section id="sec-deliverables" className="reveal-section scroll-mt-44">
         <SectionHeader label="What Participants Get" title={<>Programme <em className="italic text-[#B71E52]">Deliverables</em></>} />
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           {program.programDeliverables.map((d, i) => (
@@ -392,7 +392,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
 
       {/* EVALUATION CRITERIA */}
       {program.evaluationCriteria && (
-        <section id="sec-eval" className="reveal-section">
+        <section id="sec-eval" className="reveal-section scroll-mt-44">
           <SectionHeader label="Selection" title={<>Evaluation <em className="italic text-[#B71E52]">Criteria</em></>} />
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {program.evaluationCriteria.map((e, i) => (
@@ -407,7 +407,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
 
       {/* TOOLS */}
       {(program.toolsUsed ?? program.toolsAndPlatforms) && (
-        <section id="sec-tools" className="reveal-section">
+        <section id="sec-tools" className="reveal-section scroll-mt-44">
           <SectionHeader label="Methodology" title={<>Tools &amp; <em className="italic text-[#B71E52]">Platforms</em></>} />
           <div className="flex flex-wrap gap-2">
             {(program.toolsUsed ?? program.toolsAndPlatforms)!.map((t, i) => (
@@ -419,7 +419,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
 
       {/* VALUE CHAINS */}
       {program.valueChains && (
-        <section id="sec-valuechains" className="reveal-section">
+        <section id="sec-valuechains" className="reveal-section scroll-mt-44">
           <SectionHeader label="Sectors" title={<>Value <em className="italic text-[#B71E52]">Chains</em></>} />
           <div className="flex flex-wrap gap-2">
             {program.valueChains.map((vc, i) => (
@@ -431,7 +431,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
 
       {/* OUTCOMES */}
       {program.outcomes && (
-        <section id="sec-outcomes" className="reveal-section">
+        <section id="sec-outcomes" className="reveal-section scroll-mt-44">
           <SectionHeader label="Results" title={<>Key <em className="italic text-[#B71E52]">Outcomes</em></>} />
           <ul className="space-y-3">
             {program.outcomes.map((o, i) => (
@@ -446,7 +446,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
 
       {/* ALUMNI */}
       {program.alumniOutcomes && (
-        <section id="sec-alumni" className="reveal-section">
+        <section id="sec-alumni" className="reveal-section scroll-mt-44">
           <SectionHeader label="Cohort Spotlight" title={<>Alumni <em className="italic text-[#B71E52]">Outcomes</em></>} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {program.alumniOutcomes.map((a, i) => (
@@ -462,7 +462,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
 
       {/* SUCCESS STORY */}
       {program.successStory && (
-        <section id="sec-success" className="reveal-section">
+        <section id="sec-success" className="reveal-section scroll-mt-44">
           <div className="bg-[#1C1C2E] rounded-2xl p-6 sm:p-8 relative overflow-hidden">
             <div className="absolute top-[-40px] right-[-40px] w-40 h-40 rounded-full bg-[#B71E52]/10 pointer-events-none" />
             <div className="font-mono-dm text-[9px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 relative">⭑ Success Story</div>
@@ -479,7 +479,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
 
       {/* SUSTAINABILITY */}
       {program.sustainabilityNote && (
-        <section id="sec-sustainability" className="reveal-section">
+        <section id="sec-sustainability" className="reveal-section scroll-mt-44">
           <SectionHeader label="Sustainability" title={<>Lasting <em className="italic text-[#B71E52]">Impact</em></>} />
           <div className="border-l-[3px] border-[#B71E52] pl-5 py-3 bg-white rounded-r-lg">
             <div className="font-mono-dm text-[9px] uppercase tracking-[0.1em] text-[#B71E52] mb-2">Note</div>
@@ -490,7 +490,7 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
 
       {/* GENDER */}
       {program.genderLensNote && (
-        <section id="sec-gender" className="reveal-section">
+        <section id="sec-gender" className="reveal-section scroll-mt-44">
           <SectionHeader label="Gender Lens" title={<>GEDSI <em className="italic text-[#B71E52]">Integration</em></>} />
           <div className="border-l-[3px] border-[#B71E52] pl-5 py-3 bg-white rounded-r-lg">
             <div className="font-mono-dm text-[9px] uppercase tracking-[0.1em] text-[#B71E52] mb-2">Gender Note</div>
@@ -500,43 +500,18 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
       )}
 
       {/* PARTNERS */}
-      <section id="sec-partners" className="reveal-section">
+      <section id="sec-partners" className=" reveal-section scroll-mt-44">
         <SectionHeader label="Collaboration" title={<>Partners &amp; <em className="italic text-[#B71E52]">Funders</em></>} />
         <div className="bg-[#1C1C2E] rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {partnerCells.map((cell, i) => (
             <div key={i}>
-              <div className="font-mono-dm text-[9px] tracking-[0.1em] uppercase text-white/30 mb-1.5">{cell.label}</div>
+              <div className="font-mono-dm text-[9px] tracking-[0.1em] uppercase text-white/50 mb-1.5">{cell.label}</div>
               <div className={`text-[13px] leading-[1.6] ${cell.accent ? 'text-[#B71E52]' : 'text-white'}`}>{cell.value}</div>
             </div>
           ))}
         </div>
       </section>
 
-    </div>
-  )
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   TICKER
-═══════════════════════════════════════════════════════════════════════════ */
-/* ═══════════════════════════════════════════════════════════════════════════
-   TOP BAR (mobile)
-═══════════════════════════════════════════════════════════════════════════ */
-function MobileTopBar({ onMenuOpen }: { onMenuOpen: () => void }) {
-  return (
-    <div className="lg:hidden sticky top-0 z-30 bg-[#1C1C2E] border-b border-white/[0.08] flex items-center justify-between px-5 h-14">
-      <div className="font-display font-bold text-white text-[18px]">
-        Aadhyanta<span className="text-[#B71E52]">.</span>
-      </div>
-      <button
-        onClick={onMenuOpen}
-        className="flex flex-col gap-1.5 p-2 group"
-        aria-label="Open menu"
-      >
-        <span className="block w-5 h-[1.5px] bg-white/60 group-hover:bg-white transition-colors" />
-        <span className="block w-4 h-[1.5px] bg-white/60 group-hover:bg-white transition-colors" />
-        <span className="block w-5 h-[1.5px] bg-white/60 group-hover:bg-white transition-colors" />
-      </button>
     </div>
   )
 }
@@ -573,38 +548,6 @@ export default function ProgramDetailPage() {
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-[#F5F2ED]">
     <Navbar variant='transparent'/>
-
-        {/* Mobile top bar */}
-        {/* <MobileTopBar onMenuOpen={() => setDrawerOpen(true)} /> */}
-
-        {/* Mobile drawer overlay */}
-        {/* <div
-          className={`drawer-overlay ${drawerOpen ? "open" : ""}`}
-          onClick={() => setDrawerOpen(false)}
-        /> */}
-
-        {/* Mobile drawer panel */}
-        {/* <div className={`drawer-panel ${drawerOpen ? "open" : ""}`}>
-          <div className="flex items-center justify-between px-5 py-4 border-b border-[#E8E4DD] bg-[#1C1C2E]">
-            <div className="font-display font-bold text-white text-[18px]">
-              Aadhyanta<span className="text-[#B71E52]">.</span>
-            </div>
-            <button
-              onClick={() => setDrawerOpen(false)}
-              className="text-white/50 hover:text-white text-xl leading-none p-1"
-            >
-              ✕
-            </button>
-          </div>
-          <SidebarInner
-            program={program}
-            programs={programPages}
-            activeSection={activeSection}
-            onSelect={handleSelect}
-            onNavClick={() => setDrawerOpen(false)}
-          />
-        </div> */}
-
         {/* Desktop layout: sidebar + main */}
         <div className="lg:flex lg:min-h-screen ">
           {/* Desktop sidebar */}

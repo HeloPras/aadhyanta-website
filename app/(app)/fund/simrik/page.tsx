@@ -582,20 +582,31 @@ function CTA() {
 export default function SimrikFundPage() {
   useReveal()
   return (
+
+    // just uncomment the below code 
+    // <>
+    //   <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
+    //   <div className="min-h-screen bg-white">
+    //     <Navbar></Navbar>
+    //     <Hero />
+    //     <StatsStrip />
+    //     <MarketFailure />
+    //     <BusinessCase />
+    //     <MissionVision />
+    //     <InvestmentFocus />
+    //     <StrategicGoals />
+    //     <Team />
+    //     <WhyItMatters />
+    //     <CTA />
+    //   </div>
+    // </>
+
+
+    // remove the codes belwo 
     <>
-      <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
-      <div className="min-h-screen bg-white">
-        <Navbar></Navbar> 
-        <Hero />
-        <StatsStrip />
-        <MarketFailure />
-        <BusinessCase />
-        <MissionVision />
-        <InvestmentFocus />
-        <StrategicGoals />
-        <Team />
-        <WhyItMatters />
-        <CTA />
+    <Navbar variant='nontransparent'></Navbar>
+      <div className='flex min-h-screen w-full bg-[#F5F2ED] items-center justify-center'>
+        <div className='text-stone-400'>Coming Soon</div>
       </div>
     </>
   )

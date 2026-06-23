@@ -363,7 +363,7 @@ function Programs() {
         </div>
 
         <div className="sr mt-14">
-          <a href="/program" className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-7 py-3.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
+          <a href="/our-ecosystem" className="inline-flex items-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-7 py-3.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25">
             Learn More About Our Programs <ArrowRight size={16} />
           </a>
         </div>

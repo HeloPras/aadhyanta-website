@@ -140,24 +140,24 @@ const funds = [
     ],
     href:'/fund/noftwo',
   },
-  {
-    id: 2,
-    tag: 'Gender-Lens',
-    tagBg: '#B71E52',
-    shortName: 'Simrik',
-    name: 'Simrik Fund',
-    subtitle: "Nepal's first gender-lens investment fund",
-    description: "Pioneering gender-lens investing in Nepal with an all-women deal team. Mobilizing capital for women-led and women-impacting businesses, addressing the persistent financing gap where women receive less than 10% of bank credit despite strong performance.",
-    icon: <Users size={20} />,
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80',
-    capital: 'NPR 60M+',
-    meta: [
-      { label: 'Focus', value: 'Women-led and women-impacting businesses' },
-      { label: 'Team', value: '100% female investment committee and deal team' },
-      { label: 'Impact', value: 'Addressing <10% female access to institutional credit' },
-    ],
-    href:'/fund/simrik'
-  },
+  // {
+  //   id: 2,
+  //   tag: 'Gender-Lens',
+  //   tagBg: '#B71E52',
+  //   shortName: 'Simrik',
+  //   name: 'Simrik Fund',
+  //   subtitle: "Nepal's first gender-lens investment fund",
+  //   description: "Pioneering gender-lens investing in Nepal with an all-women deal team. Mobilizing capital for women-led and women-impacting businesses, addressing the persistent financing gap where women receive less than 10% of bank credit despite strong performance.",
+  //   icon: <Users size={20} />,
+  //   image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80',
+  //   capital: 'NPR 60M+',
+  //   meta: [
+  //     { label: 'Focus', value: 'Women-led and women-impacting businesses' },
+  //     { label: 'Team', value: '100% female investment committee and deal team' },
+  //     { label: 'Impact', value: 'Addressing <10% female access to institutional credit' },
+  //   ],
+  //   href:'/fund/simrik'
+  // },
 ]
 
 const valueProps = [
