@@ -157,7 +157,7 @@ const programs: Program[] = [
     description: 'U.S.–Nepal pre-accelerator connecting 20 early-stage entrepreneurs to AI tools, U.S. innovation frameworks, and dual-mentorship support.',
     chips: ['20 Entrepreneurs', '100+ Ecosystem Participants'],
     image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
-    href: '/program/seeding-scaling',
+    href: '/program/seeding-and-scaling-innovation-ai-entrepreneurs-lab',
   },
   {
     id: 'fao-sdg-fund',
@@ -167,7 +167,7 @@ const programs: Program[] = [
     description: 'Two-component programme: SME investment-readiness accelerator for 25+ agribusiness SMEs + Women Agro Guarantee Facility for women agro-entrepreneurs.',
     chips: ['25+ SMEs', '100% Women-led enterprises'],
     image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
-    href: '/program/fao-sdg-fund',
+    href: '/program/fao-joint-sdg-fund-agribusiness-accelerator-women-agro-guarantee-facility',
   },
   {
     id: 'ffpo-matchmaking',
@@ -177,7 +177,7 @@ const programs: Program[] = [
     description: 'Financing and partnership readiness for 5 Forest and Farm Producer Organization enterprises — culminating in a full-day B2B and B2F pitching event.',
     chips: ['5 FFPO Enterprises', '5 Value Chains'],
     image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80',
-    href: '/program/ffpo-matchmaking',
+    href: '/program/ffpo-matchmaking-and-business-pitching-event',
   },
 
   /* ── COMPLETED ── */
@@ -189,7 +189,7 @@ const programs: Program[] = [
     description: 'Investment-readiness acceleration for agri-enterprises across 5 districts of Koshi Province — 24 selected enterprises, USD 600K+ financing mobilised.',
     chips: ['166 Applicants', '24 Selected', '5 Districts'],
     image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80',
-    href: '/program/koshi-accelerator',
+    href: '/program/aadhyanta-accelerator-koshi-chapter',
   },
   {
     id: 'roof-of-the-world',
@@ -199,7 +199,7 @@ const programs: Program[] = [
     description: 'Multi-province accelerator for export-oriented SMEs in agriculture, tourism, and digital services. 4 alumni secured NOF I equity investment.',
     chips: ['4 Alumni → NOF I Equity'],
     image: 'https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?w=800&q=80',
-    href: '/program/roof-of-the-world',
+    href: '/program/roof-of-the-world-accelerator-programme',
   },
   {
     id: 'dial',
@@ -209,7 +209,7 @@ const programs: Program[] = [
     description: 'Early-stage acceleration for agritech-logistics startups — 7 enterprises, 32-hour hackathon, and product showcase.',
     chips: ['7 Enterprises', '32-Hr Hackathon'],
     image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',
-    href: '/program/dial',
+    href: '/program/digital-innovation-in-agriculture-and-logistics',
   },
   {
     id: 'feed-the-future',
@@ -391,19 +391,19 @@ function ProgramCard({ prog, delay = 0 }: { prog: Program; delay?: number }) {
 
         {/* CTA */}
         <div className="flex items-center gap-3">
-          {active ? (
+          {/* {active ? (
             <a href={`${prog.href}#apply`}
               className="flex-1 flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[13px] px-5 py-2.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-[#B71E52]/25">
               Apply Now <ArrowUpRight size={13} />
             </a>
           ) : (
-            <a href={`${prog.href}#outcomes`}
+            <a href={`${prog.href}#sec-outcomes`}
               className="flex-1 flex items-center justify-center gap-2 bg-[#F5F2ED] hover:bg-stone-200 text-stone-600 font-semibold text-[13px] px-5 py-2.5 rounded transition-all duration-200 border border-[#E8E4DD]">
               View Outcomes <ExternalLink size={13} />
             </a>
-          )}
+          )} */}
           <a href={prog.href}
-            className="flex items-center justify-center gap-2 border border-[#E8E4DD] hover:border-[#1C1C2E] text-stone-500 hover:text-[#1C1C2E] font-medium text-[13px] px-4 py-2.5 rounded transition-all duration-200">
+            className="flex-1 flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[13px] px-5 py-2.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-[#B71E52]/25">
             Read More
           </a>
         </div>
