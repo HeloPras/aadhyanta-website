@@ -129,73 +129,6 @@ function useReveal() {
   }, [])
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   DATA
-═══════════════════════════════════════════════════════════════════════════ */
-// const featured = {
-//   type: 'Article',
-//   typeCls: 'type-article',
-//   title: 'How Gender-Lens Investing Is Reshaping Nepal\'s Capital Markets',
-//   excerpt: 'The launch of the Simrik Fund marks a turning point for women-led enterprises in Nepal. We examine the structural barriers, the financing gap, and why gender-smart capital creates better returns.',
-//   author: 'Priya Thapa',
-//   role: 'Chief Investment Officer',
-//   date: 'March 2025',
-//   readTime: '12 min read',
-//   image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80',
-//   avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&q=80',
-// }
-
-// const articles = [
-//   {
-//     type: 'Blog', typeCls: 'type-blog',
-//     title: 'The Investment Readiness Gap: Why Nepal\'s SMEs Miss Out on Institutional Capital',
-//     excerpt: 'Most promising Nepali businesses aren\'t failing because of poor products — they\'re failing because institutional investors require financial discipline and governance that most haven\'t built.',
-//     author: 'Rajan Sharma', date: 'Feb 2025', readTime: '8 min',
-//     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80',
-//     tag: 'Ecosystem',
-//   },
-//   {
-//     type: 'Article', typeCls: 'type-article',
-//     title: 'Province-by-Province: Mapping Nepal\'s Untapped Investment Corridors',
-//     excerpt: 'Beyond Kathmandu valley lies a constellation of growth opportunities. Our analysis covers agriculture, manufacturing, and tourism across all seven provinces.',
-//     author: 'Anil Pradhan', date: 'Jan 2025', readTime: '10 min',
-//     image: 'https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?w=600&q=80',
-//     tag: 'Market Research',
-//   },
-//   {
-//     type: 'Report', typeCls: 'type-report',
-//     title: 'Nepal Private Equity Report 2024: Deal Flow, Returns & Outlook',
-//     excerpt: 'A comprehensive review of private equity activity in Nepal — including deal count, sector distribution, exit multiples, and the pipeline heading into 2025.',
-//     author: 'Aadhyanta Research', date: 'Dec 2024', readTime: '25 min',
-//     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80',
-//     tag: 'Annual Report',
-//   },
-//   {
-//     type: 'Blog', typeCls: 'type-blog',
-//     title: 'Blended Finance in Frontier Markets: Lessons from NOF II',
-//     excerpt: 'Combining commercial capital with development finance unlocks deal flow that neither source could access alone. Here\'s what we learned structuring our second fund.',
-//     author: 'Sunita Rai', date: 'Nov 2024', readTime: '6 min',
-//     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
-//     tag: 'Fund Management',
-//   },
-//   {
-//     type: 'Article', typeCls: 'type-article',
-//     title: 'Governance as a Return Driver: How Board Seats Create Value',
-//     excerpt: 'We don\'t just take board seats — we use them. This piece examines how active governance engagement has driven measurable improvements across our portfolio.',
-//     author: 'Rajan Sharma', date: 'Oct 2024', readTime: '9 min',
-//     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80',
-//     tag: 'Portfolio',
-//   },
-//   {
-//     type: 'Report', typeCls: 'type-report',
-//     title: 'Impact Measurement Framework: Tracking SDG Outcomes in Private Markets',
-//     excerpt: 'How do you measure job quality, gender equity, and climate resilience in a growth equity portfolio? Our methodology, tools, and findings from the field.',
-//     author: 'Aadhyanta Impact Team', date: 'Sep 2024', readTime: '18 min',
-//     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80',
-//     tag: 'Impact',
-//   },
-// ]
-
 const FILTERS = ["All", "Blog", "Article", "Report"]
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -206,16 +139,7 @@ function Hero() {
 
   return (
     <section className="bg-white border-b border-[#E8E4DD] overflow-hidden">
-      {/* Top bar */}
-      {/* <div className="bg-[#1C1C2E] py-2.5 overflow-hidden">
-        <div className="marquee-track">
-          {[...topics, ...topics].map((t, i) => (
-            <span key={i} className="whitespace-nowrap px-8 font-mono-dm text-[10px] text-white/50 tracking-widest uppercase inline-flex items-center gap-5">
-              {t} <span className="w-1 h-1 rounded-full bg-[#B71E52] inline-block" />
-            </span>
-          ))}
-        </div>
-      </div> */}
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-0">
         {/* Page title row */}

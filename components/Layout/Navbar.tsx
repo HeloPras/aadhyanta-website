@@ -114,7 +114,7 @@ function NavLink({
             <div className="font-display font-bold text-[15px] text-[#1C1C2E] leading-tight">
               {item.name} Overview
             </div>
-            <div className="font-mono-dm text-[9px] text-stone-400 tracking-[0.1em] uppercase mt-0.5">
+            <div className="font-mono-dm text-[9px] text-stone-400 tracking-widest uppercase mt-0.5">
               See all {item.name.toLowerCase()}
             </div>
           </a>
