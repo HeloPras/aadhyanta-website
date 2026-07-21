@@ -542,7 +542,7 @@ function CTA() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
             <a
-              href="/contact"
+              href="/contact-us"
               className="flex items-center justify-center gap-2 bg-[#B71E52] hover:bg-[#9e1847] text-white font-semibold text-[15px] px-7 py-3.5 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B71E52]/25"
             >
               Investor Inquiry <ArrowRight size={15} />

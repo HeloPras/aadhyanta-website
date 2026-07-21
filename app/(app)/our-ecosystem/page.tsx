@@ -146,7 +146,7 @@ const programs: Program[] = [
     funder: 'US Embassy',
     description: 'A national tech innovation hackathon series across all 7 provinces of Nepal — delivered with Georgia Tech Enterprise Innovation Institute.',
     chips: ['175 Innovators', '7 Provinces'],
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80',
+    image: '/our-ecosystem/code-for-impact.jpg',
     href: '/our-ecosystem/code-for-impact',
   },
   {
@@ -156,7 +156,7 @@ const programs: Program[] = [
     funder: 'US Embassy',
     description: 'U.S.–Nepal pre-accelerator connecting 20 early-stage entrepreneurs to AI tools, U.S. innovation frameworks, and dual-mentorship support.',
     chips: ['20 Entrepreneurs', '100+ Ecosystem Participants'],
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
+    image: '/our-ecosystem/seeding-and-scaling.png',
     href: '/our-ecosystem/seeding-and-scaling-innovation-ai-entrepreneurs-lab',
   },
   {
@@ -208,7 +208,7 @@ const programs: Program[] = [
     funder: 'Swiss Agency for Development and Cooperation (SDC)',
     description: 'Early-stage acceleration for agritech-logistics startups — 7 enterprises, 32-hour hackathon, and product showcase.',
     chips: ['7 Enterprises', '32-Hr Hackathon'],
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',
+    image: '/our-ecosystem/digital-agriculture.jpg',
     href: '/our-ecosystem/digital-innovation-in-agriculture-and-logistics',
   },
   {

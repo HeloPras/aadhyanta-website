@@ -156,7 +156,7 @@ const Member = ({
     <>
       <style dangerouslySetInnerHTML={{ __html: MEMBER_CSS }} />
 
-      <div className="flex flex-wrap gap-5 pb-4">
+      <div className="flex flex-wrap gap-5 pb-4 justify-center">
         {members.map((member) => {
           const isSelected = selected === member.name
 

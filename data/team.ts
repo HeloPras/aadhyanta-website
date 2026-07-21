@@ -266,24 +266,24 @@ image:"/aadhyanta/Team/Anuja.jpeg"
 image:"/aadhyanta/Team/Dibakar.JPG"
 
 },
-{
-  name: "Lomus Pudasaini",
-  position: "Investment Analyst",
-  department: "Management",
-  bio: "Lomus is an economics graduate focused on climate finance and international financial reform. He has experience leading policy initiatives at Beyond Bretton Woods and conducting sustainable finance and investment research across emerging markets.",
-  experience: "Sustainable Finance Research and Policy Initiatives",
-  education: "Bachelor of Arts in Economics, Middlebury College, USA",
-  specialties: [
-    "Financial Analysis",
-    "Sustainable Finance",
-    "Equity Research",
-    "Climate Finance",
-    "Policy Research",
-  ],
-  initials: "LP",
-    image: "/aadhyanta/Team/Lomus.jpeg",
+// {
+//   name: "Lomus Pudasaini",
+//   position: "Investment Analyst",
+//   department: "Management",
+//   bio: "Lomus is an economics graduate focused on climate finance and international financial reform. He has experience leading policy initiatives at Beyond Bretton Woods and conducting sustainable finance and investment research across emerging markets.",
+//   experience: "Sustainable Finance Research and Policy Initiatives",
+//   education: "Bachelor of Arts in Economics, Middlebury College, USA",
+//   specialties: [
+//     "Financial Analysis",
+//     "Sustainable Finance",
+//     "Equity Research",
+//     "Climate Finance",
+//     "Policy Research",
+//   ],
+//   initials: "LP",
+//     image: "/aadhyanta/Team/Lomus.jpeg",
 
-},
+// },
 {
   name: "Swastika Khatri",
   position: "Investment Analyst",
@@ -336,7 +336,7 @@ image:"/aadhyanta/Team/Dibakar.JPG"
     "Capacity Building",
   ],
   initials: "PP",
-  image: "/aadhyanta/Team/Pratistha.jpeg",
+  image: "/aadhyanta/Team/pratistha-1.jpg",
 },
 
 {
@@ -354,7 +354,7 @@ image:"/aadhyanta/Team/Dibakar.JPG"
     "Entrepreneurship Growth and Development",
   ],
   initials: "AM",
-  image: "/aadhyanta/Team/Agadh.png",
+  image: "/aadhyanta/Team/agadh.jpeg",
 },
 
 {
@@ -375,6 +375,6 @@ image:"/aadhyanta/Team/Dibakar.JPG"
     "Outreach & Engagement",
   ],
   initials: "AB",
-  image: "/aadhyanta/Team/Arya.jpeg",
+  image: "/aadhyanta/Team/arya-1.jpg",
 },
 ]

@@ -253,7 +253,7 @@ const TeamPage: React.FC = () => {
 
             <DepartmentSection
               label="Business Developement"
-              title="Acceletor Team"
+              title="Accelerator Team"
               description="Building partnerships, accelerating ventures, and creating opportunities that drive sustainable business growth."
               department="Programs"
             />

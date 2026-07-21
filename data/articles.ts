@@ -19,8 +19,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "6 min read",
-    image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
+    image: "/insights/turning-struggles-into-strengths.jpg",
     relatedIds: [],
     content: [
       {
@@ -108,8 +107,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "9 min read",
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&q=80",
+    image: "/insights/aadhyanta-venture-capital-nepal.jpg",
     relatedIds: [],
     content: [
       {
@@ -247,8 +245,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "10 min read",
-    image:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80",
+    image: "/insights/transforming-investment-readiness-llama3.jpg",
     relatedIds: [
       "investment-readiness-gap",
       "aadhyanta-venture-capital-nepal",
@@ -453,8 +450,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "7 min read",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80",
+    image: "/insights/leveraging-private-equity-nepal-economy.png",
     relatedIds: [
       "investment-readiness-gap",
       "aadhyanta-venture-capital-nepal",
@@ -548,8 +544,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "7 min read",
-image:
-  "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&q=80",
+    image: "/insights/securing-your-future-private-equity-nepal-startups.png",
     relatedIds: [
       "investment-readiness-gap",
       "aadhyanta-venture-capital-nepal",
@@ -642,8 +637,7 @@ image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "6 min read",
-    image:
-      "https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&q=80",
+    image: "/insights/five-secrets-about-investment.png",
     relatedIds: [
       "investment-readiness-gap",
       "leveraging-private-equity-nepal-economy",
@@ -716,8 +710,7 @@ image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "8 min read",
-    image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=80",
+    image: "/insights/lessons-to-be-learned-hydropower-industry.jpg",
     relatedIds: [
       "investment-readiness-gap",
       "leveraging-private-equity-nepal-economy",

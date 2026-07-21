@@ -381,14 +381,30 @@ function Team() {
   const [dragging, setDragging] = useState(false)
   const [dragStartX, setDragStartX] = useState(0)
   const trackRef = useRef<HTMLDivElement>(null)
+  const viewportRef = useRef<HTMLDivElement>(null)
+  const [viewportWidth, setViewportWidth] = useState(0)
 
-  const VISIBLE = 4 // cards visible at once on desktop
+  const VISIBLE = 3 // cards visible at once on desktop
+  const GAP = 24    // gap-6 = 24 px
   const total = directors.length
   const canPrev = current > 0
   const canNext = current < total - VISIBLE
 
-  const prev = () => canPrev && setCurrent((c) => c - 1)
-  const next = () => canNext && setCurrent((c) => c + 1)
+  // Pixel-accurate sizing derived from the real container width
+  const cardWidth = viewportWidth ? (viewportWidth - GAP * (VISIBLE - 1)) / VISIBLE : 0
+  const stepSize  = cardWidth + GAP
+
+  // Watch the overflow viewport so sizes stay correct on resize
+  useEffect(() => {
+    const el = viewportRef.current
+    if (!el) return
+    const ro = new ResizeObserver(([entry]) => setViewportWidth(entry.contentRect.width))
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
+  const prev = () => setCurrent((c) => (c <= 0 ? total - VISIBLE : c - 1))
+  const next = () => setCurrent((c) => (c >= total - VISIBLE ? 0 : c + 1))
 
   // Drag / swipe
   const onMouseDown = (e: React.MouseEvent) => { setDragging(true); setDragStartX(e.clientX) }
@@ -411,85 +427,80 @@ function Team() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header row */}
-        <div className="sr flex items-end justify-between mb-12 gap-6">
-          <div>
-            <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Leadership</span>
-            <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-2">
-              Meet our <em className="italic text-[#B71E52]">Directors</em>
-            </h2>
-            <p className="text-stone-500 text-[15px]">Experienced professionals guiding Aadhyanta Fund to new heights</p>
-          </div>
-
-          {/* Prev / Next */}
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <button
-              onClick={prev}
-              disabled={!canPrev}
-              aria-label="Previous"
-              className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200
-                ${canPrev
-                  ? 'border-[#1C1C2E] text-[#1C1C2E] hover:bg-[#1C1C2E] hover:text-white'
-                  : 'border-[#E8E4DD] text-[#E8E4DD] cursor-not-allowed'}`}
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <button
-              onClick={next}
-              disabled={!canNext}
-              aria-label="Next"
-              className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200
-                ${canNext
-                  ? 'border-[#B71E52] bg-[#B71E52] text-white hover:bg-[#9e1847]'
-                  : 'border-[#E8E4DD] text-[#E8E4DD] cursor-not-allowed'}`}
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
+        <div className="sr mb-12">
+          <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">Leadership</span>
+          <h2 className="font-display font-bold text-[clamp(34px,4vw,52px)] leading-[1.08] text-[#1C1C2E] mb-2">
+            Meet our <em className="italic text-[#B71E52]">Directors</em>
+          </h2>
+          <p className="text-stone-500 text-[15px]">Experienced professionals guiding Aadhyanta Fund to new heights</p>
         </div>
 
-        {/* Carousel track */}
-        <div
-          className="overflow-hidden cursor-grab active:cursor-grabbing select-none "
-          onMouseDown={onMouseDown}
-          onMouseUp={onMouseUp}
-          onMouseLeave={() => setDragging(false)}
-          onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd}
-        >
-          <div
-            ref={trackRef}
-            className="flex gap-6"
-            style={{
-              transform: `translateX(calc(-${current} * (25% + 6px)))`,
-              transition: dragging ? 'none' : 'transform 0.55s cubic-bezier(0.16,1,0.3,1)',
-              width: `${(total / VISIBLE) * 100}%`,
-            }}
+        {/* Carousel — arrows flank the track */}
+        <div className="flex items-center gap-4">
+
+          {/* Prev arrow */}
+          <button
+            onClick={prev}
+            aria-label="Previous"
+            className="flex-shrink-0 w-11 h-11 rounded-full border border-[#B71E52] bg-[#B71E52] text-white hover:bg-[#9e1847] hover:border-[#9e1847] flex items-center justify-center transition-all duration-200 cursor-pointer"
           >
-            {directors.map((m, i) => (
-              <div
-                key={i}
-                style={{ width: `${100 / total}%` }}
-                className="flex-shrink-0"
-              >
-                {/* Photo */}
-                <div className="team-img-wrap rounded-xl overflow-hidden aspect-3/4 mb-5 bg-[#1C1C2E] shadow-md">
-                  <img
-                    src={m.image}
-                    alt={m.name}
-                    draggable={false}
-                    className="team-img w-full h-full object-cover object-top"
-                  />
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
+          {/* Scrollable track */}
+          <div
+            ref={viewportRef}
+            className="flex-1 overflow-hidden cursor-grab active:cursor-grabbing select-none"
+            onMouseDown={onMouseDown}
+            onMouseUp={onMouseUp}
+            onMouseLeave={() => setDragging(false)}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+          >
+            <div
+              ref={trackRef}
+              className="flex"
+              style={{
+                gap: `${GAP}px`,
+                transform: `translateX(-${current * stepSize}px)`,
+                transition: dragging ? 'none' : 'transform 0.55s cubic-bezier(0.16,1,0.3,1)',
+              }}
+            >
+              {directors.map((m, i) => (
+                <div
+                  key={i}
+                  style={{ flex: `0 0 ${cardWidth}px`, minWidth: 0 }}
+                >
+                  {/* Photo */}
+                  <div className="team-img-wrap rounded-xl overflow-hidden aspect-3/4 mb-5 bg-[#1C1C2E] shadow-md">
+                    <img
+                      src={m.image}
+                      alt={m.name}
+                      draggable={false}
+                      className="team-img w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  {/* Info */}
+                  <h3 className="font-display font-bold text-[20px] text-[#1C1C2E] mb-1 leading-tight">{m.name}</h3>
+                  <p className="font-mono-dm text-[10px] text-[#B71E52] tracking-widest uppercase">{m.position}</p>
                 </div>
-                {/* Info */}
-                <h3 className="font-display font-bold text-[20px] text-[#1C1C2E] mb-1 leading-tight">{m.name}</h3>
-                <p className="font-mono-dm text-[10px] text-[#B71E52] tracking-widest uppercase">{m.position}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          {/* Next arrow */}
+          <button
+            onClick={next}
+            aria-label="Next"
+            className="flex-shrink-0 w-11 h-11 rounded-full border border-[#B71E52] bg-[#B71E52] text-white hover:bg-[#9e1847] hover:border-[#9e1847] flex items-center justify-center transition-all duration-200 cursor-pointer"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
         </div>
 
         {/* Dot indicators */}
