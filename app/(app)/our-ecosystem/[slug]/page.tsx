@@ -27,6 +27,12 @@ const GLOBAL_CSS = `
     background-size: 60px 60px;
   }
 
+  .prog-detail-hero-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .alumni-card {
     transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.2s;
   }
@@ -60,6 +66,16 @@ const GLOBAL_CSS = `
     transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
   }
   .reveal-section.revealed { opacity: 1; transform: translateY(0); }
+
+  /* Video modal */
+  .video-modal-overlay {
+    position: fixed; inset: 0; background: rgba(15,15,23,0.85);
+    z-index: 100; display: flex; align-items: center; justify-content: center;
+    padding: 20px; animation: fadeIn 0.2s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .watch-testimonial-btn { transition: color 0.15s, gap 0.15s; }
+  .watch-testimonial-btn:hover { color: #B71E52; gap: 8px; }
 `
 
 /* ─── Scroll Reveal ──────────────────────────────────────────────────────── */
@@ -115,6 +131,43 @@ function AlumniBadge({ badge }: { badge: string }) {
     <span className={`font-mono-dm text-[8px] tracking-[0.1em] uppercase px-2 py-1 rounded mb-2 inline-block ${styles[badge] ?? styles['Funded']}`}>
       {badge}
     </span>
+  )
+}
+
+/* ─── Video Modal ────────────────────────────────────────────────────────── */
+function VideoModal({ videoId, title, onClose }: { videoId: string; title: string; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+
+  return (
+    <div className="video-modal-overlay" onClick={onClose}>
+      <div
+        className="relative w-full max-w-4xl rounded-2xl overflow-hidden border border-white/10 shadow-2xl aspect-video"
+        onClick={e => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          aria-label="Close video"
+          className="absolute -top-10 right-0 sm:top-3 sm:right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-[16px] z-10 cursor-pointer"
+        >
+          ✕
+        </button>
+        <iframe
+          src={`https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&like=0&share=0&watchlater=0&collections=0&autoplay=1`}
+          className="absolute inset-0 w-full h-full"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+          title={title}
+        />
+      </div>
+    </div>
   )
 }
 
@@ -232,8 +285,16 @@ function SidebarInner({
 ═══════════════════════════════════════════════════════════════════════════ */
 function ProgramHero({ program }: { program: ProgramPage }) {
   const isActive = program.status === 'Active'
+  const isDIAL = program.slug === 'digital-innovation-in-agriculture-and-logistics'
   return (
-    <div className="bg-[#1C1C2E] prog-detail-hero overflow-hidden pt-22">
+    <div
+      className={`bg-[#1C1C2E] prog-detail-hero overflow-hidden pt-22${isDIAL ? ' prog-detail-hero-img' : ''}`}
+      style={isDIAL ? {
+        backgroundImage: 'linear-gradient(rgba(28, 28, 46, 0.53), rgba(28,28,46,0.9)), url(/our-ecosystem/dial.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      } : undefined}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Hero text */}
         <div className="px-5 sm:px-8 lg:px-10 pt-10 sm:pt-14 pb-8 border-b border-white/[0.07]">
@@ -286,6 +347,8 @@ function ProgramHero({ program }: { program: ProgramPage }) {
 ═══════════════════════════════════════════════════════════════════════════ */
 function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKey: string }) {
   useReveal(revealKey)
+
+  const [activeVideo, setActiveVideo] = useState<{ videoId: string; title: string } | null>(null)
 
   const pf = program.partnerAndFunder
   const partnerCells = [
@@ -377,6 +440,27 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
         </div>
       </section>
 
+      {/* DIAL JOURNEY VIDEO — only shown for the DIAL programme */}
+      {program.slug === 'digital-innovation-in-agriculture-and-logistics' && (
+        <section className="reveal-section scroll-mt-44">
+          <SectionHeader label="Our Journey" title={<>The <em className="italic text-[#B71E52]">DIAL</em> Story</>} />
+          <p className="text-stone-500 text-[14px] leading-[1.9] mb-6">
+            Witness how the DIAL programme is transforming agricultural innovation and rural livelihoods across Nepal.
+          </p>
+
+          {/* Vimeo embed */}
+          <div className="relative w-full rounded-2xl overflow-hidden border border-[#E8E4DD] shadow-xl aspect-video">
+            <iframe
+              src="https://player.vimeo.com/video/1211933504?title=0&byline=0&portrait=0&like=0&share=0&watchlater=0&collections=0"
+              className="absolute inset-0 w-full h-full"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="DIAL Journey Video"
+            />
+          </div>
+        </section>
+      )}
+
       {/* DELIVERABLES */}
       <section id="sec-deliverables" className="reveal-section scroll-mt-44">
         <SectionHeader label="What Participants Get" title={<>Programme <em className="italic text-[#B71E52]">Deliverables</em></>} />
@@ -454,10 +538,26 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
                 {a.badge && <AlumniBadge badge={a.badge} />}
                 <h3 className="font-display font-bold text-[18px] text-[#1C1C2E] mb-2">{a.company}</h3>
                 <p className="text-[12px] text-stone-500 leading-[1.75]">{a.outcome}</p>
+                {a.videoId && (
+                  <button
+                    onClick={() => setActiveVideo({ videoId: a.videoId!, title: `${a.company} Testimonial` })}
+                    className="watch-testimonial-btn cursor-pointer flex items-center gap-1.5 mt-4 font-mono-dm text-[9px] tracking-[0.1em] uppercase text-[#9CA3AF]"
+                  >
+                    <span className="text-[10px]">▶</span> Watch Testimonial
+                  </button>
+                )}
               </div>
             ))}
           </div>
         </section>
+      )}
+
+      {activeVideo && (
+        <VideoModal
+          videoId={activeVideo.videoId}
+          title={activeVideo.title}
+          onClose={() => setActiveVideo(null)}
+        />
       )}
 
       {/* SUCCESS STORY */}

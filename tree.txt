@@ -1,0 +1,2200 @@
+/
+├── 2023
+│   └── aadhyanta company profile
+│       ├── NOF_I_Pitch.ai
+│       ├── company profile copy.pdf
+│       └── company profile.ai
+├── 2025
+│   ├── Aadhyanya  standee
+│   │   ├── Aakash Dulal.pdf
+│   │   ├── Ankita Giri.pdf
+│   │   ├── Bharat Chaulagain.pdf
+│   │   ├── Bhim Shrestha.pdf
+│   │   ├── Bigyan Basnet.pdf
+│   │   ├── Dhan Kumari.pdf
+│   │   ├── Holiska Koirala.pdf
+│   │   ├── Keshav Ghimire.pdf
+│   │   ├── Kewal Niroula.pdf
+│   │   ├── Lokpriya Khanal.pdf
+│   │   ├── Pradeep Ghimire.pdf
+│   │   ├── Prajwal pradhan.pdf
+│   │   ├── Tilak Karki.pdf
+│   │   ├── Udaya Chapagain.pdf
+│   │   ├── Yogendra giri.pdf
+│   │   └── yadav Dhakal.pdf
+│   ├── Agfa Portrait XPS 160.cube
+│   ├── DIAL
+│   │   ├── Copy of DSC04800.JPG
+│   │   ├── Copy of DSC04896.JPG
+│   │   ├── Copy of DSC04897.jpg
+│   │   ├── Copy of DSC04916.JPG
+│   │   ├── Copy of DSC04916.jpg
+│   │   ├── Copy of DSC05481.JPG
+│   │   ├── Copy of DSC05481.jpg
+│   │   ├── Copy of DSC05570.JPG
+│   │   ├── Copy of DSC05605.JPG
+│   │   ├── Copy of DSC05611 (1).jpg
+│   │   ├── Copy of DSC05614 (1).jpg
+│   │   ├── Copy of DSC05617.JPG
+│   │   ├── Copy of DSC05623.jpg
+│   │   ├── Copy of DSC05661.JPG
+│   │   ├── Copy of DSC05670.JPG
+│   │   ├── Copy of DSC05674.jpg
+│   │   ├── Copy of DSC05679.jpg
+│   │   ├── Copy of DSC05689 (1).jpg
+│   │   ├── Copy of DSC05723.JPG
+│   │   ├── Copy of DSC05733.JPG
+│   │   ├── Copy of DSC05909-2.jpg
+│   │   ├── Copy of Group image 2.jpg
+│   │   ├── Copy of Group photo.jpeg
+│   │   ├── Copy of IMG_20250217_125910.jpg
+│   │   ├── Copy of Praveen Regmi.jpeg
+│   │   └── Copy of discussion 3.jpg
+│   ├── DIAL Photos
+│   │   ├── DSC05465.jpg
+│   │   ├── DSC05481.JPG
+│   │   ├── DSC05481.jpg
+│   │   ├── DSC05570.JPG
+│   │   ├── DSC05605.JPG
+│   │   ├── DSC05609.JPG
+│   │   ├── DSC05611 (1).jpg
+│   │   ├── DSC05614 (1).jpg
+│   │   ├── DSC05617.JPG
+│   │   ├── DSC05623.jpg
+│   │   ├── DSC05640.JPG
+│   │   ├── DSC05653.jpg
+│   │   ├── DSC05661.JPG
+│   │   ├── DSC05670.JPG
+│   │   ├── DSC05674.JPG
+│   │   ├── DSC05674.jpg
+│   │   ├── DSC05679.JPG
+│   │   ├── DSC05679.jpg
+│   │   ├── DSC05689 (1).jpg
+│   │   ├── DSC05689.JPG
+│   │   ├── DSC05704.JPG
+│   │   ├── DSC05723.JPG
+│   │   ├── DSC05733.JPG
+│   │   ├── DSC05744.JPG
+│   │   ├── DSC05746.JPG
+│   │   ├── DSC05749.JPG
+│   │   ├── DSC05761.JPG
+│   │   ├── DSC05769.JPG
+│   │   ├── DSC05805.JPG
+│   │   ├── DSC05909-2.jpg
+│   │   └── raw
+│   │       ├── DSC05266.ARW
+│   │       ├── DSC05267.ARW
+│   │       ├── DSC05268.ARW
+│   │       ├── DSC05269.ARW
+│   │       ├── DSC05270.ARW
+│   │       ├── DSC05271.ARW
+│   │       ├── DSC05272.ARW
+│   │       ├── DSC05273.ARW
+│   │       ├── DSC05274.ARW
+│   │       ├── DSC05275.ARW
+│   │       ├── DSC05276.ARW
+│   │       ├── DSC05277.ARW
+│   │       ├── DSC05278.ARW
+│   │       └── DSC05279.ARW
+│   ├── DIAL Videos
+│   │   ├── C6221.MP4
+│   │   ├── C6222.MP4
+│   │   ├── C6223.MP4
+│   │   ├── C6224.MP4
+│   │   ├── C6225.MP4
+│   │   ├── C6226.MP4
+│   │   ├── C6227.MP4
+│   │   ├── C6228.MP4
+│   │   ├── C6229.MP4
+│   │   ├── C6230.MP4
+│   │   ├── C6231.MP4
+│   │   ├── C6232.MP4
+│   │   ├── C6233.MP4
+│   │   ├── C6234.MP4
+│   │   ├── C6235.MP4
+│   │   ├── C6236.MP4
+│   │   ├── C6237.MP4
+│   │   ├── C6238.MP4
+│   │   ├── C6239.MP4
+│   │   ├── C6240.MP4
+│   │   ├── C6243.MP4
+│   │   ├── C6244.MP4
+│   │   ├── C6245.MP4
+│   │   ├── C6246.MP4
+│   │   ├── C6247.MP4
+│   │   ├── C6248.MP4
+│   │   ├── C6249.MP4
+│   │   ├── C6250.MP4
+│   │   ├── C6251.MP4
+│   │   ├── C6252.MP4
+│   │   ├── C6253.MP4
+│   │   ├── C6254.MP4
+│   │   ├── C6255.MP4
+│   │   ├── C6256.MP4
+│   │   ├── C6257.MP4
+│   │   ├── C6258.MP4
+│   │   ├── C6259.MP4
+│   │   ├── C6260.MP4
+│   │   ├── C6261.MP4
+│   │   ├── C6262.MP4
+│   │   ├── C6263.MP4
+│   │   ├── C6264.MP4
+│   │   ├── C6265.MP4
+│   │   ├── C6266.MP4
+│   │   ├── C6267.MP4
+│   │   ├── C6268.MP4
+│   │   ├── C6269.MP4
+│   │   ├── C6270.MP4
+│   │   ├── C6271.MP4
+│   │   ├── C6272.MP4
+│   │   ├── C6273.MP4
+│   │   ├── C6274.MP4
+│   │   ├── C6275.MP4
+│   │   ├── C6276.MP4
+│   │   ├── C6277.MP4
+│   │   ├── C6278.MP4
+│   │   ├── C6279.MP4
+│   │   ├── C6280.MP4
+│   │   ├── C6281.MP4
+│   │   ├── C6282.MP4
+│   │   ├── C6283.MP4
+│   │   ├── C6284.MP4
+│   │   ├── C6285.MP4
+│   │   ├── C6286.MP4
+│   │   ├── C6287.MP4
+│   │   ├── C6288.MP4
+│   │   ├── C6289.MP4
+│   │   ├── C6290.MP4
+│   │   ├── C6291.MP4
+│   │   ├── C6292.MP4
+│   │   ├── C6293.MP4
+│   │   ├── C6294.MP4
+│   │   ├── C6295.MP4
+│   │   ├── C6296.MP4
+│   │   ├── C6297.MP4
+│   │   ├── C6298.MP4
+│   │   ├── C6299.MP4
+│   │   ├── C6300.MP4
+│   │   ├── C6301.MP4
+│   │   ├── C6302.MP4
+│   │   ├── C6303.MP4
+│   │   ├── C6304.MP4
+│   │   ├── C6305.MP4
+│   │   ├── C6306.MP4
+│   │   ├── C6307.MP4
+│   │   ├── C6308.MP4
+│   │   ├── C6309.MP4
+│   │   ├── C6310.MP4
+│   │   ├── C6311.MP4
+│   │   ├── C6312.MP4
+│   │   ├── C6313.MP4
+│   │   ├── C6314.MP4
+│   │   ├── C6315.MP4
+│   │   ├── C6316.MP4
+│   │   ├── C6317.MP4
+│   │   ├── C6318.MP4
+│   │   ├── C6319.MP4
+│   │   ├── C6320.MP4
+│   │   ├── C6321.MP4
+│   │   ├── C6322.MP4
+│   │   ├── C6323.MP4
+│   │   ├── C6324.MP4
+│   │   ├── C6325.MP4
+│   │   ├── C6326.MP4
+│   │   ├── C6327.MP4
+│   │   ├── C6328.MP4
+│   │   ├── C6329.MP4
+│   │   ├── C6330.MP4
+│   │   ├── C6331.MP4
+│   │   ├── C6332.MP4
+│   │   ├── C6333.MP4
+│   │   ├── C6334.MP4
+│   │   ├── C6335.MP4
+│   │   ├── C6336.MP4
+│   │   ├── C6337.MP4
+│   │   ├── C6338.MP4
+│   │   ├── C6339.MP4
+│   │   ├── C6340.MP4
+│   │   ├── C6341.MP4
+│   │   ├── C6342.MP4
+│   │   ├── C6343.MP4
+│   │   ├── C6344.MP4
+│   │   ├── C6345.MP4
+│   │   ├── C6346.MP4
+│   │   ├── C6347.MP4
+│   │   ├── C6348.MP4
+│   │   ├── C6349.MP4
+│   │   ├── C6350.MP4
+│   │   ├── C6351.MP4
+│   │   ├── C6352.MP4
+│   │   ├── C6353.MP4
+│   │   ├── C6354.MP4
+│   │   ├── C6355.MP4
+│   │   ├── C6356.MP4
+│   │   ├── C6357.MP4
+│   │   ├── C6358.MP4
+│   │   ├── C6359.MP4
+│   │   ├── C6360.MP4
+│   │   ├── C6361.MP4
+│   │   ├── C6362.MP4
+│   │   ├── C6363.MP4
+│   │   ├── C6364.MP4
+│   │   └── C6365.MP4
+│   ├── Dial Testimonials
+│   │   ├── DIAL Testimonial
+│   │   │   ├── C7887.MP4
+│   │   │   └── C7888.MP4
+│   │   ├── Dailo Krishi
+│   │   │   ├── 0_Market_Snacks_3840x2160.mp4
+│   │   │   ├── 4667198_Black Seed_Pumpkin See_4096x2160.mp4
+│   │   │   ├── 5007193_North India_Maharashtra_3840x2160.mp4
+│   │   │   ├── 5959187_Bulk_Food_3840x2160.mov
+│   │   │   ├── AQNGb7L0MLnQCNm7nWh0sJbc4iRl5Z26OllrDbapzS_ekyf1HGFT5lY6hLRNVn6TQUvcFc6BY7VNsIAo-fnCGACx.mp4
+│   │   │   ├── Adobe After Effects Auto-Save
+│   │   │   │   ├── Motion Graphics auto-save 1.aep
+│   │   │   │   └── Motion Graphics auto-save 2.aep
+│   │   │   ├── Adobe Premiere Pro Audio Previews
+│   │   │   │   └── Dailo Krishi.PRV
+│   │   │   │       └── Peak Files
+│   │   │   ├── Adobe Premiere Pro Auto-Save
+│   │   │   │   ├── Dailo Krishi--cd754180-1050-6ecd-6809-4d709d2e8288-2025-05-12_15-13-00.prproj
+│   │   │   │   ├── Dailo Krishi--cd754180-1050-6ecd-6809-4d709d2e8288-2025-05-12_17-19-19.prproj
+│   │   │   │   ├── Dailo Krishi--cd754180-1050-6ecd-6809-4d709d2e8288-2025-05-13_12-10-30.prproj
+│   │   │   │   ├── Dailo Krishi--cd754180-1050-6ecd-6809-4d709d2e8288-2025-05-14_13-55-34.prproj
+│   │   │   │   ├── Dailo Krishi--cd754180-1050-6ecd-6809-4d709d2e8288-2025-05-14_14-12-01.prproj
+│   │   │   │   └── Dailo Krishi--cd754180-1050-6ecd-6809-4d709d2e8288-2025-05-14_14-37-38.prproj
+│   │   │   ├── Aerial Tour of Farmland in Nepal.mp4
+│   │   │   ├── C3646.MP4
+│   │   │   ├── C3664.MP4
+│   │   │   ├── C7890.MP4
+│   │   │   ├── C8820.MP4
+│   │   │   ├── C8834.MP4
+│   │   │   ├── Dailo Krishi Testimonial 2.mp4
+│   │   │   ├── Dailo Krishi Testimonial.mp4
+│   │   │   ├── Dailo Krishi.png
+│   │   │   ├── Dailo Krishi.prproj
+│   │   │   ├── GettyImages-1392511311.mov
+│   │   │   ├── Motion Graphics.aep
+│   │   │   ├── Motion Graphics_AME
+│   │   │   │   ├── Comp 2.mp4
+│   │   │   │   ├── Comp 3.mp4
+│   │   │   │   ├── Comp 4_2.mp4
+│   │   │   │   ├── Comp 5.mp4
+│   │   │   │   ├── Comp 6.mp4
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 2.aep
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 3.aep
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 4.aep
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 4_1.aep
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 4_2.aep
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 4_3.aep
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 5.aep
+│   │   │   │   └── tmpAEtoAMEProject-Comp 6.aep
+│   │   │   ├── all over nepal.ai
+│   │   │   ├── animated-sustainability-icons-pack-2023-11-27-05-14-36-utc
+│   │   │   │   └── Sustainability Icons Pack
+│   │   │   │       ├── Help.pdf
+│   │   │   │       └── Sustainability Icons Pack.aep
+│   │   │   ├── banking-icons-concepts-2023-11-27-05-17-51-utc
+│   │   │   │   ├── After Efects
+│   │   │   │   │   └── Banking.aep
+│   │   │   │   └── Help
+│   │   │   │       └── Tutorial 1.mp4
+│   │   │   ├── coworking-business-team-illustration-scene-2025-01-08-04-40-37-utc
+│   │   │   │   └── Coworking business team Illustration
+│   │   │   │       ├── Coworking business team Illustration.aep
+│   │   │   │       └── Tutorial.mp4
+│   │   │   ├── dailo krishi logo.jpg
+│   │   │   ├── envato-DKWVCJ8-Technology Background.mp3
+│   │   │   ├── freepik__package-being-delivered-through-public-transport-s__74818.mp4
+│   │   │   ├── graphs-and-charts-icons-2023-11-27-04-54-27-utc
+│   │   │   │   └── Graphs and Charts folder
+│   │   │   │       ├── (Footage)
+│   │   │   │       │   ├── 0. Author
+│   │   │   │       │   │   └── lezygraph.ai
+│   │   │   │       │   └── 1. Logo Animation
+│   │   │   │       │       └── Logo Animations
+│   │   │   │       │           └── 1. Logo Assets
+│   │   │   │       │               └── 0. Import Logo
+│   │   │   │       │                   └── ENVATO.tga
+│   │   │   │       ├── Graphs and Charts.aep
+│   │   │   │       └── Help file
+│   │   │   │           └── tutorial.mp4
+│   │   │   ├── initial cut 2.mp4
+│   │   │   ├── initial cut.mp4
+│   │   │   ├── logo-01.png
+│   │   │   ├── logo.ai
+│   │   │   ├── outro-02.jpg
+│   │   │   └── warning.png
+│   │   ├── Dr. Fish
+│   │   │   ├── Adobe After Effects Auto-Save
+│   │   │   │   ├── Infographics auto-save 1.aep
+│   │   │   │   └── Infographics auto-save 2.aep
+│   │   │   ├── Adobe Premiere Pro Audio Previews
+│   │   │   │   └── Dr. Fish Testimonial.PRV
+│   │   │   │       ├── 09f20771-7e61-4b03-8cb4-f30aa797697e+2cb522aa-d46c-d806-5d64-ad8700000049 48000.cfa
+│   │   │   │       └── Peak Files
+│   │   │   │           └── 09f20771-7e61-4b03-8cb4-f30aa797697e+2cb522aa-d46c-d806-5d64-ad8700000049 48000.pek
+│   │   │   ├── Adobe Premiere Pro Auto-Save
+│   │   │   │   ├── Dr. Fish Testimonial--27cca70a-df7c-01f6-0852-2f5b872b9a02-2025-04-29_14-48-49.prproj
+│   │   │   │   ├── Dr. Fish Testimonial--27cca70a-df7c-01f6-0852-2f5b872b9a02-2025-04-29_15-06-36.prproj
+│   │   │   │   ├── Dr. Fish Testimonial--27cca70a-df7c-01f6-0852-2f5b872b9a02-2025-04-29_18-03-39.prproj
+│   │   │   │   ├── Dr. Fish Testimonial--27cca70a-df7c-01f6-0852-2f5b872b9a02-2025-04-30_11-02-15.prproj
+│   │   │   │   └── Dr. Fish Testimonial--27cca70a-df7c-01f6-0852-2f5b872b9a02-2025-05-02_16-27-01.prproj
+│   │   │   ├── Birat
+│   │   │   │   ├── C0750.MP4
+│   │   │   │   ├── C0751.MP4
+│   │   │   │   ├── C0752.MP4
+│   │   │   │   ├── C0753.MP4
+│   │   │   │   ├── C0754.MP4
+│   │   │   │   ├── C0755.MP4
+│   │   │   │   ├── C0756.MP4
+│   │   │   │   ├── C0757.MP4
+│   │   │   │   ├── C0758.MP4
+│   │   │   │   ├── C0759.MP4
+│   │   │   │   ├── C0760.MP4
+│   │   │   │   ├── C0761.MP4
+│   │   │   │   ├── C0762.MP4
+│   │   │   │   ├── C0763.MP4
+│   │   │   │   ├── C0764.MP4
+│   │   │   │   ├── C0765.MP4
+│   │   │   │   ├── C0766.MP4
+│   │   │   │   ├── C0767.MP4
+│   │   │   │   ├── C0768.MP4
+│   │   │   │   ├── C0769.MP4
+│   │   │   │   ├── C0770.MP4
+│   │   │   │   ├── C0771.MP4
+│   │   │   │   ├── C0772.MP4
+│   │   │   │   ├── C0773.MP4
+│   │   │   │   ├── C0774.MP4
+│   │   │   │   ├── C0775.MP4
+│   │   │   │   ├── C0776.MP4
+│   │   │   │   ├── C0777.MP4
+│   │   │   │   ├── C0778.MP4
+│   │   │   │   ├── C0779.MP4
+│   │   │   │   ├── C0780.MP4
+│   │   │   │   ├── C0781.MP4
+│   │   │   │   ├── C0782.MP4
+│   │   │   │   ├── C0783.MP4
+│   │   │   │   ├── C0784.MP4
+│   │   │   │   ├── C0785.MP4
+│   │   │   │   ├── C0786.MP4
+│   │   │   │   ├── C0787.MP4
+│   │   │   │   ├── C0788.MP4
+│   │   │   │   ├── C0789.MP4
+│   │   │   │   ├── C0790.MP4
+│   │   │   │   ├── C0791.MP4
+│   │   │   │   ├── C0792.MP4
+│   │   │   │   ├── C0793.MP4
+│   │   │   │   ├── C0794.MP4
+│   │   │   │   ├── C0795.MP4
+│   │   │   │   ├── C0796.MP4
+│   │   │   │   ├── C0797.MP4
+│   │   │   │   ├── C0798.MP4
+│   │   │   │   ├── C0799.MP4
+│   │   │   │   ├── C0800.MP4
+│   │   │   │   ├── C0801.MP4
+│   │   │   │   ├── C0802.MP4
+│   │   │   │   ├── C0803.MP4
+│   │   │   │   ├── C0804.MP4
+│   │   │   │   ├── C0805.MP4
+│   │   │   │   ├── C0806.MP4
+│   │   │   │   ├── C0807.MP4
+│   │   │   │   ├── C0808.MP4
+│   │   │   │   ├── C0809.MP4
+│   │   │   │   ├── C0810.MP4
+│   │   │   │   ├── C0811.MP4
+│   │   │   │   ├── C0812.MP4
+│   │   │   │   └── C0813.MP4
+│   │   │   ├── C7884.MP4
+│   │   │   ├── C7885.MP4
+│   │   │   ├── C8831.MP4
+│   │   │   ├── C8832.MP4
+│   │   │   ├── C8833.MP4
+│   │   │   ├── C8890 (2).MP4
+│   │   │   ├── C8980 (2).MP4
+│   │   │   ├── C9051 (2).MP4.mp4
+│   │   │   ├── Dr. Fish Testimonial.mp4
+│   │   │   ├── Dr. Fish Testimonial.prproj
+│   │   │   ├── Dr. Fish.jpg
+│   │   │   ├── Infographics.aep
+│   │   │   ├── Infographics_AME
+│   │   │   │   ├── Comp 2.mp4
+│   │   │   │   ├── Comp 5.mp4
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 2.aep
+│   │   │   │   └── tmpAEtoAMEProject-Comp 5.aep
+│   │   │   ├── a-farmer-throwing-food-into-a-pool-fish-feeding-fl-2024-09-09-02-23-12-utc.mov
+│   │   │   ├── ai-technology-utline-icons-2023-11-27-05-34-39-utc
+│   │   │   │   ├── After Efects
+│   │   │   │   │   └── AI technology.aep
+│   │   │   │   └── Help
+│   │   │   │       └── Tutorial.mp4
+│   │   │   ├── carp-feeding-2023-11-27-05-26-19-utc.mov
+│   │   │   ├── diseases.png
+│   │   │   ├── envato-DKWVCJ8-Technology Background.mp3
+│   │   │   ├── fish tech.ai
+│   │   │   ├── food.png
+│   │   │   ├── initial cut.mp4
+│   │   │   ├── investment-and-share-market-character-animation-sc-2023-11-27-05-21-46-utc
+│   │   │   │   └── Investment and Share Market Character Animation Scene
+│   │   │   │       ├── (Footage)
+│   │   │   │       │   └── 02 Design & Element
+│   │   │   │       │       └── Mov
+│   │   │   │       │           └── Water 1.mov
+│   │   │   │       ├── A0423_06_Investment_&_Share_market_Animation_Scene.aep
+│   │   │   │       └── Envato Pdf.pdf
+│   │   │   ├── logo-01.jpg
+│   │   │   ├── logo-01.png
+│   │   │   ├── logo.ai
+│   │   │   ├── outro-02.jpg
+│   │   │   ├── turquoise-clear-water-in-the-sea-i-feed-a-flock-o-2023-11-27-05-28-27-utc.mov
+│   │   │   └── water-quality.png
+│   │   ├── Journey Video
+│   │   │   ├── 2171907_World_Planet_1920x1080.mp4
+│   │   │   ├── 6319683_Touch_Touchscreen_1920x1080.mp4
+│   │   │   ├── 6600893_Fields_Bird Eye View_1920x1080.mov
+│   │   │   ├── AAP logo horizontal.png
+│   │   │   ├── Adobe Premiere Pro Audio Previews
+│   │   │   │   └── DIAL Journey Video.PRV
+│   │   │   ├── DIAL Journey Video.mp4
+│   │   │   ├── DIAL Journey Video.prproj
+│   │   │   ├── KAT_SDC_RGB_hoch_pos_En&Nepali_2021(right version).png
+│   │   │   ├── Photo effects.aep
+│   │   │   ├── Photo effects_AME
+│   │   │   │   ├── Comp 2.mp4
+│   │   │   │   └── tmpAEtoAMEProject-Comp 2.aep
+│   │   │   ├── Photos
+│   │   │   │   ├── DSC04799.JPG
+│   │   │   │   ├── DSC04807.JPG
+│   │   │   │   ├── DSC04822.JPG
+│   │   │   │   ├── DSC04858.JPG
+│   │   │   │   ├── DSC04917.JPG
+│   │   │   │   ├── DSC04926.JPG
+│   │   │   │   ├── DSC04949.JPG
+│   │   │   │   └── DSC04952.JPG
+│   │   │   ├── Videos
+│   │   │   │   ├── C3650.MP4
+│   │   │   │   ├── C3652.MP4
+│   │   │   │   └── C3657.MP4
+│   │   │   ├── event-promo-2024-02-07-07-58-19-utc
+│   │   │   │   ├── Event Promo Pack - PP
+│   │   │   │   │   ├── Blockchain Event Promo
+│   │   │   │   │   │   ├── 01. Premiere Pro Template
+│   │   │   │   │   │   │   ├── Event Promo.prproj
+│   │   │   │   │   │   │   └── Footages
+│   │   │   │   │   │   │       └── Event Promo
+│   │   │   │   │   │   │           ├── Light Leaks 01.mp4
+│   │   │   │   │   │   │           └── Light Leaks 01.mp4 48000.pek
+│   │   │   │   │   │   ├── 02. Tutorial
+│   │   │   │   │   │   │   └── Video Tutorial.mp4
+│   │   │   │   │   │   └── 03. Links
+│   │   │   │   │   │       ├── Footages.txt
+│   │   │   │   │   │       └── Links.txt
+│   │   │   │   │   ├── Digital Event Promo
+│   │   │   │   │   │   ├── 01. Premiere Pro Template
+│   │   │   │   │   │   │   ├── Digital Event Promo.prproj
+│   │   │   │   │   │   │   └── Footages
+│   │   │   │   │   │   │       └── Event Promo
+│   │   │   │   │   │   │           ├── Light Leaks 01.mp4
+│   │   │   │   │   │   │           └── Light Leaks 01.mp4 48000.pek
+│   │   │   │   │   │   ├── 02. Help
+│   │   │   │   │   │   │   └── Video Tutorial.mp4
+│   │   │   │   │   │   └── 03. Links
+│   │   │   │   │   │       ├── Footages.txt
+│   │   │   │   │   │       └── Links.txt
+│   │   │   │   │   └── Digital Event Promo - Premiere Pro
+│   │   │   │   │       ├── 01. Premiere Pro Template
+│   │   │   │   │       │   └── Digital Event Promo.mogrt
+│   │   │   │   │       ├── 02. Tutorial
+│   │   │   │   │       │   └── Tutorial.mp4
+│   │   │   │   │       └── 03. Links
+│   │   │   │   │           ├── Font & Music.txt
+│   │   │   │   │           └── Footage Links.txt
+│   │   │   │   └── __MACOSX
+│   │   │   │       └── Event Promo Pack - PP
+│   │   │   │           ├── Blockchain Event Promo
+│   │   │   │           │   ├── 01. Premiere Pro Template
+│   │   │   │           │   │   └── Footages
+│   │   │   │           │   │       └── Event Promo
+│   │   │   │           │   ├── 02. Tutorial
+│   │   │   │           │   └── 03. Links
+│   │   │   │           ├── Digital Event Promo
+│   │   │   │           │   ├── 01. Premiere Pro Template
+│   │   │   │           │   │   └── Footages
+│   │   │   │           │   │       └── Event Promo
+│   │   │   │           │   ├── 02. Help
+│   │   │   │           │   └── 03. Links
+│   │   │   │           └── Digital Event Promo - Premiere Pro
+│   │   │   │               ├── 01. Premiere Pro Template
+│   │   │   │               ├── 02. Tutorial
+│   │   │   │               └── 03. Links
+│   │   │   ├── inspiring-voyage-2025-01-15-13-32-36-utc
+│   │   │   │   ├── Full.mp3
+│   │   │   │   ├── Full.wav
+│   │   │   │   ├── Short.mp3
+│   │   │   │   ├── Short.wav
+│   │   │   │   ├── Teaser.mp3
+│   │   │   │   └── Teaser.wav
+│   │   │   ├── outro-01.jpg
+│   │   │   ├── outro-02.jpg
+│   │   │   ├── outro.ai
+│   │   │   ├── partners-02.png
+│   │   │   ├── the-upbeat-happy-is-2025-04-26-21-21-37-utc
+│   │   │   │   ├── Mp3
+│   │   │   │   │   ├── Long (2-23).mp3
+│   │   │   │   │   ├── Middle (1-37).mp3
+│   │   │   │   │   ├── Short 1 (1-08).mp3
+│   │   │   │   │   ├── Short 2 (1-08).mp3
+│   │   │   │   │   └── Short 3 (0-38).mp3
+│   │   │   │   └── Wav
+│   │   │   │       ├── Long (2-23).wav
+│   │   │   │       ├── Middle (1-37).wav
+│   │   │   │       ├── Short 1 (1-08).wav
+│   │   │   │       ├── Short 2 (1-08).wav
+│   │   │   │       └── Short 3 (0-38).wav
+│   │   │   └── there-s-hope-2025-01-15-22-56-31-utc
+│   │   │       ├── There's Hope.mp3
+│   │   │       ├── There's Hope.wav
+│   │   │       ├── Wow, Thank you! [please open].pdf
+│   │   │       └── __MACOSX
+│   │   ├── Pick N Drop
+│   │   │   ├── 1583569_Road_Roadways_1920x1080.mov
+│   │   │   ├── AQNBvZmJraUGNjIcrqRr8BF33eLLL8y-26Akulfd95sRTxMsgUad58NKCsdqM8mGJWaTm-VK3IWlO2pkYgojV_h1.mp4
+│   │   │   ├── Adobe After Effects Auto-Save
+│   │   │   │   └── Infographics auto-save 1.aep
+│   │   │   ├── Adobe Premiere Pro Audio Previews
+│   │   │   │   └── Pick N Drop Testimonial.PRV
+│   │   │   │       └── Peak Files
+│   │   │   ├── Adobe Premiere Pro Auto-Save
+│   │   │   │   ├── Pick N Drop testimonial--6101905d-7918-f2b8-ccc6-184977284547-2025-05-06_15-47-50.prproj
+│   │   │   │   └── Pick N Drop testimonial--6101905d-7918-f2b8-ccc6-184977284547-2025-05-06_16-03-50.prproj
+│   │   │   ├── C7887.MP4
+│   │   │   ├── Infographics.aep
+│   │   │   ├── Infographics_AME
+│   │   │   │   ├── Comp 10.mp4
+│   │   │   │   ├── Comp 7.mp4
+│   │   │   │   ├── Comp 8.mp4
+│   │   │   │   ├── Comp 9.mp4
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 10.aep
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 7.aep
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 8.aep
+│   │   │   │   └── tmpAEtoAMEProject-Comp 9.aep
+│   │   │   ├── PIck N drop white.png
+│   │   │   ├── PIck N drop.jpg
+│   │   │   ├── PIck N drop.png
+│   │   │   ├── Pick N Drop testimonial.prproj
+│   │   │   ├── Pick and drop testimonial.mp4
+│   │   │   ├── all over nepal.ai
+│   │   │   ├── envato-DKWVCJ8-Technology Background.mp3
+│   │   │   ├── forwarder-delivery-man-animation-scene-2025-03-23-04-30-42-utc
+│   │   │   │   └── Forwarder Delivery Man Animation Scene
+│   │   │   │       ├── 2021_13 Forwarder Delivery Man Animation Scene.aep
+│   │   │   │       └── Help.pdf
+│   │   │   ├── initial cut.mp4
+│   │   │   ├── location-pin.png
+│   │   │   ├── logo-01.jpg
+│   │   │   ├── logo-01.png
+│   │   │   ├── logo.ai
+│   │   │   ├── networking.ai
+│   │   │   ├── outro-02.jpg
+│   │   │   └── technology-development-concept-flat-character-inst-2023-11-27-05-18-51-utc
+│   │   │       └── Technology Development Concept Flat Character Instagram Story
+│   │   │           ├── Help File.pdf
+│   │   │           └── Technology Development Concept Flat Character Instagram Story.aep
+│   │   ├── PlantSat
+│   │   │   ├── Adobe Premiere Pro Audio Previews
+│   │   │   │   └── PlantSat testimonial.PRV
+│   │   │   │       └── Peak Files
+│   │   │   ├── Adobe Premiere Pro Auto-Save
+│   │   │   │   ├── PlantSat testimonial--3750c678-e254-6e22-d660-1e40e4dd7752-2025-05-08_14-25-06.prproj
+│   │   │   │   ├── PlantSat testimonial--3750c678-e254-6e22-d660-1e40e4dd7752-2025-05-08_14-41-06.prproj
+│   │   │   │   ├── PlantSat testimonial--3750c678-e254-6e22-d660-1e40e4dd7752-2025-05-08_15-16-34.prproj
+│   │   │   │   └── PlantSat testimonial--3750c678-e254-6e22-d660-1e40e4dd7752-2025-05-09_12-21-53.prproj
+│   │   │   ├── C7889.MP4
+│   │   │   ├── GettyImages-1276903470.mov
+│   │   │   ├── Initial Cut.mp4
+│   │   │   ├── Motion part.aep
+│   │   │   ├── Motion part_AME
+│   │   │   │   ├── Comp 2.mp4
+│   │   │   │   └── tmpAEtoAMEProject-Comp 2.aep
+│   │   │   ├── PlantSat (Satellite Precision Agriculture).mp4
+│   │   │   ├── PlantSat Testimonial.mp4
+│   │   │   ├── PlantSat testimonial.prproj
+│   │   │   ├── WhatsApp Image 2025-05-08 at 11.48.27_b53aff82.jpg
+│   │   │   ├── business-icons-and-titles-for-after-effects-2024-06-04-20-35-53-utc
+│   │   │   │   ├── Business Icons And Titles
+│   │   │   │   │   └── Business Icons And Titles.aep
+│   │   │   │   ├── Fonts
+│   │   │   │   │   └── Fonts.txt
+│   │   │   │   └── Help
+│   │   │   │       ├── After Effects Tutorial.mp4
+│   │   │   │       └── Music.txt
+│   │   │   ├── envato-DKWVCJ8-Technology Background.mp3
+│   │   │   ├── freepik__big-rainfall-with-dark-clouds-and-thunder-in-a-far__89197.mp4
+│   │   │   ├── freepik__realistic-2d-animation-of-pest-infestation-of-corp__89198.mp4
+│   │   │   ├── index based insurance.ai
+│   │   │   ├── indian-farming-culture-2d-character-instagram-stor-2023-11-27-05-08-49-utc
+│   │   │   │   └── Indian Farming Culture 2D Character Instagram Story
+│   │   │   │       ├── (Footage)
+│   │   │   │       │   └── Design & Element
+│   │   │   │       │       └── Pre-Comp
+│   │   │   │       │           └── #03
+│   │   │   │       │               └── Water 1.mov
+│   │   │   │       ├── Help File.pdf
+│   │   │   │       └── Indian Farming Culture 2D Character Instagram Story.aep
+│   │   │   ├── logo-01.jpg
+│   │   │   ├── logo-01.png
+│   │   │   ├── logo.ai
+│   │   │   ├── outro-02.jpg
+│   │   │   ├── plantsat logo.png
+│   │   │   └── right-arrow.png
+│   │   ├── R&D solutions
+│   │   │   ├── AQNPKPVzC61auF9hK_RWLJwLKqsFjGrPoqWfpTFAuDOgSnEg_ItSBZ9ShirxsAPzNs729ox7Dc-nXluNQu_grKD_Z2jUKuMOY8VCGfE_mBtDBo9s9xfbI_-ZeH5ehV01beYJIau0Cw.mp4
+│   │   │   ├── Adobe After Effects Auto-Save
+│   │   │   │   └── Motion graphics auto-save 1.aep
+│   │   │   ├── Adobe Premiere Pro Audio Previews
+│   │   │   │   └── R&D Solutions.PRV
+│   │   │   ├── AgriNepal.mp4
+│   │   │   ├── C8837.MP4
+│   │   │   ├── C8872 (2).MP4
+│   │   │   ├── C8873 (2).MP4
+│   │   │   ├── C8953.MP4
+│   │   │   ├── C8954.MP4
+│   │   │   ├── C8976 (1).MP4
+│   │   │   ├── C9097 (2).MP4
+│   │   │   ├── GettyImages-1365381476.mov
+│   │   │   ├── KAT_SDC_RGB_hoch_pos_En&Nepali_2021(right version).png
+│   │   │   ├── Motion graphics.aep
+│   │   │   ├── Motion graphics_AME
+│   │   │   │   ├── Comp 1.mp4
+│   │   │   │   ├── Comp 2.mp4
+│   │   │   │   ├── Comp 3.mp4
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 1.aep
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 2.aep
+│   │   │   │   ├── tmpAEtoAMEProject-Comp 3.aep
+│   │   │   │   └── tmpAEtoAMEProject-Comp 3_1.aep
+│   │   │   ├── R&D Solutions testimonial.mp4
+│   │   │   ├── R&D Solutions.prproj
+│   │   │   ├── R&D white.png
+│   │   │   ├── animated-business-training-character-scene-2023-11-27-04-58-30-utc
+│   │   │   │   └── Animated Business Traning Character Scene
+│   │   │   │       ├── A0523_007_Bussines_Traning_Animation_Scene.aep
+│   │   │   │       └── Envato Pdf.pdf
+│   │   │   ├── coding-instagram-story-2023-11-27-05-07-23-utc
+│   │   │   │   └── Coding Instagram Story
+│   │   │   │       ├── (Footage)
+│   │   │   │       │   └── 03 Design & Element
+│   │   │   │       │       └── Ai File
+│   │   │   │       │           ├── coding_#1 Layers
+│   │   │   │       │           │   └── coding_#1.ai
+│   │   │   │       │           ├── coding_#2 Layers
+│   │   │   │       │           │   └── coding_#2.ai
+│   │   │   │       │           ├── coding_#3 Layers
+│   │   │   │       │           │   └── coding_#3.ai
+│   │   │   │       │           └── coding_#4 Layers
+│   │   │   │       │               └── coding_#4.ai
+│   │   │   │       ├── Coding Instagram Story.aep
+│   │   │   │       └── Tutorial.pdf
+│   │   │   ├── envato-DKWVCJ8-Technology Background.mp3
+│   │   │   ├── green-arrows-upward-value-increase-animation-4k-2024-01-20-07-08-24-utc.mp4
+│   │   │   ├── initial cut.mp4
+│   │   │   ├── logo-01.png
+│   │   │   ├── logo-test.png
+│   │   │   ├── logo.ai
+│   │   │   ├── new-modern-realistic-front-view-black-iphone-mockup-isolated-white-mobile-template-vector
+│   │   │   │   ├── phone_035.eps
+│   │   │   │   └── phone_035.jpg
+│   │   │   ├── outro-02.jpg
+│   │   │   ├── partners-02.png
+│   │   │   └── phone.ai
+│   │   ├── Testimonial Video
+│   │   │   ├── Agribaato Logo white.png
+│   │   │   ├── Agribaato Logo.png
+│   │   │   ├── Agribato NEw.mp4
+│   │   │   ├── Motion 1.aep
+│   │   │   ├── info 1.ai
+│   │   │   ├── motion
+│   │   │   │   ├── Agribaato Logo.png
+│   │   │   │   ├── Motion 1.aep
+│   │   │   │   ├── info 1.ai
+│   │   │   │   ├── phone.png
+│   │   │   │   ├── seller.png
+│   │   │   │   └── shopping-cart.png
+│   │   │   ├── motion.rar
+│   │   │   ├── phone.png
+│   │   │   ├── seller.png
+│   │   │   └── shopping-cart.png
+│   │   └── Thoplo Machine
+│   │       ├── Adobe After Effects Auto-Save
+│   │       │   └── infographic auto-save 1.aep
+│   │       ├── Adobe Premiere Pro Audio Previews
+│   │       │   └── Thoplo Machine Testimonial.PRV
+│   │       ├── C7891.MP4
+│   │       ├── Initial Cut.mp4
+│   │       ├── Thoplo Machine Clip.mp4
+│   │       ├── Thoplo Machine Testimonial.mp4
+│   │       ├── Thoplo Machine Testimonial.prproj
+│   │       ├── Thoplo Machine logo white.png
+│   │       ├── Thoplo Machine logo.png
+│   │       ├── envato-DKWVCJ8-Technology Background.mp3
+│   │       ├── infographic.aep
+│   │       ├── infographic_AME
+│   │       │   ├── Comp 1.mp4
+│   │       │   ├── Comp 2.mp4
+│   │       │   ├── Comp 3_2.mp4
+│   │       │   ├── tmpAEtoAMEProject-Comp 1.aep
+│   │       │   ├── tmpAEtoAMEProject-Comp 2.aep
+│   │       │   ├── tmpAEtoAMEProject-Comp 3.aep
+│   │       │   ├── tmpAEtoAMEProject-Comp 3_1.aep
+│   │       │   ├── tmpAEtoAMEProject-Comp 3_2.aep
+│   │       │   └── tmpAEtoAMEProject-Comp 3_3.aep
+│   │       ├── infographics.ai
+│   │       ├── logo-01.png
+│   │       ├── logo.ai
+│   │       ├── marketing-utline-icons-2023-11-27-05-11-46-utc
+│   │       │   ├── After Efects
+│   │       │   │   └── Marketing.aep
+│   │       │   └── Help
+│   │       │       └── Tutorial 12.mp4
+│   │       ├── outro-02.jpg
+│   │       ├── smart-farming-animation-scene-2023-11-27-05-28-54-utc
+│   │       │   ├── Smart Farming Animation Scene folder
+│   │       │   │   ├── (Footage)
+│   │       │   │   │   └── 02.Desing & Element
+│   │       │   │   │       └── Ai Files
+│   │       │   │   │           ├── smart farming 1 Layers
+│   │       │   │   │           │   └── smart farming 1.ai
+│   │       │   │   │           ├── smart farming 2 Layers
+│   │       │   │   │           │   └── smart farming 2.ai
+│   │       │   │   │           ├── smart farming 3 Layers
+│   │       │   │   │           │   └── smart farming 3.ai
+│   │       │   │   │           └── smart farming 4 Layers
+│   │       │   │   │               └── smart farming 4.ai
+│   │       │   │   ├── Help pdf.pdf
+│   │       │   │   └── Smart Farming Animation Scene.aep
+│   │       │   └── __MACOSX
+│   │       │       └── Smart Farming Animation Scene folder
+│   │       │           └── (Footage)
+│   │       │               └── 02.Desing & Element
+│   │       │                   └── Ai Files
+│   │       │                       ├── smart farming 1 Layers
+│   │       │                       ├── smart farming 2 Layers
+│   │       │                       ├── smart farming 3 Layers
+│   │       │                       └── smart farming 4 Layers
+│   │       └── traditional-indian-farming-instagram-story-2023-11-27-05-10-56-utc
+│   │           └── Traditional Indian Farming Instagram Story
+│   │               ├── (Footage)
+│   │               │   └── Design & Element
+│   │               │       └── Ai File
+│   │               │           ├── Indian Farming_#1 Layers
+│   │               │           │   └── Indian Farming_#1.ai
+│   │               │           ├── Indian Farming_#2 Layers
+│   │               │           │   └── Indian Farming_#2.ai
+│   │               │           ├── Indian Farming_#3 Layers
+│   │               │           │   └── Indian Farming_#3.ai
+│   │               │           └── Indian Farming_#4 Layers
+│   │               │               └── Indian Farming_#4.ai
+│   │               ├── Traditional Indian Farming Instagram Story.aep
+│   │               └── Tutorial.pdf
+│   └── aadhyanta agm
+│       ├── C6320.MP4
+│       ├── C6321.MP4
+│       ├── C6322.MP4
+│       ├── C6323.MP4
+│       ├── C6324.MP4
+│       ├── C6325.MP4
+│       ├── C6326.MP4
+│       ├── C6327.MP4
+│       ├── C6328.MP4
+│       ├── C6329.MP4
+│       ├── C6330.MP4
+│       ├── C6331.MP4
+│       ├── C6332.MP4
+│       ├── C6333.MP4
+│       ├── C6334.MP4
+│       ├── C6335.MP4
+│       ├── C6336.MP4
+│       ├── C6337.MP4
+│       ├── C6338.MP4
+│       ├── C6339.MP4
+│       ├── C6340.MP4
+│       ├── C6341.MP4
+│       ├── C6342.MP4
+│       ├── C6343.MP4
+│       ├── C6344.MP4
+│       ├── C6345.MP4
+│       ├── C6346.MP4
+│       ├── C6347.MP4
+│       ├── C6348.MP4
+│       ├── C6349.MP4
+│       ├── Edited photos
+│       │   └── Export
+│       │       ├── Aadhyanta AGM (1 of 72).jpg
+│       │       ├── Aadhyanta AGM (10 of 72).jpg
+│       │       ├── Aadhyanta AGM (11 of 72).jpg
+│       │       ├── Aadhyanta AGM (12 of 72).jpg
+│       │       ├── Aadhyanta AGM (13 of 72).jpg
+│       │       ├── Aadhyanta AGM (14 of 72).jpg
+│       │       ├── Aadhyanta AGM (15 of 72).jpg
+│       │       ├── Aadhyanta AGM (16 of 72).jpg
+│       │       ├── Aadhyanta AGM (17 of 72).jpg
+│       │       ├── Aadhyanta AGM (18 of 72).jpg
+│       │       ├── Aadhyanta AGM (19 of 72).jpg
+│       │       ├── Aadhyanta AGM (2 of 72).jpg
+│       │       ├── Aadhyanta AGM (20 of 72).jpg
+│       │       ├── Aadhyanta AGM (21 of 72).jpg
+│       │       ├── Aadhyanta AGM (22 of 72).jpg
+│       │       ├── Aadhyanta AGM (23 of 72).jpg
+│       │       ├── Aadhyanta AGM (24 of 72).jpg
+│       │       ├── Aadhyanta AGM (25 of 72).jpg
+│       │       ├── Aadhyanta AGM (26 of 72).jpg
+│       │       ├── Aadhyanta AGM (27 of 72).jpg
+│       │       ├── Aadhyanta AGM (28 of 72).jpg
+│       │       ├── Aadhyanta AGM (29 of 72).jpg
+│       │       ├── Aadhyanta AGM (3 of 72).jpg
+│       │       ├── Aadhyanta AGM (30 of 72).jpg
+│       │       ├── Aadhyanta AGM (31 of 72).jpg
+│       │       ├── Aadhyanta AGM (32 of 72).jpg
+│       │       ├── Aadhyanta AGM (33 of 72).jpg
+│       │       ├── Aadhyanta AGM (34 of 72).jpg
+│       │       ├── Aadhyanta AGM (35 of 72).jpg
+│       │       ├── Aadhyanta AGM (36 of 72).jpg
+│       │       ├── Aadhyanta AGM (37 of 72).jpg
+│       │       ├── Aadhyanta AGM (38 of 72).jpg
+│       │       ├── Aadhyanta AGM (39 of 72).jpg
+│       │       ├── Aadhyanta AGM (4 of 72).jpg
+│       │       ├── Aadhyanta AGM (40 of 72).jpg
+│       │       ├── Aadhyanta AGM (41 of 72).jpg
+│       │       ├── Aadhyanta AGM (42 of 72).jpg
+│       │       ├── Aadhyanta AGM (43 of 72).jpg
+│       │       ├── Aadhyanta AGM (44 of 72).jpg
+│       │       ├── Aadhyanta AGM (45 of 72).jpg
+│       │       ├── Aadhyanta AGM (46 of 72).jpg
+│       │       ├── Aadhyanta AGM (47 of 72).jpg
+│       │       ├── Aadhyanta AGM (48 of 72).jpg
+│       │       ├── Aadhyanta AGM (49 of 72).jpg
+│       │       ├── Aadhyanta AGM (5 of 72).jpg
+│       │       ├── Aadhyanta AGM (50 of 72).jpg
+│       │       ├── Aadhyanta AGM (51 of 72).jpg
+│       │       ├── Aadhyanta AGM (52 of 72).jpg
+│       │       ├── Aadhyanta AGM (53 of 72).jpg
+│       │       ├── Aadhyanta AGM (54 of 72).jpg
+│       │       ├── Aadhyanta AGM (55 of 72).jpg
+│       │       ├── Aadhyanta AGM (56 of 72).jpg
+│       │       ├── Aadhyanta AGM (57 of 72).jpg
+│       │       ├── Aadhyanta AGM (58 of 72).jpg
+│       │       ├── Aadhyanta AGM (59 of 72).jpg
+│       │       ├── Aadhyanta AGM (6 of 72).jpg
+│       │       ├── Aadhyanta AGM (60 of 72).jpg
+│       │       ├── Aadhyanta AGM (61 of 72).jpg
+│       │       ├── Aadhyanta AGM (62 of 72).jpg
+│       │       ├── Aadhyanta AGM (63 of 72).jpg
+│       │       ├── Aadhyanta AGM (64 of 72).jpg
+│       │       ├── Aadhyanta AGM (65 of 72).jpg
+│       │       ├── Aadhyanta AGM (66 of 72).jpg
+│       │       ├── Aadhyanta AGM (67 of 72).jpg
+│       │       ├── Aadhyanta AGM (68 of 72).jpg
+│       │       ├── Aadhyanta AGM (69 of 72).jpg
+│       │       ├── Aadhyanta AGM (7 of 72).jpg
+│       │       ├── Aadhyanta AGM (70 of 72).jpg
+│       │       ├── Aadhyanta AGM (71 of 72).jpg
+│       │       ├── Aadhyanta AGM (72 of 72).jpg
+│       │       ├── Aadhyanta AGM (8 of 72).jpg
+│       │       └── Aadhyanta AGM (9 of 72).jpg
+│       └── photos
+│           ├── DSC03357.JPG
+│           ├── DSC03358.JPG
+│           ├── DSC03359.JPG
+│           ├── DSC03360.JPG
+│           ├── DSC03361.JPG
+│           ├── DSC03362.JPG
+│           ├── DSC03363.JPG
+│           ├── DSC03364.JPG
+│           ├── DSC03365.JPG
+│           ├── DSC03366.JPG
+│           ├── DSC03367.JPG
+│           ├── DSC03368.JPG
+│           ├── DSC03369.JPG
+│           ├── DSC03370.JPG
+│           ├── DSC03371.JPG
+│           ├── DSC03372.JPG
+│           ├── DSC03373.JPG
+│           ├── DSC03374.JPG
+│           ├── DSC03375.JPG
+│           ├── DSC03376.JPG
+│           ├── DSC03377.JPG
+│           ├── DSC03378.JPG
+│           ├── DSC03379.JPG
+│           ├── DSC03380.JPG
+│           ├── DSC03381.JPG
+│           ├── DSC03382.JPG
+│           ├── DSC03383.JPG
+│           ├── DSC03384.JPG
+│           ├── DSC03385.JPG
+│           ├── DSC03386.JPG
+│           ├── DSC03387.JPG
+│           ├── DSC03388.JPG
+│           ├── DSC03389.JPG
+│           ├── DSC03390.JPG
+│           ├── DSC03391.JPG
+│           ├── DSC03392.JPG
+│           ├── DSC03393.JPG
+│           ├── DSC03394.JPG
+│           ├── DSC03395.JPG
+│           ├── DSC03396.JPG
+│           ├── DSC03397.JPG
+│           ├── DSC03398.JPG
+│           ├── DSC03399.JPG
+│           ├── DSC03400.JPG
+│           ├── DSC03401.JPG
+│           ├── DSC03402.JPG
+│           ├── DSC03403.JPG
+│           ├── DSC03404.JPG
+│           ├── DSC03405.JPG
+│           ├── DSC03406.JPG
+│           ├── DSC03407.JPG
+│           ├── DSC03408.JPG
+│           ├── DSC03409.JPG
+│           ├── DSC03410.JPG
+│           ├── DSC03411.JPG
+│           ├── DSC03412.JPG
+│           ├── DSC03413.JPG
+│           ├── DSC03414.JPG
+│           ├── DSC03415.JPG
+│           ├── DSC03416.JPG
+│           ├── DSC03417.JPG
+│           ├── DSC03418.JPG
+│           ├── DSC03419.JPG
+│           ├── DSC03420.JPG
+│           ├── DSC03421.JPG
+│           ├── DSC03422.JPG
+│           ├── DSC03423.JPG
+│           ├── DSC03424.JPG
+│           ├── DSC03425.JPG
+│           ├── DSC03426.JPG
+│           ├── DSC03427.JPG
+│           └── DSC03428.JPG
+├── 2026
+│   └── 8th Jan
+│       ├── Aadhyanta AGM
+│       │   ├── DSC00829.JPG
+│       │   ├── DSC00834.JPG
+│       │   ├── DSC00843.JPG
+│       │   ├── DSC00844.JPG
+│       │   ├── DSC00845.JPG
+│       │   ├── DSC00846.JPG
+│       │   ├── DSC00848.JPG
+│       │   ├── DSC00849.JPG
+│       │   ├── DSC00850.JPG
+│       │   ├── DSC00851.JPG
+│       │   ├── DSC00852.JPG
+│       │   ├── DSC00853.JPG
+│       │   ├── DSC00864.JPG
+│       │   ├── DSC00866.JPG
+│       │   ├── DSC00867.JPG
+│       │   ├── DSC00869.JPG
+│       │   ├── DSC00870.JPG
+│       │   ├── DSC00871.JPG
+│       │   ├── DSC00873.JPG
+│       │   ├── DSC00874.JPG
+│       │   ├── DSC00875.JPG
+│       │   ├── DSC00876.JPG
+│       │   ├── DSC00877.JPG
+│       │   ├── DSC00878.JPG
+│       │   ├── DSC00879.JPG
+│       │   ├── DSC00880.JPG
+│       │   ├── DSC00881.JPG
+│       │   ├── DSC00882.JPG
+│       │   ├── DSC00885.JPG
+│       │   ├── DSC00886.JPG
+│       │   ├── DSC00888.JPG
+│       │   ├── DSC00890.JPG
+│       │   ├── DSC00891.JPG
+│       │   ├── DSC00892.JPG
+│       │   ├── DSC00893.JPG
+│       │   ├── DSC00894.JPG
+│       │   ├── DSC00895.JPG
+│       │   ├── DSC00897.JPG
+│       │   ├── DSC00898.JPG
+│       │   ├── DSC00899.JPG
+│       │   ├── DSC00900.JPG
+│       │   ├── DSC00903.JPG
+│       │   ├── DSC00904.JPG
+│       │   ├── DSC00905.JPG
+│       │   ├── DSC00907.JPG
+│       │   ├── DSC00908.JPG
+│       │   ├── DSC00909.JPG
+│       │   ├── DSC00910.JPG
+│       │   ├── DSC00911.JPG
+│       │   ├── DSC00913.JPG
+│       │   ├── DSC00914.JPG
+│       │   ├── DSC00915.JPG
+│       │   ├── DSC00917.JPG
+│       │   ├── DSC00919.JPG
+│       │   ├── DSC00921.JPG
+│       │   ├── DSC00922.JPG
+│       │   ├── DSC00923.JPG
+│       │   ├── DSC00924.JPG
+│       │   ├── DSC00925.JPG
+│       │   ├── DSC00926.JPG
+│       │   ├── DSC00927.JPG
+│       │   ├── DSC00928.JPG
+│       │   ├── DSC00929.JPG
+│       │   ├── DSC00930.JPG
+│       │   ├── DSC00932.JPG
+│       │   ├── DSC00933.JPG
+│       │   ├── DSC00935.JPG
+│       │   ├── DSC00936.JPG
+│       │   ├── DSC00938.JPG
+│       │   ├── DSC00939.JPG
+│       │   ├── DSC00940.JPG
+│       │   ├── DSC00941.JPG
+│       │   ├── DSC00942.JPG
+│       │   ├── DSC00943.JPG
+│       │   ├── DSC00944.JPG
+│       │   ├── DSC00945.JPG
+│       │   ├── DSC00946.JPG
+│       │   ├── DSC00948.JPG
+│       │   ├── DSC00949.JPG
+│       │   ├── DSC00950.JPG
+│       │   ├── DSC00951.JPG
+│       │   ├── DSC00952.JPG
+│       │   ├── DSC00954.JPG
+│       │   ├── DSC00955.JPG
+│       │   ├── DSC00958.JPG
+│       │   ├── DSC00960.JPG
+│       │   ├── DSC00961.JPG
+│       │   ├── DSC00962.JPG
+│       │   ├── DSC00963.JPG
+│       │   ├── DSC00966.JPG
+│       │   ├── DSC00968.JPG
+│       │   ├── DSC00969.JPG
+│       │   ├── DSC00970.JPG
+│       │   ├── DSC00971.JPG
+│       │   ├── DSC00972.JPG
+│       │   ├── DSC00973.JPG
+│       │   ├── DSC00974.JPG
+│       │   ├── DSC00975.JPG
+│       │   ├── DSC00976.JPG
+│       │   ├── DSC00978.JPG
+│       │   ├── DSC00979.JPG
+│       │   ├── DSC00980.JPG
+│       │   ├── DSC00981.JPG
+│       │   ├── DSC00982.JPG
+│       │   ├── DSC00983.JPG
+│       │   ├── DSC00986.JPG
+│       │   ├── DSC00988.JPG
+│       │   ├── DSC00989.JPG
+│       │   ├── DSC00990.JPG
+│       │   ├── DSC00992.JPG
+│       │   ├── DSC00993.JPG
+│       │   ├── DSC00994.JPG
+│       │   ├── DSC00995.JPG
+│       │   ├── DSC00998.JPG
+│       │   ├── DSC00999.JPG
+│       │   ├── DSC01000.JPG
+│       │   ├── DSC01001.JPG
+│       │   ├── DSC01004.JPG
+│       │   ├── DSC01005.JPG
+│       │   ├── DSC01006.JPG
+│       │   ├── DSC01007.JPG
+│       │   ├── DSC01008.JPG
+│       │   ├── DSC01009.JPG
+│       │   ├── DSC01013.JPG
+│       │   ├── DSC01014.JPG
+│       │   ├── DSC01016.JPG
+│       │   ├── DSC01017.JPG
+│       │   ├── DSC01019.JPG
+│       │   ├── DSC01020.JPG
+│       │   ├── DSC01021.JPG
+│       │   ├── DSC01023.JPG
+│       │   ├── DSC01025.JPG
+│       │   ├── DSC01026.JPG
+│       │   ├── DSC01027.JPG
+│       │   ├── DSC01028.JPG
+│       │   ├── DSC01030.JPG
+│       │   ├── DSC01031.JPG
+│       │   ├── DSC01032.JPG
+│       │   ├── DSC01033.JPG
+│       │   ├── DSC01034.JPG
+│       │   ├── DSC01035.JPG
+│       │   ├── DSC01036.JPG
+│       │   ├── DSC01037.JPG
+│       │   ├── DSC01039.JPG
+│       │   ├── DSC01041.JPG
+│       │   ├── DSC01042.JPG
+│       │   ├── DSC01044.JPG
+│       │   ├── DSC01046.JPG
+│       │   ├── DSC01047.JPG
+│       │   ├── DSC01050.JPG
+│       │   ├── DSC01051.JPG
+│       │   ├── DSC01052.JPG
+│       │   ├── DSC01053.JPG
+│       │   ├── DSC01054.JPG
+│       │   ├── DSC01057.JPG
+│       │   ├── DSC01058.JPG
+│       │   ├── DSC01061.JPG
+│       │   ├── DSC01062.JPG
+│       │   ├── DSC01066.JPG
+│       │   ├── DSC01067.JPG
+│       │   ├── DSC01068.JPG
+│       │   ├── DSC01069.JPG
+│       │   ├── DSC01070.JPG
+│       │   ├── DSC01071.JPG
+│       │   ├── DSC01072.JPG
+│       │   ├── DSC01073.JPG
+│       │   ├── DSC01075.JPG
+│       │   ├── DSC01076.JPG
+│       │   ├── DSC01077.JPG
+│       │   ├── DSC01078.JPG
+│       │   ├── DSC01079.JPG
+│       │   ├── DSC01080.JPG
+│       │   ├── DSC01081.JPG
+│       │   ├── DSC01082.JPG
+│       │   ├── DSC01083.JPG
+│       │   ├── DSC01084.JPG
+│       │   ├── DSC01085.JPG
+│       │   ├── DSC01086.JPG
+│       │   ├── DSC01087.JPG
+│       │   ├── DSC01088.JPG
+│       │   ├── DSC01089.JPG
+│       │   ├── DSC01092.JPG
+│       │   ├── DSC01096.JPG
+│       │   ├── DSC01097.JPG
+│       │   ├── DSC01098.JPG
+│       │   ├── DSC01099.JPG
+│       │   ├── DSC01100.JPG
+│       │   ├── DSC01101.JPG
+│       │   ├── DSC01103.JPG
+│       │   ├── DSC01106.JPG
+│       │   ├── DSC01108.JPG
+│       │   ├── DSC01110.JPG
+│       │   ├── DSC01111.JPG
+│       │   ├── DSC01112.JPG
+│       │   ├── DSC01113.JPG
+│       │   ├── DSC01115.JPG
+│       │   ├── DSC01117.JPG
+│       │   ├── DSC01119.JPG
+│       │   ├── DSC01120.JPG
+│       │   ├── DSC01122.JPG
+│       │   ├── DSC01123.JPG
+│       │   ├── DSC01124.JPG
+│       │   ├── DSC01125.JPG
+│       │   ├── DSC01126.JPG
+│       │   ├── DSC01127.JPG
+│       │   ├── DSC01128.JPG
+│       │   ├── DSC01129.JPG
+│       │   ├── DSC01130.JPG
+│       │   ├── DSC01131.JPG
+│       │   ├── DSC01132.JPG
+│       │   ├── DSC01133.JPG
+│       │   ├── DSC01134.JPG
+│       │   ├── DSC01136.JPG
+│       │   ├── DSC01138.JPG
+│       │   ├── DSC01139.JPG
+│       │   ├── DSC01142.JPG
+│       │   ├── DSC01144.JPG
+│       │   ├── DSC01145.JPG
+│       │   ├── DSC01146.JPG
+│       │   ├── DSC01147.JPG
+│       │   ├── DSC01199.JPG
+│       │   ├── DSC01200.JPG
+│       │   ├── DSC01201.JPG
+│       │   ├── DSC01202.JPG
+│       │   ├── DSC01203.JPG
+│       │   ├── DSC01204.JPG
+│       │   ├── DSC01205.JPG
+│       │   ├── DSC01206.JPG
+│       │   ├── DSC01207.JPG
+│       │   ├── DSC01208.JPG
+│       │   ├── DSC01209.JPG
+│       │   ├── DSC01210.JPG
+│       │   ├── DSC01211.JPG
+│       │   ├── DSC01212.JPG
+│       │   ├── DSC01213.JPG
+│       │   ├── DSC01214.JPG
+│       │   ├── DSC01215.JPG
+│       │   ├── DSC01216.JPG
+│       │   ├── DSC01217.JPG
+│       │   ├── DSC01218.JPG
+│       │   └── DSC01219.JPG
+│       └── NOF AGM Photos
+│           ├── DSC00916.JPG
+│           ├── DSC00917.JPG
+│           ├── DSC00918.JPG
+│           ├── DSC00919.JPG
+│           ├── DSC00920.JPG
+│           ├── DSC00921.JPG
+│           ├── DSC00922.JPG
+│           ├── DSC00926.JPG
+│           ├── DSC00929.JPG
+│           ├── DSC00930.JPG
+│           ├── DSC00931.JPG
+│           ├── DSC00932.JPG
+│           ├── DSC00934.JPG
+│           ├── DSC00935.JPG
+│           ├── DSC00936.JPG
+│           ├── DSC00938.JPG
+│           ├── DSC00940.JPG
+│           ├── DSC00941.JPG
+│           ├── DSC00942.JPG
+│           ├── DSC00943.JPG
+│           ├── DSC00944.JPG
+│           ├── DSC00945.JPG
+│           ├── DSC00946.JPG
+│           ├── DSC00948.JPG
+│           ├── DSC00949.JPG
+│           ├── DSC00951.JPG
+│           ├── DSC00952.JPG
+│           ├── DSC00953.JPG
+│           ├── DSC00957.JPG
+│           ├── DSC00958.JPG
+│           ├── DSC00959.JPG
+│           ├── DSC00960.JPG
+│           ├── DSC00961.JPG
+│           ├── DSC00964.JPG
+│           ├── DSC00965.JPG
+│           ├── DSC00968.JPG
+│           ├── DSC00969.JPG
+│           ├── DSC00970.JPG
+│           ├── DSC00971.JPG
+│           ├── DSC00972.JPG
+│           ├── DSC00973.JPG
+│           ├── DSC00974.JPG
+│           ├── DSC00975.JPG
+│           ├── DSC00976.JPG
+│           ├── DSC00977.JPG
+│           ├── DSC00978.JPG
+│           ├── DSC00979.JPG
+│           ├── DSC00980.JPG
+│           ├── DSC00981.JPG
+│           ├── DSC00982.JPG
+│           ├── DSC00983.JPG
+│           ├── DSC00984.JPG
+│           ├── DSC00986.JPG
+│           ├── DSC00988.JPG
+│           ├── DSC00989.JPG
+│           ├── DSC00990.JPG
+│           ├── DSC00991.JPG
+│           ├── DSC00992.JPG
+│           ├── DSC00993.JPG
+│           ├── DSC00995.JPG
+│           ├── DSC00996.JPG
+│           ├── DSC00997.JPG
+│           ├── DSC00998.JPG
+│           ├── DSC00999.JPG
+│           ├── DSC01000.JPG
+│           ├── DSC01002.JPG
+│           ├── DSC01003.JPG
+│           ├── DSC01006.JPG
+│           ├── DSC01007.JPG
+│           ├── DSC01008.JPG
+│           ├── DSC01009.JPG
+│           ├── DSC01010.JPG
+│           ├── DSC01011.JPG
+│           ├── DSC01012.JPG
+│           ├── DSC01015.JPG
+│           ├── DSC01016.JPG
+│           ├── DSC01021.JPG
+│           ├── DSC01022.JPG
+│           ├── DSC01023.JPG
+│           ├── DSC01024.JPG
+│           ├── DSC01025.JPG
+│           ├── DSC01026.JPG
+│           ├── DSC01029.JPG
+│           ├── DSC01030.JPG
+│           ├── DSC01032.JPG
+│           ├── DSC01033.JPG
+│           ├── DSC01034.JPG
+│           ├── DSC01035.JPG
+│           ├── DSC01037.JPG
+│           ├── DSC01038.JPG
+│           ├── DSC01039.JPG
+│           ├── DSC01040.JPG
+│           └── DSC01041.JPG
+├── Employee Photos
+│   ├── 2024
+│   │   ├── Aadhyanta 2nd Photoshoot
+│   │   │   ├── LOL_0485.jpg
+│   │   │   ├── LOL_0600.jpg
+│   │   │   ├── LOL_0604.jpg
+│   │   │   ├── LOL_0607.jpg
+│   │   │   ├── LOL_0609.jpg
+│   │   │   ├── LOL_0612.jpg
+│   │   │   ├── LOL_0613.jpg
+│   │   │   ├── LOL_0616.jpg
+│   │   │   ├── LOL_0623.jpg
+│   │   │   ├── LOL_0642.jpg
+│   │   │   ├── LOL_0643.jpg
+│   │   │   ├── LOL_0645.jpg
+│   │   │   ├── LOL_0647.jpg
+│   │   │   ├── LOL_0648.jpg
+│   │   │   ├── LOL_0649.jpg
+│   │   │   ├── LOL_0650.jpg
+│   │   │   ├── LOL_0652.jpg
+│   │   │   ├── LOL_0656.jpg
+│   │   │   ├── LOL_0664.jpg
+│   │   │   ├── LOL_0668.jpg
+│   │   │   ├── LOL_0671.jpg
+│   │   │   ├── LOL_0679.jpg
+│   │   │   ├── LOL_0680.jpg
+│   │   │   ├── LOL_0701.jpg
+│   │   │   ├── LOL_0704.jpg
+│   │   │   ├── LOL_0706.jpg
+│   │   │   ├── LOL_0707.jpg
+│   │   │   ├── LOL_0709 crop.jpg
+│   │   │   ├── LOL_0709.jpg
+│   │   │   ├── LOL_0711.jpg
+│   │   │   ├── LOL_0715.jpg
+│   │   │   ├── LOL_0716.jpg
+│   │   │   ├── LOL_0720.jpg
+│   │   │   ├── LOL_0722.jpg
+│   │   │   ├── LOL_0723.jpg
+│   │   │   ├── LOL_0724.jpg
+│   │   │   ├── LOL_0724.psd
+│   │   │   ├── LOL_0725.jpg
+│   │   │   ├── LOL_0726.jpg
+│   │   │   ├── LOL_0728.jpg
+│   │   │   ├── LOL_0730.jpg
+│   │   │   ├── LOL_0732.jpg
+│   │   │   ├── LOL_0734.jpg
+│   │   │   ├── LOL_0736.jpg
+│   │   │   ├── LOL_0738.jpg
+│   │   │   ├── LOL_0759.jpg
+│   │   │   ├── LOL_0761.jpg
+│   │   │   ├── LOL_0765.jpg
+│   │   │   ├── LOL_0768.jpg
+│   │   │   ├── LOL_0769.jpg
+│   │   │   ├── LOL_0770.jpg
+│   │   │   ├── LOL_0772.jpg
+│   │   │   ├── LOL_0775.jpg
+│   │   │   ├── LOL_0777.jpg
+│   │   │   ├── LOL_0788.jpg
+│   │   │   ├── LOL_0789.jpg
+│   │   │   ├── LOL_0790.jpg
+│   │   │   ├── LOL_0791.jpg
+│   │   │   ├── LOL_0792.jpg
+│   │   │   ├── LOL_0794.jpg
+│   │   │   ├── LOL_0799.jpg
+│   │   │   ├── LOL_0801.jpg
+│   │   │   ├── LOL_0803.jpg
+│   │   │   ├── LOL_0810.jpg
+│   │   │   ├── LOL_0811.jpg
+│   │   │   ├── LOL_0812.jpg
+│   │   │   ├── LOL_0813.jpg
+│   │   │   ├── LOL_0815.jpg
+│   │   │   ├── LOL_0816.jpg
+│   │   │   ├── LOL_0818.jpg
+│   │   │   ├── LOL_0819.jpg
+│   │   │   ├── LOL_0820.jpg
+│   │   │   ├── LOL_0821.jpg
+│   │   │   ├── TEW_7360.NEF
+│   │   │   ├── TEW_7361.NEF
+│   │   │   ├── TEW_7362.NEF
+│   │   │   ├── TEW_7363.NEF
+│   │   │   ├── TEW_7364.NEF
+│   │   │   ├── TEW_7365.NEF
+│   │   │   ├── TEW_7366.NEF
+│   │   │   ├── TEW_7367.NEF
+│   │   │   ├── TEW_7368.NEF
+│   │   │   ├── TEW_7369.NEF
+│   │   │   ├── TEW_7370.NEF
+│   │   │   ├── TEW_7371.NEF
+│   │   │   ├── TEW_7371.xmp
+│   │   │   ├── TEW_7372.NEF
+│   │   │   ├── TEW_7373.NEF
+│   │   │   ├── TEW_7374.NEF
+│   │   │   ├── TEW_7375.NEF
+│   │   │   ├── TEW_7376.NEF
+│   │   │   └── TEW_7377.NEF
+│   │   ├── DSC_7358.JPG
+│   │   ├── DSC_7359.JPG
+│   │   ├── LOL_0279.jpg
+│   │   ├── LOL_0284.jpg
+│   │   ├── LOL_0286.jpg
+│   │   ├── LOL_0291.jpg
+│   │   ├── LOL_0302.jpg
+│   │   ├── LOL_0309.jpg
+│   │   ├── LOL_0317.jpg
+│   │   ├── LOL_0323.jpg
+│   │   ├── LOL_0328.jpg
+│   │   ├── LOL_0329.jpg
+│   │   ├── LOL_0331.jpg
+│   │   ├── LOL_0332.jpg
+│   │   ├── LOL_0334.jpg
+│   │   ├── LOL_0342.jpg
+│   │   ├── LOL_0344.jpg
+│   │   ├── LOL_0347.jpg
+│   │   ├── LOL_0350.jpg
+│   │   ├── LOL_0351.jpg
+│   │   ├── LOL_0353.jpg
+│   │   ├── LOL_0360.jpg
+│   │   ├── LOL_0362.jpg
+│   │   ├── LOL_0369.jpg
+│   │   ├── LOL_0374.jpg
+│   │   ├── LOL_0378.jpg
+│   │   ├── LOL_0387.jpg
+│   │   ├── LOL_0389.jpg
+│   │   ├── LOL_0393.jpg
+│   │   ├── LOL_0418.jpg
+│   │   ├── LOL_0424.jpg
+│   │   ├── LOL_0429.jpg
+│   │   ├── LOL_0430.jpg
+│   │   ├── LOL_0432.jpg
+│   │   ├── LOL_0433.jpg
+│   │   ├── LOL_0435 crop.jpg
+│   │   ├── LOL_0435.jpg
+│   │   ├── LOL_0446.jpg
+│   │   ├── LOL_0449.jpg
+│   │   ├── LOL_0451.jpg
+│   │   ├── LOL_0454.jpg
+│   │   ├── LOL_0460.jpg
+│   │   ├── LOL_0463.jpg
+│   │   ├── LOL_0467.jpg
+│   │   ├── LOL_0469.jpg
+│   │   ├── LOL_0477.jpg
+│   │   ├── LOL_0478.jpg
+│   │   ├── LOL_0480.jpg
+│   │   ├── LOL_0481.jpg
+│   │   └── LOL_0484.jpg
+│   ├── 2025
+│   │   ├── Aadhyanta Employee Photoshoot
+│   │   │   ├── DSC04883.ARW
+│   │   │   ├── DSC04884.ARW
+│   │   │   ├── DSC04885.ARW
+│   │   │   ├── DSC04886.ARW
+│   │   │   ├── DSC04887.ARW
+│   │   │   ├── DSC04888.ARW
+│   │   │   ├── DSC04889.ARW
+│   │   │   ├── DSC04890.ARW
+│   │   │   ├── DSC04891.ARW
+│   │   │   ├── DSC04892.ARW
+│   │   │   ├── DSC04893.ARW
+│   │   │   ├── DSC04894.ARW
+│   │   │   ├── DSC04895.ARW
+│   │   │   ├── DSC04896.ARW
+│   │   │   ├── DSC04897.ARW
+│   │   │   ├── DSC04898.ARW
+│   │   │   ├── DSC04899.ARW
+│   │   │   ├── DSC04900.ARW
+│   │   │   ├── DSC04901.ARW
+│   │   │   ├── DSC04902.ARW
+│   │   │   ├── DSC04903.ARW
+│   │   │   ├── DSC04904.ARW
+│   │   │   ├── DSC04905.ARW
+│   │   │   ├── DSC04906.ARW
+│   │   │   ├── DSC04907.ARW
+│   │   │   ├── DSC04908.ARW
+│   │   │   ├── DSC04909.ARW
+│   │   │   ├── DSC04910.ARW
+│   │   │   ├── DSC04911.ARW
+│   │   │   ├── DSC04912.ARW
+│   │   │   ├── DSC04913.ARW
+│   │   │   ├── DSC04914.ARW
+│   │   │   ├── DSC04915.ARW
+│   │   │   ├── DSC04916.ARW
+│   │   │   ├── DSC04917.ARW
+│   │   │   ├── DSC04918.ARW
+│   │   │   ├── DSC04919.ARW
+│   │   │   ├── DSC04920.ARW
+│   │   │   ├── DSC04921.ARW
+│   │   │   ├── DSC04922.ARW
+│   │   │   ├── DSC04923.ARW
+│   │   │   ├── DSC04924.ARW
+│   │   │   ├── DSC04925.ARW
+│   │   │   ├── DSC04926.ARW
+│   │   │   ├── DSC04927.ARW
+│   │   │   ├── DSC04928.ARW
+│   │   │   ├── DSC04929.ARW
+│   │   │   ├── DSC04930.ARW
+│   │   │   ├── DSC04931.ARW
+│   │   │   ├── DSC04932.ARW
+│   │   │   ├── DSC04933.ARW
+│   │   │   ├── DSC04934.ARW
+│   │   │   ├── DSC04935.ARW
+│   │   │   ├── DSC04936.ARW
+│   │   │   ├── DSC04937.ARW
+│   │   │   ├── DSC04938.ARW
+│   │   │   ├── DSC04939.ARW
+│   │   │   ├── DSC04940.ARW
+│   │   │   ├── DSC04941.ARW
+│   │   │   ├── DSC04942.ARW
+│   │   │   ├── DSC04943.ARW
+│   │   │   ├── DSC04944.ARW
+│   │   │   ├── DSC04945.ARW
+│   │   │   ├── DSC04946.ARW
+│   │   │   ├── DSC04947.ARW
+│   │   │   ├── DSC04948.ARW
+│   │   │   ├── DSC04949.ARW
+│   │   │   ├── DSC04950.ARW
+│   │   │   ├── DSC04951.ARW
+│   │   │   ├── DSC04952.ARW
+│   │   │   ├── DSC04953.ARW
+│   │   │   ├── DSC04954.ARW
+│   │   │   ├── DSC04955.ARW
+│   │   │   ├── DSC04956.ARW
+│   │   │   ├── DSC04957.ARW
+│   │   │   ├── DSC04958.ARW
+│   │   │   ├── DSC04959.ARW
+│   │   │   ├── DSC04960.ARW
+│   │   │   ├── DSC04961.ARW
+│   │   │   ├── DSC04962.ARW
+│   │   │   ├── DSC04963.ARW
+│   │   │   ├── DSC04964.ARW
+│   │   │   ├── DSC04965.ARW
+│   │   │   ├── DSC04966.ARW
+│   │   │   ├── DSC04967.ARW
+│   │   │   ├── DSC04968.ARW
+│   │   │   ├── DSC04969.ARW
+│   │   │   ├── DSC04970.ARW
+│   │   │   ├── DSC04971.ARW
+│   │   │   ├── DSC04972.ARW
+│   │   │   ├── DSC04973.ARW
+│   │   │   ├── DSC04974.ARW
+│   │   │   ├── DSC04975.ARW
+│   │   │   ├── DSC04976.ARW
+│   │   │   ├── DSC04977.ARW
+│   │   │   ├── DSC04978.ARW
+│   │   │   ├── DSC04979.ARW
+│   │   │   ├── DSC04980.ARW
+│   │   │   ├── DSC04981.ARW
+│   │   │   ├── DSC04982.ARW
+│   │   │   ├── DSC04983.ARW
+│   │   │   ├── DSC04984.ARW
+│   │   │   ├── DSC04985.ARW
+│   │   │   ├── DSC04986.ARW
+│   │   │   ├── DSC04987.ARW
+│   │   │   ├── DSC04988.ARW
+│   │   │   ├── DSC04989.ARW
+│   │   │   ├── DSC04990.ARW
+│   │   │   ├── DSC04991.ARW
+│   │   │   ├── DSC04992.ARW
+│   │   │   ├── DSC04993.ARW
+│   │   │   ├── DSC04994.ARW
+│   │   │   ├── DSC04995.ARW
+│   │   │   ├── DSC04996.ARW
+│   │   │   ├── DSC04997.ARW
+│   │   │   ├── DSC04998.ARW
+│   │   │   ├── DSC04999.ARW
+│   │   │   ├── DSC05000.ARW
+│   │   │   ├── DSC05001.ARW
+│   │   │   ├── DSC05002.ARW
+│   │   │   ├── DSC05003.ARW
+│   │   │   ├── DSC05004.ARW
+│   │   │   ├── DSC05005.ARW
+│   │   │   ├── DSC05006.ARW
+│   │   │   ├── DSC05007.ARW
+│   │   │   ├── DSC05008.ARW
+│   │   │   ├── DSC05009.ARW
+│   │   │   ├── DSC05010.ARW
+│   │   │   ├── DSC05011.ARW
+│   │   │   ├── DSC05012.ARW
+│   │   │   ├── DSC05013.ARW
+│   │   │   ├── DSC05014.ARW
+│   │   │   ├── DSC05015.ARW
+│   │   │   ├── DSC05016.ARW
+│   │   │   ├── DSC05017.ARW
+│   │   │   ├── DSC05018.ARW
+│   │   │   ├── DSC05019.ARW
+│   │   │   ├── DSC05020.ARW
+│   │   │   ├── DSC05021.ARW
+│   │   │   ├── DSC05022.ARW
+│   │   │   ├── DSC05023.ARW
+│   │   │   ├── DSC05024.ARW
+│   │   │   ├── DSC05025.ARW
+│   │   │   ├── DSC05026.ARW
+│   │   │   ├── DSC05027.ARW
+│   │   │   ├── DSC05028.ARW
+│   │   │   ├── DSC05029.ARW
+│   │   │   ├── DSC05030.ARW
+│   │   │   ├── DSC05031.ARW
+│   │   │   ├── DSC05032.ARW
+│   │   │   ├── DSC05033.ARW
+│   │   │   ├── DSC05034.ARW
+│   │   │   ├── DSC05035.ARW
+│   │   │   ├── DSC05036.ARW
+│   │   │   ├── DSC05037.ARW
+│   │   │   ├── DSC05038.ARW
+│   │   │   ├── DSC05039.ARW
+│   │   │   ├── DSC05040.ARW
+│   │   │   ├── DSC05041.ARW
+│   │   │   ├── DSC05042.ARW
+│   │   │   ├── DSC05043.ARW
+│   │   │   ├── DSC05044.ARW
+│   │   │   ├── DSC05045.ARW
+│   │   │   ├── DSC05046.ARW
+│   │   │   ├── DSC05047.ARW
+│   │   │   ├── DSC05048.ARW
+│   │   │   ├── DSC05049.ARW
+│   │   │   ├── DSC05050.ARW
+│   │   │   ├── DSC05051.ARW
+│   │   │   ├── DSC05052.ARW
+│   │   │   ├── DSC05053.ARW
+│   │   │   └── DSC05054.ARW
+│   │   └── id card
+│   │       ├── alina.jpg
+│   │       ├── ashimta.jpg
+│   │       ├── boy.jpg
+│   │       ├── durga.jpg
+│   │       ├── girl.jpg
+│   │       └── id.psb
+│   └── 2026
+│       └── Photoshoot
+│           ├── Copy of DSC01276.JPG
+│           ├── DSC01053.JPG
+│           ├── DSC01054.JPG
+│           ├── DSC01055.JPG
+│           ├── DSC01057.JPG
+│           ├── DSC01058.JPG
+│           ├── DSC01059.JPG
+│           ├── DSC01062.JPG
+│           ├── DSC01063.JPG
+│           ├── DSC01064.JPG
+│           ├── DSC01065.JPG
+│           ├── DSC01066.JPG
+│           ├── DSC01067.JPG
+│           ├── DSC01068.JPG
+│           ├── DSC01070.JPG
+│           ├── DSC01072.JPG
+│           ├── DSC01091.JPG
+│           ├── DSC01092.JPG
+│           ├── DSC01093.JPG
+│           ├── DSC01094.JPG
+│           ├── DSC01095.JPG
+│           ├── DSC01097.JPG
+│           ├── DSC01098.JPG
+│           ├── DSC01099.JPG
+│           ├── DSC01100.JPG
+│           ├── DSC01101.JPG
+│           ├── DSC01103.JPG
+│           ├── DSC01104.JPG
+│           ├── DSC01105.JPG
+│           ├── DSC01106.JPG
+│           ├── DSC01107.JPG
+│           ├── DSC01108.JPG
+│           ├── DSC01109.JPG
+│           ├── DSC01110.JPG
+│           ├── DSC01111.JPG
+│           ├── DSC01112.JPG
+│           ├── DSC01113.JPG
+│           ├── DSC01114.JPG
+│           ├── DSC01115.JPG
+│           ├── DSC01116.JPG
+│           ├── DSC01117.JPG
+│           ├── DSC01118.JPG
+│           ├── DSC01119.JPG
+│           ├── DSC01120.JPG
+│           ├── DSC01121.JPG
+│           ├── DSC01122.JPG
+│           ├── DSC01123.JPG
+│           ├── DSC01124.JPG
+│           ├── DSC01125.JPG
+│           ├── DSC01126.JPG
+│           ├── DSC01127.JPG
+│           ├── DSC01128.JPG
+│           ├── DSC01129.JPG
+│           ├── DSC01130.JPG
+│           ├── DSC01131.JPG
+│           ├── DSC01132.JPG
+│           ├── DSC01133.JPG
+│           ├── DSC01134.JPG
+│           ├── DSC01135.JPG
+│           ├── DSC01136.JPG
+│           ├── DSC01137.JPG
+│           ├── DSC01138.JPG
+│           ├── DSC01139.JPG
+│           ├── DSC01140.JPG
+│           ├── DSC01141.JPG
+│           ├── DSC01142.JPG
+│           ├── DSC01143.JPG
+│           ├── DSC01144.JPG
+│           ├── DSC01145.JPG
+│           ├── DSC01146.JPG
+│           ├── DSC01147.JPG
+│           ├── DSC01148.JPG
+│           ├── DSC01149.JPG
+│           ├── DSC01150.JPG
+│           ├── DSC01151.JPG
+│           ├── DSC01152.JPG
+│           ├── DSC01153.JPG
+│           ├── DSC01154.JPG
+│           ├── DSC01155.JPG
+│           ├── DSC01156.JPG
+│           ├── DSC01157.JPG
+│           ├── DSC01158.JPG
+│           ├── DSC01159.JPG
+│           ├── DSC01160.JPG
+│           ├── DSC01161.JPG
+│           ├── DSC01162.JPG
+│           ├── DSC01163.JPG
+│           ├── DSC01164.JPG
+│           ├── DSC01165.JPG
+│           ├── DSC01166.JPG
+│           ├── DSC01167.JPG
+│           ├── DSC01168.JPG
+│           ├── DSC01169.JPG
+│           ├── DSC01170.JPG
+│           ├── DSC01171.JPG
+│           ├── DSC01172.JPG
+│           ├── DSC01173.JPG
+│           ├── DSC01174.JPG
+│           ├── DSC01175.JPG
+│           ├── DSC01176.JPG
+│           ├── DSC01177.JPG
+│           ├── DSC01182.JPG
+│           ├── DSC01183.JPG
+│           ├── DSC01184.JPG
+│           ├── DSC01185.JPG
+│           ├── DSC01186.JPG
+│           ├── DSC01187.JPG
+│           ├── DSC01188.JPG
+│           ├── DSC01189.JPG
+│           ├── DSC01222.JPG
+│           ├── DSC01223.JPG
+│           ├── DSC01224.JPG
+│           ├── DSC01225.JPG
+│           ├── DSC01226.JPG
+│           ├── DSC01227.JPG
+│           ├── DSC01228.JPG
+│           ├── DSC01229.JPG
+│           ├── DSC01230.JPG
+│           ├── DSC01231.JPG
+│           ├── DSC01232.JPG
+│           ├── DSC01233.JPG
+│           ├── DSC01234.JPG
+│           ├── DSC01235.JPG
+│           ├── DSC01236.JPG
+│           ├── DSC01237.JPG
+│           ├── DSC01238.JPG
+│           ├── DSC01239.JPG
+│           ├── DSC01240.JPG
+│           ├── DSC01241.JPG
+│           ├── DSC01242.JPG
+│           ├── DSC01243.JPG
+│           ├── DSC01244.JPG
+│           ├── DSC01245.JPG
+│           ├── DSC01246.JPG
+│           ├── DSC01247.JPG
+│           ├── DSC01248.JPG
+│           ├── DSC01249.JPG
+│           ├── DSC01250.JPG
+│           ├── DSC01251.JPG
+│           ├── DSC01252.JPG
+│           ├── DSC01253.JPG
+│           ├── DSC01254.JPG
+│           ├── DSC01255.JPG
+│           ├── DSC01256.JPG
+│           ├── DSC01257.JPG
+│           ├── DSC01258.JPG
+│           ├── DSC01259.JPG
+│           ├── DSC01260.JPG
+│           ├── DSC01261.JPG
+│           ├── DSC01262.JPG
+│           ├── DSC01264.JPG
+│           ├── DSC01265.JPG
+│           ├── DSC01266.JPG
+│           ├── DSC01267.JPG
+│           ├── DSC01268.JPG
+│           ├── DSC01269.JPG
+│           ├── DSC01270.JPG
+│           ├── DSC01271.JPG
+│           ├── DSC01272.JPG
+│           ├── DSC01273.JPG
+│           ├── DSC01274.JPG
+│           ├── DSC01275.JPG
+│           ├── DSC01276.JPG
+│           ├── DSC01277.JPG
+│           ├── DSC01278.JPG
+│           ├── DSC01279.JPG
+│           ├── DSC01280.JPG
+│           ├── DSC01281.JPG
+│           ├── DSC01289.JPG
+│           ├── DSC01291.JPG
+│           ├── DSC01292.JPG
+│           ├── DSC01293.JPG
+│           ├── DSC01294.JPG
+│           ├── DSC01298.JPG
+│           ├── DSC01299.JPG
+│           ├── DSC01300.JPG
+│           ├── DSC01301.JPG
+│           ├── DSC01302.JPG
+│           ├── DSC01303.JPG
+│           ├── DSC01304.JPG
+│           ├── DSC01305.JPG
+│           ├── DSC01306.JPG
+│           ├── DSC01307.JPG
+│           ├── DSC01308.JPG
+│           ├── DSC01309.JPG
+│           ├── DSC01310.JPG
+│           ├── DSC01311.JPG
+│           ├── DSC01312.JPG
+│           ├── DSC01313.JPG
+│           ├── DSC01314.JPG
+│           ├── DSC01315.JPG
+│           ├── DSC01316.JPG
+│           ├── DSC01317.JPG
+│           ├── DSC01319.JPG
+│           ├── DSC01320.JPG
+│           ├── DSC01321.JPG
+│           ├── DSC01322.JPG
+│           ├── DSC01323.JPG
+│           ├── DSC01324.JPG
+│           ├── DSC01325.JPG
+│           ├── DSC01326.JPG
+│           ├── DSC01327.JPG
+│           ├── DSC01328.JPG
+│           ├── DSC01329.JPG
+│           ├── DSC01330.JPG
+│           ├── DSC01331.JPG
+│           ├── DSC01332.JPG
+│           ├── DSC01333.JPG
+│           ├── DSC01334.JPG
+│           ├── DSC01335.JPG
+│           ├── DSC01336.JPG
+│           ├── DSC01337.JPG
+│           ├── DSC01338.JPG
+│           ├── DSC01339.JPG
+│           ├── DSC01340.JPG
+│           ├── DSC01341.JPG
+│           ├── DSC01342.JPG
+│           ├── DSC01343.JPG
+│           ├── DSC01344.JPG
+│           ├── DSC01345.JPG
+│           ├── DSC01346.JPG
+│           ├── DSC01347.JPG
+│           ├── DSC01348.JPG
+│           ├── DSC01349.JPG
+│           ├── DSC01350.JPG
+│           ├── DSC01351.JPG
+│           ├── DSC01352.JPG
+│           ├── DSC01353.JPG
+│           ├── DSC01354.JPG
+│           ├── DSC01355.JPG
+│           ├── DSC01356.JPG
+│           ├── DSC01357.JPG
+│           ├── DSC01358.JPG
+│           ├── DSC01359.JPG
+│           ├── DSC01360.JPG
+│           ├── DSC01361.JPG
+│           ├── DSC01362.JPG
+│           ├── DSC01363.JPG
+│           ├── DSC01364.JPG
+│           ├── DSC01365.JPG
+│           ├── DSC01366.JPG
+│           ├── DSC01367.JPG
+│           ├── DSC01368.JPG
+│           ├── DSC01369.JPG
+│           ├── DSC01371.JPG
+│           ├── DSC01372.JPG
+│           ├── DSC01373.JPG
+│           ├── DSC01374.JPG
+│           ├── DSC01386.JPG
+│           ├── DSC01387.JPG
+│           ├── DSC01388.JPG
+│           ├── DSC01389.JPG
+│           ├── DSC01390.JPG
+│           ├── DSC01391.JPG
+│           ├── DSC01393.JPG
+│           ├── DSC01394.JPG
+│           ├── DSC01397.JPG
+│           ├── DSC01397.JPG
+│           ├── DSC01398.JPG
+│           ├── DSC01399.JPG
+│           ├── DSC01400.JPG
+│           ├── DSC01401.JPG
+│           ├── DSC01402.JPG
+│           ├── DSC01403.JPG
+│           ├── DSC01431.JPG
+│           ├── DSC01432.JPG
+│           ├── DSC01433.JPG
+│           ├── DSC01434.JPG
+│           ├── DSC01435.JPG
+│           ├── DSC01436.JPG
+│           ├── DSC01436.JPG
+│           ├── DSC01436.JPG
+│           ├── DSC01437.JPG
+│           ├── DSC01438.JPG
+│           ├── DSC01438.JPG
+│           ├── DSC01439.JPG
+│           ├── DSC01440.JPG
+│           ├── DSC01441.JPG
+│           ├── DSC01442.JPG
+│           ├── DSC01442.JPG
+│           ├── DSC01442.JPG
+│           ├── DSC01443.JPG
+│           ├── DSC01444.JPG
+│           ├── DSC01445.JPG
+│           ├── DSC01446.JPG
+│           ├── DSC01447.JPG
+│           ├── DSC01448.JPG
+│           ├── DSC01449.JPG
+│           ├── DSC01450.JPG
+│           ├── DSC01451.JPG
+│           ├── DSC01452.JPG
+│           ├── DSC01453.JPG
+│           ├── DSC01454.JPG
+│           ├── DSC01455.JPG
+│           ├── DSC01456.JPG
+│           ├── DSC01457.JPG
+│           ├── DSC01458.JPG
+│           ├── DSC01459.JPG
+│           ├── DSC01460.JPG
+│           ├── DSC01461.JPG
+│           ├── DSC01462.JPG
+│           ├── DSC01463.JPG
+│           ├── DSC01464.JPG
+│           ├── DSC01465.JPG
+│           ├── DSC01466.JPG
+│           ├── DSC01467.JPG
+│           ├── DSC01468.JPG
+│           ├── DSC01469.JPG
+│           ├── DSC01470.JPG
+│           ├── DSC01471.JPG
+│           ├── DSC01472.JPG
+│           ├── DSC01473.JPG
+│           ├── DSC01474.JPG
+│           ├── DSC01475.JPG
+│           ├── DSC01476.JPG
+│           ├── DSC01477.JPG
+│           ├── DSC01478.JPG
+│           ├── DSC01479.JPG
+│           ├── DSC01480.JPG
+│           ├── DSC01481.JPG
+│           ├── DSC01482.JPG
+│           ├── DSC01483.JPG
+│           ├── DSC01484.JPG
+│           ├── DSC01485.JPG
+│           ├── DSC01486.JPG
+│           ├── DSC01487.JPG
+│           ├── DSC01488.JPG
+│           ├── DSC01489.JPG
+│           ├── DSC01490.JPG
+│           ├── DSC01491.JPG
+│           ├── DSC01492.JPG
+│           ├── DSC01493.JPG
+│           ├── DSC01494.JPG
+│           ├── DSC01495.JPG
+│           ├── DSC01496.JPG
+│           ├── DSC01497.JPG
+│           ├── DSC01498.JPG
+│           ├── DSC01499.JPG
+│           ├── DSC01500.JPG
+│           ├── DSC01501.JPG
+│           ├── DSC01502.JPG
+│           ├── DSC01503.JPG
+│           ├── DSC01503.JPG
+│           ├── DSC01504.JPG
+│           ├── DSC01504.JPG
+│           ├── DSC01505.JPG
+│           ├── DSC01506.JPG
+│           ├── DSC01506.JPG
+│           ├── DSC01507.JPG
+│           ├── DSC01508.JPG
+│           ├── DSC01508.JPG
+│           ├── DSC01509.JPG
+│           ├── DSC01510.JPG
+│           ├── DSC01511.JPG
+│           ├── DSC01512.JPG
+│           ├── DSC01513.JPG
+│           ├── DSC01514.JPG
+│           ├── DSC01515.JPG
+│           ├── DSC01516.JPG
+│           ├── DSC01517.JPG
+│           ├── DSC01518.JPG
+│           ├── DSC01519.JPG
+│           ├── DSC01520.JPG
+│           ├── DSC01521.JPG
+│           ├── DSC01522.JPG
+│           ├── DSC01523.JPG
+│           ├── DSC01524.JPG
+│           ├── DSC01525.JPG
+│           ├── DSC01526.JPG
+│           ├── DSC01527.JPG
+│           ├── DSC01528.JPG
+│           ├── DSC01529.JPG
+│           ├── DSC01530.JPG
+│           ├── DSC01531.JPG
+│           ├── DSC01532.JPG
+│           ├── DSC01533.JPG
+│           ├── DSC01534.JPG
+│           ├── DSC01535.JPG
+│           ├── DSC01536.JPG
+│           ├── DSC01537.JPG
+│           ├── DSC01538.JPG
+│           ├── DSC01539.JPG
+│           ├── DSC01540.JPG
+│           ├── DSC01541.JPG
+│           ├── DSC01542.JPG
+│           ├── DSC01543.JPG
+│           ├── DSC01544.JPG
+│           ├── DSC01545.JPG
+│           ├── DSC01546.JPG
+│           ├── DSC01547.JPG
+│           ├── DSC01548.JPG
+│           ├── DSC01549.JPG
+│           ├── DSC01550.JPG
+│           ├── DSC01551.JPG
+│           ├── DSC01552.JPG
+│           ├── DSC01553.JPG
+│           ├── DSC01554.JPG
+│           ├── Group Photo
+│           │   ├── DSC01077.JPG
+│           │   ├── DSC01078.JPG
+│           │   ├── DSC01079.JPG
+│           │   ├── DSC01080.JPG
+│           │   ├── DSC01081.JPG
+│           │   ├── DSC01082.JPG
+│           │   ├── DSC01083.JPG
+│           │   ├── DSC01084.JPG
+│           │   ├── DSC01085.JPG
+│           │   ├── DSC01086.JPG
+│           │   ├── DSC01088.JPG
+│           │   ├── DSC01089.JPG
+│           │   ├── DSC01090.JPG
+│           │   ├── DSC01559.JPG
+│           │   ├── DSC01560.JPG
+│           │   ├── DSC01561.JPG
+│           │   ├── DSC01562.JPG
+│           │   ├── DSC01563.JPG
+│           │   ├── DSC01564.JPG
+│           │   ├── DSC01565.JPG
+│           │   ├── DSC01566.JPG
+│           │   ├── DSC01567.JPG
+│           │   ├── DSC01568.JPG
+│           │   ├── DSC01568.JPG
+│           │   ├── DSC01569.JPG
+│           │   ├── DSC01570.JPG
+│           │   ├── DSC01571.JPG
+│           │   └── DSC01572.JPG
+│           ├── Ranjan Kumar Thapa
+│           │   ├── DSC01375.JPG
+│           │   ├── DSC01376.JPG
+│           │   ├── DSC01377.JPG
+│           │   ├── DSC01379.JPG
+│           │   ├── DSC01380.JPG
+│           │   ├── DSC01381.JPG
+│           │   ├── DSC01382.JPG
+│           │   ├── DSC01383.JPG
+│           │   ├── DSC01384.JPG
+│           │   └── DSC01385.JPG
+│           ├── Smritee Paudel?
+│           │   ├── DSC01405.JPG
+│           │   ├── DSC01406.JPG
+│           │   ├── DSC01409.JPG
+│           │   ├── DSC01411.JPG
+│           │   ├── DSC01412.JPG
+│           │   ├── DSC01413.JPG
+│           │   ├── DSC01414.JPG
+│           │   ├── DSC01415.JPG
+│           │   ├── DSC01416.JPG
+│           │   ├── DSC01417.JPG
+│           │   ├── DSC01418.JPG
+│           │   ├── DSC01418.JPG
+│           │   ├── DSC01419.JPG
+│           │   ├── DSC01420.JPG
+│           │   ├── DSC01421.JPG
+│           │   ├── DSC01423.JPG
+│           │   ├── DSC01424.JPG
+│           │   ├── DSC01425.JPG
+│           │   ├── DSC01429.JPG
+│           │   └── DSC01430.JPG
+│           └── Team selected photos 
+│               ├── Copy of DSC01254.JPG
+│               ├── DSC01290.JPG
+│               ├── DSC01295.JPG
+│               ├── Swastika.JPG
+│               └── Swastika.JPG
+└── adhyanta
+    └── adhyanta
+        ├── 2.Short 1_The Violins.mp3
+        ├── 2.Short 1_The Violins.mp4
+        ├── 2.Short 1_The Violins_1.mp4
+        ├── 2.Short 1_The Violins_2.mp4
+        ├── 2.Short 1_The Violins_3.mp4
+        ├── 2.Short 1_The Violins_4.mp4
+        ├── 2.Short 1_The Violins_5.mp4
+        ├── 2.mp4
+        ├── AAP final logo vetical copy.png
+        ├── AAP final logo vetical.png
+        ├── AAP logo animation.avi
+        ├── AAP logo animation.mp4
+        ├── AAP logo.avi
+        ├── Aadhyanta Presentation.pptx
+        ├── Adobe Premiere Pro Audio Previews
+        │   └── sahaj 2 intro.PRV
+        │       ├── 02adaa09-ea30-41ff-87b0-d969a0d81b1b+195501cf-dfd8-8ad9-f650-e55600000049 48000.cfa
+        │       ├── 2d9362fb-cf69-4f1d-8ccc-2d8e68ef7665+f9993dd5-f2a8-819a-1547-9c8300000049 48000.cfa
+        │       ├── 3f7b1a1f-037c-45ec-8016-923708ee787e+f9993dd5-f2a8-819a-1547-9c8300000049 48000.cfa
+        │       ├── 4422b6b7-f9cf-4ad5-b42c-6cf476dd27e4+c02e0138-0047-eff2-a58b-3bb500000049 44100.cfa
+        │       ├── 7c9797d5-9591-442f-b96a-a30f5653e616+f9993dd5-f2a8-819a-1547-9c8300000049 48000.cfa
+        │       ├── Peak Files
+        │       │   ├── 02adaa09-ea30-41ff-87b0-d969a0d81b1b+195501cf-dfd8-8ad9-f650-e55600000049 48000.pek
+        │       │   ├── 2d9362fb-cf69-4f1d-8ccc-2d8e68ef7665+f9993dd5-f2a8-819a-1547-9c8300000049 48000.pek
+        │       │   ├── 3f7b1a1f-037c-45ec-8016-923708ee787e+f9993dd5-f2a8-819a-1547-9c8300000049 48000.pek
+        │       │   ├── 4422b6b7-f9cf-4ad5-b42c-6cf476dd27e4+c02e0138-0047-eff2-a58b-3bb500000049 44100.pek
+        │       │   ├── 7c9797d5-9591-442f-b96a-a30f5653e616+f9993dd5-f2a8-819a-1547-9c8300000049 48000.pek
+        │       │   ├── a5b58528-7d56-4a0e-88b6-5c245a947005+885cd623-2caa-d52a-5db6-7aff00000049 48000.pek
+        │       │   └── cbfe6c29-b11f-490e-b36e-a60ca1392ba2+f9993dd5-f2a8-819a-1547-9c8300000049 48000.pek
+        │       ├── a5b58528-7d56-4a0e-88b6-5c245a947005+885cd623-2caa-d52a-5db6-7aff00000049 48000.cfa
+        │       └── cbfe6c29-b11f-490e-b36e-a60ca1392ba2+f9993dd5-f2a8-819a-1547-9c8300000049 48000.cfa
+        ├── Adobe Premiere Pro Auto-Save
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-11_13-13-11.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-11_13-32-05.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-11_16-43-02.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-11_16-59-07.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-11_17-20-31.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_11-15-04.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_11-31-04.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_11-47-04.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_12-14-03.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_12-31-58.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_12-47-58.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_14-03-04.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_14-19-04.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_14-35-50.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_14-51-51.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_15-30-32.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_16-31-39.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_16-47-39.prproj
+        │   ├── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-12_19-21-27.prproj
+        │   └── sahaj 2 intro--f104badc-af30-e4cb-f53d-6f7404c1f076-2024-07-15_13-55-56.prproj
+        ├── Ajay dai .mp4
+        ├── Computer Plate 1_Locked Scrolling.mp4
+        ├── Digital Data Technology.mov
+        ├── Emotional Motivation.mp3
+        ├── Motion Graphics Template Media
+        │   └── 88ad20a9-a7a1-4264-866e-26b4ecae557c
+        │       └── [Make It Cool] Leaks 4.aegraphic
+        ├── NOF 1.png
+        ├── Sequence 01.mp4
+        ├── Sequence 01_1.mp4
+        ├── Sequence 01_2.mp4
+        ├── Sequence 01_3.mp4
+        ├── Sequence 01_4.mp4
+        ├── Sequence 01_5.mp4
+        ├── aap video IM (1).mp4
+        ├── aap video aakriti
+        ├── aap video documentary updated.mp4
+        ├── company prpfile
+        │   ├── NOF_I_Pitch.ai
+        │   ├── company profile copy.pdf
+        │   ├── company profile new.01pdf.pdf
+        │   ├── company profile new.02.pdf
+        │   ├── company profile new.03.pdf
+        │   ├── company profile new.04.pdf
+        │   ├── company profile new.05.pdf
+        │   ├── company profile new.06.pdf
+        │   ├── company profile new.ai
+        │   ├── company profile new.pdf
+        │   ├── company profile new11.pdf
+        │   ├── company profile.ai
+        │   └── company profile.pdf
+        ├── drone-shot-of-trekker-enjoying-mountain-view-on-ev-2024-06-13-17-16-30-utc.mov
+        ├── final nest_3.mp4
+        ├── nepal map copy.png
+        ├── nepal map.psd
+        ├── partners-01.jpg
+        ├── ppt
+        │   └── bg.png
+        └── sahaj 2 intro.prproj
+
+209 directories, 1988 files

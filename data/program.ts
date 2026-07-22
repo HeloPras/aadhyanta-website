@@ -14,6 +14,7 @@ export type AlumniOutcome = {
   company: string
   outcome: string
   badge?: string
+  videoId?: string
 }
 
 export type ProgramComponent = {
@@ -339,6 +340,8 @@ export const programPages: ProgramPage[] = [
         outcome:
           "Acquired by Prixa Tech in a strategic acquisition, validating its food-traceability infrastructure.",
         badge: "Acquired",
+        // TODO: replace with the real Dailo Krishi Testimonial.mp4 upload — reusing the DIAL journey video ID as a placeholder for now.
+        videoId: "1211958492",
       },
     ],
     partnerAndFunder: {

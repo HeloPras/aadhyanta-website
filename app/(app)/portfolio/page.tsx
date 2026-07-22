@@ -336,13 +336,15 @@ function PortfolioGrid() {
                   onClick={() => setExpanded(expanded === co.id ? null : co.id)}
                 >
                   {/* Image */}
-                  <div className="relative h-44 overflow-hidden">
+                  <div className={`relative h-44 overflow-hidden ${co.imageFit === "contain" ? "bg-white flex items-center justify-center p-8" : ""}`}>
                     <img
                       src={co.image}
                       alt={co.name}
-                      className="co-img w-full h-full object-cover"
+                      className={`co-img ${co.imageFit === "contain" ? "max-w-full max-h-full object-contain" : "w-full h-full object-cover"}`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/50 via-transparent to-transparent" />
+                    {co.imageFit !== "contain" && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/50 via-transparent to-transparent" />
+                    )}
 
                     {/* Badges */}
                     <div className="absolute top-3 left-3 flex items-center gap-1.5">

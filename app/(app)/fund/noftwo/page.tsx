@@ -547,12 +547,12 @@ function CTA() {
             >
               Investor Inquiry <ArrowRight size={15} />
             </a>
-            <a
+            {/* <a
               href="/downloads/nof2-overview.pdf"
               className="flex items-center justify-center gap-2 border border-[#1C1C2E] text-[#1C1C2E] hover:bg-[#1C1C2E] hover:text-white font-medium text-[15px] px-7 py-3.5 rounded transition-all duration-200"
             >
               <Download size={15} /> Download Overview
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
