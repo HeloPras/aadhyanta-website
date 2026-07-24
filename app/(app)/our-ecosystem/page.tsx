@@ -198,7 +198,7 @@ const programs: Program[] = [
     funder: 'USAID Trade & Competitiveness (Deloitte/TC-Udhyam)',
     description: 'Multi-province accelerator for export-oriented SMEs in agriculture, tourism, and digital services. 4 alumni secured NOF I equity investment.',
     chips: ['4 Alumni → NOF I Equity'],
-    image: 'https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?w=800&q=80',
+    image: '/our-ecosystem/roof-of-the-world.png',
     href: '/our-ecosystem/roof-of-the-world-accelerator-programme',
   },
   {
@@ -208,7 +208,7 @@ const programs: Program[] = [
     funder: 'Swiss Agency for Development and Cooperation (SDC)',
     description: 'Early-stage acceleration for agritech-logistics startups — 7 enterprises, 32-hour hackathon, and product showcase.',
     chips: ['7 Enterprises', '32-Hr Hackathon'],
-    image: '/our-ecosystem/digital-agriculture.jpg',
+    image: '/our-ecosystem/dial-card.jpg',
     href: '/our-ecosystem/digital-innovation-in-agriculture-and-logistics',
   },
   {
@@ -218,7 +218,7 @@ const programs: Program[] = [
     funder: 'USAID Feed the Future',
     description: 'Investment-readiness for agri-input enterprises across USAID Zones of Influence. Research-led diagnostics, investor matchmaking, and legal due-diligence support.',
     chips: ['20–30 Enterprises Scouted'],
-    image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80',
+    image: '/our-ecosystem/feed.png',
     href: '/our-ecosystem/feed-the-future',
   },
 ]
@@ -244,11 +244,10 @@ function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-15"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1800&q=80')",
+          backgroundImage: "url('/our-ecosystem/best-investment-experts-of-nepal-at-aadhyanta.jpg')",
           animation: 'heroZoom 22s ease-in-out infinite alternate',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1C1C2E]/95 via-[#1C1C2E]/70 to-[#1C1C2E]/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/80 via-transparent to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-20">

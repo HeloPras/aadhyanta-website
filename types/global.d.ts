@@ -58,6 +58,7 @@ type Company = {
   tags: string[]
   impacts: string[]
   image: string
+  imageFit?: 'cover' | 'contain'
   featured?: boolean
   logoPlaceholder: string
 }

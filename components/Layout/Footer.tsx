@@ -140,7 +140,7 @@ function Footer() {
                 <Link href="/" className="flex items-center gap-3" style={{ textDecoration: 'none' }}>
                   <div style={{ width: 40, height: 40 }}>
                     <Image
-                      src="/aadhyanta/logomark.png"
+                      src="/logomark.png"
                       alt="Aadhyanta Fund"
                       width={40}
                       height={40}
@@ -180,7 +180,7 @@ function Footer() {
 
               {/* Social */}
               <div style={{ display: 'flex', gap: 8 }}>
-                <a href="https://www.linkedin.com/company/aadhyanta/" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="LinkedIn">
                   <Linkedin size={14} />
                 </a>
               </div>

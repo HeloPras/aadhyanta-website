@@ -15,7 +15,7 @@ export const teamMembers = [
       "Partnership Development",
     ],
     initials: "MP",
-    image: "/aadhyanta/Team/Manoj.jpeg",
+    image: "/team/Manoj.jpeg",
   },
 {
   name: "Amit Koirala",
@@ -32,7 +32,7 @@ export const teamMembers = [
     "Strategic Partnerships",
   ],
   initials: "AK",
-  image:"/aadhyanta/Team/Amit.jpeg"
+  image:"/team/Amit.jpeg"
 },
  
   {
@@ -51,7 +51,7 @@ export const teamMembers = [
     "Infrastructure Finance",
   ],
   initials: "ST",
-    image: "/aadhyanta/Team/Santosh.jpeg",
+    image: "/team/Santosh.jpeg",
 
 },
 {
@@ -69,7 +69,7 @@ export const teamMembers = [
     "Banking Operations",
   ],
   initials: "PP",
-    image: "/aadhyanta/Team/Pramesh.jpeg",
+    image: "/team/Pramesh.jpeg",
 
 },
 {
@@ -88,7 +88,7 @@ export const teamMembers = [
     "Brand Protection",
   ],
   initials: "AM",
-    image: "/aadhyanta/Team/Aashma.JPG",
+    image: "/team/Aashma.JPG",
 
 },
 {
@@ -107,7 +107,7 @@ export const teamMembers = [
     "ESG & Sustainability",
   ],
   initials: "NB",
-    image: "/aadhyanta/Team/Nischal.jpeg",
+    image: "/team/Nischal.jpeg",
 
 },
 {
@@ -125,7 +125,7 @@ export const teamMembers = [
     "Counseling",
   ],
   initials: "SB",
-    image: "/aadhyanta/Team/Sumit.jpeg",
+    image: "/team/Sumit.jpeg",
 
 },
 {
@@ -144,7 +144,7 @@ export const teamMembers = [
   ],
 
   initials: "BR",
-    image: "/aadhyanta/Team/Bijesh.jpeg",
+    image: "/team/Bijesh.jpeg",
 
 },
 {
@@ -162,7 +162,7 @@ export const teamMembers = [
     "Corporate Finance",
   ],
   initials: "RT",
-    image: "/aadhyanta/Team/Ranjan.JPG",
+    image: "/team/Ranjan.JPG",
 
 },
 
@@ -182,7 +182,7 @@ export const teamMembers = [
     "Institutional Oversight",
   ],
   initials: "KS",
-    image: "/aadhyanta/Team/Krishna.jpeg",
+    image: "/team/Krishna.jpeg",
 
 },
 {
@@ -200,7 +200,7 @@ export const teamMembers = [
     "Institutional Banking",
   ],
   initials: "AR",
-    image: "/aadhyanta/Team/Aarati.JPG",
+    image: "/team/Aarati.JPG",
 
 },
 
@@ -220,7 +220,7 @@ export const teamMembers = [
     "Circular Economy",
   ],
   initials: "SP",
-    image: "/aadhyanta/Team/Smritee.jpeg",
+    image: "/team/Smritee.jpeg",
 
 },
 {
@@ -246,7 +246,7 @@ export const teamMembers = [
     "Transaction Execution",
   ],
   initials: "AA",
-image:"/aadhyanta/Team/Anuja.jpeg"
+image:"/team/Anuja.jpeg"
 },
 {
   name: "Mr. Dibakar Paudel",
@@ -263,7 +263,7 @@ image:"/aadhyanta/Team/Anuja.jpeg"
     "Strategic Leadership",
   ],
   initials: "DP",
-image:"/aadhyanta/Team/Dibakar.JPG"
+image:"/team/Dibakar.JPG"
 
 },
 // {
@@ -281,7 +281,7 @@ image:"/aadhyanta/Team/Dibakar.JPG"
 //     "Policy Research",
 //   ],
 //   initials: "LP",
-//     image: "/aadhyanta/Team/Lomus.jpeg",
+//     image: "/team/Lomus.jpeg",
 
 // },
 {
@@ -299,7 +299,7 @@ image:"/aadhyanta/Team/Dibakar.JPG"
     "Investment Evaluation",
   ],
   initials: "SK",
-  image:"/aadhyanta/Team/Swastika.png",
+  image:"/team/Swastika.png",
 },
 {
   name: "Asmita Waiba",
@@ -316,12 +316,12 @@ image:"/aadhyanta/Team/Dibakar.JPG"
     "Accounting Support",
   ],
   initials: "AW",
-  image:"/aadhyanta/Team/Asmita.PNG",
+  image:"/team/Asmita.PNG",
 },
 {
   name: "Pratistha Paudel",
   position: "Program Coordinator",
-  department: "Programs",
+  department: "Accelerator",
   bio: "Pratistha is a Program Coordinator at Aadhyanta with over 5 years of experience in entrepreneurship development, innovation programming, and accelerator management. She specializes in coordinating accelerator and incubation programs, mentor engagement, stakeholder coordination, program reporting, and multi-province program delivery. She has led the design and implementation of innovation initiatives supporting startups and enterprise development across Nepal.",
   experience: "5+ years in Entrepreneurship Development, Innovation Programming, and Accelerator Management",
   education: "MSc in International Cooperation and Development, MICD Kathmandu; Collaborative Research Programme, University of Pavia, Italy",
@@ -336,13 +336,13 @@ image:"/aadhyanta/Team/Dibakar.JPG"
     "Capacity Building",
   ],
   initials: "PP",
-  image: "/aadhyanta/Team/pratistha-1.jpg",
+  image: "/team/pratistha-1.jpg",
 },
 
 {
   name: "Agadh Malla",
   position: "Program Associate",
-  department: "Programs",
+  department: "Accelerator",
   bio: "Agadh is a Program Associate at Aadhyanta, working at the intersection of private capital, development finance, and grassroots enterprise support across Nepal. He contributes to programs supporting startups, SMEs, and high-potential entrepreneurs through financial analysis, market research, and entrepreneurial ecosystem development.",
   experience: "Experience across Startups, Growth-Stage Businesses, and Capital Markets",
   education: "BSc Economics and Business Economics, specializing in Emerging Markets, Maastricht University, Netherlands; MBA Candidate, Finance and Entrepreneurship, Kathmandu University School of Management",
@@ -354,13 +354,13 @@ image:"/aadhyanta/Team/Dibakar.JPG"
     "Entrepreneurship Growth and Development",
   ],
   initials: "AM",
-  image: "/aadhyanta/Team/agadh.jpeg",
+  image: "/team/agadh.jpeg",
 },
 
 {
   name: "Arya Bharti",
   position: "Communications & Partnerships Associate",
-  department: "Programs",
+  department: "Accelerator",
   bio: "Arya is a Communications & Partnerships Associate at Aadhyanta, supporting organizational visibility, partner communications, and entrepreneurship development initiatives. She specializes in partnership coordination, content development, business development, investor relations, and community engagement while working closely with startups, investors, and business communities.",
   experience: "5+ years in Communications, Business Development, Partnership Development, and Relationship Management",
   education: "MBA in Marketing, Infrastructure University Kuala Lumpur; Bachelor of Business Management (BBM), Asia Pacific University of Technology & Innovation",
@@ -375,6 +375,46 @@ image:"/aadhyanta/Team/Dibakar.JPG"
     "Outreach & Engagement",
   ],
   initials: "AB",
-  image: "/aadhyanta/Team/arya-1.jpg",
+  image: "/team/arya-1.jpg",
+},
+
+{
+  name: "Srijan Bashyal",
+  position: "Program Operations Intern",
+  department: "Accelerator",
+  bio: "Srijan is a Program Operations Intern with the Accelerator Team at Aadhyanta Fund Management Limited, where he contributes to the planning, coordination, and execution of entrepreneurship and business acceleration programs. His work involves collaborating with startups, development partners, government agencies, and private-sector stakeholders to support innovation, investment readiness, and sustainable enterprise development.",
+  experience: "Research, banking, leadership, and program management",
+  education: "Finance Integrated with ACCA, Islington College (London Metropolitan University)",
+  specialties: [
+    "Program Coordination",
+    "Stakeholder Engagement",
+    "Venture Capital & Private Equity",
+    "Investment Readiness",
+    "Research & Analysis",
+    "Startup Ecosystem Development",
+    "Economic Development",
+  ],
+  initials: "SB",
+  image: "/team/srijan.png",
+},
+
+{
+  name: "Shivalika Malla",
+  position: "Knowledge Management Intern",
+  department: "Accelerator",
+  bio: "Shivalika is a Knowledge Management Intern with the Accelerator Team at Aadhyanta, contributing her expertise in economic research, program coordination, and institutional writing. She has authored published research on retail investor behavior and tourism sector resilience in Nepal's economy, and has supported the planning and logistics of high-level institutional programs alongside conducting sector briefs and monetary policy research.",
+  experience: "Economic research, program coordination, content strategy, and stakeholder communications",
+  education: "Bachelor's in Business Administration (International Business) — Islington College",
+  specialties: [
+    "Economic & Policy Research",
+    "Program & Event Coordination",
+    "Financial Analysis",
+    "Institutional & Proposal Writing",
+    "FDI & Regulatory Research",
+    "Content Strategy",
+    "Stakeholder Communications",
+  ],
+  initials: "SM",
+  image: "/team/shivalika.png",
 },
 ]

@@ -235,7 +235,7 @@ export function Navbar({ variant = "transparent" }: NavbarProp) {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <a href="/">
-            <Image alt="logo" height={50} width={50} src={"/aadhyanta/logomark.png"} />
+            <Image alt="logo" height={50} width={50} src={"/logomark.png"} />
           </a>
         </div>
 

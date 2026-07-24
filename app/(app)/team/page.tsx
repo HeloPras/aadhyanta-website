@@ -7,11 +7,136 @@ import {
   Award,
   Globe,
   TrendingUp,
+  ChevronLeft,
+  Quote,
 } from "lucide-react"
 import { Navbar } from "@/components/Layout/Navbar"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Member from "@/components/Pages/Teams/member"
 import { teamMembers } from "@/data/team"
+
+/* ─── Word from Leadership ────────────────────────────────────────────────
+   Short pull-quotes drawn from each leader's role and background. */
+const leadershipMessages = [
+  {
+    name: "Mr. Manoj Paudel",
+    role: "Co-Founder & Chairman",
+    initials: "MP",
+    image: "/team/Manoj.jpeg",
+    quote:
+      "Our mission has always been to change how capital reaches Nepal's entrepreneurs and enterprises. Every partnership we build is a step toward a more resilient, inclusive economy.",
+  },
+  {
+    name: "Santosh Thapa",
+    role: "Chief Executive Officer",
+    initials: "ST",
+    image: "/team/Santosh.jpeg",
+    quote:
+      "We measure our success by the enterprises we help grow, from feasibility to funding to full realization. That discipline is what sets Aadhyanta apart.",
+  },
+  {
+    name: "Mr. Krishna Prasad Sharma",
+    role: "Independent Director",
+    initials: "KPS",
+    image: "/team/Krishna.jpeg",
+    quote:
+      "Strong governance is the foundation of trust. As a board, our role is to ensure Aadhyanta's growth is guided by prudence, transparency, and accountability at every step.",
+  },
+]
+
+/* ─── Leadership message slider ──────────────────────────────────────────── */
+function LeadershipSlider() {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % leadershipMessages.length)
+    }, 7000)
+    return () => clearInterval(id)
+  }, [])
+
+  const current = leadershipMessages[index]
+
+  return (
+    <div className="sr-s relative bg-[#1C1C2E] rounded-2xl overflow-hidden">
+      <div className="hero-grid absolute inset-0 opacity-40" />
+      <div className="relative px-6 py-14 sm:px-12 sm:py-16 lg:px-16">
+        <Quote
+          size={40}
+          className="text-[#B71E52]/50 mb-6"
+          strokeWidth={1.5}
+        />
+
+        <blockquote className="font-display italic text-white text-[clamp(20px,2.6vw,30px)] leading-[1.5] max-w-3xl mb-10">
+          {current.quote}
+        </blockquote>
+
+        <div className="flex items-center justify-between gap-6 flex-wrap">
+          <div className="flex items-center gap-4">
+            <div className="w-16 h-16 rounded-full overflow-hidden bg-white/10 flex items-center justify-center flex-shrink-0">
+              {current.image ? (
+                <img
+                  src={current.image}
+                  alt={current.name}
+                  className="w-full h-full object-cover object-top scale-125"
+                />
+              ) : (
+                <span className="font-mono-dm text-[12px] text-white">
+                  {current.initials}
+                </span>
+              )}
+            </div>
+            <div>
+              <div className="font-semibold text-[15px] text-white">
+                {current.name}
+              </div>
+              <div className="font-mono-dm text-[10px] text-white/50 tracking-[0.1em] uppercase mt-0.5">
+                {current.role}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              {leadershipMessages.map((m, i) => (
+                <button
+                  key={m.name}
+                  onClick={() => setIndex(i)}
+                  aria-label={`Show message from ${m.name}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === index ? "w-6 bg-[#B71E52]" : "w-1.5 bg-white/25"
+                  }`}
+                />
+              ))}
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() =>
+                  setIndex(
+                    (i) =>
+                      (i - 1 + leadershipMessages.length) %
+                      leadershipMessages.length,
+                  )
+                }
+                aria-label="Previous message"
+                className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-colors"
+              >
+                <ChevronLeft size={16} />
+              </button>
+              <button
+                onClick={() => setIndex((i) => (i + 1) % leadershipMessages.length)}
+                aria-label="Next message"
+                className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-colors"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 /* ─── Same reveal hook as every other page ───────────────────────────────── */
 function useReveal() {
@@ -171,13 +296,12 @@ const TeamPage: React.FC = () => {
             className="absolute inset-0 bg-cover bg-center opacity-25"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1800&q=80')",
+                "url('/team/team.jpg')",
               animation: "heroZoom 22s ease-in-out infinite alternate",
             }}
           />
           {/* Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1C1C2E]/90 via-[#1C1C2E]/60 to-[#1C1C2E]/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[#1C1C2E]/10" />
 
           <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-16">
             {/* Badge */}
@@ -255,7 +379,7 @@ const TeamPage: React.FC = () => {
               label="Business Developement"
               title="Accelerator Team"
               description="Building partnerships, accelerating ventures, and creating opportunities that drive sustainable business growth."
-              department="Programs"
+              department="Accelerator"
             />
             {/* <DepartmentSection
               label="Support Teams"
@@ -263,6 +387,22 @@ const TeamPage: React.FC = () => {
               description="Dedicated professionals ensuring operational excellence and exceptional service across every touchpoint."
               department="Operations"
             /> */}
+          </div>
+        </section>
+
+        {/* ── WORD FROM LEADERSHIP ─────────────────────────────────────────── */}
+        <section className="bg-white py-20 md:py-24 border-b border-[#E8E4DD]">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="sr text-center mb-12">
+              <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
+                In Their Words
+              </span>
+              <h2 className="font-display font-bold text-[clamp(30px,3.5vw,44px)] leading-[1.08] text-[#1C1C2E]">
+                A word from our <em className="italic text-[#B71E52]">leadership</em>
+              </h2>
+            </div>
+
+            <LeadershipSlider />
           </div>
         </section>
 

@@ -61,6 +61,8 @@ export type ProgramPage = {
   outcomes?: string[]
   sustainabilityNote?: string
   genderLensNote?: string
+  youtubeVideoId?: string
+  heroImage?: string
   partnerAndFunder: PartnerFunder
 }
 
@@ -150,6 +152,8 @@ export const programPages: ProgramPage[] = [
     ],
     sustainabilityNote:
       "A permanent Business Growth Centre was co-established with FNCCI-Koshi as a provincial BDS platform — extending the programme's value beyond the contract period.",
+    youtubeVideoId: "LYDogiTSRTY",
+    heroImage: "/our-ecosystem/Dudh_Koshi_River.jpg",
     partnerAndFunder: {
       funder: "Swisscontact NAMDP (Sahaj Phase II)",
       partners: [
@@ -344,6 +348,7 @@ export const programPages: ProgramPage[] = [
         videoId: "1211958492",
       },
     ],
+    heroImage: "/our-ecosystem/dial.jpg",
     partnerAndFunder: {
       funder: "Swiss Agency for Development and Cooperation (SDC)",
       term: "July 2024 – August 2025",

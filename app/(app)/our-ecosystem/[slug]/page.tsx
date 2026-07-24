@@ -285,12 +285,12 @@ function SidebarInner({
 ═══════════════════════════════════════════════════════════════════════════ */
 function ProgramHero({ program }: { program: ProgramPage }) {
   const isActive = program.status === 'Active'
-  const isDIAL = program.slug === 'digital-innovation-in-agriculture-and-logistics'
+  const hasHeroImage = !!program.heroImage
   return (
     <div
-      className={`bg-[#1C1C2E] prog-detail-hero overflow-hidden pt-22${isDIAL ? ' prog-detail-hero-img' : ''}`}
-      style={isDIAL ? {
-        backgroundImage: 'linear-gradient(rgba(28, 28, 46, 0.53), rgba(28,28,46,0.9)), url(/our-ecosystem/dial.jpg)',
+      className={`bg-[#1C1C2E] prog-detail-hero overflow-hidden pt-22${hasHeroImage ? ' prog-detail-hero-img' : ''}`}
+      style={hasHeroImage ? {
+        backgroundImage: `linear-gradient(rgba(28, 28, 46, 0.73), rgba(28,28,46,0.9)), url(${program.heroImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       } : undefined}
@@ -456,6 +456,27 @@ function ProgramContent({ program, revealKey }: { program: ProgramPage; revealKe
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen
               title="DIAL Journey Video"
+            />
+          </div>
+        </section>
+      )}
+
+      {/* YOUTUBE JOURNEY VIDEO — shown for programmes with a youtubeVideoId */}
+      {program.youtubeVideoId && (
+        <section className="reveal-section scroll-mt-44">
+          <SectionHeader label="Our Journey" title={<>The <em className="italic text-[#B71E52]">Programme</em> Story</>} />
+          <p className="text-stone-500 text-[14px] leading-[1.9] mb-6">
+            Watch how this programme is driving lasting impact across enterprises and communities.
+          </p>
+
+          {/* YouTube embed */}
+          <div className="relative w-full rounded-2xl overflow-hidden border border-[#E8E4DD] shadow-xl aspect-video">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${program.youtubeVideoId}?rel=0&modestbranding=1&color=white`}
+              className="absolute inset-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              title="Programme Journey Video"
             />
           </div>
         </section>

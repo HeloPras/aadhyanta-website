@@ -300,7 +300,7 @@ function Hero() {
       {/* Photo */}
       <div
         className="absolute inset-0 bg-cover bg-center anim-hero-zoom"
-        style={{ backgroundImage: "url('/aadhyanta/Landing/grass.jpg')" }}
+        style={{ backgroundImage: "url('/landing/magnific.png')" }}
       />
       {/* Overlays */}
       <div className="absolute inset-0 bg-linear-to-r from-[#1C1C2E]/90 via-[#1C1C2E]/60 to-[#1C1C2E]/25" />
@@ -516,7 +516,7 @@ function About() {
           {/* Main image */}
           <div className="rounded-xl overflow-hidden shadow-2xl shadow-stone-200 aspect-4/3">
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80"
+              src="/landing/about-home.jpeg"
               alt="Team"
               className="w-full h-full object-cover"
             />

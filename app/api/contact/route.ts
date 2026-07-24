@@ -13,7 +13,7 @@ async function sendAutoReplyToClient(userEmail: string, userName: string) {
     attachments: [
       {
         filename: "logo.png",
-        path: "./public/aadhyanta/logo.png",
+        path: "./public/logo.png",
         cid: "companylogo",
       },
     ],
