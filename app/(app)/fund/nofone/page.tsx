@@ -232,7 +232,7 @@ function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=80')",
+          backgroundImage: "url('/nofone/nof.jpg')",
           animation: 'heroZoom 22s ease-in-out infinite alternate',
         }}
       />

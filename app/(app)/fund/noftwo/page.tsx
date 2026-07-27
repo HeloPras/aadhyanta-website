@@ -185,7 +185,7 @@ function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-15"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=1800&q=80')",
+          backgroundImage: "url('/noftwo/noftwo.jpeg')",
           animation: 'heroZoom 24s ease-in-out infinite alternate',
         }}
       />
