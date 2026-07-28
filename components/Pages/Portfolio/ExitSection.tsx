@@ -104,7 +104,7 @@ const exits = [
     holdPeriod: '3 years',
     description:
       'Strategic sale to a regional hospitality group with international brand ambitions. Governance strengthening and brand positioning work during the hold period unlocked a material valuation premium at exit.',
-    image: '/portfolio/pokhara-heritage-resort-cropped.jpg',
+    image: '/portfolio/pokhara-heritage-resort-cropped.webp',
     impacts: ['300+ quality jobs', 'International brand tie-up completed', '4-star rating achieved'],
     featured: false,
   },

@@ -88,7 +88,7 @@ export const teamMembers = [
     "Brand Protection",
   ],
   initials: "AM",
-    image: "/team/Aashma.JPG",
+    image: "/team/Aashma.webp",
 
 },
 {
@@ -299,7 +299,7 @@ image:"/team/Dibakar.JPG"
     "Investment Evaluation",
   ],
   initials: "SK",
-  image:"/team/Swastika.png",
+  image:"/team/Swastika.webp",
 },
 {
   name: "Asmita Waiba",
@@ -316,7 +316,7 @@ image:"/team/Dibakar.JPG"
     "Accounting Support",
   ],
   initials: "AW",
-  image:"/team/Asmita.PNG",
+  image:"/team/Asmita.webp",
 },
 {
   name: "Pratistha Paudel",
@@ -415,6 +415,6 @@ image:"/team/Dibakar.JPG"
     "Stakeholder Communications",
   ],
   initials: "SM",
-  image: "/team/shivalika.png",
+  image: "/team/shivalika.webp",
 },
 ]

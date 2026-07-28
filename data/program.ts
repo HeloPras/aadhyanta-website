@@ -348,7 +348,7 @@ export const programPages: ProgramPage[] = [
         videoId: "1211958492",
       },
     ],
-    heroImage: "/our-ecosystem/dial.jpg",
+    heroImage: "/our-ecosystem/dial.webp",
     partnerAndFunder: {
       funder: "Swiss Agency for Development and Cooperation (SDC)",
       term: "July 2024 – August 2025",

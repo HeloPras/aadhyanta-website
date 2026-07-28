@@ -156,7 +156,7 @@ const programs: Program[] = [
     funder: 'US Embassy',
     description: 'U.S.–Nepal pre-accelerator connecting 20 early-stage entrepreneurs to AI tools, U.S. innovation frameworks, and dual-mentorship support.',
     chips: ['20 Entrepreneurs', '100+ Ecosystem Participants'],
-    image: '/our-ecosystem/seeding-and-scaling.png',
+    image: '/our-ecosystem/seeding-and-scaling.webp',
     href: '/our-ecosystem/seeding-and-scaling-innovation-ai-entrepreneurs-lab',
   },
   {
@@ -208,7 +208,7 @@ const programs: Program[] = [
     funder: 'Swiss Agency for Development and Cooperation (SDC)',
     description: 'Early-stage acceleration for agritech-logistics startups — 7 enterprises, 32-hour hackathon, and product showcase.',
     chips: ['7 Enterprises', '32-Hr Hackathon'],
-    image: '/our-ecosystem/dial-card.jpg',
+    image: '/our-ecosystem/dial-card.webp',
     href: '/our-ecosystem/digital-innovation-in-agriculture-and-logistics',
   },
   {

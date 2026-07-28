@@ -104,10 +104,10 @@ export const articles: Article[] = [
     author: "Aadhyanta Team",
     authorRole: "Venture Capital & Ecosystem Team",
     authorAvatar:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
+      "/insights/aadhyanta-venture-capital-nepal.webp",
     date: "February 14, 2025",
     readTime: "9 min read",
-    image: "/insights/aadhyanta-venture-capital-nepal.jpg",
+    image: "/insights/aadhyanta-venture-capital-nepal.webp",
     relatedIds: [],
     content: [
       {
@@ -637,7 +637,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "6 min read",
-    image: "/insights/five-secrets-about-investment.png",
+    image: "/insights/five-secrets-about-investment.webp",
     relatedIds: [
       "investment-readiness-gap",
       "leveraging-private-equity-nepal-economy",

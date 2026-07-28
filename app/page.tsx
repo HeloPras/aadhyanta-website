@@ -300,7 +300,7 @@ function Hero() {
       {/* Photo */}
       <div
         className="absolute inset-0 bg-cover bg-center anim-hero-zoom"
-        style={{ backgroundImage: "url('/landing/magnific.png')" }}
+        style={{ backgroundImage: "url('/landing/magnific.webp')" }}
       />
       {/* Overlays */}
       <div className="absolute inset-0 bg-linear-to-r from-[#1C1C2E]/90 via-[#1C1C2E]/60 to-[#1C1C2E]/25" />
@@ -666,7 +666,7 @@ function Funds() {
         "Board representation",
       ],
       image:
-        "/nofone/nofone.jpg",
+        "/nofone/nofone.webp",
       capital: "NPR 120M+",
       href: "/fund/nofone",
     },

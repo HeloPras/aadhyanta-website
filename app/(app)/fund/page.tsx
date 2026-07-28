@@ -113,7 +113,7 @@ const funds = [
     subtitle: "Nepal's flagship sector-agnostic growth equity fund",
     description: "Our first institutional fund demonstrated proof of concept: raising NPR 300 crores from Nepal's leading banks and insurance companies, deploying capital across diverse sectors, and building a portfolio advancing toward exits.",
     icon: <TrendingUp size={20} />,
-    image: '/nofone/nofone.jpg',
+    image: '/nofone/nofone.webp',
     capital: 'NPR 120M+',
     meta: [
       { label: 'Status', value: 'Fully deployed — Portfolio actively managed' },
