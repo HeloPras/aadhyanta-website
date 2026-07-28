@@ -666,7 +666,7 @@ function Funds() {
         "Board representation",
       ],
       image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80",
+        "/nofone/nofone.jpg",
       capital: "NPR 120M+",
       href: "/fund/nofone",
     },
@@ -683,7 +683,7 @@ function Funds() {
         "Active value creation",
       ],
       image:
-        "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80",
+        "/noftwo/noftwo.jpg",
       capital: "NPR 140M+",
       href: "/fund/noftwo",
     },

@@ -171,32 +171,36 @@ const offices = [
 ═══════════════════════════════════════════════════════════════════════════ */
 function Hero() {
   return (
-    <section className="relative overflow-hidden pt-36 pb-28 bg-[#F5F2ED] border-b border-[#E8E4DD] hero-grid">
-      {/* Decorative blobs */}
-      <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-[#B71E52]/8 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -left-20 w-72 h-72 rounded-full bg-[#1C1C2E]/5 blur-3xl pointer-events-none" />
+    <section className="relative min-h-[52vh] flex items-end overflow-hidden bg-[#1C1C2E] hero-grid">
+      {/* Photo backdrop */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-25"
+        style={{
+          backgroundImage: "url('/about/hero.jpg')",
+          animation: "heroZoom 22s ease-in-out infinite alternate",
+        }}
+      />
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-[#1C1C2E]/10" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          {/* Badge */}
-          <div className="sr inline-flex items-center gap-2.5 px-4 py-2 rounded-sm border border-[#E8E4DD] bg-white/80 backdrop-blur-sm mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#B71E52] flex-shrink-0" />
-            <span className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.12em] uppercase">Trusted since 2009</span>
-          </div>
-
-          {/* Headline */}
-          <h1 className="sr d1 font-display font-bold leading-[1.02] text-[#1C1C2E] mb-7
-            text-[clamp(44px,6.5vw,80px)]">
-            Building wealth<br />
-            <em className="italic text-[#B71E52]">with clarity &amp; discipline</em>
-          </h1>
-
-          {/* Sub */}
-          <p className="sr d2 text-stone-500 text-base sm:text-lg leading-[1.85] max-w-xl">
-            For more than 15 years, we've partnered with individuals and institutions to grow capital responsibly
-            through long-term strategies, data-driven decisions, and personalized guidance.
-          </p>
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-16">
+        {/* Badge */}
+        <div className="sr inline-flex items-center gap-2.5 mb-6 px-4 py-2 bg-white/[0.07] border border-white/[0.15] rounded-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0" />
+          <span className="font-mono-dm text-[10px] text-white/75 tracking-[0.12em] uppercase">Trusted since 2009</span>
         </div>
+
+        <h1 className="sr d1 font-display font-bold text-white leading-[1.0] mb-5
+          text-[clamp(48px,7vw,88px)]">
+          Building wealth
+          <br />
+          <em className="italic text-white/45">with clarity &amp; discipline</em>
+        </h1>
+
+        <p className="sr d2 text-white/55 text-base sm:text-lg leading-[1.8] max-w-lg">
+          For more than 15 years, we've partnered with individuals and institutions to grow capital responsibly
+          through long-term strategies, data-driven decisions, and personalized guidance.
+        </p>
       </div>
     </section>
   )
@@ -609,7 +613,7 @@ export default function AboutPage() {
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-white">
-        <Navbar variant="nontransparent" />
+        <Navbar />
         <Hero />
         <Stats />
         <MissionVision />

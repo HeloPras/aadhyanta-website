@@ -474,8 +474,8 @@ const offices = [
   {
     city: "Kathmandu",
     label: "Headquarters",
-    address: "Lazimpat, Ward No. 2\nKathmandu 44600, Nepal",
-    phone: "01-4526601",
+    address: "Dharamarg, Baluwatar-4\nKathmandu, Nepal",
+    phone: "+977-01-4526601",
     email: "contact@aadhyanta.com",
     hours: "Mon – Fri, 9:30 AM – 5:30 PM NPT",
     primary: true,

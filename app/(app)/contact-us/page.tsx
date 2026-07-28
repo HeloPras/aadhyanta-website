@@ -154,8 +154,8 @@ const offices = [
   {
     city: 'Kathmandu',
     label: 'Headquarters',
-    address: 'Lazimpat, Ward No. 2\nKathmandu 44600, Nepal',
-    phone: ' 01-4526601',
+    address: 'Dharamarg, Baluwatar-4\nKathmandu, Nepal',
+    phone: '+977-01-4526601',
     email: 'contact@aadhyanta.com',
     hours: 'Mon – Fri, 9:30 AM – 5:3-*0 PM NPT',
     primary: true,
@@ -222,8 +222,7 @@ function Hero() {
             {[
               { icon: <Mail size={16} />, label: 'General Inquiries', value: 'contact@aadhyanta.com' },
               // { icon: <Mail size={16} />, label: 'Investor Relations', value: 'invest@aadhyanta.com', href: 'mailto:invest@aadhyanta.com' },
-              { icon: <Phone size={16} />, label: 'Kathmandu Office (1. num)', value: '01-4526601'},
-              { icon: <Phone size={16} />, label: 'Kathmandu Office (2. num)', value: ' 01-4526603'},
+              { icon: <Phone size={16} />, label: 'Kathmandu Office', value: '+977-01-4526601'},
             ].map((c, i) => (
               <div key={i} 
               onClick={()=>{navigator.clipboard.writeText(c.value); toast.success("Copied to Clipboard")
