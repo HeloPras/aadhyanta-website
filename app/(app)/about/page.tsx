@@ -388,7 +388,7 @@ function Team() {
   const viewportRef = useRef<HTMLDivElement>(null)
   const [viewportWidth, setViewportWidth] = useState(0)
 
-  const VISIBLE = 3 // cards visible at once on desktop
+  const VISIBLE = viewportWidth > 0 && viewportWidth < 640 ? 1 : 3 // 1 on mobile, 3 on desktop
   const GAP = 24    // gap-6 = 24 px
   const total = directors.length
   const canPrev = current > 0
@@ -407,8 +407,8 @@ function Team() {
     return () => ro.disconnect()
   }, [])
 
-  const prev = () => setCurrent((c) => (c <= 0 ? total - VISIBLE : c - 1))
-  const next = () => setCurrent((c) => (c >= total - VISIBLE ? 0 : c + 1))
+  const prev = () => setCurrent((c) => Math.max(0, c - 1))
+  const next = () => setCurrent((c) => Math.min(total - VISIBLE, c + 1))
 
   // Drag / swipe
   const onMouseDown = (e: React.MouseEvent) => { setDragging(true); setDragStartX(e.clientX) }

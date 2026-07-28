@@ -208,7 +208,7 @@ const programs: Program[] = [
     funder: 'Swiss Agency for Development and Cooperation (SDC)',
     description: 'Early-stage acceleration for agritech-logistics startups — 7 enterprises, 32-hour hackathon, and product showcase.',
     chips: ['7 Enterprises', '32-Hr Hackathon'],
-    image: '/our-ecosystem/dial-card.webp',
+    image: '/our-ecosystem/dial-card-1.webp',
     href: '/our-ecosystem/digital-innovation-in-agriculture-and-logistics',
   },
   {

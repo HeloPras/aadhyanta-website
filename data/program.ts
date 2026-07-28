@@ -153,7 +153,7 @@ export const programPages: ProgramPage[] = [
     sustainabilityNote:
       "A permanent Business Growth Centre was co-established with FNCCI-Koshi as a provincial BDS platform — extending the programme's value beyond the contract period.",
     youtubeVideoId: "LYDogiTSRTY",
-    heroImage: "/our-ecosystem/Dudh_Koshi_River.jpg",
+    heroImage: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80",
     partnerAndFunder: {
       funder: "Swisscontact NAMDP (Sahaj Phase II)",
       partners: [
@@ -258,6 +258,7 @@ export const programPages: ProgramPage[] = [
       description:
         "Nepal's first accelerator-to-IPO exit story. From Roof of the World cohort to Nepal Opportunity Fund I equity to IPO listing.",
     },
+    heroImage: "/our-ecosystem/roof-of-the-world.png",
     partnerAndFunder: {
       funder:
         "USAID Trade and Competitiveness Program (Deloitte / TC-Udhyam Nepal)",
@@ -348,7 +349,7 @@ export const programPages: ProgramPage[] = [
         videoId: "1211958492",
       },
     ],
-    heroImage: "/our-ecosystem/dial.webp",
+    heroImage: "/our-ecosystem/dial-card-1.webp",
     partnerAndFunder: {
       funder: "Swiss Agency for Development and Cooperation (SDC)",
       term: "July 2024 – August 2025",
@@ -455,6 +456,7 @@ export const programPages: ProgramPage[] = [
       ],
       term: "October 2025 – August 2026",
     },
+    heroImage: "/our-ecosystem/code-for-impact.jpg",
   },
   {
     id: 5,
@@ -531,6 +533,7 @@ export const programPages: ProgramPage[] = [
         "Global IME Bank",
       ],
     },
+    heroImage: "/our-ecosystem/seeding-and-scaling.webp",
   },
   {
     id: 6,
@@ -629,6 +632,7 @@ export const programPages: ProgramPage[] = [
       taPartner: "Food and Agriculture Organization (FAO)",
       pilotLocation: "Bagmati Province",
     },
+    heroImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
   },
   {
     id: 7,
@@ -690,5 +694,6 @@ export const programPages: ProgramPage[] = [
       funder: "FAO Forest and Farm Facility (FFF)",
       term: "May 2026 – July 2026",
     },
+    heroImage: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80",
   },
 ]

@@ -430,7 +430,7 @@ export default function ArticlePage() {
           </div>
 
           {/* Hero image — bleeds to full width */}
-          <div className="mt-8 overflow-hidden max-h-[480px]">
+          <div className="mt-8 overflow-hidden h-[580px]">
             <img
               src={article.image}
               alt={article.title}

@@ -3,7 +3,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Navbar } from "@/components/Layout/Navbar"
-import {motion} from 'framer-motion'
+import {motion, AnimatePresence} from 'framer-motion'
 import {
   ArrowUpRight,
   Search,
@@ -323,7 +323,7 @@ function PortfolioGrid() {
           initial = 'hidden'
           animate = 'visible'
 
-           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
             {filtered.map((co, i) => (
               <motion.div
               variants={sfd}
@@ -332,7 +332,7 @@ function PortfolioGrid() {
               >
                 <div
                   key={co.id}
-                  className={`sr on co-card d${Math.min(i + 1, 6)} bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden cursor-pointer`}
+                  className={`sr on co-card d${Math.min(i + 1, 6)} bg-[#F5F2ED] border border-[#E8E4DD] rounded-xl overflow-hidden cursor-pointer flex flex-col`}
                   onClick={() => setExpanded(expanded === co.id ? null : co.id)}
                 >
                   {/* Image */}
@@ -355,7 +355,7 @@ function PortfolioGrid() {
                   </div>
 
                   {/* Card body */}
-                  <div className="p-5 sm:p-6">
+                  <div className="p-5 sm:p-6 flex flex-col">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-5 h-5 rounded bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] flex-shrink-0">
                         <co.sectorIcon size = {15}>/</co.sectorIcon>
@@ -365,7 +365,7 @@ function PortfolioGrid() {
                       </span>
                     </div>
 
-                    <h3 className="font-display font-bold text-[19px] text-[#1C1C2E] leading-tight mb-2">
+                    <h3 className="font-display font-bold text-[19px] text-[#1C1C2E] leading-tight mb-2 line-clamp-2 min-h-[2.6em]">
                       {co.name}
                     </h3>
 
@@ -390,7 +390,7 @@ function PortfolioGrid() {
                     </div>
 
                     {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#E8E4DD]">
+                    <div className="flex flex-wrap content-start gap-1.5 pt-4 border-t border-[#E8E4DD] min-h-[68px]">
                       {co.tags.map((t, j) => (
                         <span
                           key={j}
@@ -403,28 +403,34 @@ function PortfolioGrid() {
                   </div>
 
                   {/* Expandable impact panel */}
-                  {expanded === co.id && (
-                    <div
-                      className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-[#E8E4DD] bg-white"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <div className="pt-5">
-                        <div className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.12em] uppercase mb-3">
-                          Impact Highlights
+                  <AnimatePresence initial={false}>
+                    {expanded === co.id && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden border-t border-[#E8E4DD] bg-white"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-5">
+                          <div className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.12em] uppercase mb-3">
+                            Impact Highlights
+                          </div>
+                          <ul className="flex flex-col gap-2.5">
+                            {co.impacts.map((imp, j) => (
+                              <li key={j} className="flex items-start gap-2.5">
+                                <div className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0 mt-[6px]" />
+                                <span className="text-[13px] text-stone-600 leading-[1.65]">
+                                  {imp}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <ul className="flex flex-col gap-2.5">
-                          {co.impacts.map((imp, j) => (
-                            <li key={j} className="flex items-start gap-2.5">
-                              <div className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0 mt-[6px]" />
-                              <span className="text-[13px] text-stone-600 leading-[1.65]">
-                                {imp}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </motion.div>
             ))}

@@ -245,7 +245,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "10 min read",
-    image: "/insights/transforming-investment-readiness-llama3.jpg",
+    image: "/insights/transforming-investment-readiness-llama3.webp",
     relatedIds: [
       "investment-readiness-gap",
       "aadhyanta-venture-capital-nepal",

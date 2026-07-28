@@ -143,23 +143,22 @@ function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-0">
         {/* Page title row */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-10 border-b border-[#E8E4DD]">
+        <div className="sm:items-end justify-between gap-6 pb-10 border-b border-[#E8E4DD]">
           <div className="sr">
             <span className="font-mono-dm text-[11px] tracking-[0.14em] uppercase text-[#B71E52] mb-3 block">
               Insights
             </span>
-            <h1 className="font-display font-bold text-[clamp(52px,7vw,96px)] leading-[0.95] text-[#1C1C2E]">
+            <h1 className="font-display font-bold text-[clamp(52px,7vw,96px)] leading-[0.95] text-[#1C1C2E] pt-5">
               Ideas &amp;
-              <br />
-              <em className="italic text-[#B71E52]">Analysis</em>
+              <em className="italic text-[#B71E52]"> Analysis</em>
             </h1>
           </div>
-          <p className="sr-r text-stone-500 text-[15px] leading-[1.85] max-w-sm pb-2">
+          
+        </div>
+<p className="sr-r text-stone-500 text-[15px] leading-[1.85]  max-w-lg pt-5 pb-5">
             Perspectives on private equity, impact investing, and Nepal's
             evolving capital markets — from the practitioners building them.
           </p>
-        </div>
-
         {/* ── Featured article — asymmetric editorial layout ── */}
         {featured.map((a) => {
           return (
