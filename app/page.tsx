@@ -296,11 +296,11 @@ function CompanyCard({
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden bg-[#1C1C2E]">
+    <section className="relative min-h-screen flex md:items-end overflow-hidden bg-[#1C1C2E]">
       {/* Photo */}
       <div
         className="absolute inset-0 bg-cover bg-center anim-hero-zoom"
-        style={{ backgroundImage: "url('/landing/magnific.webp')" }}
+        style={{ backgroundImage: "url('/landing/output.webp')" }}
       />
       {/* Overlays */}
       <div className="absolute inset-0 bg-linear-to-r from-[#1C1C2E]/90 via-[#1C1C2E]/60 to-[#1C1C2E]/25" />

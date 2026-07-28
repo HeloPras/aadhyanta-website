@@ -172,7 +172,7 @@ const RevenueValuationCalculator = () => {
 
     let status: StatusKey = 'moderate'
     let message = 'Your valuation reflects a traditional operating business profile with moderate growth expectations — common for established Nepali SMEs.'
-    if (multiple >= 10) {
+    if (multiple >= 8) {
       status  = 'premium'
       message = 'Your business falls into the high-growth category that institutional investors typically value aggressively due to scalability and future expansion potential.'
     } else if (multiple >= 6) {

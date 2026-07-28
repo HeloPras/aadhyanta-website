@@ -46,6 +46,16 @@ const GLOBAL_CSS = `
     background-size: 72px 72px;
   }
 
+  /* Hero backdrop — mobile uses output.webp, desktop uses the full photo */
+  .hero-backdrop {
+    background-image: url('/our-ecosystem/output.webp');
+  }
+  @media (min-width: 640px) {
+    .hero-backdrop {
+      background-image: url('/our-ecosystem/best-investment-experts-of-nepal-at-aadhyanta.jpg');
+    }
+  }
+
   /* Ticker */
   .ticker-track { display:flex; width:max-content; animation: ticker 28s linear infinite; }
   .ticker-track:hover { animation-play-state:paused; }
@@ -242,11 +252,8 @@ function Hero() {
     <section className="relative bg-[#1C1C2E] hero-grid overflow-hidden">
       {/* Subtle photo backdrop */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-15"
-        style={{
-          backgroundImage: "url('/our-ecosystem/best-investment-experts-of-nepal-at-aadhyanta.jpg')",
-          animation: 'heroZoom 22s ease-in-out infinite alternate',
-        }}
+        className="hero-backdrop absolute inset-0 bg-cover bg-center opacity-15"
+        style={{ animation: 'heroZoom 22s ease-in-out infinite alternate' }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/80 via-transparent to-transparent" />
 
