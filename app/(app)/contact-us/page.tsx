@@ -19,6 +19,14 @@ const GLOBAL_CSS = `
   @keyframes fadeLeft  { from { opacity:0; transform:translateX(-28px); } to { opacity:1; transform:translateX(0); } }
   @keyframes fadeRight { from { opacity:0; transform:translateX(28px); }  to { opacity:1; transform:translateX(0); } }
   @keyframes scaleIn   { from { opacity:0; transform:scale(0.95); }        to { opacity:1; transform:scale(1); } }
+  @keyframes heroZoom  { from { transform:scale(1.0); } to { transform:scale(1.05); } }
+
+  /* hero bg grid */
+  .hero-grid {
+    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
 
   .sr,.sr-l,.sr-r,.sr-s { opacity:0; }
   .sr.on   { animation: fadeUp    0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
@@ -195,24 +203,35 @@ const faqs = [
 ═══════════════════════════════════════════════════════════════════════════ */
 function Hero() {
   return (
-    <section className="bg-[#F5F2ED] border-b border-[#E8E4DD] pt-28 pb-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-[52vh] flex items-end overflow-hidden bg-[#1C1C2E] hero-grid">
+      {/* Photo backdrop */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-25"
+        style={{
+          backgroundImage: "url('/contact/contact.jpg')",
+          animation: "heroZoom 22s ease-in-out infinite alternate",
+        }}
+      />
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-[#1C1C2E]/10" />
+
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
 
           {/* Left */}
           <div>
-            <div className="sr inline-flex items-center gap-2.5 mb-7 px-4 py-2 bg-white border border-[#E8E4DD] rounded-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] shrink-0" />
-              <span className="font-mono-dm text-[10px] text-[#B71E52] tracking-[0.12em] uppercase">
+            <div className="sr inline-flex items-center gap-2.5 mb-6 px-4 py-2 bg-white/[0.07] border border-white/[0.15] rounded-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] flex-shrink-0" />
+              <span className="font-mono-dm text-[10px] text-white/75 tracking-[0.12em] uppercase">
                 Get In Touch
               </span>
             </div>
-            <h1 className="sr d1 font-display font-bold text-[#1C1C2E] leading-none mb-6
-              text-[clamp(48px,6.5vw,80px)]">
+            <h1 className="sr d1 font-display font-bold text-white leading-[1.0] mb-5
+              text-[clamp(48px,7vw,88px)]">
               Let's start a<br />
-              <em className="italic text-[#B71E52]">conversation</em>
+              <em className="italic text-white/45">conversation</em>
             </h1>
-            <p className="sr d2 text-stone-500 text-[16px] leading-[1.85] max-w-md">
+            <p className="sr d2 text-white/55 text-base sm:text-lg leading-[1.8] max-w-md">
               Whether you're an enterprise seeking growth capital, an investor exploring opportunities, or a partner looking to collaborate — we want to hear from you.
             </p>
           </div>
@@ -224,19 +243,19 @@ function Hero() {
               // { icon: <Mail size={16} />, label: 'Investor Relations', value: 'invest@aadhyanta.com', href: 'mailto:invest@aadhyanta.com' },
               { icon: <Phone size={16} />, label: 'Kathmandu Office', value: '+977-01-4526601'},
             ].map((c, i) => (
-              <div key={i} 
+              <div key={i}
               onClick={()=>{navigator.clipboard.writeText(c.value); toast.success("Copied to Clipboard")
 
               }}
-                className="group flex items-center gap-4 bg-white border border-[#E8E4DD] rounded-xl px-5 py-4 hover:border-[#B71E52] cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-                <div className="w-9 h-9 rounded-lg bg-[#f5e8ed] flex items-center justify-center text-[#B71E52] shrink-0">
+                className="group flex items-center gap-4 bg-white/[0.07] border border-white/[0.15] rounded-xl px-5 py-4 hover:border-[#B71E52] cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/[0.1]">
+                <div className="w-9 h-9 rounded-lg bg-[#B71E52]/20 flex items-center justify-center text-[#B71E52] shrink-0">
                   {c.icon}
                 </div>
                 <div className="min-w-0">
-                  <div className="font-mono-dm text-[10px] text-stone-400 tracking-widest uppercase mb-0.5">{c.label}</div>
-                  <div className="font-semibold text-[14px] text-[#1C1C2E] truncate group-hover:text-[#B71E52] transition-colors duration-200">{c.value}</div>
+                  <div className="font-mono-dm text-[10px] text-white/40 tracking-widest uppercase mb-0.5">{c.label}</div>
+                  <div className="font-semibold text-[14px] text-white truncate group-hover:text-[#B71E52] transition-colors duration-200">{c.value}</div>
                </div>
-                <ChevronRight size={15} className="text-stone-300 group-hover:text-[#B71E52] ml-auto shrink-0 transition-colors duration-200" />
+                <ChevronRight size={15} className="text-white/30 group-hover:text-[#B71E52] ml-auto shrink-0 transition-colors duration-200" />
               </div>
             ))}
           </div>
@@ -352,7 +371,7 @@ function ContactPageContent() {
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <div className="min-h-screen bg-white">
         <Toaster position="bottom-center" />
-        <Navbar variant="nontransparent" />
+        <Navbar />
         <Hero />
         <ContactMain paramTopic={topic} />
         <MapSection />

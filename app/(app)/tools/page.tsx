@@ -66,11 +66,32 @@ const ToolsPage = () => {
         className="min-h-screen bg-white"
         style={{ fontFamily: "'Outfit', sans-serif" }}
       >
-        <Navbar variant="nontransparent" />
+        <Navbar />
 
         {/* ── HERO ──────────────────────────────────────────────────────── */}
-        <section className="relative bg-[#F5F2ED] border-b border-[#E8E4DD] overflow-hidden dot-grid">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+        <section className="relative min-h-[52vh] flex items-end overflow-hidden bg-[#1C1C2E]">
+          <style dangerouslySetInnerHTML={{ __html: `
+            @keyframes toolsHeroZoom { from { transform:scale(1.0); } to { transform:scale(1.05); } }
+          `}} />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
+              backgroundSize: "72px 72px",
+            }}
+          />
+          {/* Photo backdrop */}
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-25"
+            style={{
+              backgroundImage: "url('/tools/tools.jpg')",
+              animation: "toolsHeroZoom 22s ease-in-out infinite alternate",
+            }}
+          />
+          {/* Overlays */}
+          <div className="absolute inset-0 bg-[#1C1C2E]/10" />
+
+          <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
               {/* Left */}
               <motion.div
@@ -81,13 +102,13 @@ const ToolsPage = () => {
                 <motion.div
                 variants={sfl}
 
-                 className="sr inline-flex items-center gap-2.5 mb-7 px-4 py-2 bg-white border border-[#E8E4DD] rounded-sm">
+                 className="inline-flex items-center gap-2.5 mb-6 px-4 py-2 bg-white/[0.07] border border-white/[0.15] rounded-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#B71E52] shrink-0" />
                   <span
                     className="font-mono-dm"
                     style={{
                       fontSize: 10,
-                      color: "#B71E52",
+                      color: "rgba(255,255,255,0.75)",
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
                     }}
@@ -98,20 +119,20 @@ const ToolsPage = () => {
 
                 <motion.h1
                 variants={sfl}
-                  className="sr d1 font-display font-bold text-[#1C1C2E] leading-none mb-6"
-                  style={{ fontSize: "clamp(48px, 6.5vw, 80px)" }}
+                  className="font-display font-bold text-white leading-[1.0] mb-5"
+                  style={{ fontSize: "clamp(48px, 7vw, 88px)" }}
                 >
                   Powerful
                   <br />
-                  <em style={{ fontStyle: "italic", color: "#B71E52" }}>
+                  <em style={{ fontStyle: "italic", color: "rgba(255,255,255,0.45)" }}>
                     Business Tools
                   </em>
                 </motion.h1>
 
                 <motion.p
                 variants={sfl}
-                  className="sr d2 leading-[1.85] max-w-md"
-                  style={{ fontSize: 16, color: "#6B7280" }}
+                  className="leading-[1.8] max-w-md"
+                  style={{ fontSize: 16, color: "rgba(255,255,255,0.55)" }}
                 >
                   A suite of carefully crafted tools designed to simplify
                   complex financial decisions, improve accuracy, and accelerate
@@ -135,10 +156,10 @@ const ToolsPage = () => {
                   <motion.div
                   variants={sfd}
                     key={i}
-                    className="bg-white border border-[#E8E4DD] rounded-xl p-5"
+                    className="bg-white/[0.07] border border-white/[0.15] rounded-xl p-5"
                   >
                     <div
-                      className="font-display font-bold text-[#1C1C2E] leading-none mb-1.5"
+                      className="font-display font-bold text-white leading-none mb-1.5"
                       style={{ fontSize: "clamp(28px, 3vw, 38px)" }}
                     >
                       {s.val}
@@ -147,7 +168,7 @@ const ToolsPage = () => {
                       className="font-mono-dm"
                       style={{
                         fontSize: 10,
-                        color: "#9CA3AF",
+                        color: "rgba(255,255,255,0.4)",
                         letterSpacing: "0.1em",
                         textTransform: "uppercase",
                       }}

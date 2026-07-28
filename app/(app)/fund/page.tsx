@@ -113,7 +113,7 @@ const funds = [
     subtitle: "Nepal's flagship sector-agnostic growth equity fund",
     description: "Our first institutional fund demonstrated proof of concept: raising NPR 300 crores from Nepal's leading banks and insurance companies, deploying capital across diverse sectors, and building a portfolio advancing toward exits.",
     icon: <TrendingUp size={20} />,
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80',
+    image: '/nofone/nofone.jpg',
     capital: 'NPR 120M+',
     meta: [
       { label: 'Status', value: 'Fully deployed — Portfolio actively managed' },
@@ -131,7 +131,7 @@ const funds = [
     subtitle: 'Building on proven success with enhanced flexibility',
     description: "Our second fund leverages NOF I's track record with a blended finance structure, enabling both follow-on support for high-performing portfolio companies and strategic new investments with flexible instruments beyond pure equity.",
     icon: <BarChart3 size={20} />,
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80',
+    image: '/noftwo/noftwo.jpg',
     capital: 'NPR 140M+',
     meta: [
       { label: 'Structure', value: 'Blended finance (commercial + development capital)' },
@@ -180,13 +180,13 @@ function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center anim-hero-zoom opacity-30"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?w=1800&q=80')",
+          backgroundImage: "url('/fund/fund.jpg')",
           animation: 'heroZoom 22s ease-in-out infinite alternate',
         }}
       />
       {/* Overlays */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#1C1C2E]/95 via-[#1C1C2E]/70 to-[#1C1C2E]/40" />
-      <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/80 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#1C1C2E]/75 via-[#1C1C2E]/40 to-[#1C1C2E]/30" />
+      {/* <div className="absolute inset-0 bg-linear-to-t from-[#1C1C2E]/80 via-transparent to-transparent" /> */}
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20">
         {/* Badge */}
@@ -363,34 +363,6 @@ function OurFunds() {
               Learn More <ChevronRight size={16} />
             </a>
           </div>
-        </div>
-
-        {/* ── Fund overview cards ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-12 border-t border-[#E8E4DD]">
-          {funds.map(fund => (
-            <button key={fund.id} onClick={() => setActive(fund.id)}
-              className={`fund-overview-card text-left p-6 rounded-xl border transition-all duration-200 cursor-pointer
-                ${active === fund.id
-                  ? 'bg-white border-[#B71E52] shadow-lg shadow-stone-100'
-                  : 'bg-white border-[#E8E4DD] hover:border-stone-300'}`}>
-
-              <div className="flex items-center justify-between mb-4">
-                <span className="px-2.5 py-1 rounded font-mono-dm text-[9px] text-white tracking-widest uppercase"
-                  style={{ background: fund.tagBg }}>{fund.tag}</span>
-                <span className={active === fund.id ? 'text-[#B71E52]' : 'text-stone-300'}>
-                  {fund.icon}
-                </span>
-              </div>
-
-              <h4 className="font-display font-bold text-[17px] text-[#1C1C2E] mb-2 leading-snug">{fund.name}</h4>
-              <p className="text-[13px] text-stone-500 leading-[1.65]">{fund.subtitle}</p>
-
-              {/* Active indicator line */}
-              {active === fund.id && (
-                <div className="mt-4 h-0.5 bg-[#B71E52] rounded-full w-8" />
-              )}
-            </button>
-          ))}
         </div>
       </div>
     </section>

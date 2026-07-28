@@ -160,7 +160,7 @@ const stats = [
 
 
 const offices = [
-  { city: 'Kathmandu', label: 'Headquarters', detail: 'Lazimpat, Kathmandu 44600' },
+  { city: 'Kathmandu', label: 'Headquarters', detail: 'Dharamarg, Baluwatar-4, Kathmandu' },
   { city: 'New York', label: 'Americas Office', detail: '535 Fifth Avenue, Suite 1200' },
   { city: 'London', label: 'European Office', detail: '1 Canada Square, Canary Wharf' },
   { city: 'Singapore', label: 'Asia-Pacific Hub', detail: '1 Raffles Place, #40-02' },

@@ -450,7 +450,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "7 min read",
-    image: "/insights/leveraging-private-equity-nepal-economy.png",
+    image: "/insights/leveraging-private-equity-nepal-economy.jpg",
     relatedIds: [
       "investment-readiness-gap",
       "aadhyanta-venture-capital-nepal",
@@ -544,7 +544,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=80&q=80",
     date: "February 14, 2025",
     readTime: "7 min read",
-    image: "/insights/securing-your-future-private-equity-nepal-startups.png",
+    image: "/insights/securing-your-future-private-equity-nepal-startups.jpg",
     relatedIds: [
       "investment-readiness-gap",
       "aadhyanta-venture-capital-nepal",

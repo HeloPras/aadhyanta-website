@@ -185,12 +185,12 @@ function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-15"
         style={{
-          backgroundImage: "url('/noftwo/noftwo.jpeg')",
+          backgroundImage: "url('/noftwo/bg.jpg')",
           animation: 'heroZoom 24s ease-in-out infinite alternate',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1C1C2E]/95 via-[#1C1C2E]/70 to-[#1C1C2E]/35" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/85 via-transparent to-transparent" />
+      {/* <div className="absolute inset-0 bg-gradient-to-r from-[#1C1C2E]/95 via-[#1C1C2E]/70 to-[#1C1C2E]/35" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C2E]/85 via-transparent to-transparent" /> */}
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-44 pb-16">
         {/* Breadcrumb */}

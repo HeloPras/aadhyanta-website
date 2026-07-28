@@ -1104,12 +1104,12 @@ function CTA() {
               {
                 icon: <MapPin size={15} />,
                 label: "Address",
-                val: "Lazimpat, Kathmandu, Nepal",
+                val: "Dharamarg, Baluwatar-4, Kathmandu, Nepal",
               },
               {
                 icon: <Phone size={15} />,
                 label: "Phone",
-                val: "01-4526601, 01-4526603",
+                val: "+977-01-4526601",
               },
               {
                 icon: <Mail size={15} />,
